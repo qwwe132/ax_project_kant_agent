@@ -1,0 +1,317 @@
+<title>KANT Learning Roadmap</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+
+:root { --ink:#172036; --muted:#5f6b7d; --subtle:#8a95a7; --ground:#f5f7fb; --panel:#fff; --line:#dce3ee; --soft:#edf1f7; --track:#2473b9; --project:#9c5a0a; --focus:#172036; --shadow:0 8px 22px rgba(33,47,68,.08); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; min-width:320px; color:var(--ink); background:var(--ground); font-family:'Noto Sans KR',Arial,sans-serif; overflow-x:hidden; }
+button { font:inherit; } button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.shell { min-height:100vh; background:linear-gradient(180deg,#fff 0 18rem,var(--ground) 34rem); }
+.topline { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.65rem clamp(1rem,4vw,4.5rem); border-bottom:1px solid var(--line); color:var(--muted); background:#fff; font:500 .68rem/1 'IBM Plex Mono',monospace; letter-spacing:.08em; }
+.topline b { color:var(--ink); font-weight:600; }.status { display:flex; align-items:center; gap:.5rem; white-space:nowrap; }.status-dot { width:.45rem; height:.45rem; border-radius:50%; background:#4d9b61; }
+.masthead { max-width:1440px; margin:0 auto; padding:clamp(2.2rem,5vw,4.8rem) clamp(1rem,4vw,4.5rem) 1.25rem; }.brandline { display:flex; justify-content:space-between; align-items:flex-start; gap:2rem; }.eyebrow { margin:0 0 .72rem; color:var(--muted); font:600 .68rem/1 'IBM Plex Mono',monospace; letter-spacing:.12em; }h1 { margin:0; max-width:18ch; font-size:clamp(2rem,4.4vw,4rem); line-height:1.18; letter-spacing:-.055em; text-wrap:balance; }h1 span { color:var(--track); }.hero-copy { max-width:42rem; margin:1rem 0 0; color:var(--muted); font-size:clamp(.91rem,1.25vw,1rem); line-height:1.75; }.hero-copy strong { color:var(--ink); font-weight:700; }
+.track-switcher { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.65rem; margin-top:2.4rem; }.track-tab { appearance:none; cursor:pointer; min-width:0; padding:.85rem 1rem; border:1px solid var(--line); border-radius:.7rem; text-align:left; color:var(--muted); background:rgba(255,255,255,.76); transition:border-color .15s,box-shadow .15s,background .15s; }.track-tab:hover { border-color:var(--track); background:#fff; }.track-tab.active { color:var(--ink); border-color:var(--track); background:#fff; box-shadow:0 0 0 2px color-mix(in srgb,var(--track) 15%,transparent); }.track-tab .tab-code { display:block; color:var(--track); font:600 .78rem/1 'IBM Plex Mono',monospace; letter-spacing:.08em; }.track-tab .tab-name { display:block; margin-top:.34rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:.82rem; font-weight:700; }
+.main { max-width:1440px; margin:0 auto; padding:1.4rem clamp(1rem,4vw,4.5rem) 5rem; }.readout { display:flex; align-items:end; justify-content:space-between; gap:1rem; padding:1.5rem 0 1.1rem; border-bottom:1px solid var(--line); }.readout h2 { margin:0; font-size:clamp(1.5rem,2.5vw,2.15rem); line-height:1.2; letter-spacing:-.045em; }.readout h2 em { color:var(--track); font:600 .85rem/1 'IBM Plex Mono',monospace; font-style:normal; letter-spacing:.06em; vertical-align:.22em; }.readout p { margin:.4rem 0 0; color:var(--muted); font-size:.84rem; }
+.position-readout { min-width:19rem; padding:.78rem .9rem .82rem; border:1px solid var(--line); border-left:4px solid var(--track); border-radius:.45rem; color:var(--muted); background:#fff; font:500 .65rem/1.65 'IBM Plex Mono',monospace; }.position-readout strong { display:block; overflow:hidden; color:var(--ink); text-overflow:ellipsis; white-space:nowrap; font:700 .86rem 'Noto Sans KR',sans-serif; }.progress-copy { display:block; margin-top:.35rem; color:var(--muted); font:500 .61rem/1.3 'IBM Plex Mono',monospace; }.progress-meter { height:.42rem; margin-top:.45rem; overflow:hidden; border-radius:99px; background:var(--soft); }.progress-meter span { display:block; width:0; height:100%; border-radius:inherit; background:var(--track); transition:width .28s ease; }
+.flow-story { display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:start; margin:1.5rem 0 2.2rem; padding:1rem 1.1rem; border:1px solid color-mix(in srgb,var(--track) 27%,var(--line)); border-radius:.8rem; background:color-mix(in srgb,var(--track) 5%,#fff); }.flow-story-label { padding:.35rem .48rem; border-radius:.3rem; color:var(--track); background:#fff; font:600 .62rem/1 'IBM Plex Mono',monospace; letter-spacing:.05em; }.flow-story h3 { margin:0; font-size:.86rem; }.flow-story p { margin:.35rem 0 0; color:var(--muted); font-size:.81rem; line-height:1.65; }
+.level-map { display:grid; gap:1.45rem; }.level-card { position:relative; padding:1.15rem; border:1px solid var(--line); border-left:4px solid var(--track); border-radius:.85rem; background:#fff; box-shadow:var(--shadow); }.level-header { display:flex; justify-content:space-between; gap:1rem; align-items:start; padding-bottom:1rem; border-bottom:1px solid var(--line); }.level-number { display:flex; gap:.65rem; align-items:baseline; color:var(--muted); font:500 .62rem 'IBM Plex Mono',monospace; letter-spacing:.06em; }.level-title { margin:.42rem 0 0; font-size:1.38rem; line-height:1; letter-spacing:-.04em; }.level-desc { margin:.38rem 0 0; color:var(--muted); font-size:.78rem; }.chapter-date { flex:0 0 auto; padding:.45rem .55rem; border-radius:.35rem; color:var(--track); background:color-mix(in srgb,var(--track) 9%,#fff); font:600 .63rem/1 'IBM Plex Mono',monospace; letter-spacing:.02em; white-space:nowrap; }.course-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(14.5rem,1fr)); gap:.65rem; margin-top:1rem; }.course { position:relative; appearance:none; cursor:pointer; display:flex; flex-direction:column; gap:.5rem; min-height:11.3rem; padding:.85rem; border:1px solid var(--line); border-radius:.55rem; text-align:left; color:var(--ink); background:#fff; transition:border-color .14s,box-shadow .14s,background .14s; }.course:hover { border-color:var(--track); background:#fbfcfe; }.course::before { content:attr(data-order); color:var(--subtle); font:500 .58rem/1 'IBM Plex Mono',monospace; letter-spacing:.04em; }.course.current { border-color:var(--track); background:color-mix(in srgb,var(--track) 7%,#fff); box-shadow:0 0 0 2px color-mix(in srgb,var(--track) 13%,transparent); }.course.current::before { color:var(--track); font-weight:600; }.course.project { border-bottom:3px solid var(--project); }.course.project::after { content:'프로젝트'; position:absolute; top:.85rem; right:.78rem; color:var(--project); font-size:.58rem; font-weight:700; }.course-name { padding-right:0; font-size:.87rem; font-weight:700; line-height:1.4; word-break:keep-all; }.course.project .course-name { padding-right:2.6rem; }.course-summary { margin:0; color:var(--muted); font-size:.72rem; line-height:1.55; }.course-tags { display:flex; flex-wrap:wrap; gap:.25rem; margin-top:auto; }.course-tags span { padding:.1rem .27rem; border-radius:.2rem; color:var(--muted); background:var(--soft); font:500 .56rem/1.28 'IBM Plex Mono',monospace; letter-spacing:.01em; }.connection { margin-top:.1rem; padding-top:.5rem; border-top:1px solid var(--soft); color:var(--muted); font-size:.64rem; line-height:1.4; }.connection b { color:var(--track); font-weight:700; }.importance { color:#9c5a0a; font-weight:700; }
+.chapter-bridge { display:flex; align-items:start; gap:.6rem; margin-top:.9rem; padding:.75rem .85rem; border-radius:.45rem; color:var(--muted); background:var(--soft); font-size:.74rem; line-height:1.55; }.chapter-bridge b { flex:0 0 auto; color:var(--track); }
+.legend { display:flex; flex-wrap:wrap; gap:.7rem 1.35rem; padding:1.1rem 0 0; color:var(--muted); font-size:.72rem; }.legend-item { display:flex; align-items:center; gap:.4rem; }.legend-dot { width:.55rem; height:.55rem; border:1.5px solid #aeb8c6; border-radius:50%; }.legend-dot.current { border:0; background:var(--track); box-shadow:inset 0 0 0 2px #fff; outline:1px solid var(--track); }.legend-bar { width:.24rem; height:.75rem; border-radius:2px; background:var(--project); }
+.overview { margin-top:3.2rem; padding-top:1.35rem; border-top:1px solid var(--line); }.overview-heading { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; }.overview h3 { margin:0; font-size:1.2rem; letter-spacing:-.03em; }.overview p { margin:0; color:var(--muted); font-size:.73rem; }.overview-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:.75rem; margin-top:1rem; }.overview-track { appearance:none; cursor:pointer; min-width:0; padding:.95rem; border:1px solid var(--line); border-radius:.7rem; text-align:left; color:var(--ink); background:#fff; transition:border-color .15s,box-shadow .15s; }.overview-track:hover { border-color:var(--overview); box-shadow:var(--shadow); }.overview-track .overview-code { color:var(--overview); font:600 .76rem/1 'IBM Plex Mono',monospace; letter-spacing:.08em; }.overview-track .overview-name { display:block; min-height:2.2em; margin-top:.34rem; font-size:.78rem; font-weight:700; line-height:1.4; }.mini-map { display:flex; gap:3px; margin-top:.85rem; }.mini-map span { display:block; height:.28rem; flex:1; border-radius:99px; background:var(--overview); opacity:.75; }.overview-track .overview-count { display:block; margin-top:.6rem; overflow:hidden; color:var(--muted); text-overflow:ellipsis; white-space:nowrap; font:500 .58rem 'IBM Plex Mono',monospace; }
+.system-map { position:relative; display:grid; gap:.85rem; padding-left:2.7rem; }.system-map::before { content:''; position:absolute; top:1.3rem; bottom:1.3rem; left:.78rem; border-left:1px solid color-mix(in srgb,var(--track) 42%,var(--line)); }.system-stage { position:relative; display:grid; grid-template-columns:minmax(10rem,.76fr) 1.1fr 1fr; gap:1rem; align-items:start; padding:1.1rem; border:1px solid var(--line); border-radius:.8rem; background:#fff; box-shadow:var(--shadow); }.system-stage::before { content:attr(data-step); position:absolute; left:-2.7rem; top:1rem; display:grid; width:1.62rem; height:1.62rem; place-items:center; border:3px solid var(--ground); border-radius:50%; color:#fff; background:var(--track); font:600 .57rem/1 'IBM Plex Mono',monospace; }.system-stage h3 { margin:0; font-size:1.08rem; letter-spacing:-.03em; }.system-stage .system-action { margin:.43rem 0 0; color:var(--muted); font-size:.77rem; line-height:1.58; }.system-block { padding-left:1rem; border-left:1px solid var(--line); }.system-block b { display:block; margin-bottom:.35rem; color:var(--track); font:600 .59rem/1 'IBM Plex Mono',monospace; letter-spacing:.04em; }.system-block p { margin:0; color:var(--muted); font-size:.74rem; line-height:1.55; }.system-tags { display:flex; flex-wrap:wrap; gap:.27rem; margin-top:.72rem; }.system-tags span { padding:.12rem .3rem; border-radius:.2rem; color:var(--muted); background:var(--soft); font:500 .55rem/1.2 'IBM Plex Mono',monospace; }.system-closing { margin:1.5rem 0 0 2.7rem; padding:1rem 1.1rem; border:1px solid color-mix(in srgb,var(--track) 30%,var(--line)); border-radius:.65rem; background:color-mix(in srgb,var(--track) 5%,#fff); color:var(--muted); font-size:.8rem; line-height:1.65; }.system-closing b { color:var(--ink); }
+.footer { display:flex; justify-content:space-between; gap:1rem; max-width:1440px; margin:0 auto; padding:1.4rem clamp(1rem,4vw,4.5rem) 2rem; border-top:1px solid var(--line); color:var(--subtle); font:.62rem/1.6 'IBM Plex Mono',monospace; }.footer b { color:var(--muted); }
+@media (max-width:760px) { .topline .status{display:none}.track-switcher,.overview-grid{grid-template-columns:repeat(2,1fr)}.readout{align-items:start;flex-direction:column}.position-readout{width:100%}.flow-story{grid-template-columns:1fr}.course-list{grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}.system-stage{grid-template-columns:1fr}.system-block{padding:.75rem 0 0;border-top:1px solid var(--line);border-left:0}.footer{flex-direction:column} }
+@media (max-width:440px) { .masthead{padding-top:2.2rem}.track-tab{padding:.72rem}.course-list{grid-template-columns:1fr}.level-card{padding:.9rem}.level-header{flex-direction:column}.chapter-date{align-self:flex-start} }
+@media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important} }
+</style>
+
+<div class="shell">
+  <div class="topline">
+    <span><b>KANT</b> / LEARNING ROADMAP</span>
+    <span class="status"><i class="status-dot"></i> 4개 트랙 · 학습 시스템</span>
+  </div>
+
+  <header class="masthead">
+    <div class="brandline">
+      <div>
+        <p class="eyebrow">KANT · LEARNING ROADMAP</p>
+        <h1>나의 학습 여정을 <span>한눈에</span></h1>
+        <p class="hero-copy"><strong>교과목 이름을 따라가며</strong> 지금의 학습 위치와 다음 과정을 가볍게 확인하세요. 학습 시스템 탭에서는 배운 내용을 점검하고 실무 경험으로 연결하는 과정도 확인할 수 있어요.</p>
+      </div>
+    </div>
+    <nav class="track-switcher" aria-label="트랙 선택" id="trackTabs"></nav>
+  </header>
+
+  <main class="main">
+    <section aria-labelledby="trackTitle">
+      <div class="readout">
+        <div>
+          <h2 id="trackTitle"></h2>
+          <p id="trackSubtitle"></p>
+        </div>
+        <div class="position-readout" aria-live="polite">나의 현재 위치<strong id="currentReadout">아직 선택하지 않았어요</strong><span class="progress-copy" id="currentProgress">전체 커리큘럼에서의 위치를 표시해요</span><div class="progress-meter" role="progressbar" aria-label="전체 커리큘럼 진행 위치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progressFill"></span></div></div>
+      </div>
+      <section class="flow-story" aria-labelledby="flowTitle">
+        <span class="flow-story-label">WHY THIS FLOW</span>
+        <div><h3 id="flowTitle">이 트랙의 학습 흐름</h3><p id="flowCopy"></p></div>
+      </section>
+      <div class="level-map" id="levelMap" aria-label="교과목 로드맵"></div>
+      <div class="legend" aria-label="범례">
+        <span class="legend-item"><i class="legend-dot"></i> 교과목</span>
+        <span class="legend-item"><i class="legend-dot current"></i> 내가 선택한 현재 위치</span>
+        <span class="legend-item"><i class="legend-bar"></i> 프로젝트 · 실전 미션</span>
+      </div>
+    </section>
+
+    <section class="overview" aria-labelledby="overviewTitle">
+      <div class="overview-heading">
+        <h3 id="overviewTitle">전체 트랙 한눈에 보기</h3>
+        <p>트랙을 누르면 해당 로드맵으로 이동해요.</p>
+      </div>
+      <div class="overview-grid" id="overviewGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span><b>KANT LEARNING ROADMAP</b> · 교과목 중심 학습 경로</span>
+    <span>클릭한 현재 위치는 이 브라우저에만 저장됩니다.</span>
+  </footer>
+</div>
+
+<script>
+const tracks = [
+  {
+    id: 'ds', code: 'DS', name: 'Data Science', label: '데이터 사이언스', color: '#53d5ff',
+    levels: [
+      { name: 'Lv. 1', subtitle: '기초 체력 · 데이터 읽기', courses: [
+        ['입학식', ['START']], ['Git&Github', ['GIT', 'COLLAB']], ['데이터 리터러시', ['DATA', 'INSIGHT']], ['AI Literacy', ['AI', 'PROMPT']], ['Python 기초', ['PYTHON']], ['SQL&데이터베이스', ['SQL', 'DB']], ['데이터 전처리 & 시각화', ['PANDAS', 'VIZ']], ['기초통계', ['STATS']], ['머신러닝 기초', ['ML']]
+      ]},
+      { name: 'Lv. 2', subtitle: '분석 · 모델링 · 실전', courses: [
+        ['SQL 쿼리 최적화', ['SQL', 'QUERY']], ['추론 통계 & 실험 설계', ['A/B', 'STATS']], ['프로덕트 분석', ['FUNNEL', 'METRIC']], ['실전 머신러닝', ['ML', 'MODEL']], ['BI 도구', ['BI', 'DASHBOARD']], ['프로젝트(1) ML 기반 비즈니스 분석', ['PROJECT', 'ML'], true], ['AI를 위한 수학', ['MATH']], ['딥러닝 기초', ['DL', 'PYTORCH']], ['데이터 수집', ['API', 'CRAWL']], ['텍스트 분석', ['NLP', 'LLM']]
+      ]},
+      { name: 'Lv. 3', subtitle: 'AI 서비스로 확장', courses: [
+        ['이미지 분석', ['CV', 'VLM']], ['프로젝트(2) CV 기반 데이터분석', ['PROJECT', 'CV'], true], ['RAG & 추천 시스템', ['RAG', 'VECTOR DB']], ['AI Agent & MCP', ['AGENT', 'MCP']], ['MLOps', ['MLOPS', 'SERVING']], ['프로젝트(3) AI 서비스 구축', ['PROJECT', 'SERVICE'], true], ['빅데이터 처리', ['SPARK', 'DUCKDB']], ['프로젝트(4) AI 기반 데이터 분석 및 자동화 프로젝트', ['FINAL', 'AUTOMATION'], true]
+      ]},
+      { name: 'Lv. 4', subtitle: '융합 프로젝트 · 커리어', courses: [
+        ['AI Kaggle 프로젝트', ['FINAL', 'KAGGLE'], true], ['기업초청발표회', ['DEMO']], ['취업지원', ['CAREER']], ['수료식', ['FINISH']]
+      ]}
+    ]
+  },
+  {
+    id: 'pa', code: 'PA', name: 'Physical AI', label: '피지컬 AI', color: '#b9ee6d',
+    levels: [
+      { name: 'Lv. 1', subtitle: '로봇 시스템 코어', courses: [
+        ['입학식', ['START']], ['취업지원', ['CAREER']], ['Physical AI Robotics 코어', ['ROBOT', 'ROS2']]
+      ]},
+      { name: 'Lv. 2', subtitle: '인지 · 제어 · 자율주행', courses: [
+        ['임베디드 제어 기초', ['PID', 'MCU']], ['로봇 기구학 및 동역학', ['KINEMATICS']], ['컴퓨터 비전 + 카메라 모델', ['CV', 'OPENCV']], ['2D / 3D 공간 인지 및 비전 AI', ['3D', 'YOLO']], ['프로젝트(1) ROS2 기반 비전 연동 객체 추적', ['PROJECT', 'ROS2'], true], ['SLAM 및 Nav2 자율주행', ['SLAM', 'NAV2']], ['로봇 모방학습 및 정책 최적화', ['POLICY', 'RL']], ['Sim2Real 및 가상 물리 시뮬레이션', ['SIM2REAL']], ['에지 컴퓨팅 및 실시간 배포', ['EDGE', 'JETSON']], ['프로젝트(2) 자율주행 기반 물류 이송 및 장애물 회피', ['PROJECT', 'AUTONOMY'], true]
+      ]},
+      { name: 'Lv. 3', subtitle: 'AI 로보틱스 · 운영', courses: [
+        ['AI / LLM 응용 베이스', ['LLM', 'VLM']], ['LLM / VLM / VLA Robotics', ['VLA', 'ROS2']], ['다중 로봇 조정 및 협업', ['MULTI ROBOT']], ['프로젝트(3) 물류/공정 자동화 시나리오 구현', ['PROJECT', 'AUTOMATION'], true], ['디지털 트윈 기반 통합 대시보드', ['TWIN', 'WEBGL']], ['로봇 운영 최적화 (RobotOps)', ['ROBOTOPS']], ['프로젝트(4) Digital Twin & AI 모델 학습 및 검증', ['FINAL', 'DIGITAL TWIN'], true]
+      ]},
+      { name: 'Lv. 4', subtitle: '융합 프로젝트 · 커리어', courses: [
+        ['AI Kaggle 프로젝트', ['FINAL', 'KAGGLE'], true], ['기업초청발표회', ['DEMO']], ['취업지원', ['CAREER']], ['수료식', ['FINISH']]
+      ]}
+    ]
+  },
+  {
+    id: 'ax', code: 'AX', name: 'Fullstack AX Agent', label: '풀스택 AX', color: '#ff8b73',
+    levels: [
+      { name: 'Lv. 1', subtitle: '개발 · AI 기초', courses: [
+        ['입학식', ['START']], ['Git&Github', ['GIT', 'COLLAB']], ['Python 기초', ['PYTHON']], ['AI Literacy', ['AI', 'PROMPT']], ['머신러닝 기초', ['ML']], ['SQL&데이터베이스', ['SQL', 'DB']]
+      ]},
+      { name: 'Lv. 2', subtitle: '제품 개발 · LLM 활용', courses: [
+        ['데이터베이스 & AI 활용', ['DB', 'SUPABASE']], ['프론트엔드 개발', ['HTML', 'JS']], ['프론트엔드 심화 (TypeScript)', ['TS']], ['프론트엔드 응용 (React/Next.js)', ['REACT', 'NEXT']], ['프로젝트(1): AI 쇼핑몰 프론트엔드', ['PROJECT', 'FRONTEND'], true], ['백엔드 아키텍처 & API 설계', ['API', 'EXPRESS']], ['프로젝트(2): AI 쇼핑몰 백엔드', ['PROJECT', 'BACKEND'], true], ['LLM 프롬프트 엔지니어링', ['LLM', 'PROMPT']]
+      ]},
+      { name: 'Lv. 3', subtitle: 'AI 제품 출시 · 운영', courses: [
+        ['RAG 파이프라인 설계', ['RAG', 'EVAL']], ['프로젝트(3): RAG Agent 프로젝트', ['PROJECT', 'RAG'], true], ['모델 고도화 (PEFT)', ['LORA', 'PEFT']], ['워크플로우 오케스트레이션', ['WORKFLOW']], ['프로젝트(4): 오케스트레이션 프로젝트', ['PROJECT', 'AUTOMATION'], true], ['LLMOps', ['LLMOPS', 'EVAL']], ['프로젝트(5): 최종 프로젝트', ['FINAL', 'LAUNCH'], true]
+      ]},
+      { name: 'Lv. 4', subtitle: '융합 프로젝트 · 커리어', courses: [
+        ['AI Kaggle 프로젝트', ['FINAL', 'KAGGLE'], true], ['기업초청발표회', ['DEMO']], ['취업지원', ['CAREER']], ['수료식', ['FINISH']]
+      ]}
+    ]
+  },
+  {
+    id: 'llm', code: 'LLM', name: 'Private LLM', label: '프라이빗 LLM', color: '#ad83ff',
+    levels: [
+      { name: 'Lv. 1', subtitle: 'LLM 기초 체력', courses: [
+        ['입학식', ['START']], ['Git&Github', ['GIT', 'COLLAB']], ['AI Literacy', ['AI', 'ETHICS']], ['기초 수학 (선형대수)', ['MATH', 'VECTOR']], ['머신러닝 심화', ['ML', 'EVAL']], ['딥러닝 기초', ['DL', 'PYTORCH']], ['딥러닝 심화', ['TRANSFORMER', 'HF']]
+      ]},
+      { name: 'Lv. 2', subtitle: 'RAG · 튜닝 · LLM 개발', courses: [
+        ['딥러닝 실전 & 프롬프트 엔지니어링', ['DL', 'PROMPT']], ['프로젝트(1): 오픈소스 LLM 활용', ['PROJECT', 'OLLAMA'], true], ['데이터 수집 & API 서버 구축', ['API', 'FASTAPI']], ['LangChain', ['LANGCHAIN']], ['프로젝트(2): 기초 프로젝트(딥러닝)', ['PROJECT', 'DL'], true], ['RAG 기초/심화', ['RAG', 'VECTOR DB']], ['Context Engineering', ['CONTEXT']], ['LLMOps', ['LLMOPS']], ['LLM Fine-tuning', ['LORA', 'DPO']], ['프로젝트(3): 심화 프로젝트-RAG 기반 Q&A 서비스', ['PROJECT', 'RAG'], true]
+      ]},
+      { name: 'Lv. 3', subtitle: '에이전트 · 인프라 · 서빙', courses: [
+        ['AI Agent', ['AGENT', 'MCP']], ['프로젝트(4): 실전 프로젝트 (Fine-tuning)', ['PROJECT', 'AGENT'], true], ['클라우드 인프라', ['CLOUD', 'K8S']], ['Private LLM 서빙', ['VLLM', 'SERVING']], ['프로젝트(5): 최종 프로젝트', ['FINAL', 'PRODUCTION'], true]
+      ]},
+      { name: 'Lv. 4', subtitle: '융합 프로젝트 · 커리어', courses: [
+        ['AI Kaggle 프로젝트', ['FINAL', 'KAGGLE'], true], ['기업초청발표회', ['DEMO']], ['취업지원', ['CAREER']], ['수료식', ['FINISH']]
+      ]}
+    ]
+  },
+  {
+    id: 'system', code: 'SYSTEM', name: 'Learning System', label: '학습 시스템', color: '#42806d', system: true,
+    stages: [
+      { title: 'AI 역량 평가', action: '입과 초기와 과정의 주요 시점에 현재 수준과 기초 개념을 점검해요.', checkpoint: '나는 어느 수준이며, 어떤 기초를 먼저 보완해야 할까요?', next: '출발점과 보완점을 바탕으로 나에게 맞는 직무 방향과 학습 목표를 구체화해요.', take: '점수보다 회차별 변화를 보고, 낮게 나온 개념을 복습 계획에 반영하세요.', tags: ['START', 'BASELINE', 'GROWTH'] },
+      { title: '취업지원 세션', action: '관심·강점·희망 업무를 탐색하고 학습을 취업 목표와 연결해요.', checkpoint: '목표 직무에 가까워지려면 과정에서 무엇을 더 쌓아야 할까요?', next: '정한 방향을 기준으로 매일의 학습에서 집중할 역량을 정하고 데일리 퀘스트로 이해도를 확인해요.', take: '관심 직무, 해보고 싶은 업무, 걱정되는 지점을 미리 정리해 세션에 가져오세요.', tags: ['CAREER', 'GOAL', 'FOCUS'] },
+      { title: '데일리 퀘스트', action: '그날 배운 내용을 짧은 문제로 풀며 이해도를 바로 점검해요.', checkpoint: '오늘 학습을 제대로 이해했나요? 어느 개념에서 막혔나요?', next: '오답과 어려운 개념은 복습·실습·튜터 설명으로 보완하고, 진단퀴즈·과제에서 핵심 역량으로 검증해요.', take: '가능한 학습 당일에 풀고, 오답의 원인을 한 줄로 기록해 보세요.', tags: ['DAILY', 'REVIEW', 'FEEDBACK'] },
+      { title: '진단퀴즈 · 과제', action: '핵심 개념을 이해하고 실제 문제에 적용할 수 있는지 확인해요.', checkpoint: '취업 준비에 필요한 역량 중 무엇이 충분하고, 무엇을 더 채워야 할까요?', next: '결과를 보완 학습과 튜터 피드백에 반영하고, 프로젝트에서 실제 업무처럼 적용할 준비를 해요.', take: '넓게 반복하기보다 데일리 퀘스트와 실습에서 어려웠던 개념부터 정리하세요.', tags: ['CHECKPOINT', 'APPLY', 'SKILL'] },
+      { title: '프로젝트', action: '실제 업무와 유사한 문제를 팀과 정의하고 해결 과정과 결과물을 완성해요.', checkpoint: '낯선 문제에도 적용할 수 있나요? 어떤 역할에서 강점을 보이나요?', next: '프로젝트의 강점과 보완점은 포트폴리오·면접·다음 직무 선택의 근거가 되고, 필요하면 학습 방향을 다시 조정해요.', take: '내 기여, 어려웠던 문제, 해결 방식과 배움을 정리해 포트폴리오와 면접에 활용하세요.', tags: ['PROJECT', 'COLLABORATION', 'PORTFOLIO'] }
+    ]
+  }
+];
+
+const chapterDates = ['08.03 ~ 09.07', '09.08 ~ 11.11', '11.12 ~ 02.16', '02.17 ~ 05.14'];
+const trackStories = {
+  ds: '데이터를 읽고 다루는 기초 위에서 분석과 머신러닝을 수행하고, 텍스트·이미지·RAG·에이전트·MLOps까지 확장해 AI 서비스로 완성합니다. 프로젝트마다 분석 결과를 실제 비즈니스 문제 해결과 운영 가능한 서비스로 전환해요.',
+  pa: 'ROS2·좌표계·프로그래밍이라는 로봇의 공통 언어를 먼저 만들고, 제어·기구학·비전·공간인지로 로봇의 인지와 행동을 연결합니다. 이후 자율주행·시뮬레이션·엣지 배포를 거쳐 산업 운영 단계까지 확장해요.',
+  ax: '개발 협업, Python·SQL·AI 기초를 토대로 데이터베이스와 프론트엔드·백엔드로 AI 제품의 골격을 만듭니다. 이어 프롬프트·RAG·PEFT·오케스트레이션·LLMOps를 더해 신뢰성 있는 AX 제품 출시로 연결해요.',
+  llm: '수학·머신러닝·딥러닝·Transformer 원리로 모델과 평가의 언어를 만들고, 오픈소스 모델·RAG·파인튜닝으로 도메인 성능을 높입니다. 에이전트·클라우드·프라이빗 서빙까지 이어 자체 LLM 서비스를 배포해요.',
+  system: 'KANT는 강의를 듣는 데서 끝나지 않아요. 현재 위치를 확인하고, 매일 배운 내용을 점검하며, 핵심 역량을 검증해 프로젝트의 실무형 경험과 취업 준비로 연결하는 학습 시스템입니다.'
+};
+const chapterBridges = {
+  ds: ['Python·SQL·통계 기반을 쌓아 데이터 전처리·머신러닝 실습으로 넘어가요.', '분석과 ML을 딥러닝·텍스트 분석으로 넓혀 AI 서비스의 재료를 확보해요.', 'RAG·에이전트·MLOps를 통합해 데이터 기반 AI 서비스를 완성해요.', '앞선 역량을 실제 기업 데이터 문제 해결과 커리어 결과물로 검증해요.'],
+  pa: ['ROS2·좌표계·코딩 기반을 제어·기구학·비전 실습에 바로 활용해요.', '인지·제어·자율주행 역량을 LLM/VLA와 자동화 공정으로 통합해요.', '로봇 기능을 디지털 트윈과 RobotOps 관점의 안정적인 운영으로 확장해요.', '산업 문제 해결 프로젝트와 발표로 융합 역량을 검증해요.'],
+  ax: ['개발·데이터·AI 기초를 AI 제품의 프론트엔드와 백엔드 구현에 연결해요.', '제품 골격 위에 프롬프트·RAG·PEFT로 AI 기능의 품질을 높여요.', '오케스트레이션·LLMOps까지 더해 배포·관측 가능한 AX 제품으로 완성해요.', '융합 프로젝트에서 전체 제품 개발 경험을 검증해요.'],
+  llm: ['수학·ML·DL 기반으로 Transformer와 오픈소스 LLM의 동작을 이해해요.', 'RAG·Context Engineering·Fine-tuning으로 도메인 맞춤 성능을 만들어요.', 'Agent·클라우드·서빙을 통합해 보안과 운영성을 갖춘 프로덕션 서비스로 확장해요.', '실제 기업 데이터 프로젝트와 발표로 결과물을 완성해요.']
+};
+const futureUse = {
+  ds: { 'Python 기초':'데이터 전처리 & 시각화 · 머신러닝 기초', 'SQL&데이터베이스':'SQL 쿼리 최적화 · 프로덕트 분석', '기초통계':'추론 통계 & 실험 설계 · 프로덕트 분석', '머신러닝 기초':'실전 머신러닝 · ML 기반 비즈니스 분석', '딥러닝 기초':'이미지 분석 · 텍스트 분석', '텍스트 분석':'RAG & 추천 시스템', 'RAG & 추천 시스템':'AI 서비스 구축', 'AI Agent & MCP':'AI 서비스 구축 · 자동화 프로젝트', 'MLOps':'AI 서비스 구축 · 자동화 프로젝트' },
+  pa: { 'Physical AI Robotics 코어':'제어 · 기구학 · 비전 · 공간 인지 전반', '임베디드 제어 기초':'ROS2 기반 비전 연동 객체 추적', '로봇 기구학 및 동역학':'ROS2 기반 비전 연동 객체 추적 · Nav2', '컴퓨터 비전 + 카메라 모델':'2D / 3D 공간 인지 및 비전 AI · 객체 추적', '2D / 3D 공간 인지 및 비전 AI':'객체 추적 · 물류 이송 프로젝트', 'SLAM 및 Nav2 자율주행':'자율주행 기반 물류 이송 프로젝트', '로봇 모방학습 및 정책 최적화':'Sim2Real · Digital Twin 프로젝트', 'AI / LLM 응용 베이스':'LLM / VLM / VLA Robotics', 'LLM / VLM / VLA Robotics':'물류/공정 자동화 프로젝트', '로봇 운영 최적화 (RobotOps)':'Digital Twin & AI 모델 학습 및 검증' },
+  ax: { 'Python 기초':'LLM 프롬프트 엔지니어링 · 백엔드 구현', 'SQL&데이터베이스':'데이터베이스 & AI 활용 · AI 쇼핑몰 백엔드', '프론트엔드 개발':'TypeScript · React/Next.js · AI 쇼핑몰 프론트엔드', '프론트엔드 심화 (TypeScript)':'React/Next.js · AI 쇼핑몰 프론트엔드', '프론트엔드 응용 (React/Next.js)':'AI 쇼핑몰 프론트엔드', '백엔드 아키텍처 & API 설계':'AI 쇼핑몰 백엔드 · RAG Agent', 'LLM 프롬프트 엔지니어링':'RAG 파이프라인 설계 · LLMOps', 'RAG 파이프라인 설계':'RAG Agent 프로젝트 · 최종 프로젝트', '모델 고도화 (PEFT)':'최종 프로젝트', '워크플로우 오케스트레이션':'오케스트레이션 프로젝트 · 최종 프로젝트', 'LLMOps':'최종 프로젝트' },
+  llm: { '기초 수학 (선형대수)':'딥러닝 기초 · 딥러닝 심화 · Fine-tuning', '머신러닝 심화':'RAG 평가 · LLMOps · 모든 프로젝트', '딥러닝 기초':'딥러닝 심화 · 오픈소스 LLM 활용', '딥러닝 심화':'오픈소스 LLM 활용 · LLM Fine-tuning', '데이터 수집 & API 서버 구축':'RAG 기초/심화 · RAG 기반 Q&A 서비스', 'LangChain ':'RAG 기초/심화 · AI Agent', 'RAG 기초/심화':'RAG 기반 Q&A 서비스 · AI Agent', 'Context Engineering':'RAG 기반 Q&A 서비스 · AI Agent', 'LLM Fine-tuning':'실전 프로젝트 · 최종 프로젝트', 'AI Agent':'실전 프로젝트 · 최종 프로젝트', '클라우드 인프라':'Private LLM 서빙 · 최종 프로젝트', 'Private LLM 서빙':'최종 프로젝트' }
+};
+function learningSummary(course, tags) {
+  const notes = {
+    '입학식':'과정 운영 방식과 학습 도구를 익히며 출발을 준비해요.', 'Git&Github':'버전 관리와 PR 협업 흐름으로 팀 개발의 기반을 만들어요.', '데이터 리터러시':'데이터 왜곡·인과관계·지표를 읽어 문제를 올바르게 정의해요.', 'AI Literacy':'생성형 AI를 검증·윤리 기준과 함께 활용하는 법을 익혀요.', 'Python 기초':'문법·함수·객체지향을 바탕으로 분석과 개발을 시작해요.', 'SQL&데이터베이스':'ERD·조회·집계·JOIN으로 필요한 데이터를 꺼내고 다뤄요.', '기초통계':'확률·분포·상관·회귀로 데이터가 말하는 바를 해석해요.', '머신러닝 기초':'분류·회귀·평가·파이프라인으로 기본 모델링을 수행해요.', 'SQL 쿼리 최적화':'복합 쿼리를 설계하고 대용량 데이터의 성능을 개선해요.', '추론 통계 & 실험 설계':'가설검정과 A/B 테스트로 변화가 유의미한지 판단해요.', '프로덕트 분석':'퍼널·코호트·리텐션으로 제품 성장의 원인을 찾아요.', '실전 머신러닝':'앙상블·시계열·해석·웹앱까지 ML을 실전 수준으로 고도화해요.', 'BI 도구':'대시보드로 분석 결과를 이해하기 쉽게 전달해요.', 'AI를 위한 수학':'벡터·유사도·최적화 원리를 AI 모델 동작과 연결해요.', '딥러닝 기초':'신경망과 PyTorch 학습 파이프라인을 직접 구현해요.', '데이터 수집':'API와 크롤링으로 분석·서비스용 데이터를 수집해요.', '텍스트 분석':'임베딩·토픽·LLM으로 텍스트에서 인사이트를 추출해요.', '이미지 분석':'컴퓨터 비전과 VLM으로 이미지 데이터를 분석해요.', 'RAG & 추천 시스템':'검색·벡터DB·추천·평가로 지식 기반 기능을 만들어요.', 'AI Agent & MCP':'Tool Calling과 MCP로 업무를 수행하는 에이전트를 구성해요.', 'MLOps':'모델 버전·서빙·모니터링으로 운영 가능한 ML을 설계해요.', '빅데이터 처리':'Polars·DuckDB·PySpark로 대용량 데이터를 처리해요.', 'Physical AI Robotics 코어':'Linux·ROS2·좌표계·C++/Python으로 로봇 개발의 공통 언어를 만들어요.', '임베디드 제어 기초':'PID·MCU·센서를 활용해 실시간 로봇 제어를 구현해요.', '로봇 기구학 및 동역학':'FK/IK·Jacobian·궤적으로 로봇의 움직임을 모델링해요.', '컴퓨터 비전 + 카메라 모델':'카메라 보정·PnP·OpenCV로 로봇의 시각을 구현해요.', '2D / 3D 공간 인지 및 비전 AI':'YOLO·Point Cloud·6D Pose로 공간을 이해하는 로봇을 만들어요.', 'SLAM 및 Nav2 자율주행':'지도화·위치추정·경로계획·장애물 회피를 구성해요.', '로봇 모방학습 및 정책 최적화':'시연 데이터로 행동 정책을 학습하고 성능을 검증해요.', 'Sim2Real 및 가상 물리 시뮬레이션':'시뮬레이터에서 학습한 정책을 실물 환경으로 전이해요.', '에지 컴퓨팅 및 실시간 배포':'TensorRT·Jetson으로 지연을 고려한 엣지 배포를 해요.', 'AI / LLM 응용 베이스':'LLM·VLM·VLA의 원리와 구조화된 로봇 명령을 익혀요.', 'LLM / VLM / VLA Robotics':'자연어 계획과 시각·행동 모델을 ROS2 작업에 연결해요.', '다중 로봇 조정 및 협업':'작업 분배·상태 공유·협업 지표로 로봇 팀을 운영해요.', '디지털 트윈 기반 통합 대시보드':'실시간 로봇 상태와 3D 공장을 한 화면에 표현해요.', '로봇 운영 최적화 (RobotOps)':'관측성·복구·HITL로 로봇 시스템을 안정적으로 운영해요.', '데이터베이스 & AI 활용':'PostgreSQL·Supabase로 제품 데이터 계층을 구현해요.', '프론트엔드 개발':'HTML·CSS·JavaScript로 웹 UI의 기본 구조를 만들어요.', '프론트엔드 심화 (TypeScript)':'타입 시스템으로 안정적인 프론트엔드 개발 환경을 만들어요.', '프론트엔드 응용 (React/Next.js)':'컴포넌트·상태·라우팅으로 제품 UI를 구현해요.', '백엔드 아키텍처 & API 설계':'REST·인증·ORM·계층 구조로 신뢰도 높은 API를 설계해요.', 'LLM 프롬프트 엔지니어링':'구조화 출력·검증·재시도로 LLM 응답의 품질을 높여요.', 'RAG 파이프라인 설계':'하이브리드 검색·리랭킹·평가셋으로 RAG 품질을 설계해요.', '모델 고도화 (PEFT)':'LoRA·QLoRA로 도메인 맞춤 모델 튜닝을 비교·실습해요.', '워크플로우 오케스트레이션':'여러 도구와 시스템을 연결하는 자동화 흐름을 설계해요.', 'LLMOps':'버전·평가·관측·보안으로 LLM 제품을 운영해요.', '기초 수학 (선형대수)':'임베딩·유사도·attention을 이해하는 수학적 직관을 만들어요.', '머신러닝 심화':'평가 지표·오류 분석·재현성으로 모델 품질을 관리해요.', '딥러닝 심화':'Transformer·토크나이저·Hugging Face 워크플로우를 익혀요.', '데이터 수집 & API 서버 구축':'크롤링·FastAPI·비동기로 LLM 연동 API를 구현해요.', 'RAG 기초/심화':'청킹·벡터DB·하이브리드 검색·평가로 RAG를 고도화해요.', 'Context Engineering':'컨텍스트·메모리·스킬·압축 전략을 설계해요.', 'LLM Fine-tuning':'SFT·LoRA·DPO로 도메인 모델을 튜닝해요.', 'AI Agent':'LangGraph·MCP·HITL로 신뢰도 있는 에이전트를 구현해요.', '클라우드 인프라':'Docker·Kubernetes·IaC로 배포 환경을 구성해요.', 'Private LLM 서빙':'vLLM·양자화·GKE로 프라이빗 LLM을 서빙해요.'
+  };
+  if (notes[course]) return notes[course];
+  if (course.includes('프로젝트')) return '앞선 교과목의 역량을 팀 단위로 통합해 문제 해결 결과물을 만들어요.';
+  if (course.includes('Kaggle')) return '실제 기업 데이터를 바탕으로 전 과정의 역량을 융합·검증해요.';
+  if (course.includes('취업')) return '포트폴리오·서류·면접을 준비하며 다음 커리어 단계를 설계해요.';
+  if (course.includes('발표')) return '프로젝트 결과를 발표하고 기업 피드백을 통해 완성도를 높여요.';
+  if (course.includes('수료')) return '학습 성과를 정리하고 이후의 성장 경로를 확인해요.';
+  return `${tags.join(' · ')} 핵심 개념을 익혀 다음 단계의 실습 역량을 쌓아요.`;
+}
+let activeTrackId = 'ds';
+const savedPositions = JSON.parse(localStorage.getItem('kant-track-positions') || '{}');
+const tabs = document.getElementById('trackTabs');
+const map = document.getElementById('levelMap');
+const overview = document.getElementById('overviewGrid');
+
+function esc(value) {
+  return String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]));
+}
+function activeTrack() { return tracks.find(track => track.id === activeTrackId); }
+function positionText(track) {
+  const position = savedPositions[track.id];
+  if (!position) return '아직 선택하지 않았어요';
+  return `${position.level.replace('Lv.', 'Ch.')} · ${position.course}`;
+}
+function renderTabs() {
+  tabs.innerHTML = tracks.map(track => `
+    <button class="track-tab ${track.id === activeTrackId ? 'active' : ''}" style="--track:${track.color}" data-track="${track.id}" aria-pressed="${track.id === activeTrackId}">
+      <span class="tab-code">${track.code}</span><span class="tab-name">${track.label}</span>
+    </button>`).join('');
+}
+function renderSystemMap(track) {
+  document.documentElement.style.setProperty('--track', track.color);
+  document.getElementById('trackTitle').innerHTML = `<em>${track.code}</em> / ${esc(track.name)}`;
+  document.getElementById('trackSubtitle').textContent = '나를 이해하고, 매일 쌓고, 실무 경험으로 증명하는 5단계';
+  document.getElementById('flowTitle').textContent = '학습 결과를 다음 행동으로 연결하는 과정';
+  document.getElementById('flowCopy').textContent = trackStories.system;
+  document.querySelector('.position-readout').hidden = true;
+  document.querySelector('.legend').hidden = true;
+  map.className = 'system-map';
+  map.setAttribute('aria-label', 'KANT 학습 시스템 로드맵');
+  map.innerHTML = track.stages.map((stage, index) => `
+    <article class="system-stage" data-step="${String(index + 1).padStart(2, '0')}">
+      <div><h3>${esc(stage.title)}</h3><p class="system-action">${esc(stage.action)}</p><div class="system-tags">${stage.tags.map(tag => `<span>${esc(tag)}</span>`).join('')}</div></div>
+      <div class="system-block"><b>CHECKPOINT</b><p>${esc(stage.checkpoint)}</p></div>
+      <div class="system-block"><b>NEXT STEP</b><p>${esc(stage.next)}</p><b style="margin-top:.75rem">HOW TO USE</b><p>${esc(stage.take)}</p></div>
+    </article>`).join('') + `<p class="system-closing"><b>핵심은 결과를 다음 행동으로 연결하는 것입니다.</b><br>평가에서 발견한 보완점은 데일리 퀘스트와 복습으로, 과제에서의 문제 해결 경험은 프로젝트로, 프로젝트에서 확인한 강점은 취업 방향과 포트폴리오로 이어집니다.</p>`;
+}
+function renderMap() {
+  const track = activeTrack();
+  if (track.system) { renderSystemMap(track); return; }
+  document.querySelector('.position-readout').hidden = false;
+  document.querySelector('.legend').hidden = false;
+  map.className = 'level-map';
+  map.setAttribute('aria-label', '교과목 로드맵');
+  const allCourses = track.levels.flatMap(level => level.courses.map(([course]) => ({ course, level: level.name })));
+  const selectedPosition = savedPositions[track.id];
+  const selectedIndex = selectedPosition ? allCourses.findIndex(item => item.course === selectedPosition.course && item.level === selectedPosition.level) : -1;
+  const progress = selectedIndex >= 0 ? Math.round(((selectedIndex + 1) / allCourses.length) * 100) : 0;
+
+  document.documentElement.style.setProperty('--track', track.color);
+  document.getElementById('trackTitle').innerHTML = `<em>${track.code}</em> / ${esc(track.name)}`;
+  document.getElementById('trackSubtitle').textContent = `${track.label} 트랙 · ${allCourses.length}개 교과목`;
+  document.getElementById('flowCopy').textContent = trackStories[track.id];
+  document.getElementById('currentReadout').textContent = positionText(track);
+  document.getElementById('currentProgress').textContent = selectedIndex >= 0
+    ? `전체 ${allCourses.length}개 교과목 중 ${selectedIndex + 1}번째 · ${progress}% 지점`
+    : `총 ${allCourses.length}개 교과목 중 현재 위치를 선택해 주세요`;
+  document.getElementById('progressFill').style.width = `${progress}%`;
+  document.querySelector('.progress-meter').setAttribute('aria-valuenow', progress);
+
+  map.innerHTML = track.levels.map((level, levelIndex) => {
+    const beforeLevel = track.levels.slice(0, levelIndex).reduce((sum, item) => sum + item.courses.length, 0);
+    return `
+      <article class="level-card">
+        <header class="level-header">
+          <div><div class="level-number"><span>CHAPTER ${String(levelIndex + 1).padStart(2, '0')}</span><span>${level.courses.length} SUBJECTS</span></div><h3 class="level-title">Ch. ${levelIndex + 1}</h3><p class="level-desc">${esc(level.subtitle)}</p></div>
+          <time class="chapter-date">${chapterDates[levelIndex]}</time>
+        </header>
+        <div class="course-list">
+          ${level.courses.map(([course, tags, project], courseIndex) => {
+            const linkedCourse = futureUse[track.id][course] || (levelIndex < track.levels.length - 1 ? `Ch. ${levelIndex + 2}의 핵심 교과목` : '최종 프로젝트와 커리어 결과물');
+            return `<button class="course ${project ? 'project' : ''} ${selectedIndex === beforeLevel + courseIndex ? 'current' : ''}" data-order="${String(beforeLevel + courseIndex + 1).padStart(2, '0')} / ${String(allCourses.length).padStart(2, '0')}" data-course="${esc(course)}" data-level="${level.name}" aria-pressed="${selectedIndex === beforeLevel + courseIndex}">
+              <span class="course-name">${esc(course)}</span>
+              <p class="course-summary">${esc(learningSummary(course, tags))}</p>
+              <span class="course-tags">${tags.map(tag => `<span>${esc(tag)}</span>`).join('')}</span>
+              <span class="connection"><b>다음 연결</b> ${esc(linkedCourse)}</span>
+            </button>`;
+          }).join('')}
+        </div>
+        ${levelIndex < track.levels.length - 1 ? `<div class="chapter-bridge"><b>왜 다음 Ch.?</b><span>${chapterBridges[track.id][levelIndex]}</span></div>` : ''}
+      </article>`;
+  }).join('');
+}
+function renderOverview() {
+  overview.innerHTML = tracks.map(track => {
+    const count = track.system ? track.stages.length : track.levels.reduce((n, level) => n + level.courses.length, 0);
+    const detail = track.system ? '5 STEPS · 나를 이해하고 실무 경험으로 증명' : `${count} SUBJECTS · ${positionText(track)}`;
+    const steps = track.system ? track.stages : track.levels;
+    return `<button class="overview-track" style="--overview:${track.color}" data-track="${track.id}">
+      <span class="overview-code">${track.code}</span>
+      <span class="overview-name">${esc(track.label)}</span>
+      <span class="mini-map">${steps.map(() => '<span></span>').join('')}</span>
+      <span class="overview-count">${detail}</span>
+    </button>`;
+  }).join('');
+}
+function render() { renderTabs(); renderMap(); renderOverview(); }
+function selectTrack(id) {
+  activeTrackId = id;
+  render();
+  document.querySelector('.readout').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+tabs.addEventListener('click', event => {
+  const button = event.target.closest('[data-track]');
+  if (button) selectTrack(button.dataset.track);
+});
+map.addEventListener('click', event => {
+  const course = event.target.closest('.course');
+  if (!course) return;
+  const track = activeTrack();
+  savedPositions[track.id] = { course: course.dataset.course, level: course.dataset.level };
+  localStorage.setItem('kant-track-positions', JSON.stringify(savedPositions));
+  render();
+});
+overview.addEventListener('click', event => {
+  const button = event.target.closest('[data-track]');
+  if (button) selectTrack(button.dataset.track);
+});
+render();
+</script>
