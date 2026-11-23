@@ -1,0 +1,57 @@
+[
+  {
+    "id": "SMOKE-001",
+    "type": "표현 변형",
+    "question": "몇 시부터 지각이야?",
+    "expected_answer": [
+      "09:10 이후 입실하면 지각이다."
+    ],
+    "allowed_evidence": [
+      {
+        "document_id": "SAMPLE-001",
+        "chunk_id": null,
+        "source_location": "입실 기준"
+      }
+    ]
+  },
+  {
+    "id": "SMOKE-002",
+    "type": "표현 변형",
+    "question": "아파서 하루 쉬려면 병원에서 뭘 받아야 해?",
+    "expected_answer": [
+      "진료일과 질병코드가 적힌 진료확인서가 필요하다."
+    ],
+    "allowed_evidence": [
+      {
+        "document_id": "SAMPLE-002",
+        "chunk_id": null,
+        "source_location": "질병 공가"
+      }
+    ]
+  },
+  {
+    "id": "SMOKE-003",
+    "type": "직접 검색",
+    "question": "2026년 12월 1일 오전 첫 수업은 뭐야?",
+    "expected_answer": [
+      "09:00~10:00 RAG 실습이다."
+    ],
+    "allowed_evidence": [
+      {
+        "document_id": "SAMPLE-003",
+        "chunk_id": null,
+        "source_location": "시간표!A2:C2"
+      }
+    ]
+  },
+  {
+    "id": "SMOKE-004",
+    "type": "근거 없음",
+    "question": "내 이번 달 실제 출석률은 얼마야?",
+    "expected_answer": [
+      "제공된 자료로는 개인별 실제 출석률을 확인할 수 없다고 안내한다."
+    ],
+    "allowed_evidence": [],
+    "absence_reason": "가상 원문에는 출결 기준만 있고 개인별 출결 기록이 없다."
+  }
+]
