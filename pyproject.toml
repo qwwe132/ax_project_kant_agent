@@ -7,7 +7,10 @@ authors = [
     { name = "qwwe132", email = "qwwe1321@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "langchain-core>=1.8.4",
+    "langchain-text-splitters>=1.1.3",
+]
 
 [project.scripts]
 kant-agent = "kant_agent:main"
