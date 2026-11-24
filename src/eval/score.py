@@ -68,11 +68,25 @@ def read_sheet(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def total_of(column: str, group: list[dict]):
-    filled = [r for r in group if r[column] != ""]
+def total_of(column, group):
+    filled = [r for r in group if r[column] in ("0", "1")]
     score = sum(int(r[column]) for r in filled if r["call_ok"] == "1")
     return score, len(filled), len(group)
 
+def check_sheet(rows):
+    problems = []
+    for r in rows:
+        qid = r["question_id"]
+        for col in SCORE_COLUMNS:
+            if r[col] not in ("", "0", "1"):
+                problems.append(f"{qid}: {col} must be 0 or 1 (got {r[col]!r})")
+        wrong = ["no_evidence_ok"] if r["hit_at_5"] != "" else ["answer_correct", "evidence_fit"]
+        for col in wrong:
+            if r[col] != "":
+                problems.append(f"{qid}: {col} should be empty for this question type")
+        if r["call_ok"] == "1" and any(r[c] != "" for c in SCORE_COLUMNS) and r["scorer"] == "":
+            problems.append(f"{qid}: scored but scorer is empty")
+    return problems
 
 def summarize(records: list[dict], rows: list[dict]) -> None:
     answerable = [r for r in rows if r["hit_at_5"] != ""]
@@ -107,6 +121,8 @@ def summarize(records: list[dict], rows: list[dict]) -> None:
              if r["call_ok"] == "0" and any(r[c] == "1" for c in SCORE_COLUMNS)]
     if wrong:
         print(f"WARNING: call errors marked as 1 (counted as 0): {', '.join(wrong)}")
+    for p in check_sheet(rows):
+        print("WARNING:", p)
 
 
 def main() -> None:
