@@ -7,7 +7,7 @@ T = TypeVar("T")
 
 
 class APIResponse(BaseModel, Generic[T]):
-    success: bool = Field(description="처리 성공 성공/실패 여부)")
+    success: bool = Field(description="처리 성공/실패 여부")
     code: str | None = Field(
         None, description="비즈니스 식별 코드 (성공 시 OK, 실패 시 에러 코드)"
     )
@@ -16,7 +16,7 @@ class APIResponse(BaseModel, Generic[T]):
         None, description="실패 시 세부 오류 내용"
     )
     data: T | None = Field(None, description="성공 시 응답 데이터")
-    responsed_at: datetime = Field(
+    responded_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
         description="응답 날짜시간(UTC)",
     )
@@ -28,7 +28,9 @@ class APIResponse(BaseModel, Generic[T]):
         message: str = "요청이 성공적으로 처리되었습니다.",
         code: str = "OK",
     ) -> "APIResponse[T]":
-        return cls(success=True, code=code, message=message, errors=None, data=data)
+        return cls(
+            success=True, code=code, message=message, errors=None, data=data
+        )
 
     @classmethod
     def fail(
@@ -37,4 +39,6 @@ class APIResponse(BaseModel, Generic[T]):
         code: str = "BAD_REQUEST",
         errors: dict[str, list[str]] | list[str] | Any | None = None,
     ) -> "APIResponse[None]":
-        return cls(success=False, code=code, message=message, errors=None, data=None)
+        return cls(
+            success=False, code=code, message=message, errors=errors, data=None
+        )

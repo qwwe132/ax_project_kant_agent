@@ -33,7 +33,9 @@ def register_exception_handlers(app: FastAPI) -> None:
         errors_map: dict[str, list[str]] = {}
         for err in exc.errors():
             loc = ".".join(str(item) for item in err["loc"] if item != "body")
-            errors_map.setdefault(loc or "non_field_errors", []).append(err["msg"])
+            errors_map.setdefault(loc or "non_field_errors", []).append(
+                err["msg"]
+            )
 
         response_dto = APIResponse.fail(
             code="REQUEST_VALIDATION_ERROR",
