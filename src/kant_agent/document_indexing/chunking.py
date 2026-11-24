@@ -27,7 +27,11 @@ def load_markdown_document(file_path: str) -> Document:
     """Markdown 파일을 읽어 본문과 메타데이터를 가진 Document로 만든다."""
     path = Path(file_path)
     # 원문에 한글·이모지가 있어 OS 기본 인코딩(cp949) 대신 UTF-8로 읽는다.
-    lines = path.read_text(encoding="utf-8").splitlines()
+    text = path.read_text(encoding="utf-8")
+    # 머리말·본문을 나누기 전에 먼저 정제한다.
+    # 정제 전에는 <h2>공가 신청</h2> 같은 HTML 제목이 "## "로 시작하지
+    # 않아서, 그 아래 본문까지 머리말로 잘못 취급되기 때문이다.
+    lines = clean_notion_markdown(text).splitlines()
 
     # source_path는 OS와 관계없이 "/" 구분자로 저장한다.
     # Windows의 "\" 경로가 섞이면 팀원 간 출처 대조가 어긋나기 때문이다.
@@ -60,9 +64,7 @@ def load_markdown_document(file_path: str) -> Document:
     if "document_id" not in metadata:
         raise ValueError(f"문서 ID가 없습니다: {file_path}")
 
-    # 정제 후 Document 제작
-    page_content = clean_notion_markdown("\n".join(body_lines))
-    return Document(page_content=page_content, metadata=metadata)
+    return Document(page_content="\n".join(body_lines), metadata=metadata)
 
 
 def _split_sections(text: str) -> list[tuple[str, str]]:
