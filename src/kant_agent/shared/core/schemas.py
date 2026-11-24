@@ -3,11 +3,14 @@ from typing import Any, Generic, TypeVar
 
 from pydantic import BaseModel, Field
 
-T=TypeVar("T")
+T = TypeVar("T")
 
 
 class APIResponse(BaseModel, Generic[T]):
-    success: bool = Field(description="처리 성공 성공 실패 (성공 시 OK, 실패 시 에러 코드)")
+    success: bool = Field(description="처리 성공 성공/실패 여부)")
+    code: str | None = Field(
+        None, description="비즈니스 식별 코드 (성공 시 OK, 실패 시 에러 코드)"
+    )
     message: str | None = Field(None, description="성공 또는 실패 시 설명")
     errors: dict[str, list[str]] | list[str] | Any | None = Field(
         None, description="실패 시 세부 오류 내용"
@@ -25,9 +28,7 @@ class APIResponse(BaseModel, Generic[T]):
         message: str = "요청이 성공적으로 처리되었습니다.",
         code: str = "OK",
     ) -> "APIResponse[T]":
-        return cls(
-            success=True, code=code, message=message, errors=None, data=data
-        )
+        return cls(success=True, code=code, message=message, errors=None, data=data)
 
     @classmethod
     def fail(
@@ -36,6 +37,4 @@ class APIResponse(BaseModel, Generic[T]):
         code: str = "BAD_REQUEST",
         errors: dict[str, list[str]] | list[str] | Any | None = None,
     ) -> "APIResponse[None]":
-        return cls(
-            success=False, code=code, message=message, errors=None,
-        )
+        return cls(success=False, code=code, message=message, errors=None, data=None)

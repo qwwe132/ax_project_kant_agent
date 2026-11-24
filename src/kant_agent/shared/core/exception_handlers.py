@@ -51,6 +51,10 @@ def register_exception_handlers(app: FastAPI) -> None:
             "미처리 시스템 오류 발생 (path: %s): %s", request.url.path, exc
         )
         response_dto = APIResponse.fail(
+            code="INTERNAL_SERVER_ERROR",
+            message="서버 내부 오류가 발생했습니다. 관리자에게 문의하세요.",
+        )
+        return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content=response_dto.model_dump(mode="json"),
         )
