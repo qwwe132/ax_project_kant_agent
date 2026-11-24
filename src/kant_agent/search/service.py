@@ -10,6 +10,8 @@ from langchain_community.retrievers import BM25Retriever
 TOP_K = 5
 CANDIDATE_K = 20
 RRF_C = 60
+BM25_WEIGHT = 0.5
+VECTOR_WEIGHT = 0.5
 EMBEDDING_MODEL = "text-embedding-3-small"
 RERANKER_MODEL = "Dongjin-kr/ko-reranker"
 
@@ -97,9 +99,14 @@ def vector_search(question, k):
 
 
 def keyword_search(question):
+    if bm25 is None:
+        return []
     scores = bm25.vectorizer.get_scores(split_words(question))
     results = []
     for i, chunk in enumerate(chunks):
+        # 일치하지 않는 청크가 RRF 점수를 받지 않도록 먼저 제외한다.
+        if scores[i] <= 0:
+            continue
         row = chunk.copy()
         row["bm25_score"] = float(scores[i])
         results.append(row)
@@ -115,7 +122,7 @@ def hybrid_search(vector_results, keyword_results):
     for row in keyword_results:
         chunk_id = row["chunk_id"]
         combined[chunk_id] = row.copy()
-        combined[chunk_id]["rrf_score"] = 0.5 / (RRF_C + row["bm25_rank"])
+        combined[chunk_id]["rrf_score"] = BM25_WEIGHT / (RRF_C + row["bm25_rank"])
 
     for row in vector_results:
         chunk_id = row["chunk_id"]
@@ -123,7 +130,7 @@ def hybrid_search(vector_results, keyword_results):
             combined[chunk_id] = row.copy()
             combined[chunk_id]["rrf_score"] = 0
         combined[chunk_id].update(row)
-        combined[chunk_id]["rrf_score"] += 0.5 / (RRF_C + row["vector_rank"])
+        combined[chunk_id]["rrf_score"] += VECTOR_WEIGHT / (RRF_C + row["vector_rank"])
 
     results = list(combined.values())
     results.sort(key=lambda row: row["rrf_score"], reverse=True)
@@ -200,8 +207,8 @@ def search_with_trace(question, mode="C"):
         "settings": {
             "top_k": TOP_K,
             "candidate_k": CANDIDATE_K,
-            "bm25_weight": 0.5,
-            "vector_weight": 0.5,
+            "bm25_weight": BM25_WEIGHT,
+            "vector_weight": VECTOR_WEIGHT,
             "rrf_c": RRF_C,
             "embedding_model": EMBEDDING_MODEL,
             "reranker_model": RERANKER_MODEL,
