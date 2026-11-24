@@ -39,3 +39,9 @@
 5. 평가 실행: <명령, 구성 및 결과 저장 위치 작성>
 
 설계와 범위는 [문제 정의](docs/problem.md), 평가 파일 형식은 [평가셋 안내](eval/README.md), 결과 해석은 [비교 보고서](report.md)에 기록합니다.
+
+## 검색·재정렬 모듈
+
+`kant_agent.search`의 `search(question, mode)`로 A(Vector),
+B(BM25+Vector RRF), C(B+Cross-Encoder)를 선택합니다.
+설정·실행 명령·팀 연결 계약·검증 범위는 [검색 안내](docs/search.md)를 참고하세요.
