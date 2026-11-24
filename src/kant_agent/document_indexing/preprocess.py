@@ -32,7 +32,11 @@ _HEADING_TAG = re.compile(
 # 예) <toggle heading="h2">
 #     1️⃣ 프로젝트 개요
 # 여는 태그 다음 줄(2번 그룹)을 제목으로 본다.
-_TOGGLE_HEADING = re.compile(r'<toggle heading="h([23])">\s*\n\s*([^\n]+)')
+# - [^>]*   : heading 앞뒤에 color="..." 같은 다른 속성이 있어도 넘어간다.
+# - .h([23]). : 따옴표 자리에 . 을 써서 "h2" 와 'h2' 를 모두 잡는다.
+_TOGGLE_HEADING = re.compile(
+    r"<toggle[^>]*heading=.h([23]).[^>]*>\s*\n\s*([^\n]+)"
+)
 
 # 표 한 행(<tr>...</tr>)과 그 안의 칸
 # 칸은 일반 칸 <td>와 머리글 칸 <th>를 모두 잡는다. t[dh] = td 또는 th
@@ -43,10 +47,17 @@ _TABLE_CELL = re.compile(r"<t[dh][^>]*>(.*?)</t[dh]>", re.DOTALL)
 # 줄바꿈 태그. <br>, <br/>, <br /> 모두 잡는다.
 _LINE_BREAK = re.compile(r"<br\s*/?>")
 
-# 이미지만 있는 줄. 예) ![원본 첨부 이미지](./assets/image-03.png)
+# 첨부 파일 링크만 있는 줄.
+# 예) ![원본 첨부 이미지](./assets/image-03.png)   ← 이미지
+#     [원본 첨부](./assets/notion-20261123-39.mp4) ← 영상·xlsx·html
+# - !?      : 이미지 표시 "!"가 있어도(0번) 없어도(1번) 된다.
+# - \./assets/ : 원문 사본의 첨부 폴더를 가리키는 링크만 지운다.
+#             본문 속 일반 웹 링크는 남긴다.
 # MULTILINE을 켜야 ^(줄 시작)과 $(줄 끝)가 문서 전체가 아니라
 # 각 줄마다 적용된다. (정규식 특강 4절)
-_IMAGE_LINE = re.compile(r"^\s*!\[[^\]]*\]\([^)]*\)\s*$", re.MULTILINE)
+_ATTACHMENT_LINE = re.compile(
+    r"^\s*!?\[[^\]]*\]\(\./assets/[^)]*\)\s*$", re.MULTILINE
+)
 
 # 남은 HTML 태그. <b>, </span>, <callout icon="💡"> 등
 # 진짜 태그만 지우도록 조건을 좁힌다.
@@ -67,7 +78,7 @@ _MARKDOWN_ESCAPE = re.compile(r"\\([\\`*_{}\[\]()#+\-.!~|<>])")
 _EXTRA_BLANK_LINES = re.compile(r"\n{3,}")
 
 
-def _heading_repl(match):
+def _heading_repl(match: re.Match[str]) -> str:
     """제목 태그 매치를 '###' 제목 형식의 Markdown 제목으로 바꾼다."""
     # sub()에 함수를 넘기면, 매치될 때마다 이 함수가 불리고
     # 함수가 돌려준 문자열로 그 자리를 바꾼다. (정규식 특강 9절)
@@ -81,7 +92,7 @@ def _heading_repl(match):
     return "\n" + "#" * level + " " + title + "\n"
 
 
-def _table_row_repl(match):
+def _table_row_repl(match: re.Match[str]) -> str:
     """표 한 행 매치를 '칸1 | 칸2 | 칸3' 한 줄로 바꾼다."""
     # 표의 한 행은 "사유 - 인정 일수 - 필요 서류"처럼 하나의 정보다.
     # 칸이 여러 줄로 흩어져 있으면 청킹할 때 행 중간이 잘릴 수 있다.
@@ -101,7 +112,10 @@ def _table_row_repl(match):
         row_text = _HTML_TAG.sub("", match.group(1))
         return " ".join(row_text.split()) + "\n"
     # 예) "질병/입원(본인, 자녀) | 전체 소정훈련일수의 10 퍼센트 | ..."
-    return " | ".join(cells) + "\n"
+    # 마지막 칸들이 비어 있으면 "투표확인증 | " 처럼 끝에 "|"가 남는다.
+    # rstrip(" |")는 오른쪽 끝의 공백과 "|"만 지운다.
+    # 가운데 빈 칸은 그대로 두어 칸 순서(몇 번째 칸인지)는 유지한다.
+    return " | ".join(cells).rstrip(" |") + "\n"
 
 
 def clean_notion_markdown(text: str) -> str:
@@ -117,8 +131,8 @@ def clean_notion_markdown(text: str) -> str:
     text = _TABLE_ROW.sub(_table_row_repl, text)
     # 3) 남은 <br /> → 실제 줄바꿈
     text = _LINE_BREAK.sub("\n", text)
-    # 4) 이미지 줄은 검색에 도움이 안 되어 지운다.
-    text = _IMAGE_LINE.sub("", text)
+    # 4) 이미지·첨부 파일 링크 줄은 검색에 도움이 안 되어 지운다.
+    text = _ATTACHMENT_LINE.sub("", text)
     # 5) 나머지 태그(<b>, <span>, <callout> 등)는 글자만 남기고 지운다.
     text = _HTML_TAG.sub("", text)
     # 6) "\." → "." 처럼 역슬래시를 떼고 1번 그룹 글자만 남긴다.
