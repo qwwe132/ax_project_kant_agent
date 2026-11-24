@@ -68,12 +68,12 @@ def read_sheet(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def total_of(column, group):
+def total_of(column: str, group: list[dict]):
     filled = [r for r in group if r[column] in ("0", "1")]
     score = sum(int(r[column]) for r in filled if r["call_ok"] == "1")
     return score, len(filled), len(group)
 
-def check_sheet(rows):
+def check_sheet(rows: list[dict]) -> list[str]:
     problems = []
     for r in rows:
         qid = r["question_id"]
@@ -136,6 +136,10 @@ def main() -> None:
     records = load_jsonl(run_dir / f"{args.run_id}.jsonl")
     items = {i["id"]: i for i in json.loads((ROOT / args.eval_file).read_text(encoding="utf-8"))}
 
+    missing = [r["question_id"] for r in records if r["question_id"] not in items]
+    if missing:
+        raise SystemExit(f"Question IDs not in {args.eval_file}: {', '.join(missing)}\n"
+                         "Check that the eval file matches this run.")
     sheet_path = run_dir / f"{args.run_id}_scoring.csv"
     if not sheet_path.exists():
         with sheet_path.open("w", encoding="utf-8-sig", newline="") as f:

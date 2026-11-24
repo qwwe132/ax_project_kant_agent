@@ -2,6 +2,7 @@ import argparse
 import json
 import time
 from pathlib import Path
+
 from kant_agent.answer_generation.generator import answer_from_chunks
 
 ROOT = Path(__file__).resolve().parents[2]
