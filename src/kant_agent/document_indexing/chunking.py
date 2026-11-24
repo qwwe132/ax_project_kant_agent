@@ -10,6 +10,8 @@ from pathlib import Path
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+from kant_agent.document_indexing.preprocess import clean_notion_markdown
+
 DEFAULT_CHUNK_SIZE = 500
 DEFAULT_CHUNK_OVERLAP = 50
 
@@ -58,7 +60,9 @@ def load_markdown_document(file_path: str) -> Document:
     if "document_id" not in metadata:
         raise ValueError(f"문서 ID가 없습니다: {file_path}")
 
-    return Document(page_content="\n".join(body_lines), metadata=metadata)
+    # 정제 후 Document 제작
+    page_content = clean_notion_markdown("\n".join(body_lines))
+    return Document(page_content=page_content, metadata=metadata)
 
 
 def _split_sections(text: str) -> list[tuple[str, str]]:
