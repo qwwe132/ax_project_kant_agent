@@ -1,3 +1,5 @@
+import json
+
 from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain_core.documents import Document
@@ -105,6 +107,15 @@ def answer_question(question: str, docs: list[Document]) -> dict:
     }
 
 
+def answer_from_chunks(question: str, chunks: list[dict]) -> dict:
+    """dict 형태 청크(샘플, 하네스 입력)를 Document로 바꿔 답변합니다."""
+    docs = [
+        Document(page_content=chunk["text"], metadata=chunk)
+        for chunk in chunks
+    ]
+    return answer_question(question, docs)
+
+
 if __name__ == "__main__":
     sample_docs = [
         Document(
@@ -133,3 +144,8 @@ if __name__ == "__main__":
     print(answer_question("지각 기준이 몇 시야?", []))
     # 3) 문서와 무관한 질문 -> no_evidence
     print(answer_question("회의실 예약은 어떻게 해?", sample_docs))
+    # 4) dict 청크 입력 (하네스와 같은 형식)
+    chunks = json.loads(
+        open("data/fixtures/sample-chunks.json", encoding="utf-8").read()
+    )
+    print(answer_from_chunks("지각 기준이 몇 시야?", chunks))
