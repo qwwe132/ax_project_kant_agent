@@ -2,6 +2,7 @@ import argparse
 import json
 import time
 from pathlib import Path
+from kant_agent.answer_generation.generator import answer_from_chunks
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -9,13 +10,14 @@ ROOT = Path(__file__).resolve().parents[2]
 def retrieve(question: str) -> list[dict]:
     """Search step. Returns chunks, best first.
     Each chunk may also carry "score" and "pre_rerank_rank" (for config C)."""
+    #raise RuntimeError("test") #오류테스트용
     path = ROOT / "data" / "fixtures" / "sample-chunks.json"
     return json.loads(path.read_text(encoding="utf-8"))
 
 #TODO: 갈아끼기
 def answer(question: str, chunks: list[dict]) -> dict:
     """Answer step. Returns the answer text, citations, and a status."""
-    return {"answer": "", "citations": [], "status": "no_evidence"}
+    return answer_from_chunks(question, chunks)
 
 
 def run(run_id: str, config: str, eval_file: str, kind: str) -> Path:
