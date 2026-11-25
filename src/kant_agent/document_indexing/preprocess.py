@@ -38,6 +38,10 @@ _TOGGLE_HEADING = re.compile(
     r"<toggle[^>]*heading=.h([23]).[^>]*>\s*\n\s*([^\n]+)"
 )
 
+# 표 전체(<table ...>...</table>)
+# 1번 그룹 = 여는 태그의 속성(header-row="true" 확인용), 2번 그룹 = 표 내용
+_TABLE = re.compile(r"<table([^>]*)>(.*?)</table>", re.DOTALL)
+
 # 표 한 행(<tr>...</tr>)과 그 안의 칸
 # 칸은 일반 칸 <td>와 머리글 칸 <th>를 모두 잡는다. t[dh] = td 또는 th
 # 표가 여러 줄에 걸쳐 저장되어 있어 DOTALL이 필요하다.
@@ -102,20 +106,66 @@ def _heading_repl(match: re.Match[str]) -> str:
     return "\n" + "#" * level + " " + title + "\n"
 
 
-def _table_row_repl(match: re.Match[str]) -> str:
-    """표 한 행 매치를 '칸1 | 칸2 | 칸3' 한 줄로 바꾼다."""
-    # 표의 한 행은 "사유 - 인정 일수 - 필요 서류"처럼 하나의 정보다.
-    # 칸이 여러 줄로 흩어져 있으면 청킹할 때 행 중간이 잘릴 수 있다.
-    # 한 줄로 모아 두면 한 행의 내용이 같은 청크에 남는다.
+def _row_cells(row_html: str) -> list[str]:
+    """표 한 행의 HTML에서 칸 글자만 꺼내 리스트로 돌려준다."""
     cells = []
-    # findall()은 행 안의 모든 <td> 칸 내용을 리스트로 돌려준다.
-    for cell in _TABLE_CELL.findall(match.group(1)):
+    # findall()은 행 안의 모든 <td>·<th> 칸 내용을 리스트로 돌려준다.
+    for cell in _TABLE_CELL.findall(row_html):
         # 칸 안의 줄바꿈은 " / "로 이어서 한 행이 한 줄로 남게 한다.
         cell = _LINE_BREAK.sub(" / ", cell)
         cell = _HTML_TAG.sub("", cell)
         # split()은 공백·줄바꿈을 기준으로 나누고,
         # " ".join()으로 다시 이으면 여러 공백이 한 칸으로 줄어든다.
         cells.append(" ".join(cell.split()))
+    return cells
+
+
+def _table_repl(match: re.Match[str]) -> str:
+    """머리글이 있는 표의 각 행에 칸 이름을 붙여 한 줄씩 만든다.
+
+    예) 머리글: 공가 인정 사유 | 출석인정일수 | 필요 서류
+        행    : 결혼(본인, 자녀) | 5일 / 1일 | 청첩장, 가족관계증명서
+        결과  : 공가 인정 사유: 결혼(본인, 자녀) | 출석인정일수: 5일 / 1일
+                | 필요 서류: 청첩장, 가족관계증명서
+    """
+    # 왜 칸 이름을 붙이나?
+    # 긴 표는 청킹할 때 여러 조각으로 나뉘고, 머리글은 첫 조각에만 남는다.
+    # 그러면 "5일 / 1일"만 있는 조각이 검색됐을 때 무슨 값인지 알 수 없다.
+    # 행마다 칸 이름을 붙여 두면 어느 조각이 검색돼도 뜻이 남는다.
+
+    # header-row="true"가 없는 표는 첫 행이 머리글이라는 보장이 없어서
+    # 칸 이름 없이 행만 한 줄씩 만든다. (아래 _table_row_repl과 같은 방식)
+    if 'header-row="true"' not in match.group(1):
+        return _TABLE_ROW.sub(_table_row_repl, match.group(2))
+
+    rows = [_row_cells(row) for row in _TABLE_ROW.findall(match.group(2))]
+    if not rows:
+        return ""
+    header = rows[0]
+    # 머리글 행도 한 줄로 남겨서 표가 어떤 칸으로 되어 있는지 보이게 한다.
+    lines = [" | ".join(header).rstrip(" |")]
+    for cells in rows[1:]:
+        parts = []
+        for col_index, value in enumerate(cells):
+            # 빈 칸은 "참고: " 처럼 이름만 남지 않도록 건너뛴다.
+            if not value:
+                continue
+            # 머리글 칸이 모자라거나 비어 있으면 값만 쓴다.
+            if col_index < len(header) and header[col_index]:
+                parts.append(header[col_index] + ": " + value)
+            else:
+                parts.append(value)
+        if parts:
+            lines.append(" | ".join(parts))
+    return "\n" + "\n".join(lines) + "\n"
+
+
+def _table_row_repl(match: re.Match[str]) -> str:
+    """표 한 행 매치를 '칸1 | 칸2 | 칸3' 한 줄로 바꾼다."""
+    # 표의 한 행은 "사유 - 인정 일수 - 필요 서류"처럼 하나의 정보다.
+    # 칸이 여러 줄로 흩어져 있으면 청킹할 때 행 중간이 잘릴 수 있다.
+    # 한 줄로 모아 두면 한 행의 내용이 같은 청크에 남는다.
+    cells = _row_cells(match.group(1))
     # 칸 태그를 하나도 못 찾았으면 행 내용이 통째로 사라지지 않도록
     # 태그만 지운 글자를 그대로 한 줄로 남긴다.
     if not cells:
@@ -137,7 +187,9 @@ def clean_notion_markdown(text: str) -> str:
     # 1) HTML 제목 → Markdown 제목(##, ###)
     text = _HEADING_TAG.sub(_heading_repl, text)
     text = _TOGGLE_HEADING.sub(_heading_repl, text)
-    # 2) 표 한 행 → "칸1 | 칸2 | 칸3" 한 줄
+    # 2) 표 → 머리글이 있으면 "칸 이름: 값 | ..." 한 줄씩
+    text = _TABLE.sub(_table_repl, text)
+    #    <table> 없이 남은 행이 있으면 "칸1 | 칸2 | 칸3" 한 줄
     text = _TABLE_ROW.sub(_table_row_repl, text)
     # 2-1) 줄 맨 앞의 짧은 굵은 글씨 → "### 소제목"
     text = _BOLD_HEADING.sub(r"\n### \1\n", text)
