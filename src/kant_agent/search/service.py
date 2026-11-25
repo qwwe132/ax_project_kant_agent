@@ -22,9 +22,10 @@ VECTOR_WEIGHT = 0.5
 EMBEDDING_MODEL = "text-embedding-3-small"
 RERANKER_MODEL = "Dongjin-kr/ko-reranker"
 
-# 색인 담당(document_indexing/build_index.py)이 적재하는 컬렉션 이름
+# 색인 담당(document_indexing/build_index.py)이 적재하는 운영 컬렉션 이름
 COLLECTION_NAME = "kant_docs"
-SAMPLE_COLLECTION_NAME = "kant_docs_sample"
+# DB가 꺼져 있을 때 서버 시작이 오래 멈추지 않도록 연결 대기 시간(초)을 제한한다.
+DB_CONNECT_TIMEOUT = 5
 
 chunks = []
 chunk_map = {}
@@ -92,7 +93,9 @@ def load_collection_chunks(collection_name: str, engine: Engine) -> list[dict]:
 
 # BM25에 남길 형태소 품사. 조사(J*)·어미(E*)·문장부호(S*)는 버린다.
 # 공백 분리만 하면 "지각이야?"와 "지각"이 다른 단어가 되어 키워드 검색이 실패한다.
-# W_*는 09:10, 2026-12-01 같은 시간·날짜·URL을 한 토큰으로 유지한다.
+# W_*는 09:10, 2026-12-01 같은 시간·날짜(Kiwi 태그 W_SERIAL)와 URL·이메일을 한 토큰으로 유지한다.
+# 부사(MAG: 안, 못, 매일, 언제 등)는 거의 모든 문서에 흔해 키워드 변별력이 낮아 버린다.
+# 부정 같은 의미 차이는 벡터 검색과 재정렬이 문장 전체로 판단한다.
 _KEEP_TAG_PREFIXES = ("NN", "NR", "NP", "VV", "VA", "XR", "SL", "SH", "SN", "W_")
 _kiwi = None
 
@@ -152,6 +155,7 @@ def prepare_chunks(chunk_list):
 def setup_search(
     collection_name: str,
     version: str,
+    *,
     chunks_path: str | Path | None = None,
     load_reranker: bool = True,
 ) -> None:
@@ -162,13 +166,30 @@ def setup_search(
     load_reranker가 True면 재정렬 모델도 여기서 로드한다.
     첫 C 모드 검색이 모델 로드 시간만큼 느려지고 latency_sec에
     그 시간이 섞이는 것을 막기 위해서다. A·B 모드만 쓸 때는 False로 둔다.
+
+    chunks_path·load_reranker는 키워드로만 받는다. 예전 위치 인자 순서
+    (chunks_path, collection_name, version)로 호출하면 TypeError가 나서
+    엉뚱한 컬렉션 이름으로 조용히 초기화되는 것을 막는다.
     """
     global vectorstore, reranker, index_version
     from langchain_openai import OpenAIEmbeddings
     from langchain_postgres import PGVector
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, text
+    from sqlalchemy.exc import OperationalError
 
-    engine = create_engine(get_database_url())
+    engine = create_engine(
+        get_database_url(), connect_args={"connect_timeout": DB_CONNECT_TIMEOUT}
+    )
+
+    # 먼저 연결만 확인해서, DB 문제를 원인이 보이는 메시지로 알린다.
+    try:
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+    except OperationalError as error:
+        raise RuntimeError(
+            f"DB에 연결할 수 없습니다({DB_CONNECT_TIMEOUT}초 대기). "
+            "Postgres가 실행 중인지, .env의 DATABASE_URL이 맞는지 확인하세요."
+        ) from error
 
     if chunks_path is None:
         chunk_list = load_collection_chunks(collection_name, engine)
@@ -320,6 +341,10 @@ def search_with_trace(question, mode="C"):
 
     if not question.strip():
         raise ValueError("질문을 입력하세요.")
+
+    # 초기화 전에 호출하면 빈 결과가 "근거 없음"처럼 보이므로 오류로 알린다.
+    if vectorstore is None:
+        raise ValueError("setup_search를 먼저 실행하세요.")
 
     start = perf_counter()
     vector_results = []
