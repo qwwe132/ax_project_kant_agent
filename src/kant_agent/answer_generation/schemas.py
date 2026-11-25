@@ -1,6 +1,16 @@
 from pydantic import BaseModel, Field
 
 
+class AskRequest(BaseModel):
+    """질의 응답 API 요청 DTO"""
+
+    question: str = Field(
+        default="몇 시부터 지각이야?",
+        min_length=1,
+        description="사용자 질문",
+    )
+
+
 class CitedAnswerOutput(BaseModel):
     """LLM 모델 Structured Output 전용 응답 스키마"""
 
