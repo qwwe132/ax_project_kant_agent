@@ -1,0 +1,2655 @@
+[
+  {
+    "chunk_id": "NOTION-001-001",
+    "document_id": "NOTION-001",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa8017bcaff81ac763619c\n- Notion 최종 수정 시각: 2026-11-23T02:05:22.650Z\n\n- [[KANT] 비상 상황 대응 가이드](./emergency-response.md)\n\n- [[KANT] 훈련생 유의 사항 및 제도](./trainee-rules-and-benefits.md)\n\n- [[KANT] 출석 및 공가 신청 가이드](./attendance-and-excused-absence.md)\n\n- [[KANT] 부정 출결 조치 안내](./attendance-fraud.md)\n\n- [[KANT] 훈련생 제적 기준](./trainee-dismissal.md)\n\n- [[KANT] LMS(학습 공간) 가이드](./lms-guide.md)\n\n- [회의실 이용 방법 안내](./meeting-room-guide.md)",
+    "source_path": "data/raw/notion/index.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-002-001",
+    "document_id": "NOTION-002",
+    "text": "- 분류: KANT 문화 가이드\n- Notion 원문: https://app.notion.com/p/4216d0d25caa8040a791fbe57e7b59c3\n- Notion 최종 수정 시각: 2026-11-23T01:53:09.435Z",
+    "source_path": "data/raw/notion/culture-and-rules.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-002-002",
+    "document_id": "NOTION-002",
+    "text": "- 변기 사용 후 물내림(FULL) 버튼을 끝까지 누르고, 완전히 내려갔는지 확인해주세요.\n- 바닥에 오염물질이 튀지 않도록 조심해주세요.\n- 화장실 쓰레기통에는 강의실에서 나온 쓰레기를 버리지 말아주세요. 화장실 쓰레기통은 용량이 작아 금방 넘칩니다.",
+    "source_path": "data/raw/notion/culture-and-rules.md",
+    "source_location": "🚻 화장실"
+  },
+  {
+    "chunk_id": "NOTION-002-003",
+    "document_id": "NOTION-002",
+    "text": "- 아이스 스쿱은 반드시 제자리에 놓아주세요. 제빙기 안에 스쿱을 넣어두면 위생 문제로 얼음을 전량 폐기하고 교체해야 하는 상황이 생깁니다.\n- 건조대에 개인 물품을 장기간 방치하면 폐기될 수 있으니 사용 후 바로 회수해주세요.\n- 음식물 처리기에 한 번에 많은 양을 넣지 말아주세요. 처리 용량을 초과하면 고장의 원인이 됩니다. 가능하면 남기지 않을 만큼만 덜어 드시는 것을 권장합니다.",
+    "source_path": "data/raw/notion/culture-and-rules.md",
+    "source_location": "☕ 캔틴 & 라운지"
+  },
+  {
+    "chunk_id": "NOTION-002-004",
+    "document_id": "NOTION-002",
+    "text": "- 강의실 쓰레기통은 일반쓰레기 전용입니다. 테이크아웃 컵 등 분리배출이 필요한 것은 라운지 분리수거함을 이용해주세요.\n- 회사에 출근한다는 마음으로 복장과 개인 청결에 신경 써주세요. 함께 지내는 공간인 만큼 서로에 대한 배려 해주세요.",
+    "source_path": "data/raw/notion/culture-and-rules.md",
+    "source_location": "🖥️ 강의실"
+  },
+  {
+    "chunk_id": "NOTION-003-001",
+    "document_id": "NOTION-003",
+    "text": "- 분류: KANT 문화 가이드\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80f5bc8ae6957767d410\n- Notion 최종 수정 시각: 2026-11-23T01:53:09.435Z\n\n개발 경험이 없어도 수업과 프로젝트를 따라가기 위해 꼭 알아야 할 협업 용어, 질문법, AI 활용법을 정리했습니다.\n\n---",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-003-002",
+    "document_id": "NOTION-003",
+    "text": "✅ 개발 협업은 파일을 주고받는 일이 아니라, 여러 사람이 고친 내용을 안전하게 합치는 일입니다.\n\n용어 | 설명\n\nGit | 코드 변경 이력을 관리하는 도구\n\nGitHub | Git 저장소를 팀이 함께 쓰는 온라인 협업 플랫폼\n\nRepository (저장소) | 프로젝트 폴더의 원격 저장소\n\nBranch (브랜치) | 메인 작업물과 분리해서 안전하게 수정하는 작업선\n\nCommit (커밋) | 변경 사항을 저장하는 단위\n\nPull Request (PR) | 내 변경 사항을 합치기 전에 리뷰받는 요청\n\nCode Review | 합치기 전 동료가 코드·설계를 검토하는 과정\n\nIssue (이슈) | 해야 할 일, 버그, 요청사항을 기록하는 단위\n\nMerge Conflict | 같은 파일을 서로 다르게 고쳐서 충돌한 상태\n\n---",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "1. 개발 협업 101"
+  },
+  {
+    "chunk_id": "NOTION-003-003",
+    "document_id": "NOTION-003",
+    "text": "✅ 칸반보드는 \"업무의 현재 위치를 볼 수 있는 곳\"입니다. 누구 일이 많은지, 어디서 막혔는지, 다음에 무엇을 해야 하는지 한눈에 보기 위해 씁니다.\n\n용어 | 설명\n\nJira | 이슈·업무·스프린트를 관리하는 프로젝트 관리 도구\n\n칸반보드 (Kanban Board) | 할 일 → 진행 중 → 리뷰 중 → 완료처럼 업무 흐름을 시각화한 보드\n\nBacklog | 아직 시작하지 않았지만 해야 할 일 목록\n\nSprint | 정해진 기간 동안 끝낼 일을 묶는 반복 주기\n\nEpic | 여러 작업을 묶는 큰 목표\n\nUser Story | \"사용자로서 무엇을 원한다\" 형식의 요구사항\n\nTask | 실제 수행 단위\n\nBug | 기대와 다르게 동작하는 문제\n\nWIP (Work In Progress) | 동시에 진행 중인 일을 제한하는 규칙\n\nAgile (애자일) | 계획을 한 번에 고정하지 않고, 짧은 주기로 만들고 확인하며 개선하는 방식\n\n---",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "2. 프로젝트 관리 용어 (Jira·칸반보드·애자일)"
+  },
+  {
+    "chunk_id": "NOTION-003-004",
+    "document_id": "NOTION-003",
+    "text": "더 빠르고, 정확한 답변을 받고 싶을 때, 다음과 같은 질문 방식을 활용해보세요.\n\n[상황]\n\n무엇을 하려고 했나요?\n\n[기대 결과]\n\n원래는 어떻게 되어야 하나요?\n\n[실제 결과]\n\n어떤 에러/화면/로그가 나왔나요?\n\n[시도한 것]\n\n검색한 키워드, 실행한 명령어, 참고한 링크는 무엇인가요?\n\n[환경]\n\nOS, Python/Node 버전, 브라우저, 사용한 라이브러리 버전\n\n📌 TIP\n\n- \"안 돼요\"만 있는 질문은 다시 물어볼 수 있어요 상황을 구체적으로 설명하면 빠르고 정확한 도움을 받을 수 있습니다.\n- 에러 메시지는 이미지보다 텍스트로 붙이는 것이 검색과 복사에 유리합니다.\n- 질문은 무엇이 안 되는지 + 어디에서 안 되는지 쓰면 좋습니다.\n\n---",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "3. 질문 잘하는 법 📝"
+  },
+  {
+    "chunk_id": "NOTION-003-005",
+    "document_id": "NOTION-003",
+    "text": "- AI 답변은 좋은 출발점이 되는 초안으로 활용하면 좋습니다.\n- 최신 라이브러리 버전, 설치 명령어, API 사용법은 공식 문서로 한 번 더 확인하면 정확합니다.\n- 데이터 보안, 비용, 개인정보까지 함께 점검하면 완성도가 높아집니다.\n- 출처·실행 결과·테스트 케이스를 같이 남기면 신뢰도가 올라갑니다.\n\n---",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "4. AI 답변 검증법 🤖"
+  },
+  {
+    "chunk_id": "NOTION-003-006",
+    "document_id": "NOTION-003",
+    "text": "첫 주에는 이름만 알아두면 됩니다. 자세한 내용은 각 트랙 페이지에서 다룹니다.\n\n데이터사이언스\n\n- SQL: 데이터베이스에서 원하는 데이터를 꺼내는 질의 언어\n- EDA: 모델링 전에 데이터 구조·분포·이상치를 탐색하는 단계\n- 머신러닝: 데이터에서 패턴을 학습해 예측·분류하는 방법\n\nPhysical AI\n\n- ROS2: 로봇 소프트웨어를 모듈화해 통신시키는 프레임워크\n- SLAM: 로봇이 지도를 만들면서 자기 위치를 추정하는 기술\n- Isaac Sim: 로봇 시뮬레이션 환경\n\nLLM\n\n- Token / Embedding: 텍스트를 모델이 처리하는 단위 / 숫자 벡터로 바꾼 표현\n- RAG: 외부 문서를 검색해 답변 근거로 쓰는 방식\n- Fine-tuning: 기존 모델을 특정 데이터에 맞게 추가 학습하는 과정\n\nAI 에이전트",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "5. 트랙별 핵심 용어 맛보기"
+  },
+  {
+    "chunk_id": "NOTION-003-007",
+    "document_id": "NOTION-003",
+    "text": "AI 에이전트\n\n- Tool Calling: LLM이 외부 도구·API를 호출하는 방식\n- LangGraph: 상태 기반 에이전트 흐름을 설계하는 도구\n- HITL (Human-in-the-loop): 중요한 결정에 사람의 승인·검토를 넣는 방식",
+    "source_path": "data/raw/notion/collaboration-tools.md",
+    "source_location": "5. 트랙별 핵심 용어 맛보기"
+  },
+  {
+    "chunk_id": "NOTION-004-001",
+    "document_id": "NOTION-004",
+    "text": "- 분류: KANT 문화 가이드\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80099b5cdcfd1916da19\n- Notion 최종 수정 시각: 2026-11-23T01:53:09.435Z\n\n📌 자세한 위치나 메뉴는 ‘하트❤️’를 눌러 참고해 주세요.\n\n📌 간단한 정보 요약은 ‘토글’을 눌러 확인해 주세요 .\n\n건물 내 식당, 카페\n\n<식당>\n\n밥도둑 [❤️](https://naver.me/Gvcph5ZE)\n\n대표 메뉴 : 묵은지 돼지찜, 꽁치찜, 갈비찜, 고등어찜 (2인 이상 가능) / 제육 볶음 / 차돌 된장 등\n\n가격 : 7,000 ~ 12,000원\n\n알찬푸드 구내식당 [❤️](https://naver.me/Gow5FlSP)\n\n대표 메뉴 :  정성스런 한끼, 직접 만든 샐러드\n\n가격 : 8,000원\n\n청룡미담  [❤️](https://naver.me/xONv9MZZ)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-002",
+    "document_id": "NOTION-004",
+    "text": "청룡미담  [❤️](https://naver.me/xONv9MZZ)\n\n- 대표 메뉴 :  청룡탕면, 냉면, 아나고덮밥\n- 가격: 9,000원 ~\n\n룽푸청마라탕 [❤️](https://map.naver.com/p/entry/place/1527600517?lng=126.8944581&lat=37.4873159&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607161519%26locale%3Dko%26svcName%3Dmap_pcv5&searchType=place&c=18.96,0,0,0,dh)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-003",
+    "document_id": "NOTION-004",
+    "text": "아리가또맘마 [❤️](https://map.naver.com/p/entry/place/32277970?lng=126.8946174&lat=37.4871966&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607161521%26locale%3Dko%26svcName%3Dmap_pcv5&searchType=place&c=15.00,0,0,0,dh)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-004",
+    "document_id": "NOTION-004",
+    "text": "바른쌀국수 [❤️](https://map.naver.com/p/entry/place/1921625357?lng=126.8945149&lat=37.4872609&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607161524%26locale%3Dko%26svcName%3Dmap_pcv5&searchType=place&c=15.00,0,0,0,dh)\n\n---\n\n<카페>\n\n- 나이스카페인클럽 [❤️](https://naver.me/x9BNNGDE)\n- 더치앤빈 [❤️](https://naver.me/G38M0dqr)\n- 투썸플레이스 [❤️](https://naver.me/xMjGjcnQ)\n- 만랩커피 [❤️](https://naver.me/5VmXAfqv)\n- 벤티프레소 [❤️](https://naver.me/xcn4mVEA)\n\n근처 식당",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-005",
+    "document_id": "NOTION-004",
+    "text": "근처 식당\n\n맷돌로만 [❤️](https://naver.me/FoEN7INZ)\n\n- 대표 메뉴 : 순두부 찌개, 청국장, 점심 세트(뚝배기 선택+고등어+두부부침) 등\n- 가격: 9,000원 ~\n- 도보 1분\n\n정남옥 [❤️](https://naver.me/5QieSOkZ)\n\n- 대표메뉴: 순대국, 순대곱창볶음 등\n- 가격 : 9,000원 ~\n- 도보 1분\n\n포비엣베트남쌀국수 [❤️](https://naver.me/xzlg829R)\n\n- 대표 메뉴 : 쌀국수, 해물볶음밥\n- 가격 : 8,900 ~ 13,900원\n- 도보 1분\n\n아이다텐동소바 [❤️](https://naver.me/F7F2C7c6)\n\n대표 메뉴 : 소바, 텐동\n\n가격 : 11,000 ~ 13,000원\n\n도보 3분\n\n타코잇 [❤️](https://naver.me/GHveRMPX)\n\n- 대표 메뉴: 타코잇 타코, 타코잇 라이스, 구디또(비프 브리또) 등\n- 가격 :  4,900원 ~\n- 도보 4분",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-006",
+    "document_id": "NOTION-004",
+    "text": "김밥천국 [❤️](https://naver.me/GalE5pck)\n\n- 대표 메뉴: 김밥, 비빔밥, 오므라이스 등 분식류\n- 가격 : 2,000원 ~\n- 도보 4분\n\n부대찌개대사관 [❤️](https://map.naver.com/p/directions/3zea2g,2AIIOY,%EB%8C%80%EB%A5%AD%ED%8F%AC%EC%8A%A4%ED%8A%B8%ED%83%80%EC%9B%8C7%EC%B0%A8,19867712,PLACE_POI/3zedCC,2AIGJ7,%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C%EB%8C%80%EC%82%AC%EA%B4%80%20%EA%B5%AC%EB%A1%9C%EB%94%94%EC%A7%80%ED%84%B8%EB%B3%B8%EC%A0%90,1004538341,PLACE_POI/-/walk?c=18.00,0,0,0,dh)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-007",
+    "document_id": "NOTION-004",
+    "text": "이비가짬뽕 [❤️](https://map.naver.com/p/entry/place/1111480002?c=18.82,0,0,0,dh&placePath=%2Freview%3FadditionalHeight%3D76%26fromPanelNum%3D1%26locale%3Dko%26svcName%3Dmap_pcv5%26timestamp%3D202607161528)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-008",
+    "document_id": "NOTION-004",
+    "text": "강순자옛맛김치찌개 [❤️](https://map.naver.com/p/directions/-/3zedCC,2AIGJ7,%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C%EB%8C%80%EC%82%AC%EA%B4%80%20%EA%B5%AC%EB%A1%9C%EB%94%94%EC%A7%80%ED%84%B8%EB%B3%B8%EC%A0%90,1004538341,PLACE_POI/-/walk/place/2031688024?c=18.00,0,0,0,dh&placePath=%2Freview%3FfromPanelNum%3D2%26locale%3Dko%26svcName%3Dmap_pcv5%26timestamp%3D202607161530)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-009",
+    "document_id": "NOTION-004",
+    "text": "맥도날드[❤️](https://map.naver.com/p/directions/3zea2g,2AIIOY,%EB%8C%80%EB%A5%AD%ED%8F%AC%EC%8A%A4%ED%8A%B8%ED%83%80%EC%9B%8C7%EC%B0%A8,19867712,PLACE_POI/3zeb6l,2AIDa5,%EB%A7%A5%EB%8F%84%EB%82%A0%EB%93%9C%20%EA%B5%AC%EB%A1%9C%EB%94%94%EC%A7%80%ED%84%B8%EC%A0%90,18444969,PLACE_POI/-/walk?c=17.00,0,0,0,dh)\n\n구디단 SNS 맛집\n\n원래순 교자관 [❤️](https://naver.me/IMyG56DN)\n\n- 대표 메뉴 : 군만두, 소룡포, 마파두부, 꿔바로우\n- 가격: 8,000 ~ 20,000원\n- 도보 17분\n\n라미노 피자 [❤️](https://naver.me/52R5srzU)",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-004-010",
+    "document_id": "NOTION-004",
+    "text": "라미노 피자 [❤️](https://naver.me/52R5srzU)\n\n- 대표 메뉴 : 나폴리 피자, 뇨끼, 리조또\n- 가격 : 17,900원 ~\n- 도보 9\n\n5.13 낙곱새 [❤️](https://naver.me/xoH9r6Fa)\n\n- 대표 메뉴 :  낙곱새, 대창덮밥, 낙지덮밥\n- 가격 : 11,900 ~ 13,900원\n- 도보 8분\n\n신림 춘천집 [❤️](https://naver.me/53lKPs0e)\n\n- 대표 메뉴 : 닭갈비, 막국수\n- 가격: 9,000 ~ 19,500 원\n- 도보 12분",
+    "source_path": "data/raw/notion/local-restaurants.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-005-001",
+    "document_id": "NOTION-005",
+    "text": "- 분류: KANT 문화 가이드\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80328f0cddcb0bb478ad\n- Notion 최종 수정 시각: 2026-11-23T01:53:08.519Z\n\nKANT 수강생 여러분! 사물함 비밀번호를 새로 설정하거나 변경하는 방법을 안내드립니다. 아래 순서대로 천천히 따라해주세요.\n\n1. 문을 연 상태에서 손잡이를 열림 표시에 맞춰주세요.\n2. 손잡이 아래의 작은 설정 스위치를 오른쪽으로 밀어주세요.\n\n   딱- 소리가 나면서 오른쪽에 고정되고,\n이 상태가 비밀번호 변경이 가능한 상태입니다.\n\n3. 다이얼을 돌려 비밀번호를 설정해주세요.\n4. 손잡이를 왼쪽으로 돌려 닫힘으로 설정한 뒤, 숫자를 섞어 잠가주세요.\n5. 비밀번호 변경 완료!\n   - 마지막으로, 새로 설정한 비밀번호로 사물함이 잘 열리는지 꼭 한 번 확인해주세요.",
+    "source_path": "data/raw/notion/locker-password-guide.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-006-001",
+    "document_id": "NOTION-006",
+    "text": "- 분류: 필독\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80f99c38d0b1b29f119b\n- Notion 최종 수정 시각: 2026-11-23T01:55:29.101Z\n\n---",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-006-002",
+    "document_id": "NOTION-006",
+    "text": "AI를 써본 분들이라면 이런 경험 한 번은 해보셨을 거예요.\n\n- 커리큘럼과 전혀 다른 방향을 알려줘서 오히려 더 헷갈릴 때\n- 아직 안 배운 개념이 답변에 나와 그대로 따라하기 어려울 때\n- 질문 하나 하려고 상황 설명에만 한참이 걸릴 때\n\n에이타니는 여러분들의 시간표와 커리큘럼, 현재 학습하고 있는 내용을 정확하게 알고 있어요.\n자세한 배경 설명 없이 질문해도 지금 여러분 상황에 딱 맞는 답변을 받을 수 있어요.\n\n---",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "1. 에이타니가 다른 AI와 다른 이유"
+  },
+  {
+    "chunk_id": "NOTION-006-003",
+    "document_id": "NOTION-006",
+    "text": "답을 대신 만들어주는 게 아니라, 여러분이 직접 이해하고 풀 수 있도록 도와드려요.\n\nAI한테 학습을 대신 하도록 맡기는 게 아니니까 죄책감 없이,\n\n마음껏 활용하셔도 돼요.\n\n---",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "2. 에이타니는 AI 튜터입니다"
+  },
+  {
+    "chunk_id": "NOTION-006-004",
+    "document_id": "NOTION-006",
+    "text": "→ 방향이 안 잡힌다, 구현 방법을 모르겠다 싶으면 지금 상황을 그대로 이야기해 보세요. 상황에 맞는 맞춤 도움을 받을 수 있어요.",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "① 과제 / 프로젝트가 막막할 때"
+  },
+  {
+    "chunk_id": "NOTION-006-005",
+    "document_id": "NOTION-006",
+    "text": "→ \"제한된 힌트, 더 많은 힌트\" 설정을 통해 원하는 수준을 직접 요청할 수 있어요. 개념 이해를 위해서는 생황 예시가 있는 제한된 힌트부터, 시작조차 어려울 땐 더 구체적인 힌트까지 조절할 수 있어요.",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "② 대화 모드 활용하기"
+  },
+  {
+    "chunk_id": "NOTION-006-006",
+    "document_id": "NOTION-006",
+    "text": "→ \"내가 이렇게 이해했는데, 잘 이해한 거 맞아?\" 하고 에이타니에게 설명해 보세요. 대화를 통해 진짜 이해했는지 확인해드려요.\n\n---",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "③ 이해도 확인하고 싶을 때"
+  },
+  {
+    "chunk_id": "NOTION-006-007",
+    "document_id": "NOTION-006",
+    "text": "에이타니와 질의응답으로 개념을 이해했다면, 이제 직접 검증해 볼 차례예요.\n\nAI 진단 퀴즈는 시간표에 맞게 구성되어 있어요. 퀴즈를 잘 푼다면, 이론을 잘 이해했다고 볼 수 있어요.\n\n퀴즈를 풀다가 막히는 문제가 생기면, 바로 에이타니에게 질문할 수도 있답니다.\n\n추천 학습 흐름\n\n강의 수강 → 모르는 개념 에이타니에게 질문 → AI 진단 퀴즈로 이해도 검증 → 틀린 부분 다시 에이타니에게 질문하여 정확하게 이해하기\n\n---",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "4. `AI 진단 퀴즈` 로 내 이해도를 검증해보세요"
+  },
+  {
+    "chunk_id": "NOTION-006-008",
+    "document_id": "NOTION-006",
+    "text": "역량 | 설명\n\n🧠 메타인지 향상 | 질문을 정리하는 과정에서 내가 무엇을 모르는지 스스로 파악하게 돼요. 학습 효율의 핵심 요인입니다.\n\n🛠️ 자기해결 능력 | 문제를 스스로 정의하고 AI로 답을 탐색하는 경험이 쌓이면 든든한 문제 해결 능력이 생겨요.\n\n💬 튜터님과 더 깊은 대화 | 에이타니로 기본 개념을 먼저 다지고 튜터님을 만나면, 더 핵심적인 질문을 할 수 있어요.",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "5. 에이타니로 이런 역량도 함께 키워요"
+  },
+  {
+    "chunk_id": "NOTION-006-009",
+    "document_id": "NOTION-006",
+    "text": "🙋 \"물어보기 애매한 질문도 이해할 때까지 계속 물어볼 수 있었어요. 구글링 시간도 확 줄었어요.\"\n\n🙋‍♀️\"강의 맥락에 딱 맞는 답변을 받을 수 있었어 빠르게 학습을 이어갈 수 있었어요.\"\n\n🙋‍♂️\"다른 AI 를 활용할 때, 커리큘럼과 학습 방향 등이 달라서 오히려 헷갈렸는데, 에이타니는 지금 배우는 내용 기준으로 정확하게 알려줘요.\"\n\n---\n\n지금 바로 에이타니에게 질문해보세요!\n\n👉 에이타니 바로가기:  [https://nbcamp.spartaclub.kr/lms/ai-tutor](https://nbcamp.spartaclub.kr/lms/ai-tutor)",
+    "source_path": "data/raw/notion/ai-tutor-guide.md",
+    "source_location": "※ 실제 수강생 후기"
+  },
+  {
+    "chunk_id": "NOTION-007-001",
+    "document_id": "NOTION-007",
+    "text": "- 분류: 필독\n- Notion 원문: https://app.notion.com/p/4216d0d25caa809095e0e20e9d01d131\n- Notion 최종 수정 시각: 2026-11-23T01:55:29.101Z",
+    "source_path": "data/raw/notion/qr-attendance.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-007-002",
+    "document_id": "NOTION-007",
+    "text": "📌 앱 설치가 미리 되어 있어야 당일 출석 처리가 빠르고 원활하게 진행됩니다.\n\n1. ‘고용24 직업훈련 출결관리’ 앱 설치\n2. 앱 실행 → 메인화면 바로가기\n3. 회원가입 → 로그인\n4. 기기등록 (최초 1회)\n\n   앱 내 로그인\n\n   메인화면 바로가기\n\n    [마이페이지 → 나의 출결 기기관리]에서 스마트폰 등록",
+    "source_path": "data/raw/notion/qr-attendance.md",
+    "source_location": "1. 개강 전, 꼭 준비해주세요! ⭐"
+  },
+  {
+    "chunk_id": "NOTION-007-003",
+    "document_id": "NOTION-007",
+    "text": "입실 · 퇴실 총 2회 체크하는 거 잊지 마세요 (입실할 때 1번, 퇴실할 때 1번)\n\n입실할 때 쓴 방식 그대로 퇴실도 해주세요\n\n마지막으로 반드시 본인의 출결 상태를 확인하고, 이상이 있으면 바로 담임매니저에게 말씀해주세요.\n\n🚨 9:10 이후에는 출석 수정이 안되니, 여유롭게 확인해주시면 좋아요!",
+    "source_path": "data/raw/notion/qr-attendance.md",
+    "source_location": "2. 출석 전, 꼭 확인해주세요!⭐"
+  },
+  {
+    "chunk_id": "NOTION-007-004",
+    "document_id": "NOTION-007",
+    "text": "‘고용24 직업훈련 출결관리’ 앱 실행 → 로그인\n\n강의실에 도착 후 앱 켜둔 상태로 대기\n\n‘도착알림’ 또는 하단 [출결 체크] →  [QR] → [입실]\n\n끝날 때도 같은 방법으로 [퇴실]\n\n[QR] 탭에서 정상 처리됐는지 한 번 더 확인해주세요",
+    "source_path": "data/raw/notion/qr-attendance.md",
+    "source_location": "3. QR 출석 방법"
+  },
+  {
+    "chunk_id": "NOTION-007-005",
+    "document_id": "NOTION-007",
+    "text": "너무 걱정하지 마시고, 9:10전까지 시간, 본인 얼굴, 강의실이 함께 나오게 셀카를 여러 장 찍어두세요. 출결 증빙 자료로 사용됩니다.",
+    "source_path": "data/raw/notion/qr-attendance.md",
+    "source_location": "5. QR 출석도 안 될 경우 🚨→ 셀카 (증빙 자료 확보)"
+  },
+  {
+    "chunk_id": "NOTION-008-001",
+    "document_id": "NOTION-008",
+    "text": "- 분류: 필독\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80fd84efdb93f87eeec8\n- Notion 최종 수정 시각: 2026-11-23T01:55:32.069Z\n\nKANT에 오신 것을 환영합니다!\n\n아래 순서대로 하나씩 진행해 주세요. 각 단계가 완료되면 체크박스를 눌러주시면 됩니다 🙌",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-008-002",
+    "document_id": "NOTION-008",
+    "text": "- [ ] 고용24 출결관리 앱 설치하기\n- [ ] 앱 로그인 후 출결 처리가 정상적으로 가능한지 확인하기\n\n매일 출결에 사용하는 앱이므로 첫날 반드시 정상 작동 여부를 확인해 주세요.\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "0. 출결 준비하기"
+  },
+  {
+    "chunk_id": "NOTION-008-003",
+    "document_id": "NOTION-008",
+    "text": "- [ ] 아래 링크에서 장비 대여 신청하기\n- [ ] 장비를 수령한 뒤 기본 세팅 진행하기\n\n👉 [장비 대여 신청하기](https://app.notion.com/p/39e2dc3ef51480dab0b8eab02c56cfcf)\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "1. 노트북, 마우스 장비 대여 신청하기"
+  },
+  {
+    "chunk_id": "NOTION-008-004",
+    "document_id": "NOTION-008",
+    "text": "장비 대여가 완료되었다면 학습에 사용할 기본 서비스들을 준비해 주세요.\n\n- [ ] Slack 데스크톱 앱 설치 및 로그인\n- [ ] Slack 프로필 설정(프로필 사진 설정) / (예: OOO(AX_2기))\n- [ ] Notion 데스크톱 앱 설치 및 로그인\n- [ ] LMS 로그인 확인\n- [ ] 크롬 설치\n- [ ] 각 트랙별 필요한 프로그램 설치 및 세팅\n- [ ] KANT 티셔츠 사이즈 확인 및 담임 매니저에게 DM (L, XL, XXL)\n- [ ] 안내 받은 내용에 따라 기본 장비 세팅 완료\n\n👉 [KANT LMS 접속하기](https://kant.spartaclub.kr/)\n\n앞으로 공지와 소통은 Slack(알림 설정 꼭 해 주세요!), 학습자료는 Notion과 LMS에서 자주 확인하게 됩니다. 앱까지 미리 설치해두면 훨씬 편해요. 슬랙 프로필 사진은 본인을 잘 알아볼 수 있는 사진으로 부탁드립니다.\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "2. 학습에 필요한 서비스 접속 및 장비 세팅하기"
+  },
+  {
+    "chunk_id": "NOTION-008-005",
+    "document_id": "NOTION-008",
+    "text": "- [ ] 스타터 노트 작성 및 제출하기\n\n👉 [스타터 노트 작성하러 가기](https://docs.google.com/forms/d/e/1FAIpQLSe7Bm_8UkQehWF0CUkO0kk2Lqj7F70MzmJ10yWRRe2smplMIQ/viewform)\n\n스타터 노트는 앞으로의 학습과 목표를 함께 이해하기 위한 첫 번째 기록이에요 ✍️\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "3. 스타터 노트 작성하기"
+  },
+  {
+    "chunk_id": "NOTION-008-006",
+    "document_id": "NOTION-008",
+    "text": "앞으로 함께할 매니저와 동료들을 알아가는 시간이에요 🙌\n\n- [ ] 기존 멤버 카드 둘러보기\n- [ ] 나의 멤버 카드 작성하기\n\n👉 [멤버 카드 작성하러 가기](https://app.notion.com/p/3842dc3ef514802ebd4cf6fc3d43b5a6)\n\n어떻게 작성해야 할지 모르겠다면 매니저님들의 멤버 카드를 먼저 참고해보세요!\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "4. 멤버 카드 작성하기"
+  },
+  {
+    "chunk_id": "NOTION-008-007",
+    "document_id": "NOTION-008",
+    "text": "- [ ] 약식 OT 내용 확인하기\n- [ ] 과정 운영 방식과 기본 안내 사항 확인하기\n\n약식 OT에서는 앞으로 교육에 참여하면서 꼭 알아야 할 기본 운영 사항을 안내 드릴 예정입니다.\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "5. 약식 OT 참여하기(매니저와)"
+  },
+  {
+    "chunk_id": "NOTION-008-008",
+    "document_id": "NOTION-008",
+    "text": "- [ ] 아래 Google Drive 링크 접속하기\n- [ ] Viewer 권한으로 액세스 요청하기\n- [ ] 권한 승인 후 본인의 트랙에 해당하는 커리큘럼 OT 영상 시청하기\n\n👉 [트랙별 커리큘럼 OT 확인하기](https://drive.google.com/drive/folders/1JF_d5E0gTS8zLC0Nk2pG0XSGl4wEsRE1?usp=sharing)\n\n액세스 권한이 없다면 Viewer(보기) 권한으로 요청해 주세요.  comment에는 “[트랙명] OOO”라고 적어 주시면 됩니다. 승인된 뒤 본인 트랙의 영상을 확인하면 됩니다.\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "6. 트랙별 커리큘럼 OT 시청하기"
+  },
+  {
+    "chunk_id": "NOTION-008-009",
+    "document_id": "NOTION-008",
+    "text": "- [ ] 아래 학습자료 Docs 페이지에 접속하기\n- [ ] 접근 권한이 없다면 액세스 요청하기\n- [ ] 권한 승인 후 학습자료 위치와 구성 확인하기\n\n👉 [KANT 1기 Docs 학습자료 확인하기](https://app.notion.com/p/3842dc3ef514800b9f56dcf157bebde1)\n\n앞으로 학습에 필요한 자료들이 모여 있는 공간이므로 미리 한 번씩 둘러봐 주세요.\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "7. 학습자료 Docs 권한 요청 및 확인하기"
+  },
+  {
+    "chunk_id": "NOTION-008-010",
+    "document_id": "NOTION-008",
+    "text": "- [ ] [KANT LMS](https://kant.spartaclub.kr/) 로그인하기\n- [ ] 학습공간으로 이동하기\n- [ ] 안내된 AI 기초 역량평가 진행하기\n- [ ] 명찰 받고 강의실 이동\n\nAI 기초 역량평가는 현재의 역량을 확인하기 위한 과정입니다. 불이익 없으니 편하게 응시해 주시면 돼요!\n\n---",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "8. LMS에서 AI 기초 역량평가 진행하기 (매니저의 감독 하에 진행)"
+  },
+  {
+    "chunk_id": "NOTION-008-011",
+    "document_id": "NOTION-008",
+    "text": "아래 항목이 모두 완료되었다면 기본 온보딩 완료입니다!\n\n- [ ] 고용24 출결관리 앱 정상 작동 확인\n- [ ] 장비 대여 및 장비 세팅 완료\n- [ ] Slack / Notion / LMS 접속 완료\n- [ ] 스타터노트 제출\n- [ ] 멤버카드 작성\n- [ ] 약식 OT 확인\n- [ ] 트랙별 커리큘럼 OT 시청\n- [ ] 학습자료 Docs 권한 및 내용 확인\n- [ ] AI 기초 역량평가 완료\n- [ ] KANT 티셔츠 및 명찰 수령\n\n여기까지 모두 완료했다면 준비 끝! 앞으로 함께 차근차근 시작해보아요 🙌",
+    "source_path": "data/raw/notion/onboarding-checklist.md",
+    "source_location": "🎉 온보딩 최종 체크"
+  },
+  {
+    "chunk_id": "NOTION-009-001",
+    "document_id": "NOTION-009",
+    "text": "- 분류: 필독\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80be9c29c4f1dc6a203c\n- Notion 최종 수정 시각: 2026-11-23T01:55:29.101Z",
+    "source_path": "data/raw/notion/assignment-submission.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-009-002",
+    "document_id": "NOTION-009",
+    "text": "- [bootcamp-lms.spartaclub.kr](https://bootcamp-lms.spartaclub.kr/kant) 접속\n- 로그인 > 상단 메뉴바 > 과제/프로젝트 탭으로 이동",
+    "source_path": "data/raw/notion/assignment-submission.md",
+    "source_location": "과제 제출 링크"
+  },
+  {
+    "chunk_id": "NOTION-009-003",
+    "document_id": "NOTION-009",
+    "text": "1️⃣ 제출 링크에서 제출할 과제명/기간을 확인하고 클릭합니다.\n\n2️⃣ 첫 페이지 : 최종 결과물 제출과 과제를 진행하며 어려웠던 점을 작성해주세요.\n\n 3️⃣ 두 번째 페이지 : 자신의 과제를 피드백 기준 체크리스트에 체크하며 점검해보는 시간을 가져보세요.\n\n체크리스트는 성취도 평가 문항 중 ‘구현’ 영역에 해당하는 항목으로 구성되어 있습니다.\n\n각 문항을 충분히 읽고, 자신의 과제가 해당 기준을 충족했는지 꼼꼼히 확인해 주세요.\n\n체크가 정확하고 디테일 할수록 좋습니다. 충분히 생각하는 시간을 가지고 체크해주세요.\n\n---\n\nQ. 과제를 미완성 또는 진행하지 않았어요.\n\nA. 완성 / 미완성 / 진행하지 않음 중 하나로 표기해주세요!\n\nQ. 과제가 아직 완료되지 않았어요. 어떡하죠?\n\nA. 정해진 기한 내에서 수행 정도를 파악해야 한 분 한 분께 맞는 피드백을 전달드릴 수 있습니다. 진행한 부분까지라도 무조건 제출해주세요!",
+    "source_path": "data/raw/notion/assignment-submission.md",
+    "source_location": "과제 제출 방법"
+  },
+  {
+    "chunk_id": "NOTION-010-001",
+    "document_id": "NOTION-010",
+    "text": "- 분류: 필독\n- Notion 원문: https://app.notion.com/p/4216d0d25caa80b49254cb6d3ea4852e\n- Notion 최종 수정 시각: 2026-11-23T01:55:29.101Z\n\nDQ 대시보드에서 내 제출 기록과 포인트, 트랙 현황을 확인할 수 있어요.\nDQ에 꾸준히 참여해 모은 포인트는 매월 럭키드로우 응모권으로 자동 전환돼요.\n\n처음 접속하는 분은 아래 순서대로 확인해주세요.",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-010-002",
+    "document_id": "NOTION-010",
+    "text": "[KANT DQ 대시보드 바로가기](https://kant-dq-dashboard-kant10.vercel.app)\nDQ 참여 → 포인트 적립 → 응모권 전환 → 월간 럭키드로우\n\n1. 링크를 열고 Google 로그인을 선택해주세요.\n2. 수강생으로 등록된 Google 계정으로 로그인해주세요.\n3. 화면에 표시된 이름과 트랙이 본인 정보와 맞는지 확인해주세요.\n\n개인용 계정 등 다른 계정으로 로그인하면 수강생 정보를 찾지 못할 수 있어요.\n등록한 이메일이 기억나지 않거나 이름·트랙이 다르면 담임매니저에게 알려주세요.\n\n---",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "🔑 1. 대시보드에 접속해 주세요"
+  },
+  {
+    "chunk_id": "NOTION-010-003",
+    "document_id": "NOTION-010",
+    "text": "대시보드의 퀘스트 메뉴에서 오늘 DQ를 확인하고, 연결된 퀘스트 링크로 이동해 문제를 풀고 제출해주세요. 대시보드에 접속하거나 퀘스트 링크를 열기만 한 것은 DQ 제출로 처리되지 않아요.\n\n제출 후에는 대시보드에서 내 기록을 확인할 수 있어요. 다만 제출 기록과 집계는 즉시 반영되지 않을 수 있으니, 방금 제출했다면 조금 뒤에 다시 확인해주세요. 화면의 집계 기준 시각도 함께 확인하면 좋아요.\n\n메뉴별로 볼 수 있는 내용은 아래와 같아요.\n\n메뉴 | 확인할 수 있는 내용\n\n대시보드 | 내 참여 현황, 포인트와 레벨, 트랙 리그 현황을 확인해요.\n\n퀘스트 | 오늘 DQ와 지난 제출 기록을 확인해요.\n\n트랙 | 내 트랙의 참여 현황을 확인해요.\n\n리그 | 트랙별 제출율과 순위를 확인해요.\n\n응모권 | 현재 사용 가능한 포인트와 월별 응모권 발급 내역을 확인해요.",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "📝 2. 오늘 DQ에 참여하고 기록을 확인해요"
+  },
+  {
+    "chunk_id": "NOTION-010-004",
+    "document_id": "NOTION-010",
+    "text": "응모권 | 현재 사용 가능한 포인트와 월별 응모권 발급 내역을 확인해요.\n\n갱신 대기 안내가 보이면 마지막으로 확인된 집계가 표시되고 있는 상태예요.\n이때는 함께 표시되는 기준 시각과 집계 기간을 보고 확인해주세요.\n\n---",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "📝 2. 오늘 DQ에 참여하고 기록을 확인해요"
+  },
+  {
+    "chunk_id": "NOTION-010-005",
+    "document_id": "NOTION-010",
+    "text": "활동 | 적립 포인트\n\n일일 대시보드 방문 | 10P\n\n일일 DQ 제출 | 30P\n\n5일 연속 제출 달성 | 50P\n\n10일 연속 제출 달성 | 100P\n\n20일 연속 제출 달성 | 200P\n\n우수 TIL 선정 | 200P\n\n월간 트랙 리그 1위 / 2위 / 3위 | 200P / 100P / 50P\n\n일일 방문과 제출 포인트는 같은 날 여러 번 접속하거나 제출한다고 반복해서 쌓이지 않아요. 연속 제출 포인트는 해당 연속 제출 일수를 달성했을 때 지급돼요. 주말과 공휴일은 연속 제출 일수에 포함하지 않아요.\n\n트랙 리그 보너스는 해당 월 1~3위 트랙의 수강생 중, 본인 트랙에서 출제된 DQ의 50% 이상을 제출한 수강생에게 지급돼요.\n⇒ 예를 들어 그 달 DQ가 10번 출제되었다면 5번 이상 제출해야 해요.\n\n50% 제출 조건은 트랙 리그 보너스를 받기 위한 조건이에요. 일반 포인트의 응모권 전환에 동일한 조건이 붙는 것은 아니에요.\n\n---",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "⭐ 3. 포인트는 이렇게 쌓여요"
+  },
+  {
+    "chunk_id": "NOTION-010-006",
+    "document_id": "NOTION-010",
+    "text": "매월 정산할 때 전환 대상 포인트 200P당 응모권 1장이 자동으로 발급돼요. 별도로 전환 버튼을 누르거나 응모권 수를 신청할 필요는 없어요.\n\n응모권으로 바뀐 만큼의 포인트는 사용 처리되고, 200P 미만으로 남은 포인트는 다음 달로 이어져요. 다음 달에 새로 적립한 포인트가 이전 달 응모권에 섞여 전환되지는 않아요.\n\n예를 들어 전환 대상 포인트가 650P라면 다음과 같이 처리돼요.\n\n- 응모권 3장 발급\n- 600P 사용\n- 남은 50P는 다음 달로 이월\n\n예를 들어 전환 대상 포인트가 650P라면 다음과 같이 처리돼요.\n\n- 응모권 3장 발급\n- 600P 사용\n- 남은 50P는 다음 달로 이월\n\n포인트가 응모권으로 전환되어도 그 전환 때문에 레벨이 내려가지는 않아요. 레벨에 반영되는 누적 획득 포인트와 지금 사용할 수 있는 포인트 잔액은 서로 다르기 때문이에요. 홈의 누적 획득 포인트와 응모권 화면의 현재 사용 가능 포인트가 달라도 이 차이 때문일 수 있어요.\n\n---",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "🎟️ 4. 200P가 응모권 1장으로 바뀌어요"
+  },
+  {
+    "chunk_id": "NOTION-010-007",
+    "document_id": "NOTION-010",
+    "text": "응모권 메뉴에 들어가면 제목 오른쪽에서 현재 사용 가능한 포인트를 볼 수 있어요. 이 숫자는 선택한 달의 잔액이 아니라, 지금 남아 있는 잔액이에요.\n\n월을 선택하면 아래 항목이 순서대로 표시돼요.\n\n1. 발급 응모권: 선택한 달에 발급된 응모권 수예요.\n2. 이월 포인트: 선택한 달의 이월 기록이에요.\n3. 사용 포인트: 선택한 달의 응모권 발급에 사용된 포인트예요.\n\n지난달 응모권을 확인하려면 조회 월을 지난달로 바꿔주세요. 이전 발급 기록도 함께 확인할 수 있어요.\n\n이월 포인트가 ‘—’로 보이면 해당 월의 저장된 이월값이 없다는 뜻이에요. 0P라는 뜻은 아니에요. 현재 남은 포인트는 화면 오른쪽 위의 현재 사용 가능 포인트를 확인해주세요.\n\n이월 포인트가 ‘—’로 보이면 해당 월의 저장된 이월값이 없다는 뜻이에요. 0P라는 뜻은 아니에요. 현재 남은 포인트는 화면 오른쪽 위의 현재 사용 가능 포인트를 확인해주세요.",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "🔎 5. 응모권 화면은 이렇게 확인해주세요"
+  },
+  {
+    "chunk_id": "NOTION-010-008",
+    "document_id": "NOTION-010",
+    "text": "이번 달이 아직 정산되지 않았다면 포인트가 쌓여 있어도 이번 달 발급 내역은 없을 수 있어요. 월별 발급 내역과 현재 잔액을 구분해서 확인해주세요.\n\n---",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "🔎 5. 응모권 화면은 이렇게 확인해주세요"
+  },
+  {
+    "chunk_id": "NOTION-010-009",
+    "document_id": "NOTION-010",
+    "text": "운영진이 월별 발급 응모권을 기준으로 추첨을 진행해요. 수강생이 직접 룰렛에 이름이나 응모권 수를 입력할 필요는 없어요.\n\n상품은 아래 구성으로 준비해요.\n\n- 배민 2만원권\n- 알찬푸드 식권 2장\n- 알찬푸드 식권 1장\n- 커피상품권 2장\n- 커피상품권 1장\n\n정확한 추첨 일정과 참여 안내, 당첨 결과 및 상품 수령 방법은 별도 공지로 안내드릴게요. 해당 월의 럭키드로우 공지를 함께 확인해주세요.\n\n※ 상품 구성에는 변동이 생길 수 있습니다.\n\n---",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "🎁 6. 월간 럭키드로우는 이렇게 진행돼요"
+  },
+  {
+    "chunk_id": "NOTION-010-010",
+    "document_id": "NOTION-010",
+    "text": "제출했는데 미제출로 보여요.\n방금 제출했다면 기록 반영까지 시간이 걸릴 수 있어요. 로그인 계정과 제출 날짜, 화면의 집계 기준을 먼저 확인해주세요. 시간이 지난 뒤에도 다르면 담임매니저에게 알려주세요.\n\n제출했는데 미제출로 보여요.\n방금 제출했다면 기록 반영까지 시간이 걸릴 수 있어요. 로그인 계정과 제출 날짜, 화면의 집계 기준을 먼저 확인해주세요. 시간이 지난 뒤에도 다르면 담임매니저에게 알려주세요.\n\n집계 전 또는 갱신 대기로 표시돼요.\n집계 전은 아직 확인된 집계가 없는 상태예요. 갱신 대기는 이전에 확인된 같은 달의 집계를 보여주는 상태이므로, 표시된 시각과 기간을 함께 확인해주세요. 두 표시를 미제출이나 0%라는 의미로 받아들이지 않아도 돼요.",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "💬 7. 자주 묻는 질문"
+  },
+  {
+    "chunk_id": "NOTION-010-011",
+    "document_id": "NOTION-010",
+    "text": "집계 전 또는 갱신 대기로 표시돼요.\n집계 전은 아직 확인된 집계가 없는 상태예요. 갱신 대기는 이전에 확인된 같은 달의 집계를 보여주는 상태이므로, 표시된 시각과 기간을 함께 확인해주세요. 두 표시를 미제출이나 0%라는 의미로 받아들이지 않아도 돼요.\n\n포인트는 있는데 응모권이 없어요.\n응모권은 포인트를 얻을 때마다 즉시 발급되는 것이 아니라 월별 정산 때 전환돼요. 선택한 월이 맞는지와 해당 월의 발급 내역을 확인해주세요. 전환 대상 포인트가 200P 미만이면 응모권 대신 포인트로 남아요.\n\n포인트는 있는데 응모권이 없어요.\n응모권은 포인트를 얻을 때마다 즉시 발급되는 것이 아니라 월별 정산 때 전환돼요. 선택한 월이 맞는지와 해당 월의 발급 내역을 확인해주세요. 전환 대상 포인트가 200P 미만이면 응모권 대신 포인트로 남아요.",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "💬 7. 자주 묻는 질문"
+  },
+  {
+    "chunk_id": "NOTION-010-012",
+    "document_id": "NOTION-010",
+    "text": "기록이 계속 다르거나 로그인이 안 돼요.\n담임매니저에게 DM으로 등록 이메일, 확인하려는 날짜나 월, 문제가 보이는 화면 캡처를 보내주세요. 비밀번호나 인증 코드는 보내지 않아도 돼요. 확인이 필요한 부분을 함께 남겨주시면 더 빠르게 살펴볼 수 있어요.\n\n기록이 계속 다르거나 로그인이 안 돼요.\n담임매니저에게 DM으로 등록 이메일, 확인하려는 날짜나 월, 문제가 보이는 화면 캡처를 보내주세요. 비밀번호나 인증 코드는 보내지 않아도 돼요. 확인이 필요한 부분을 함께 남겨주시면 더 빠르게 살펴볼 수 있어요.\n\n---\n\n추가적으로 궁금하신 내용이나 건의사항이 있다면 해당 트랙의 담임매니저에게 문의주세요!",
+    "source_path": "data/raw/notion/daily-quest-guide.md",
+    "source_location": "💬 7. 자주 묻는 질문"
+  },
+  {
+    "chunk_id": "NOTION-011-001",
+    "document_id": "NOTION-011",
+    "text": "- 분류: 필독\n- Notion 원문: https://app.notion.com/p/4216d0d25caa804fa3d5e74c91939303\n- Notion 최종 수정 시각: 2026-11-23T01:55:44.704Z",
+    "source_path": "data/raw/notion/learning-roadmaps.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-012-001",
+    "document_id": "NOTION-012",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa80e99c96cacdab8755c2\n- Notion 최종 수정 시각: 2026-11-23T01:59:16.828Z\n\n- 비상 상황이 발생하면 당황하지 말고, 아래 안내에 따라 행동해주세요.\n- 무엇보다 본인과 주변 사람의 안전을 먼저 확보하고, 생명이나 신체에 위험이 있다고 판단되면\n운영진의 승인을 기다리지 말고 바로 119 또는 112에 신고해주세요.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-012-002",
+    "document_id": "NOTION-012",
+    "text": "- 응급환자, 화재, 연기 발생: 119\n- 폭력, 침입, 범죄 위험: 112\n- 신고 주소 : 서울특별시 구로구 디지털로 33길 48 대륭포스트타워 7차 15층 또는 16층\n  - 신고할 때는 아래 내용을 함께 알려주세요.\n    - 건물명과 정확한 층\n    - 강의실 또는 사고 발생 장소\n    - 현재 상황과 위험 요소\n    - 부상자 또는 대피 인원\n    - 신고자의 이름과 연락처",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "긴급 신고"
+  },
+  {
+    "chunk_id": "NOTION-012-003",
+    "document_id": "NOTION-012",
+    "text": "- 건물 1층 정문 앞 공터로 모여주세요.\n  - 집결 후 과정 별로 인원을 확인합니다.\n  - 소방대원 또는 운영진의 안내가 있기 전까지 건물에 다시 들어가지 않습니다.\n  - 개인 물품을 가지러 다시 올라가지 않습니다.\n\n---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "화재 또는 지진으로 대피한 경우"
+  },
+  {
+    "chunk_id": "NOTION-012-004",
+    "document_id": "NOTION-012",
+    "text": "- 🆘 응급 환자 : 반응과 호흡을 확인하고, 생명 위험이 의심되면 119\n- 🔥 화재 : “불이야”라고 알리고 비상벨을 누른 뒤 연기 없는 계단으로 대피\n- 🫨 지진 : 흔들리는 동안 머리와 목을 보호하고, 멈춘 뒤 계단으로 대피\n- 🔦 정전 : 이동을 멈추고 연기, 불꽃, 탄 냄새 등 화재 징후 확인\n- 🚨 폭력 또는 침입 : 안전한 출구가 있으면 탈출하고, 어렵다면 문을 잠그고 숨어 112 신고\n\n---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "비상시 첫 행동"
+  },
+  {
+    "chunk_id": "NOTION-012-005",
+    "document_id": "NOTION-012",
+    "text": "- 대피도 확인 방법\n  - 초록색 화살표는 가까운 피난 계단으로 이동하는 기본 경로입니다.\n  - 기본 경로에 연기, 열기 또는 심한 혼잡이 있으면 주황색 대체 경로를 이용해주세요.\n  - 두 경로 모두 위험하면 무리하게 진입하지 말고 안전한 실내로 이동한 뒤 운영진 또는 소방대원원의 안내를 기다려주세요.\n- 대피 시 유의 사항\n  - 일반 승객용 승강기는 사용하지 않습니다.\n  - 운영진의 안내에 따라 강의실 별로 순서대로 이동합니다.\n  - 앞 사람을 밀거나 뛰지 않습니다.\n  - 떨어진 물건을 줍기 위해 갑자기 멈추거나 몸을 숙이지 않습니다.\n  - 대피 후 건물 1층 정문 앞 공터에서 과정 별로 인원을 확인합니다.\n- 15층\n\n  🔵 AX 1반 - BASE CAMP 1\n\n  🔵 AX 2반 - BASE CAMP 2\n\n  🟢 PA - BASE CAMP 4\n\n  🟢 PA - CORE LAB\n\n- 16층\n\n  🟣 LLM - BASE CAMP 5",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "강의실 별 비상 대피도"
+  },
+  {
+    "chunk_id": "NOTION-012-006",
+    "document_id": "NOTION-012",
+    "text": "🟢 PA - CORE LAB\n\n- 16층\n\n  🟣 LLM - BASE CAMP 5\n\n  🟠 DS - BASE CAMP 7\n\n---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "강의실 별 비상 대피도"
+  },
+  {
+    "chunk_id": "NOTION-012-007",
+    "document_id": "NOTION-012",
+    "text": "- 반응이 없거나 정상적으로 호흡하지 않는 경우, 심한 호흡곤란, 흉통, 마비, 출혈, 중증 외상, 화상, 중독, 경련 등 생명 위험이 의심되면 즉시 119에 신고해주세요.\n- 기본 대응 순서\n  1. 주변에 추가 위험이 없는지 먼저 확인합니다.\n  2. 환자에게 말을 걸고 어깨를 가볍게 두드려 반응을 확인합니다.\n  3. 가슴과 배의 움직임을 보고 정상적으로 호흡하는지 확인합니다.\n  4. 특정 사람을 지목해 119 신고와 구급대 진입 안내를 요청합니다.\n  5. 반응과 정상 호흡이 없으면 119 상황 요원의 안내에 따라 가슴 압박을 시작합니다.\n  6. 가장 가까운 운영진에게 상황을 알립니다.\n  7. 구급대가 도착하면 발생 시각, 상태 변화, 시행한 조치를 전달합니다.\n\n⚠️ 유의 사항",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "응급 환자 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-008",
+    "document_id": "NOTION-012",
+    "text": "⚠️ 유의 사항\n\n- 의식이 없거나 삼키기 어려운 환자에게 음식, 물, 약을 주지 않습니다.\n- 주변이 안전한 경우 환자를 불필요하게 옮기지 않습니다.\n- 환자의 사진이나 개인정보를 단체방 또는 개인 SNS에 공유하지 않습니다.\n- 병명을 추측하기보다 눈앞에 보이는 증상을 기준으로 대응합니다.\n\n⚠️ 상황별 대응 방법\n\n갑자기 쓰러졌을 때\n\n- 실신이 의심되는 경우\n  - 안전한 곳에 눕힙니다.\n  - 의식이 있고 외상이 없다면 다리를 조금 높여줍니다.\n  - 의식이 흐리지만 정상 호흡을 하거나 구토할 경우 몸을 옆으로 돌려줍니다.\n  - 바로 일으켜 세우거나 걷게 하지 않습니다.\n  - 의식이 돌아오지 않거나 호흡 이상, 흉통, 외상, 경련이 있으면 119에 신고합니다.\n\n몸을 떨거나 굳고 반응이 없을 때",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "응급 환자 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-009",
+    "document_id": "NOTION-012",
+    "text": "몸을 떨거나 굳고 반응이 없을 때\n\n- 경련이 의심되는 경우\n  - 경련이 시작된 시간을 확인합니다.\n  - 주변의 위험한 물건과 안경을 치웁니다.\n  - 접은 옷이나 수건으로 머리를 보호합니다.\n  - 몸을 억지로 붙잡거나 움직임을 막지 않습니다.\n  - 입에 손가락, 숟가락 또는 다른 물건을 넣지 않습니다.\n  - 경련이 멈춘 뒤 정상 호흡을 확인하고 몸을 옆으로 돌려줍니다.\n  - 첫 경련이거나 5분 이상 지속되는 경우, 반복되는 경우, 호흡 이상 또는 외상이 있으면 119에 신고합니다.\n\n숨을 빠르게 쉬고 손발이 저릴 때\n\n- 과호흡 또는 공황이 의심되는 경우\n  - 조용하고 안전한 곳에 앉히거나 눕힙니다.\n  - 조이는 옷을 풀어줍니다.\n  - 코로 천천히 들이마시고 입으로 더 길게 내쉬도록 안내합니다.\n  - 종이봉투나 비닐봉투를 입과 코에 대지 않습니다.\n  - 흉통, 청색증, 실신, 경련 또는 의식 저하가 있거나 증상이 계속 악화되면 119에 신고합니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "응급 환자 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-010",
+    "document_id": "NOTION-012",
+    "text": "식은땀, 떨림, 멍한 모습이 보일 때\n\n- 저혈당이 의심되는 경우\n  - 의식이 있고 안전하게 삼킬 수 있을 때만 당분이 포함된 음식이나 음료를 제공합니다.\n  - 설탕 또는 꿀 15g, 사탕 3개에서 4개, 주스나 일반 탄산음료 약 3분의 2컵 정도를 제공할 수 있습니다.\n  - 15분 뒤에도 회복되지 않으면 한 번 더 제공합니다.\n  - 의식이 흐리거나 삼키기 어렵거나 경련이 있으면 아무것도 먹이지 말고 119에 신고합니다.\n  - 인슐린이나 약을 임의로 사용하지 않습니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "응급 환자 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-011",
+    "document_id": "NOTION-012",
+    "text": "- 반응과 정상 호흡이 없으면 119 상황 요원의 안내에 따라 가슴 압박을 시작해주세요.\n- 인공호흡은 관련 교육을 받았고 안전하게 시행할 수 있는 경우에만 진행합니다. 그렇지 않으면 가슴압박을 계속해주세요.\n\n심폐소생술 순서\n\n구급대가 올 때까지\n\n- 환자의 반응·호흡 변화를 계속 확인합니다.\n- 구조대에 발생 시각과 시행한 처치를 인계 합니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "심폐소생술"
+  },
+  {
+    "chunk_id": "NOTION-012-012",
+    "document_id": "NOTION-012",
+    "text": "- “응급 환자가 발생했습니다. 위치는 AI 캠퍼스, 서울특별시 구로구 디지털로33길 48 대륭포스트타워7차, 15층 또는 16층의 BASECAME 1 강의실입니다.”\n- 환자의 의식 여부, 호흡 상태, 주요 증상과 현재 시행 중인 조치를 함께 말씀해주세요.\n- 신고 후 전화를 먼저 끊지 않습니다.\n- 안내자가 1층에서 구급대를 기다리고 진입 경로를 안내합니다.\n- 구급대가 올 때까지 환자의 반응과 호흡 변화를 계속 확인합니다.\n\n---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "119 신고 예시"
+  },
+  {
+    "chunk_id": "NOTION-012-013",
+    "document_id": "NOTION-012",
+    "text": "- 화재가 발생하면 대피가 가장 먼저입니다.\n\n화재 대응 순서\n\n1. 주변에 크게 “불이야”라고 알립니다.\n2. 가까운 비상벨을 누릅니다.\n3. 문을 열기 전 손등으로 문과 손잡이의 열을 확인합니다.\n4. 문이 뜨겁거나 연기와 열기가 느껴지면 열지 않고 다른 경로를 찾습니다.\n5. 개인 물품은 두고 몸을 낮춰 연기 없는 피난계단으로 이동합니다.\n6. 마지막 사람은 가능한 범위에서 문을 닫되 잠그지 않습니다.\n7. 안전한 장소에서 119에 층, 화재 위치, 연기 상태와 고립 인원을 알립니다.\n8. 건물 1층 정문 앞 공터에서 과정별 인원을 확인합니다.\n\n유의 사항\n\n- 일반 승객용 승강기는 사용하지 않습니다.\n- 연기와 열기가 있는 계단으로 무리하게 진입하지 않습니다.\n- 소지품을 가지러 강의실로 다시 돌아가지 않습니다.\n- 소방대원의 안내 전까지 건물에 다시 들어가지 않습니다.\n\n연기가 있는 곳을 지나야 할 때",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "화재 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-014",
+    "document_id": "NOTION-012",
+    "text": "연기가 있는 곳을 지나야 할 때\n\n- 바로 사용할 수 있는 옷소매, 손수건 등으로 코와 입을 가립니다.\n- 수건을 찾거나 물에 적시느라 대피를 늦추지 않습니다.\n- 허리를 숙이거나 팔과 무릎을 이용해 낮은 자세로 이동합니다.\n- 앞이 보이지 않거나 숨쉬기 어렵고 열기가 강해지면 즉시 돌아갑니다.\n- 두 계단 모두 위험하면 연기와 열기가 없는 실내로 이동한 뒤 문을 닫습니다.\n- 119에 정확한 층, 강의실, 인원과 현재 위치를 알립니다.\n\n소화기 사용 방법\n\n- 소화기는 불이 작고 연기가 많지 않으며, 등 뒤에 안전한 탈출로가 있을 때만 사용해주세요.\n- 조금이라도 위험해지면 즉시 포기하고 대피합니다.\n- 사용 순서\n  1. 안전핀을 뽑습니다.\n  2. 노즐을 불의 밑부분으로 향합니다.\n  3. 손잡이를 힘껏 움켜쥡니다.\n  4. 좌우로 빗자루 쓸 듯 분사합니다.\n\n완강기 사용",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "화재 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-015",
+    "document_id": "NOTION-012",
+    "text": "완강기 사용\n\n- 화재, 지진, 정전 시 일반 승객용 승강기는 사용하지 않습니다.\n- 15층과 16층의 기본 대피 경로는 피난계단입니다.\n- 완강기를 이용하기 위해 다른 층으로 이동하지 않습니다.\n- 실제 완강기가 설치된 층에 있고, 계단과 복도를 이용할 수 없는 경우에만 사용을 검토합니다.\n- 사용이 필요한 경우 가능하면 119 상황요원 또는 운영진의 안내에 따라주세요.\n\n방화문 사용\n\n- 방화문은 화재와 연기의 확산을 막기 위한 안전설비입니다.\n  - 고무 쐐기, 도어스토퍼, 의자, 끈 또는 테이프로 상시 고정하지 않습니다.\n  - 방화문 앞과 문이 열리고 닫히는 범위에 물건을 두지 않습니다.\n  - 물품 운반으로 잠시 열어야 하는 경우 사람이 직접 잡고 있다가 통과 후 즉시 닫습니다.\n  - 문이 완전히 닫히지 않거나 고장이 의심되면 운영진에게 알려주세요.\n\n---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "화재 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-016",
+    "document_id": "NOTION-012",
+    "text": "- 15층과 16층은 지상층보다 흔들림이 크고 오래 느껴질 수 있습니다.\n- 흔들리는 동안 복도나 계단으로 뛰어나가지 말고, 가까운 곳에서 몸을 낮추고 머리와 목을 보호해주세요.\n  1. 창문, 외벽, 높은 가구와 가까이 있다면 무리하지 않는 범위에서만 벗어납니다.\n  2. 튼튼한 책상이 가까우면 책상 아래로 들어갑니다.\n  3. 한 팔로 머리와 목을 보호하고 다른 손으로 책상 다리를 잡습니다.\n  4. 책상이 없다면 낙하물이 없는 안쪽 벽 또는 기둥 가까이에서 몸을 웅크립니다.\n  5. 복도나 계단에 있다면 이동을 멈추고 몸을 낮춘 뒤 손잡이나 지지물을 잡습니다.\n  6. 승강기는 새로 타지 않습니다.\n  7. 이미 승강기 안이라면 모든 층 버튼을 누르고 가장 먼저 문이 열린 층에서 내립니다.\n  8. 승강기에 갇혔다면 비상호출로 구조를 요청하고 문을 강제로 열지 않습니다.\n- 흔들림이 멈춘 뒤\n  1. 부상자와 화재, 연기, 낙하물, 계단 파손 여부를 확인합니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "지진 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-017",
+    "document_id": "NOTION-012",
+    "text": "1. 부상자와 화재, 연기, 낙하물, 계단 파손 여부를 확인합니다.\n  2. 화재 또는 연기가 있으면 비상벨과 119 신고 후 화재 대응 절차로 전환합니다.\n  3. 머리와 목을 보호하며 연기 없는 피난계단으로 이동합니다.\n  4. 이동 중 다시 흔들리면 즉시 멈추고 몸을 보호합니다.\n  5. 두 계단 모두 위험하면 안전한 실내로 이동해 문을 닫고 119와 방재실에 위치를 알립니다.\n  6. 건물 1층 정문 앞 공터에서 과정별 인원을 확인합니다.\n  7. 운영진 또는 관계 기관의 안내 전까지 건물에 다시 들어가지 않습니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "지진 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-018",
+    "document_id": "NOTION-012",
+    "text": "---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "지진 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-019",
+    "document_id": "NOTION-012",
+    "text": "- 정전 대응 순서\n  1. 수업과 이동을 멈춥니다.\n  2. 비상조명 아래에서 인원을 확인합니다.\n  3. 연기, 탄 냄새, 불꽃, 이상한 열기 또는 경보가 있는지 확인합니다.\n  4. 화재 징후가 있으면 즉시 화재 대응 절차로 전환합니다.\n  5. 단순 정전으로 확인되면 방재실과 운영진의 안내에 따라 대기합니다.\n  6. 대피가 필요한 경우 휴대조명과 계단 안전이 확인된 후 순서대로 이동합니다.\n  7. 정전 중에는 승강기를 이용하지 않습니다.\n  8. 일반 수강생과 운영진은 분전반, 차단기 또는 승강기 문을 임의로 조작하지 않습니다.\n  9. 전력이 복구된 뒤에도 건물 관리자가 정상 운행을 확인하기 전까지 승강기를 이용하지 않습니다.\n- 승강기에 갇혔을 때\n  - 승강기 문을 강제로 열거나 스스로 빠져나오지 않습니다.\n  - 비상 호출 버튼 또는 휴대전화로 구조를 요청하고 안내를 기다려주세요.\n    1. 비상 호출 버튼을 눌러 관리실 또는 유지 관리 업체에 연락합니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "정전 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-020",
+    "document_id": "NOTION-012",
+    "text": "1. 비상 호출 버튼을 눌러 관리실 또는 유지 관리 업체에 연락합니다.\n    2. 연결되지 않으면 휴대전화로 119에 신고합니다.\n    3. 건물명과 주소, 현재 층 또는 호기, 갇힌 인원과 부상 여부를 알립니다.\n    4. 확인할 수 있다면 승강기 내부에 표시된 7자리 고유 번호를 전달합니다.\n    5. 출입문과 비상 환기구를 강제로 열지 않습니다.\n    6. 문이 열리더라도 구조 요원의 안내 없이 임의로 이동하지 않습니다.\n    7. 안전 손잡이를 잡고 침착하게 대기합니다.\n- 절대 하지 말아야 할 행동\n  - 승강기 문 강제 개방\n  - 비상 환기구 개방\n  - 승강기와 승강장 사이로 탈출 시도",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "정전 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-021",
+    "document_id": "NOTION-012",
+    "text": "---",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "정전 발생 시"
+  },
+  {
+    "chunk_id": "NOTION-012-022",
+    "document_id": "NOTION-012",
+    "text": "- 위협자를 직접 확인하거나 제지하기 위해 접근하지 않습니다.\n- 화재 대피와 달리 정해진 집결지를 향해 무조건 이동하지 말고, 위협과 반대 방향의 안전한 경로를 선택해주세요.\n- 대응 순서\n  1. 안전한 출구가 명확하면 주변 사람과 함께 위협과 반대 방향으로 벗어납니다.\n  2. 탈출하는 것이 더 위험하면 문을 잠그거나 가구로 막습니다.\n  3. 출입문과 창문에서 보이지 않는 곳에 숨습니다.\n  4. 안전이 확보된 상태에서 112에 신고합니다.\n  5. 휴대전화의 소리와 진동을 끄고 화면 밝기를 낮춥니다.\n  6. 경찰이 도착하기 전까지 문을 열거나 자신의 위치를 노출하지 않습니다.\n  7. 경찰이 도착하면 손이 보이도록 하고 갑작스러운 움직임을 피합니다.\n- 112 신고 시 아래 내용을 알려주세요.\n  - 건물명과 주소\n  - 층과 강의실\n  - 위협자의 인상착의\n  - 무기 소지 여부\n  - 이동 방향\n  - 부상자와 숨어 있는 인원",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "폭력 또는 외부인 침입 시"
+  },
+  {
+    "chunk_id": "NOTION-012-023",
+    "document_id": "NOTION-012",
+    "text": "- 무기 소지 여부\n  - 이동 방향\n  - 부상자와 숨어 있는 인원\n- 탈출과 은폐가 모두 불가능하고 생명이 즉시 위협 받는 경우에만 주변 사람과 협력해 자신을 보호합니다.\n- 위협자를 뒤쫓거나 숨어 있는 곳에서 먼저 접근하지 않습니다.",
+    "source_path": "data/raw/notion/emergency-response.md",
+    "source_location": "폭력 또는 외부인 침입 시"
+  },
+  {
+    "chunk_id": "NOTION-013-001",
+    "document_id": "NOTION-013",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa80b891d2feb8943f3fb5\n- Notion 최종 수정 시각: 2026-11-23T01:59:34.845Z\n\nKANT 여러분! 반갑습니다.\n\n- 본 프로그램은 고용노동부에서 진행하고 있는 K-Digital Training 사업으로 국비지원 교육과정입니다.\n- K-Digital Training에서 규정하고 있는 훈련생 유의사항과 제도의 핵심만 뽑아 안내드립니다.\n\n개인정보 수집 및 처리 방침\n\n- 팀스파르타의 개인정보 수집 및 처리 방침은 회원가입 시 동의하신 절차에 따릅니다.\n\n  [Notion 연결 페이지](https://app.notion.com/p/247d57da1322424d8e8c551df21a048e)\n\n  [Notion 연결 페이지](https://app.notion.com/p/7b1dc644460946f08bab08b794de685f)",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-002",
+    "document_id": "NOTION-013",
+    "text": "- 단, 국민내일배움카드 규정 제57조 3에 따라 훈련기관은 훈련생의 재해보험 가입을 해야 하기에 이를 위해 추가적으로 개인정보 수집함에 따라 수집 및 제3자 정보제공에 대한 동의를 받고 있습니다.\n\n본인인증과 출석체크\n\n- 출석률은 과정의 수료와 훈련장려금 수령 여부 및 금액에 영향을 주기 때문에 반드시 잘 챙겨주셔야 합니다.\n  - [[KANT] 출석 및 공가 신청 가이드](./attendance-and-excused-absence.md)\n\n  ✅ 핵심요약",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-003",
+    "document_id": "NOTION-013",
+    "text": "✅ 핵심요약\n\n  - 매일 입실 및 퇴실 체크\n  - 정해진 시간 내 입퇴실 미체크 시 지각&조퇴&결석 처리\n  - 하루의 수업시간 50% 미만 수강 시, 결석 처리\n  - 자리비움 시 외출 버튼 클릭, 돌아오면 복귀 버튼 클릭\n    - 외출 시 담임매니저&팀원에게 미리 말해주기\n  - 해외에서 출석 불가\n    - IP 우회 등으로 인한 출석 적발 시, 부정출결로 제적\n  - 공가 신청: 공적인 사유(병원 진료, 예비군 훈련, 직계가족의 사망, 입사시험 등)로 결석할 경우 신청 가능\n    - KANT 마이페이지 > 출결/학습관리 > 하단 공가 신청 > 사유발생일 이후 행정매니저의 안내 DM 수신 > 출석입력요청대장 서명 및 증빙자료 제출\n\n    🚨 유의사항\n\n    - 사유발생일 다음날 17시까지 신청 가능\n    - 행정매니저의 DM 수신일 포함 3일 이내 회신하지 않을 경우 공가 신청 자동취소",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-004",
+    "document_id": "NOTION-013",
+    "text": "⚠️ 본인의 당일 출석 여부는 자정 이전까지 출결 관리 어플에서 확인 가능합니다.\n시스템 오류가 아닌, 단순 실수 혹은 입퇴실을 잊은 경우의 정정 요청은 불가합니다.\n\n부정출결\n\n- 훈련을 수강하지 않았음에도 불구하고 거짓 기타 부정한 방법으로 출석을 확인하거나, 그 훈련생을 대신하여 출석을 확인한 행위를 말합니다.\n\n  [KANT] 부정 출결 조치 안내\n\n  ✅ 핵심요약",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-005",
+    "document_id": "NOTION-013",
+    "text": "[KANT] 부정 출결 조치 안내\n\n  ✅ 핵심요약\n\n  - 부정출결 해당 케이스\n    - 정규 교육 시간 내 학습 외 다른 일(근로, 학교 수업, 타 훈련과정 참여 등)을 병행하는 경우\n    - 훈련에 성실히 참여하기 어려운 환경(해외체류, 여행, 운전 보행 등)에서 참여하는 경우\n    - 오프라인 교육장에 오지 않았음에도, 출석 체크가 되어 있는 경우\n  - 부정출결 적발 시, 경고 절차 없이 그 자리에서 즉시 제적되며 바로 KANT 과정에 참여할 수 없습니다.\n  - 부정출결 사유 제적 대상자는 아래와 같은 행정 조치를 받습니다.\n    - 신규 내일배움카드 발급까지 KDT 수강 불가(최대 5년)\n    - 내일배움카드 잔액 전액 차감\n\n수강정정 기간 및 중도하차자 행정 조치",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-006",
+    "document_id": "NOTION-013",
+    "text": "수강정정 기간 및 중도하차자 행정 조치\n\n- 개강 후 14일 간은 별도의 패널티 없이 수강신청 취소를 할 수 있습니다.\n- 수강 취소를 희망하는 훈련생은 원활한 행정처리를 위해 개강 2주차 내에 담임매니저에게 알려주시기 바랍니다. (트랙 별 별도 공지)\n- 해당 기간 이후에는 훈련생의 확정자 신고가 진행됩니다.\n- 수강정정 기간을 지나 확정자 신고 이후 중도하차하는 경우, 다음과 같은 행정 패널티를 받게 됩니다.\n  - 신규 내일배움카드 발급까지 KDT 수강 불가(최대 5년)\n  - 참여 훈련일수만큼의 내일배움카드 잔액 차감(1일 약 5만원)\n  - 내일배움카드 잔액 차감\n    - 1회 : 20만원 차감\n    - 2회 : 50만원 차감\n    - 3회 이상 : 100만원 차감\n\n제적\n\n- 올바른 면학 분위기 형성과 교육 형평성을 보장하기 위해, 특정 사유에 따른 기준에 해당하는 수강생을 교육과정에서 강제로 내보내는 조치입니다.\n\n  [KANT] 훈련생 제적 기준",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-007",
+    "document_id": "NOTION-013",
+    "text": "[KANT] 훈련생 제적 기준\n\n  ✅ 핵심요약",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-008",
+    "document_id": "NOTION-013",
+    "text": "- 제적 기준(아래 사유들 중 1개만 해당되어도 제적됩니다.)\n    - 부정출결 사유\n    - 출석률 사유\n      - 단위기간 훈련일수의 50% 이상 무단결석 시\n      - 전체 훈련일수의 20% 초과 무단결석 시\n    - 기타 사유\n      - 상해, 폭행, 절도, 성추행, 재물손괴 등을 통해 타 훈련생, 훈련강사, 훈련기관에 피해를 줄 시\n      - 훈련기관 자체 기준에 따라 수강태도가 불량할 시\n  - 제적 대상자는 수강정정 기간 이후 중도하차자와 동일한 행정 패널티를 받습니다.\n    - 신규 내일배움카드 발급까지 KDT 수강 불가(최대 5년)\n    - 참여 훈련일수만큼의 내일배움카드 잔액 차감(1일 약 5만원)\n    - 내일배움카드 잔액 차감\n      - 1회 : 20만원 차감\n      - 2회 : 50만원 차감\n      - 3회 이상 : 100만원 차감",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-009",
+    "document_id": "NOTION-013",
+    "text": "- 2회 : 50만원 차감\n      - 3회 이상 : 100만원 차감\n      - 단, 부정출결 사유로 인한 제적 대상자는 내일배움카드 잔액 전액이 차감됩니다.",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-010",
+    "document_id": "NOTION-013",
+    "text": "KANT 수료 기준\n\nKANT의 수료 기준은 훈련생이 교육과정을 통해 설정된 학습 목표를 적절히 달성했는지를 판단하기 위한 최소 기준입니다. 아래 세 가지 조건을 모두 충족해야 수료로 인정되며, 이는 취업 연계를 위한 기초 자료로 활용됩니다.\n\n1. 출석률 80% 이상\n   - 전체 훈련 기간 대비 출석률이 80% 이상이어야 합니다.\n   - 출석은 비콘  입퇴실 기반으로 자동 집계되며, 무단결석·지각·조퇴는 기준에 따라 불인정 처리됩니다.\n   - 성실한 출석은 자기주도적 학습 태도와 훈련 참여도 평가의 핵심 지표입니다.\n2. 프로젝트 결과물 제출 완료\n   - 훈련과정 내 핵심 과제로 구성된 프로젝트 결과물을 제출해야 합니다.\n   - 결과물은 훈련 목표와 직결된 실무 문제 해결 능력을 평가하는 기준입니다.\n   - 각 프로젝트는 과정 종료 전 담당 튜터의 확인을 거칩니다.",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-011",
+    "document_id": "NOTION-013",
+    "text": "※ 상기 기준을 하나라도 충족하지 못할 경우, 본 과정 수료로 인정되지 않습니다.\n※ 수료 여부는 LMS 기록, 운영진 검토, 프로젝트 리뷰 결과 등을 종합하여 판정합니다.\n\n훈련장려금\n\n- K-Digital Training 과정을 수강하는 조건 충족 훈련생에게 지급되는 지원금입니다.\n\n  훈련장려금 지급 관련 법령",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-012",
+    "document_id": "NOTION-013",
+    "text": "1. [「근로기준법」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제2조제4호](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 근로계약을 체결한 사람이 아닐 것(단, [「고용보험법」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제2조제6호](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 일용근로자인 경우에는 단위기간의 마지막 날을 기준으로 직전 2개월 동안의 일용근로내역일수가 1월간 10일 이상인 사람이 아닐 것)",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-013",
+    "document_id": "NOTION-013",
+    "text": "2. [「소득세법 시행령」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제137조제1항](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 사업자 또는 영리를 목적으로 자기의 계산과 책임 하에 근로를 제공하는 사람이 아닐 것\n  3. [「부가가치세법」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 사업자등록증을 발급받은 사람 또는 사업자등록증을 발급받은 법인의 이사가 아닐 것",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-014",
+    "document_id": "NOTION-013",
+    "text": "4. [「소득세법」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제168조](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) 또는 [「국세기본법 시행령」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제8조](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) 등에 따라 고유번호를 부여받은 단체의 대표가 아닐 것(단, 지원의 필요성이 있다고 고용노동부장관이 별도로 정하는 사람은 제외한다)",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-015",
+    "document_id": "NOTION-013",
+    "text": "5. 1개월간의 소정근로시간을 60시간 미만(1주간의 소정근로시간을 15시간 미만으로 정하는 경우를 포함한다)으로 정하고 근로를 제공하는 피보험자\n  6. [「조세특례제한법」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제100조의2](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 근로장려금 또는[ 같은 법 제100조의27](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 자녀장려금을 수급하는 사람으로서 별도로 정하는 기준을 충족하는 사람",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-016",
+    "document_id": "NOTION-013",
+    "text": "7. [「고용보험법」](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX) [제2조제1호나목](https://www.law.go.kr/LSW//admRulInfoP.do?admRulSeq=2100000224108&chrClsCd=010201#AJAX)에 따른 자영업자인 피보험자. 다만, 훈련 도중에 고용보험 피보험자 자격을 상실하거나, 고용보험료를 체납한 경우에는 훈련장려금을 지급하지 아니한다.\n  8. 그 밖에 국ㆍ내외 경제사정의 변화 등으로 지원의 필요성이 있다고 고용노동부장관이 별도로 인정하는 사람\n  9. 장애인 취업성공패키지 사업에 참여 중인 사람\n  10. 실업급여를 받는 사람이 아닐 것\n  11. 휴업급여를 받는 사람이 아닐 것\n  12. 중앙부처 또는 지자체 등으로부터 구직활동 지원 목적의 수당을 받는 사람이 아닐 것",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-017",
+    "document_id": "NOTION-013",
+    "text": "13. 공공근로사업 또는 재정지원 일자리사업에 참여하는 사람이 아닐 것",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-018",
+    "document_id": "NOTION-013",
+    "text": "✅ 핵심 Point\n\n  - 최대 지급 금액(단위기간 별)\n    - 실업자, 주 15시간 미만 피보험 근로자: 400,000원\n    - 피보험 영세자영업자: 360,000원\n  - 수령 조건\n    1. 근로 형태가 다음 세 가지 중 하나에 해당하는 사람\n       1. 실업자\n       2. 주 15시간 미만 고용보험 가입 근로자\n       3. 고용보험 가입 영세자영업자\n\n       🚨 참고사항\n\n       - 근로자, 특수형태근로자는 수령이 불가합니다.\n       - 주 15시간 미만 근로자, 영세자영업자는 반드시 고용보험에 가입되어 있어야 합니다.\n       - 매출이 발생하지 않거나 휴업 상태여도 고용보험 미가입 영세자영업자는 수령이 불가합니다.\n       - 근로장려금을 받는 영세자영업자는 고용보험 미가입이어도 훈련장려금 수령이 가능합니다.",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-019",
+    "document_id": "NOTION-013",
+    "text": "2. 단위기간(개강일로부터 1개월 단위) 출석률 80% 이상\n       - 개강 후 첫 1개월은 ‘개별 최종등록일~단위기간 종료일’ 내 출석률 80% 이상 기준 적용\n\n       🚨 참고사항\n\n       - 훈련장려금 지급 금액은 출석일 1일 단위로 계산됩니다.\n\n         고용형태 별 1일 훈련장려금 금액\n\n         - 실업자, 주 15시간 미만 피보험 근로자: 1일 10,000원\n         - 피보험 영세자영업자: 1일 18,000원\n\n       - 특별훈련수당 지급 금액은 출석일 1일 단위로 계산됩니다.\n         - 금액: 1일 5,000원\n\n       출석률에 따른 지급 금액 예시(일반 과정, 실업자&주 15시간 미만 피보험 근로자, 단위기간 훈련일수 20일 기준)",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-020",
+    "document_id": "NOTION-013",
+    "text": "- 20일 출석 → 최대 금액 300,000원 지급\n       - 19일 출석 → 285,000원 지급\n       - 18일 출석 → 270,000원 지급\n       - 17일 출석 → 255,000원 지급\n       - 16일 출석 → 240,000원 지급\n       - 15일 출석 → 훈련장려금 수령 불가(출석률 80% 미만)\n\n       - 단위기간 별 지급이 가능한 최대 훈련일수는 20일입니다.\n\n         단위기간 훈련일수 별 지급 금액 예시(일반 과정, 실업자&주 15시간 미만 피보험 근로자 기준)",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-021",
+    "document_id": "NOTION-013",
+    "text": "- 단위기간 훈련일수가 20일인 경우\n           - 20일 출석 → 최대 금액 300,000원 지급\n           - 19일 출석 → 285,000원 지급\n           - 18일 출석 → 270,000원 지급\n         - 단위기간 훈련일수가 21일인 경우\n           - 21일 출석, 20일 출석 → 동일하게 최대 금액 300,000원 지급\n           - 19일 출석 → 285,000원 지급\n         - 단위기간 훈련일수가 19일인 경우\n           - 19일 출석 → 285,000원 지급",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-022",
+    "document_id": "NOTION-013",
+    "text": "3. 실업급여 혹은 지역수당(서울시청년수당 등)을 수령하고 있지 않음.\n       - 국민취업지원제도 구직촉진수당, 근로장려금과는 중복 수령 가능\n    4. 단위기간 마지막 날을 기준으로, 직전 2개월 동안 각 1개월의 2개 기간으로 나누고, 2개 기간 일용근로내역일수가 10일 이상이 아닐 것.\n  - 수령 방법\n    - 훈련기관의 신청서 검토 후 고용24등록 혹은 수강신청시 입력한 계좌로 지급됩니다.\n    - 고용센터 검토 속도에 따라 지급시기가 상이하며, 단위기간 종료 후 1개월 정도 소요됩니다.\n    - 마지막 훈련장려금은 수강평(최종 만족도 조사)을 입력하지 않을 시 지급되지 않습니다.\n  - 훈련장려금 신청 및 지급 절차\n    1. 매 단위기간 종료일 다음날, 전체 공지\n    2. 마이페이지의 모달에 따라 출석부 확인 및 설문조사 응답\n    3. 훈련생 전원의 설문조사 결과 수합",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-023",
+    "document_id": "NOTION-013",
+    "text": "3. 훈련생 전원의 설문조사 결과 수합\n    4. 고용센터에 대표로 훈련기관이 신청(수강생 개인이 신청하는 것이 아님.)\n    5. 검토 후, 훈련장려금 지급",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-013-024",
+    "document_id": "NOTION-013",
+    "text": "KANT의 훈련장려금을 정기 지출 및 생활비 목적으로 수령하지 말아주세요! 🙏\n\n  - 고용노동부의 훈련 장려금은 근로로 인한 수당이 아닌, 디지털 인재 양성을 장려하는 목적으로 지급되고 있습니다.\n  - KANT에서는 모든 훈련생의 훈련장려금을 가장 빠른 일정으로 신청하고 있지만, 장려금 지급을 위해서는 훈련생들의 출결/근로상황 등이 정확히 파악되어야 하며, 고용노동부 산하 여러 기관의 협조가 필요하여 지급일이 일정하지 않습니다. (매 단위기간 최대 10일 이상 차이가 발생할 수 있음)\n  - 연말, 연초의 국가 예산 상황에 따라 지급 일정이 변동되는 경우도 있습니다.\n  - 훈련장려금의 수령 및 이용은 훈련생 개인의 자유이지만, 특정 개인에게만 빠르게 지급 도와드릴 수 없는 점, 지급 권한이 훈련 기관이 아닌 고용노동부에 있는 점 등 변동 사항이 많으므로, 훈련생 분들께 훈련장려금을 생활비 성격으로 수령하는 것을 권장하지 않고 있습니다.",
+    "source_path": "data/raw/notion/trainee-rules-and-benefits.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-014-001",
+    "document_id": "NOTION-014",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa804c9992d2b43ac83e2a\n- Notion 최종 수정 시각: 2026-11-23T01:59:49.658Z\n\n✅ 핵심 요약\n\n- 유의사항: 하루의 수업시간 50% 미만 수강 시, 결석 처리\n- 출석 가능 시간\n  - 입실: ~09:10\n  - 09:10 이후 입실 시, 지각\n  - 퇴실: 17:50~23:59\n    - 17:50 이전 퇴실 시, 조퇴\n    - 당일 자정 전(23:39)까지 퇴실 미체크 시, 결석",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-014-002",
+    "document_id": "NOTION-014",
+    "text": "공가 인정되는 공적인 사유로 결석하게 될 때 신청하는 휴가를 의미해요. 사유에 따라 올바른 증빙자료를 제출하면 해당 일 전체가 출석으로 인정됩니다.\n\n출석정정 공적인 사유는 아니지만, 각종 사정으로 출석체크를 정상적으로 하지 못했을 때 출석 상태를 정정하는 것을 의미해요. 사유에 따라 당일의 학습기록(젭, 줌 접속로그 등)이 추가로 필요한데요, 이때는 실제 학습기록을 기준으로 출석, 지각, 조퇴 등 다양하게 처리될 수 있습니다.",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "공가 신청"
+  },
+  {
+    "chunk_id": "NOTION-014-003",
+    "document_id": "NOTION-014",
+    "text": "---\n\n고용노동부에서 지정한 공식 사유 및 증빙자료 조건입니다. 토글을 열면 모든 사유를 확인할 수 있어요!\n\n⭕️ 공가 및 출석정정 인정 사유\n\n훈련생이 결석한 사유가 아래 기준에 부합하고, 적합한 증빙서류를 제출했다면 공가로 인정될 수 있어요.\n\n공가 인정 사유 | 출석인정일수 | 필요 서류 | 참고\n\n질병/입원(본인, 자녀) | 전체 소정훈련일수의 10 퍼센트(소수점 이하 첫째자리에서 반올림하여 계산) | 병명 혹은 질병코드 명시된 진료 확인서, 진료비내역서 혹은 진단서, 처방전 등 / (자녀)가족관계증명서 | - 반드시 증빙서류에 병명 혹은 질병코드가 명시되어 있어야 함. / - 공가신청일과 동일한 방문 날짜가 명시되어 있어야함 / - 일반 건강검진, 라식수술 인정 불가 / - 진단서나 소견서 내 기재된 진료일만 인정 가능 / -난임치료 공가 인정",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "전체 인정 사유 및 필요 증빙자료"
+  },
+  {
+    "chunk_id": "NOTION-014-004",
+    "document_id": "NOTION-014",
+    "text": "취업, 훈련 관련 시험 / (자격증, 면허증 등) | 소요일수 | 응시확인서 | - 접수확인서 불가 / - 훈련과정과 관련된 자격시험만 가능(예. 정보처리기사 등) / - 대학교 중간 및 기말고사 인정 불가\n\n입사시험(면접) | 소요일수 | 기업 직인이 포함된 면접확인서 / or / 담당자나 대표의 싸인이 포함된 면접확인서 + 담당자나 대표의 명함 | - 서류 합격 안내문, 면접 통지서 불가 / - 면접확인서 내 기업의 직인이 포함되어 있어야 함.(싸인 단독 인정 불가) / -기업 직인이 없을 경우, 일정을 조율한 메일 혹은 문자를 같이 첨부 / - 싸인만 있는 경우, 담당자나 대표의 명함까지 함께 첨부 필요 / - 동일 기업에 중복 공가 처리 불가\n\n선거권, 기타 공민권 행사 | 소요일수 | 투표확인증\n\n예비군, 민방위 훈련 | 소요일수 | 교육필증 | - 소집통지서 불가 / - 연속 사유발생시, 모든 훈련일수마다 개별로 신청 필요\n\n징병검사 | 소요일수 | 참여확인서",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "전체 인정 사유 및 필요 증빙자료"
+  },
+  {
+    "chunk_id": "NOTION-014-005",
+    "document_id": "NOTION-014",
+    "text": "징병검사 | 소요일수 | 참여확인서\n\n결혼(본인, 자녀) | 5일 / 1일 | 청첩장, 가족관계증명서 | - 결혼일만 신청하면 됨. / - (본인) 자동으로 5일 신청\n\n사망(배우자, 본인 및 배우자의 부모) | 토요일 및 공휴일 제외 5일 | 사망진단서, 가족관계증명서 | - 사망일만 신청하면 됨. / - 자동으로 5일 신청\n\n사망(본인 및 배우자의 조부모) | 토요일 및 공휴일 제외 3일 | 사망진단서, 가족관계증명서 | - 사망일만 신청하면 됨. / - 자동으로 3일 신청\n\n사망(자녀, 그 자녀의 배우자) | 토요일 및 공휴일 제외 3일 | 사망진단서, 가족관계증명서 | - 사망일만 신청하면 됨. / - 자동으로 3일 신청\n\n사망(본인 및 배우자의 형제자매) | 토요일 및 공휴일 제외 3일 | 사망진단서, 가족관계증명서\n\n배우자의 출산 | 5일 | 출생증명서, 가족관계증명서 | - 출산일만 신청하면 됨. / - 자동으로 5일 신청",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "전체 인정 사유 및 필요 증빙자료"
+  },
+  {
+    "chunk_id": "NOTION-014-006",
+    "document_id": "NOTION-014",
+    "text": "훈련직종 관련 해커톤, 경진대회 등 | 소요일수 | 참여확인서 | - 고용노동부 본부에서 지정한 해커톤 및 경진대회 한정 / - 해당 사유로 신청하기 전에 행정 문의를 통해 확인 요망\n\n국내기능경기대회, 국제기능올림픽대회 출전 | 소요일수 | 참여확인서\n\n스마트폰 분실/고장 | 소요일수 | - 수리 접수증, 분실 신고증 등 / - 젭 접속로그 | - 실제 학습한 기록(젭 접속로그)가 있어야만 인정 가능\n\n❌ 인정 불가 사유\n\n아래 사유들은 공가로 인정될 수 없어요.",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "전체 인정 사유 및 필요 증빙자료"
+  },
+  {
+    "chunk_id": "NOTION-014-007",
+    "document_id": "NOTION-014",
+    "text": "❌ 인정 불가 사유\n\n아래 사유들은 공가로 인정될 수 없어요.\n\n- 고용센터 방문(국취제, 실업급여 상담 등)\n- 부모님의 병원 동행\n- 진료 목적이 아닌 병원 검사, 검진(혈액검사, CT촬영 등)\n- 라식 수술\n- 질병외의 병원 방문(치과교정, 피부과, 성형외과 등)\n- 단순 휴식(병원 미방문)\n- 컨퍼런스 참여\n- 대학교 졸업식\n- 대학교 시험\n- 훈련과정과 관련 없는 시험\n- 노트북 분실 및 고장\n- 제사\n- 직계가족 외 사망(큰아버지, 사촌 등)\n- 법원 출석\n- 경찰서 방문\n- 개인의 인터넷 환경 장애",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "전체 인정 사유 및 필요 증빙자료"
+  },
+  {
+    "chunk_id": "NOTION-014-008",
+    "document_id": "NOTION-014",
+    "text": "---",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "대표 사유 별 인정 기준 및 증빙자료 예시"
+  },
+  {
+    "chunk_id": "NOTION-014-009",
+    "document_id": "NOTION-014",
+    "text": "고용노동부에서 공식적으로 인정하는 공가 사유로서, 해당 일 전체가 출석으로 인정됩니다.",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "공가"
+  },
+  {
+    "chunk_id": "NOTION-014-010",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수: 소요일수\n\n- 전체 소정훈련일수의 10 퍼센트(소수점 이하 첫째자리에서 반올림하여 계산)\n\n🔵 본인이 아파서 혹은 다쳐서 병원 진료(치료, 검사 등)를 받은 경우\n\n→ 병명 혹은 질병코드가 쓰여있는 진료확인서(+진단서, 소견서, 처방전 등)\n\n올바른 증빙자료\n\n- 질병코드 있는 처방전\n\n잘못된 증빙자료\n\n- 병명 혹은 질병코드가 쓰여있지 않은 진료비계산서, 영수증, 진료비 세부산정내역서\n- 병명 혹은 질병코드가 쓰여있지 않은 진료확인서\n\n🔵 본인이 아파서 혹은 다쳐서 여러 날 입원한 경우\n\n→ 입퇴원 기간이 쓰여있는 입퇴원확인서\n\n올바른 증빙자료\n\n🔵 만 19세 미만 자녀의 병원 진료/입원에 동반한 경우\n\n→ 상기 조건과 동일한 진단서(병원 진료) or 입퇴원확인서(입원) + 가족관계증명서\n\n올바른 증빙자료\n\n- 2가지 서류 구비 필요\n\n❌ 일반 건강검진(예방접종)\n\n❌ 미용 목적의 병원 방문(라식, 라섹, 기타 성형 수술 및 시술)",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "본인 및 자녀의 질병/입원"
+  },
+  {
+    "chunk_id": "NOTION-014-011",
+    "document_id": "NOTION-014",
+    "text": "❌ 미용 목적의 병원 방문(라식, 라섹, 기타 성형 수술 및 시술)\n\n❌ 부모님, 조부모님의 병원 동행\n\n❌ 병원에 방문하지 않고 집에서 약 먹고 휴식",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "본인 및 자녀의 질병/입원"
+  },
+  {
+    "chunk_id": "NOTION-014-012",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수: 소요일수\n\n🔵 취업을 위해 기업의 채용전형 중 면접에 참여한 경우\n\n→ 면접확인서\n\n올바른 증빙자료\n\n기업 직인 포함\n\n잘못된 증빙자료\n\n- 직인이 아니라, 싸인이 포함된 서류 (담당자/대표의 명함이 추가로 준비되면 인정 가능)\n\n- (단독) 서류 합격 통지 및 면접 안내문(메일, 문자 등)\n\n❌ 채용 담당자와의 티타임, 커피챗",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "입사시험(면접)"
+  },
+  {
+    "chunk_id": "NOTION-014-013",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수: 소요일수\n\n🔵 훈련과정과 관련된 자격증 / 면허증 취득을 위한 시험에 응시한 경우\n\n→ 응시확인서\n\n올바른 증빙자료\n\n잘못된 증빙자료\n\n- 접수 확인서\n\n🔵 취업을 위해 기업의 채용전형 중 필기 시험(코딩테스트 등)에 참여한 경우\n\n→ 응시확인서\n\n올바른 증빙자료\n\n잘못된 증빙자료\n\n- 시험 응시 안내문\n\n- 시험 응시 안내 메일\n\n- 서류 전형 합격 및 시험 안내문\n\n❌ 수강 중인 훈련과정과 무관한 자격증 취득을 위한 시험에 응시한 경우(토익, JLPT 등)\n\n❌ 대학교 중간고사, 기말고사",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "취업, 훈련 관련 시험"
+  },
+  {
+    "chunk_id": "NOTION-014-014",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수 - 사망일만 신청하면 나머지 일수는 자동 신청\n\n직계가족의 사망 | 출석인정일수\n\n사망(배우자, 본인 및 배우자의 부모) | 토요일 및 공휴일 제외 5일\n\n사망(본인 및 배우자의 조부모) | 토요일 및 공휴일 제외 3일\n\n사망(자녀, 그 자녀의 배우자) | 토요일 및 공휴일 제외 3일\n\n사망(본인 및 배우자의 형제자매) | 토요일 및 공휴일 제외 3일\n\n🔵 배우자 / 본인 혹은 배우자의 부모, 조부모, 자녀, 형제자매의 사망\n\n→ 사망진단서 + 가족관계증명서\n\n올바른 증빙자료\n\n- 2가지 서류 구비 필요\n\n❌ 삼촌, 이모, 지인 등 직계가족이 아닌 사람의 사망\n\n❌ 집안 제사",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "직계가족의 사망"
+  },
+  {
+    "chunk_id": "NOTION-014-015",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수: 소요 일수 - 모든 훈련일 개별 신청 필요\n\n🔵 소집 통지에 따라 예비군, 민방위 훈련에 참여한 경우\n\n→ 훈련필증\n\n올바른 증빙자료\n\n잘못된 증빙자료\n\n- 소집통지서\n\n---",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "예비군, 민방위 훈련"
+  },
+  {
+    "chunk_id": "NOTION-014-016",
+    "document_id": "NOTION-014",
+    "text": "아래 사유(스마트폰 분실/고장, 시스템장애)는 출석만 불가할 뿐 학습은 가능하기 때문에, 출석 기록이 추가 증빙자료로 필요합니다. 사유발생 즉시 구비하여 행정 매니저님께 전달합니다.",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "출석입력요청"
+  },
+  {
+    "chunk_id": "NOTION-014-017",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수: 소요일수\n\n🔵 본인인증 및 입퇴실 체크에 필요한 스마트폰을 잃어버린 경우\n\n→ 분실신고증 + 출석 기록\n\n올바른 증빙자료\n\n가입 이동통신사에 분실신고 접수 후, 고객센터 문의 필요\n\n🔵 본인인증 및 입퇴실 체크에 필요한 스마트폰이 고장 나 사용할 수 없는 경우\n\n→ 수리 접수증 + 출석 기록\n\n올바른 증빙자료\n\n잘못된 증빙자료\n\n- 훼손되거나 고장 난 스마트폰 사진\n\n❌ 스마트폰 분실/고장에도 불구하고 신규 개통하지 않거나 수리하지 않는 경우",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "스마트폰 분실/고장"
+  },
+  {
+    "chunk_id": "NOTION-014-018",
+    "document_id": "NOTION-014",
+    "text": "✅ 출석인정일수: 소요일수\n\n🔵 출석체크 홈페이지 혹은 어플리케이션 오류가 발생한 경우\n\n→ 오류 화면 녹화본 + 강의실 내/외부에서 수강생 명찰 + 핸드폰 시간 + 수강생 얼굴이 모두 나오도록 사진 촬영\n\n올바른 증빙자료\n\n❌ 개인 인터넷 환경 문제로 입퇴실 시간 내 체크를 못한 경우",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "시스템 장애"
+  },
+  {
+    "chunk_id": "NOTION-014-019",
+    "document_id": "NOTION-014",
+    "text": "- KANT 출결 페이지 하단 공가 신청\n\n1. KANT 마이페이지 > 출결/학습관리 > 하단 공가 신청 (사유 발생일 다음날 17시까지 접수 가능)\n2. 공가 신청 접수가 확인되면, 행정 매니저가 순차적으로 연락 드립니다.\n   - 사유 발생일 이후 3일 내 연락 드립니다.\n3. 팀스파르타(주)에서 발송된 메일 확인 후, ‘내용 확인하고 서명하기’ 클릭\n\n   수신 메일 화면 예시\n\n4. 출석입력요청대장에 증빙자료 첨부 후 서명하여 회신 (3일 이내 올바른 증빙자료 미회신 시, 접수 취소)\n\n   출석입력요청대장 서류 예시\n\n   - 도장 생성하여 서명",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "공가 신청 방법"
+  },
+  {
+    "chunk_id": "NOTION-014-020",
+    "document_id": "NOTION-014",
+    "text": "- 사유발생일 다음날 오후 5시까지 신청이 가능합니다.\n(신청 방법: ‘마이페이지 > 출결/학습관리 하단에서 신청’ 제출)\n  - 이후 신청 시 처리가 불가합니다.\n  - 미리 신청이 가능하니, 날짜가 확정되면 미리 신청해주시는 것이 좋습니다.\n- 행정 매니저의 DM 수신일 포함 3일 이내 출석입력요청대장 서명 및 증빙자료 제출을 하지 않을 경우, 공가 신청은 자동으로 취소됩니다.\n- 증빙자료가 미처 구비되어 있지 못한 상태여도 공가 신청을 먼저 제출해주셔야 합니다.\n  - 공가 선 접수 → 행정 매니저 DM 수신 → 출석입력요청대장 서명 및 증빙자료 사후 제출\n- 증빙자료 조건 미충족 시, 공가 승인이 불가합니다.\n- 예비군 훈련, 입원 등 2일 이상의 공가를 신청하실 경우, 모든 날짜를 하루 단위로 각각 신청 넣어주셔야 합니다. (각 날짜별로 신청 기한 적용)\n\n  참고 직계가족 사망의 사유는 사망일만 신청해주셔도 자동으로 나머지 일수가 인정됩니다.",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "🚨 공가 신청 유의 사항"
+  },
+  {
+    "chunk_id": "NOTION-014-021",
+    "document_id": "NOTION-014",
+    "text": "- 증빙자료 제출 후 최종 승인까지 최대 1주일 소요됩니다. (출석부 반영)\n- 동일한 날짜의 공가 신청을 중복으로 접수할 시, 최신 신청만이 조회되기 때문에 누락 가능성이 커지고 처리가 더 늦어집니다.",
+    "source_path": "data/raw/notion/attendance-and-excused-absence.md",
+    "source_location": "🚨 공가 신청 유의 사항"
+  },
+  {
+    "chunk_id": "NOTION-015-001",
+    "document_id": "NOTION-015",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa8055821ecd338b29d56e\n- Notion 최종 수정 시각: 2026-11-23T02:00:33.185Z",
+    "source_path": "data/raw/notion/attendance-fraud.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-015-002",
+    "document_id": "NOTION-015",
+    "text": "훈련을 수강하지 않았음에도 불구하고 거짓 기타 부정한 방법으로 출석을 확인하거나, 그 훈련생을 대신하여 출석을 확인한 행위를 말합니다.\n\n부정출결을 왜 금지하고 별도 조치를 취하나요?\n\n- 면학 분위기 형성 및 협업 지원을 위해\n\n  KANT는 프로젝트 중심의 교육과정이며 모든 프로젝트는 팀 단위로 진행됩니다. 모든 훈련생이 성실히 학습 및 프로젝트에 참여할 수 있도록 지원함으로써 올바른 면학 분위기를 형성하고 원활한 팀 협업을 돕습니다.\n\n- 공정성 확보\n\n  KANT는 고용노동부 지원 K-Digital Training 과정으로, 출석률에 따라 수료 가능 여부와 훈련장려금 수령 금액이 달라집니다.\n\n  부정한 방법으로 교육과정 수료 자격을 얻거나 금전을 수급하는 행위를 방지함으로써, 교육과정의 공정성을 유지하고 모든 훈련생이 올바른 자격과 절차에 따라 혜택을 받을 수 있도록 돕기 위함입니다.\n\n부정출결 해당 케이스",
+    "source_path": "data/raw/notion/attendance-fraud.md",
+    "source_location": "부정출결이란?"
+  },
+  {
+    "chunk_id": "NOTION-015-003",
+    "document_id": "NOTION-015",
+    "text": "부정출결 해당 케이스\n\n1. 정규 교육 시간 내 학습 외 다른 일을 병행하는 경우\n   - 근로(재택근로 포함), 학교 수업(온라인 수업 포함) 참여, 타 훈련과정 수강 등\n2. 마이페이지에 입실 체크는 했으나 강의장에 입실하지 않은 경우\n3. 입실 후 훈련 중 특정 사유 없이 부재 및 운영진의 호출에 응하지 않는 경우\n4. 기타 성실한 훈련 참여로 볼 수 없는 행위를 지속하는 경우\n\n부정출결 적발 시 받는 불이익\n\n부정출결과 제적 상황에 대한 사실확인서를 작성합니다.\n\n사실확인서 예시\n\n국민내일배움카드 운영규정 제35조에 따라, 훈련과정에서 제적되며, 즉시 모든 프로그램의 참여가 제한됩니다.\n\n- 별도의 경고 절차 없이, 부정출결 적발 즉시 제적됩니다.",
+    "source_path": "data/raw/notion/attendance-fraud.md",
+    "source_location": "부정출결이란?"
+  },
+  {
+    "chunk_id": "NOTION-015-004",
+    "document_id": "NOTION-015",
+    "text": "- 별도의 경고 절차 없이, 부정출결 적발 즉시 제적됩니다.\n\n[국민내일배움카드 운영규정 원문](https://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EA%B5%AD%EB%AF%BC%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%B9%B4%EB%93%9C%EC%9A%B4%EC%98%81%EA%B7%9C%EC%A0%95)\n\n국민내일배움카드 운영규정 제15조에 따라, 내일배움카드 잔액 전액이 차감됩니다.\n\n[국민내일배움카드 운영규정 원문](https://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EA%B5%AD%EB%AF%BC%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%B9%B4%EB%93%9C%EC%9A%B4%EC%98%81%EA%B7%9C%EC%A0%95)",
+    "source_path": "data/raw/notion/attendance-fraud.md",
+    "source_location": "부정출결이란?"
+  },
+  {
+    "chunk_id": "NOTION-015-005",
+    "document_id": "NOTION-015",
+    "text": "새로운 내일배움카드 발급까지 K-Digital Training 수강이 불가합니다.(최대 5년)\n\n부정출결 조치를 받지 않으려면\n\n1. 근로, 학교 수업 참여, 타 훈련과정 수강 등 다른 일과 병행 없이 오직 참여 중인 프로그램에만 집중합니다.\n\n   재택 근무 및 훈련과 무관한 온라인 강의 수강 등 모든 형태의 외부 활동 불가\n\n2. 불가피하게 병행해야 할 경우, 반드시 운영진에게 사전에 알린 뒤 병행 시간 동안은 출결페이지 내/HRD-Net어플의 ‘외출 및 복귀’ 처리를 합니다.\n3. 병원, 고용센터 등 외부 장소로 이동할 때에도 ‘외출’ 처리를 해야 하며, 일정을 끝내고 학습을 위해 다시 자리에 앉았을 때 ‘복귀’ 처리해주세요.\n\n   <참고사항>",
+    "source_path": "data/raw/notion/attendance-fraud.md",
+    "source_location": "부정출결이란?"
+  },
+  {
+    "chunk_id": "NOTION-015-006",
+    "document_id": "NOTION-015",
+    "text": "<참고사항>\n\n   - ‘외출~복귀’ 사이의 시간은 당일 학습시간으로 카운팅되지 않습니다.\n   - 외출 처리를 한 당일은 출석값이 ‘외출’이 됩니다.\n   - ‘복귀’도 반드시 해주셔야 합니다. 그렇지 않으면 ‘결석’ 처리됩니다.\n   - 외출/지각/조퇴 패널티 3회 누적 시 결석 1회로 처리됩니다.\n     - 당일에 외출과 조퇴를 모두 진행한 경우 패널티는 2회 누적됩니다.",
+    "source_path": "data/raw/notion/attendance-fraud.md",
+    "source_location": "부정출결이란?"
+  },
+  {
+    "chunk_id": "NOTION-016-001",
+    "document_id": "NOTION-016",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa80f399f1f3be82a1c689\n- Notion 최종 수정 시각: 2026-11-23T02:00:50.809Z\n\n📋 국민내일배움카드 운영규정 제 35조 ‘훈련생의 제적’ 을 더 쉽게 이해하실 수 있도록,\n\n꼭 알아두셔야 할 핵심 내용만 정리한 자료입니다.\n\n     모든 훈련생이 서로를 존중하며 안정적인 환경에서 학습할 수 있도록 마련된 기준이며,\n     자세한 운영 기준은 하단의 ‘규정 전문' 을 통해 확인하실 수 있습니다.\n     궁금한 점이 있다면 언제든 트랙 운영진에게 문의해 주세요.\n\n---",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-016-002",
+    "document_id": "NOTION-016",
+    "text": "대리 수강, 대리 출석\n\n출결처리 없이 훈련 시간 중 근로, 학업, 여행 등 병행\n\n폭행, 성희롱, 협박, 심각한 욕설·인격 모독\n\n결석 및 부분 출석(지각/외출/조퇴) 패널티 누적으로 단위기간의 출석률이 50% 미만으로 판단되는 경우\n\n결석 및 부분 출석(지각/외출/조퇴) 패널티 누적으로 전체기간의 결석률이 20% 초과로 판단되는 경우\n\n---",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "❌ 이런 경우, 즉시 제적될 수 있어요."
+  },
+  {
+    "chunk_id": "NOTION-016-003",
+    "document_id": "NOTION-016",
+    "text": "- 장시간 무단 이탈 및 연락 두절 또는 불성실한 학습 태도\n- 운영진의 공식 면담·소통 요청 거부\n- 학습 환경을 심각하게 훼손하는 행위\n- 반복적인 학습 방해, 공격적인 소통 및 허위정보 유포\n\n---",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "⚠️ 이런 행동이 반복되면 제적될 수 있어요."
+  },
+  {
+    "chunk_id": "NOTION-016-004",
+    "document_id": "NOTION-016",
+    "text": "- 운영진(튜터, 담임매니저, 운영총괄매니저)는 여러분의 학습을 돕는 사람입니다.\n- 무례한 언행, 폭언, 욕설은 학습 에티켓 위반에 해당합니다.\n- 내부 기준에 의해 제적 경고 또는 즉시 제적될 수 있습니다.\n\n---",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "🙋‍♀️ 운영진은 이렇게 대해 주세요."
+  },
+  {
+    "chunk_id": "NOTION-016-005",
+    "document_id": "NOTION-016",
+    "text": "- 훈련을 시작하기 전에는 자부담금 전액을, 훈련을 시작한 후에는 일할 계산되어 반환됩니다.\n\n---",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "💸 수료하지 못하는 경우 자부담금은 어떻게 되나요?"
+  },
+  {
+    "chunk_id": "NOTION-016-006",
+    "document_id": "NOTION-016",
+    "text": "본 규정은 모든 훈련생이 안전하고 공정하게 학습하기 위해 지키는 최소한의 기준입니다.\n\n규정 본문은 아래 [훈련기관 제적 규정안 본문]을 통해 확인하실 수 있습니다.\n\n[훈련기관 제적 규정안 본문] 자세히 보기",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "📌 기억해주세요"
+  },
+  {
+    "chunk_id": "NOTION-016-007",
+    "document_id": "NOTION-016",
+    "text": "본 기준은 「국민내일배움카드 운영규정」 등 관계 법령을 준수하여 훈련 운영의 공정성과 질서를 유지하고, 모든 훈련생의 학습권 보호 및 원활한 훈련 운영을 목적으로 한다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "1-1. 목적"
+  },
+  {
+    "chunk_id": "NOTION-016-008",
+    "document_id": "NOTION-016",
+    "text": "1. 제적이라 함은 훈련생이 관계 법령 또는 훈련기관이 정한 운영 기준을 위반하여 해당 훈련과정에서 제외되는 행정처리를 말한다.\n2. 훈련생이라 함은 팀스파르타가 운영하는 KDT 훈련과정에 참여 중인 자를 말한다.\n3. 부정출결이라 함은 훈련을 실제로 수강하지 않았음에도 출석한 것으로 처리되거나, 훈련 참여 의무를 위반한 상태에서 출석으로 인정되는 모든 행위를 말한다.\n4. 서면이라 함은 훈련 운영 과정에서 기록 및 확인이 가능한 방식으로 전달되는 의사표시를 말하며, 다음 각 호의 수단을 포함한다.\n   1. 슬랙(Slack) 등 훈련기관이 지정한 공식 메신저\n   2. 전자우편(E-mail)\n   3. 문자메시지(SMS) 또는 이에 준하는 모바일 메시지 등",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "1-2. 정의"
+  },
+  {
+    "chunk_id": "NOTION-016-009",
+    "document_id": "NOTION-016",
+    "text": "1. 본 기준은 팀스파르타가 운영하는 KDT 훈련과정의 모든 훈련생에게 적용한다.\n2. 제적 기준 및 절차는 「국민내일배움카드 운영규정」을 최우선으로 적용하며, 본 규정은 그에 대한 세부 사항을 정하는 내부 운영 기준으로 한다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "1-3. 적용 범위 및 우선순위"
+  },
+  {
+    "chunk_id": "NOTION-016-010",
+    "document_id": "NOTION-016",
+    "text": "본 장은 훈련생 간 상호 존중과 원활한 팀 단위 학습 환경 조성을 위한 기본 원칙을 규정한 것으로, 위반 시 그 정도 및 반복성에 따라 Ⅲ장 제적 기준에 따른 제적 또는 제재가 이루어질 수 있다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "Ⅱ. 훈련 에티켓 및 학습 기본 원칙"
+  },
+  {
+    "chunk_id": "NOTION-016-011",
+    "document_id": "NOTION-016",
+    "text": "훈련생 본인이 아닌 제3자가 출석하거나, 출석 사실을 허위로 등록하는 행위는 부정출결에 해당한다.\n\n대리수강·대리출석 또는 훈련을 수강하지 않았음에도 불구하고 거짓 기타 부정한 방법으로 출석 확인 등 이에 준하는 행위가 확인될 경우, 사전 경고 없이 즉시 해당 과정에서 제적 처리된다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "2-1.  대리 수강 및 대리 출석 금지"
+  },
+  {
+    "chunk_id": "NOTION-016-012",
+    "document_id": "NOTION-016",
+    "text": "1. 정규 훈련 시간 중 다음 각 호의 행위는 허용되지 않는다.\n   - 근로 활동\n   - 학교 수업 등 학업 병행\n   - 해외체류, 국내/외 여행, 운전, 보행, 기타 훈련 집중이 불가능한 활동\n2. 적합한 출결처리 없이 위 행위가 확인될 경우, 실제 학습 여부와 관계없이 부정출결로 간주되어 제적 처리될 수 있다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "2-2. 근로·학업 등 타 활동 병행 금지"
+  },
+  {
+    "chunk_id": "NOTION-016-013",
+    "document_id": "NOTION-016",
+    "text": "본 훈련과정은 커리큘럼 특성상 학습·실습·프로젝트를 모두 팀 단위로 진행된다.\n\n불가피하게 자리를 비워야 할 경우, 반드시 사전에 운영진 및 팀원에게 공유하고 외출 처리를 해야 한다.\n\n사전 공유 없이 자리를 이탈하고 연락이 닿지 않는 경우, 부정출결로 간주되어 제적 처리될 수 있다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "2-3. 장시간 자리 이탈 시 사전 소통 의무"
+  },
+  {
+    "chunk_id": "NOTION-016-014",
+    "document_id": "NOTION-016",
+    "text": "1. 모든 훈련생은 함께 학습하며 성장하는 동료임을 인식해야 한다.\n2. 본인이 존중받고자 하는 방식과 동일한 수준의 존중을 타 훈련생에게도 예의를 지켜야 한다.\n3. 다음 각 호에 해당하는 행위는 면학 분위기를 해치는 행위로 본다.\n   - 학습 중 방해 또는 무단 난입\n   - 반복적인 잡담으로 학습 흐름 저해\n   - 일방적·공격적 소통 방식 등\n4. 위 행위가 확인될 경우, 경고 후에도 개선되지 않으면 제적 처리될 수 있다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "2-4. 타 훈련생에 대한 기본 예의 준수"
+  },
+  {
+    "chunk_id": "NOTION-016-015",
+    "document_id": "NOTION-016",
+    "text": "1. 훈련교강사(튜터)는 자기주도적 학습 환경에서 훈련생의 학습 방향성과 성장을 지원하는 역할을 담당한다.\n2. 학습관리매니저는 훈련생의 학습 현황을 관리하며 훈련 과정 전반에 발생하는 문의, 이슈 및 학습 관련 어려움에 대응하는 역할을 담당한다.\n3. 운영매니저는 커리큘럼 운영 및 트랙 (분야)의 전반적인 운영을 총괄하는 역할을 담당한다.\n4. 훈련 운영 및 수업과 관련한 의견이나 문제 제기는 운영진을 통해 공식적으로 전달할 수 있다.\n5. 다만, 훈련교강사 등에게 무례하거나 공격적인 언행을 하는 경우, 면학 분위기 저해 행위로 판단되어 제적 처리될 수 있다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "2-5. 훈련교강사(튜터) 및 학습관리매니저 등 운영진에 대한 존중 및 소통 원칙"
+  },
+  {
+    "chunk_id": "NOTION-016-016",
+    "document_id": "NOTION-016",
+    "text": "1. 다음 어느 하나에 해당하는 자는 경고 없이 제적한다.\n   1. 국민내일배움카드 운영규정 제35조 1항에 따른 제적\n\n       단위기간 중 결석일수가 소정훈련일수의 50% 이상인 훈련생\n(단위기간 소정훈련일수 14일 이상인 경우에 한함)\n\n      총 결석일수가 전체 소정훈련일수의 20%를 초과하는 훈련생\n\n      훈련을 수강하지 않았음에도 불구하고 거짓 기타 부정한 방법으로 출석 확인한 훈련생 및 그 훈련생을 대신하여 출석 확인 행위를 한 훈련생\n\n      상해ㆍ폭행, 절도, 성추행, 재물손괴 등을 통해 타 훈련생, 훈련교ㆍ강사, 훈련기관 등에 피해를 입힌 사실이 확인된 훈련생\n(단, 경미한 과실에 의한 경우이거나, 합의 등 피해회복을 위하여 진지한 노력을 기울인 경우 등 참작 사유가 있는 경우는 제외한다)",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-1. 제적기준"
+  },
+  {
+    "chunk_id": "NOTION-016-017",
+    "document_id": "NOTION-016",
+    "text": "2. 다음의 어느 하나에 해당하는 자는 서면 혹은 유선 경고 후 제적할 수 있다.\n   1. 국민내일배움카드 운영규정 제35조제2항에 따른 제적\n      1. 수강태도가 매우 불량하여 해당 훈련과정을 정상적으로 운영할 수 없다고 판단되는 경우\n      2. 훈련기관이 마련한 훈련생 관리기준상 제적 사유에 해당하는 경우\n         1. (불성실한 과제 제출)\n\n            ① 교강사(튜터) 판단 하, 과제물 내용이 타 훈련생과 100% 동일하거나 외부 코드 그대로 제출한 경우\n\n         2. (소통 불이행)\n\n            ① 카메라·마이크 미사용 등으로 훈련 참여 상태 확인이 지속적으로 불가능한 경우(서면으로만 소통하는 경우도 포함)\n\n            ② 운영단의 대면 면담 요청 시 응답하지 않거나, 거부하는 행위\n\n            ③ 연락이 되지 않아, 최대 3회 서면 안내 및 주의사항 경고를 받은 경우",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-1. 제적기준"
+  },
+  {
+    "chunk_id": "NOTION-016-018",
+    "document_id": "NOTION-016",
+    "text": "(면학 분위기 저해)\n\n         ① 반복적인 학습 방해, 무단 난입, 일방적·공격적 소통\n\n         ② 타인의 학습에 악영향을 준다고 판단되는 소통 및 학습 태도 등 부정적인 코멘트가 포함된 평가 결과\n\n         (허위정보 유포)\n\n         ① 지속적으로 근거 없는 허위 정보를 퍼뜨리며 학습 분위기를 해치는 행위\n\n         (안전 및 인권 침해)\n\n         ① 훈련과정 중 훈련생이 훈련교사, 강사, 운영 매니저를 포함한 훈련기관 관계자에게 폭언, 욕설, 협박, 성희롱, 인격 모독(반복적 비하, 인신 공격성 발언, 모욕적 표현) 등을 행하여 정신적 고통을 주거나 업무를 방해하는 행위\n\n         ② 행위에 대한 진위 여부는 증빙 자료를 통해 내부 기준에 따라 판단하며, 근로자 보호를 위해 훈련생을 즉시 분리 조치할 수 있습니다.\n\n         (기타)",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-1. 제적기준"
+  },
+  {
+    "chunk_id": "NOTION-016-019",
+    "document_id": "NOTION-016",
+    "text": "(기타)\n\n         ① 성 범죄 등 형사 처벌의 이력이 발각된 훈련생은 훈련 품질을 위해 제적 권고를 할 수 있으며, 개인으로 분리하여 훈련을 진행할 수 있다.\n\n         근거 법률에 따른 구체 사유\n\n         금고 이상의 형의 선고유예를 받은 경우에 그 선고유예 기간 중에 있는 자 - 법원의 판결 또는 다른 법률에 따라 자격이 상실되거나 정지된 자\n\n         ｢형법｣ 제303조 또는 ｢성폭력범죄의 처벌 등에 관한 특례법｣ 제10조에 규정된 죄를 범한 사람으로서 300만원 이상의 벌금형을 선고받고 그 형이 확정된 자\n\n         ｢성폭력범죄의 처벌 등에 관한 특례법｣ 제2조에 따른 성폭력범죄를 범한 사람으로서 100만원 이상의 벌금형을 선고받고 그 형이 확정된 자",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-1. 제적기준"
+  },
+  {
+    "chunk_id": "NOTION-016-020",
+    "document_id": "NOTION-016",
+    "text": "미성년자에 대하여 ｢성폭력범죄의 처벌 등에 관한 특례법｣ 제2조에 따른 성폭력범죄, ｢아동･청소년의 성보호에 관한 법률｣ 제2조제2호에 따른 아동･청소년대상 성범죄를 저질러 파면･해임되거나 형 또는 치료감호를 선고받아 그 형 또는 치료감호가 확정된 자\n(2019.4.17. 이후에 발생한 행위에 적용)\n\n         ｢정보통신망 이용촉진 및 정보보호 등에 관한 법률｣ 제74조제1항제2호 및 제3호에 규정된 죄를 범한 사람으로서 100만원 이상의 벌금형을 선고받고 그 형이 확정된 자\n\n         ｢스토킹범죄의 처벌 등에 관한 법률｣ 제2조제2호에 따른 스토킹범죄를 범한 사람으로서 100만원 이상의 벌금형을 선고받고 그 형이 확정된 자",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-1. 제적기준"
+  },
+  {
+    "chunk_id": "NOTION-016-021",
+    "document_id": "NOTION-016",
+    "text": "1. 사실 확인 및 기록 (공통)\n   1. 제적 사유 발생 시, 사실관계 확인 및 증빙 확보 후 사실확인서를 작성한다.\n2. 고지방식\n   - 훈련생이 서명을 거부하더라도, 서면으로 전달된 경우 고지되어 최종 인정되는 것으로 본다.\n3. 경고 및 제적 적용\n   1. 제35조 제1항 해당 시, 경고 절차 없이 사유발생일 다음 날 즉시 제적한다.\n   2. 제35조 제2항 및 훈련기관 관리기준 해당 시, 사실확인 및 고지는 1회의 공식 경고로 본다. 이후 동일·유사 위반이 반복 될 경우 제적 처리할 수 있다.\n4. 안전 및 인권 침해 예외\n\n   사안의 경중에 따라 경고 없이 즉시 제적하거나, 1회 경고 후 재발 시 제적할 수 있다.\n\n   사항의 경중함은 내부 운영 기준에 따라 운영진이 자체적으로 판단하며, 형사법상 모욕, 명예훼손, 업무방해 혐의로 고소, 고발 조치가 병행될 수 있다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-2. 제적 절차"
+  },
+  {
+    "chunk_id": "NOTION-016-022",
+    "document_id": "NOTION-016",
+    "text": "본 조항은「산업안전보건법」제41조(고객의 폭언 등으로 인한 건강장해 예방조치 등) 및 동법 시행령에 의거하여, 고객응대근로자 보호를 목적으로 한다.\n\n5. 국민내일배움카드 운영규정 제35조에 따라 사유발생일 다음 날에 제적한다.",
+    "source_path": "data/raw/notion/trainee-dismissal.md",
+    "source_location": "3-2. 제적 절차"
+  },
+  {
+    "chunk_id": "NOTION-017-001",
+    "document_id": "NOTION-017",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa8022be60c7f6df7d2ad8\n- Notion 최종 수정 시각: 2026-11-23T02:05:03.894Z\n\nLMS 가이드는 여러분들이 교육을 들으시면서 가장 많이 사용하게 되실 LMS에 대한 가이드입니다.\n\n주요하게 사용되는 탭들에 대한 설명을 작성해두었으니 참고해주세요.\n\n> KANT 홈페이지 로그인 ⇒ 프로필 클릭 ⇒ 학습 공간 LMS",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-017-002",
+    "document_id": "NOTION-017",
+    "text": "누적 성취도 및 오늘의 할일 제출, 공지를 확인할 수 있는 첫 화면입니다.\n\n앞으로 매일 이용하게 될 화면인 만큼, 어떤 정보와 기능이 있는지 미리 살펴보고 익숙해져\n주세요.\n\n학습 성취도\n\n- 여러분의 학습 활동과 과제 수행 현황 등을 바탕으로 누적 성취도를 확인할 수 있습니다.\n단순히 성취도를 확인하는 것을 넘어, 지금까지의 학습 진행 상황을 돌아보고 앞으로의 학습 방향과 목표를 점검하는 데 활용할 수 있습니다.\n\n오늘 할 일\n\n매일 수행해야 하는 학습 활동을 한눈에 확인할 수 있는 공간입니다.\n\n진단 퀴즈 1문제 풀기\n\n- 간단한 퀴즈를 통해 학습 내용을 점검하고, 부족한 부분을 확인할 수 있습니다. 매일 한 문제씩 풀어보며 배운 내용을 꾸준히 복습해 보시기 바랍니다.\n\nTIL 제출 [( TIL 작성가이드)](/p/3fc2dc3ef514801db163cc9d7a0b25ad?pvs=25)",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "① 학습 홈"
+  },
+  {
+    "chunk_id": "NOTION-017-003",
+    "document_id": "NOTION-017",
+    "text": "- TIL(Today I Learned)은 오늘 배운 내용과 새롭게 알게 된 점을 기록하는 학습 일지입니다. 하루의 학습을 돌아보고 배운 내용을 자신의 것으로 정리하는 데 도움이 됩니다.\n\nDQ (데일리 퀘스트 풀기)\n\n- 매일 제공되는 학습 문제를 통해 배운 내용을 직접 적용하고 이해도를 점검할 수 있습니다. 문제를 해결하는 과정에서 부족한 개념을 발견하고, 문제 해결 능력을 꾸준히 키워보시기 바랍니다.\n\n진단 퀴즈와 데일리 퀘스트의 ‘시작하기’ 버튼을 클릭하면 AI 튜터 화면으로 이동합니다.\nAI 튜터에서는 해당 학습 활동에 대한 자세한 내용을 확인하고, 문제 풀이와 학습을 이어갈 수 있습니다.\n\n- TIL 제출하기\n- 작성한 TIL의 링크를 입력해 간편하게 제출할 수 있는 공간입니다.\n\n오늘의 온도 (학습 컨디션 제출하기)\n\n여러분의 하루 학습 컨디션과 현재 상태를 공유할 수 있는 공간입니다.\n\n공지 및 가이드\n\n행정 관련 공지 및 가이드를 확인 하실 수 있습니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "① 학습 홈"
+  },
+  {
+    "chunk_id": "NOTION-017-004",
+    "document_id": "NOTION-017",
+    "text": "여러분들의 입실/퇴실 시간, 출석율, 공가 신청을 확인할 수 있는 탭입니다.\n\n- 단위기간 출석률이 50% 이하로 떨어지지 않도록 출석에 각별히 신경 써주세요.\n- 본인이 알고 있는 출석률과 LMS에 표시된 출석률이 다를 경우, 당황하지 마시고 담임매니저에게 정확한 출석률을 문의해주세요.\n- 입실은 09:10 이전, 퇴실은 17:50~23:59 사이에 반드시 진행해주세요. 특히 퇴실 버튼을 누르지 않고 귀가하는 경우가 많으니, 퇴실 처리를 꼭 확인해주세요.\n- 공가/휴가 신청\n  - 공가/휴가 신청은 발생일 기준 다음날 17시까지만 신청 가능합니다.\n  - 다음날이 주말, 공휴일인 경우 다음 영업일 17시까지 신청 가능합니다.\n  - 휴가는 공가 신청에 들어가신 후 신청 사유에서 선택하실 수 있습니다.\n  - 휴가는 단위 기간 당 1회씩 누적되며 잔여 휴가가 남아 있을 경우 사용 가능합니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "② 출결 관리"
+  },
+  {
+    "chunk_id": "NOTION-017-005",
+    "document_id": "NOTION-017",
+    "text": "성취도란?\n\n각 트랙의 최종 목표 직무를 달성하기 위해 필수적으로 달성해야 하는 핵심 역량\n\n- 이론: 실무 문제를 올바르게 이해하고 해결하기 위해 필요한 핵심 개념\n- 구현: 배운 개념을 실제 문제에 활용할 수 있는 수행 능력\n\n모든 성취도는 목표 직무 취업을 위한 필수 역량입니다.\n\n하나씩 달성하며 취업에 필요한 경쟁력을 완성해 보세요.\n\n여러분들이 트랙 전체적으로, 혹은 현재 진행중인 챕터 별로 어느 정도 성취도를 달성하고 있는지 확인할 수 있습니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "③ 성취도 현황"
+  },
+  {
+    "chunk_id": "NOTION-017-006",
+    "document_id": "NOTION-017",
+    "text": "챕터마다 제공된 과제 혹은 프로젝트를 제출하실 수 있는 곳입니다.\n\n구체적인 과제/프로젝트 제출 안내는 추후 안내가 나갈 예정입니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "④ 과제/프로젝트"
+  },
+  {
+    "chunk_id": "NOTION-017-007",
+    "document_id": "NOTION-017",
+    "text": "팀스파르타 내부에서 개발한 에이타니를 활용한 기능들이 모여있는 탭입니다.\n\n에이타니\n\n에이타니는 여러분들의 학습을 도와줄 AI 튜터입니다.\n\n다만 ChatGPT, Claude와 같이 정답을 모두 알려주지는 않으니 공부에 활용하기 좋습니다.\n\n자세한 내용은 에이타니 활용 가이드를 참고해보세요.  (→ [에이타니 활용 가이드로 이동](/3842dc3ef514803d9fc1d47f71a73260?pvs=25))\n\n데일리 퀘스트\n\n매일 학습한 내용을 체크해볼 수 있는 퀴즈 5문제가 출제됩니다.\n\n오늘 학습이 종료된 후, 퇴실하기 전 꼭 내가 오늘 잘 이해했는지 체크해보세요.\n\n모든 데일리 퀘스트는 제출 내용을 확인하고 복습 하실 수 있습니다.\n\n진단 퀴즈\n\n성취도 평가 문항 중 “이론”을 평가할 수 있는 퀴즈입니다.\n\n학습 들으시면서 평가 항목 중 풀 수 있는 항목을 학습했다면\n진단 퀴즈를 통해 내가 어느정도로 개념을 이해하고 있는지 성취도를 달성해보시길 바랍니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "⭐️ ⑤ AI 튜터"
+  },
+  {
+    "chunk_id": "NOTION-017-008",
+    "document_id": "NOTION-017",
+    "text": "문제는 무한대로 나오지만 그 중 3문제를 꼭 맞춰야 다음 항목으로 넘어갈 수 있으니 참고해 주세요!\n\n⭐️ 성취도를 하나씩 달성할 때마다 내가 성장하고 있다는 느낌을 받으실 겁니다. ⭐️\n\n복습 노트\n\n진단 퀴즈에서 틀렸던 문제 혹은 내가 특정 개념에 대해 더 학습하고 싶은 경우,\n복습 노트를 활용해주시면 됩니다.\n\n복습 노트에서는 내가 틀렸던 문제를 다시 풀어볼 수도 있고 선택한 항목에 대해 퀴즈를 계속 생성해서 풀어볼 수도 있습니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "⭐️ ⑤ AI 튜터"
+  },
+  {
+    "chunk_id": "NOTION-017-009",
+    "document_id": "NOTION-017",
+    "text": "KANT 생활 중 문의나 기기 대여가 필요한 경우 문의 및 신청 하는 곳입니다.\n\n실업 급여, 국취제 증빙 등을 위한 서류를 다운 받으실 수 있습니다.\n\n- 수기 출석부 발급\n- 훈련 참여 확인서 발급\n- 훈련 과정 탐색 결과표\n\n- 학습 및 진로 상담\n- 행정 문의/요청\n  - 훈련 장려금, 실업 급여, 국취제 등\n- 오류 불편 제보\n  - 오프라인 현장 시설 및 비품 부족 문의 방법\n    - 오류 불편 제보 클릭\n    - 유형 ⇒ 오프라인 현장 시설 및 비품 클릭\n    - 내용 ⇒ 상세 문의 내용 작성\n- 노트북 / 마우스 기기 대여 요청\n  - 대여 신청 방법\n\n    [Notion 연결 페이지](https://app.notion.com/p/39e2dc3ef51480dab0b8eab02c56cfcf)",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "⑥ 도움/문의"
+  },
+  {
+    "chunk_id": "NOTION-017-010",
+    "document_id": "NOTION-017",
+    "text": "자세한 대여 가이드는 슬랙 좌측[ #kant-장비문의 채널](slackChannel://2026kant.slack.com/C0BJKP9DP4M) ⇒ 책갈피 ⇒ [훈련장비 대여 가이드](/p/39e2dc3ef51480dab0b8eab02c56cfcf?pvs=25) 문서 안에서 확인하실 수 있습니다.\n\n    #kant-장비문의 채널 : [바로가기](slackChannel://2026kant.slack.com/C0BJKP9DP4M)\n\n  - 대여 기기 사용 중 이슈 문의 방법\n\n     책갈피 ⇒ [훈련 장비 문의 접수](https://docs.google.com/forms/d/e/1FAIpQLSfzaRWHRGAeXWT_G3KGPMsGUnH4B_YwknUX8tTdsO3WqK1gAw/viewform) 구글폼으로 제출 해주세요.\n\n    - ex) 고장, 파손, 분실 등",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "⑥ 도움/문의"
+  },
+  {
+    "chunk_id": "NOTION-017-011",
+    "document_id": "NOTION-017",
+    "text": "본격적인 교육에 앞서 현재 나의 기초 역량을 확인하는 진단 평가입니다.\n\n평가 결과를 통해 현재 나의 수준을 진단하고, 어떤 역량을 보완해야 하는지 확인할 수 있습니다.\n\n역량 평가는 총 3회차로 이루어져 있으며, 진행 방법은 단계별로 운영진 안내가 나갈 예정입니다.",
+    "source_path": "data/raw/notion/lms-guide.md",
+    "source_location": "⑦ AI 기초 역량 평가"
+  },
+  {
+    "chunk_id": "NOTION-018-001",
+    "document_id": "NOTION-018",
+    "text": "- Notion 원문: https://app.notion.com/p/4216d0d25caa80b3b811c55351fd2607\n- Notion 최종 수정 시각: 2026-11-23T02:05:40.706Z\n\n안녕하세요 KANT 수강생 여러분 !\n\n여러분의 원활한 학습을 위해 회의실을 마련해드리고 있습니다. 모두가 쾌적하게 이용할 수 있도록 이용 수칙을 준수해주시길 바랍니다.\n\n예약 방법\n\n- [회의실 예약 사이트](https://kant-frontend-production.up.railway.app/kant/meeting-rooms)에 접속합니다.\n  - 수강생은 16층 회의실만 사용 가능합니다.\n- 예약하기 버튼을 누릅니다.\n- 본인의 회차를 선택 후, 이름과 연락처 뒤 4자리를 입력합니다.\n- 원하는 시간대를 선택하고 예약 완료를 누릅니다.\n\n예약 안내",
+    "source_path": "data/raw/notion/meeting-room-guide.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-018-002",
+    "document_id": "NOTION-018",
+    "text": "예약 안내\n\n- 회의실은 8:00~21:00 동안 개방하고, 그 외의 시간에는 사용하실 수 없습니다.\n- 1인당 하루 최대 1회, 30분 예약 가능\n- 예약은 완료 즉시 자동 확정됩니다.\n- 이용 시작 1시간 전까지 취소할 수 있습니다.\n- 이용일 기준 당일 포함 최대 30일 전부터 사전 예약할 수 있습니다.\n\n이용 수칙\n\n- 수강생은 16층 회의실만 사용 가능합니다.\n- 회의실은 스터디와 팀 프로젝트 등 학습 및 협업 목적으로 이용해 주세요.\n- 휴식 공간처럼 이용하거나, 목적에 맞지 않게 사용하는 경우 즉시 이용이 제한될 수 있습니다.\n- 회의실에서는 간단한 다과 및 음료 외 취식이 금지됩니다. 식사는 엄격히 금지되니 꼭 지켜주세요.\n- 사용 후에는 전등 및 에어컨은 꼭 소등해주시고, 의자와 기타 물품들을 잘 정리정돈 해주세요.",
+    "source_path": "data/raw/notion/meeting-room-guide.md",
+    "source_location": "본문"
+  },
+  {
+    "chunk_id": "NOTION-019-001",
+    "document_id": "NOTION-019",
+    "text": "2026-08-03(월) 1주차 시간표: 09:00~11:00 입학식, 11:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E3:E13"
+  },
+  {
+    "chunk_id": "NOTION-019-002",
+    "document_id": "NOTION-019",
+    "text": "2026-08-04(화) 1주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F3:F13"
+  },
+  {
+    "chunk_id": "NOTION-019-003",
+    "document_id": "NOTION-019",
+    "text": "2026-08-05(수) 1주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G3:G13"
+  },
+  {
+    "chunk_id": "NOTION-019-004",
+    "document_id": "NOTION-019",
+    "text": "2026-08-06(목) 1주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H3:H13"
+  },
+  {
+    "chunk_id": "NOTION-019-005",
+    "document_id": "NOTION-019",
+    "text": "2026-08-07(금) 1주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I3:I13"
+  },
+  {
+    "chunk_id": "NOTION-019-006",
+    "document_id": "NOTION-019",
+    "text": "2026-08-10(월) 2주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E20:E30"
+  },
+  {
+    "chunk_id": "NOTION-019-007",
+    "document_id": "NOTION-019",
+    "text": "2026-08-11(화) 2주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F20:F30"
+  },
+  {
+    "chunk_id": "NOTION-019-008",
+    "document_id": "NOTION-019",
+    "text": "2026-08-12(수) 2주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G20:G30"
+  },
+  {
+    "chunk_id": "NOTION-019-009",
+    "document_id": "NOTION-019",
+    "text": "2026-08-13(목) 2주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H20:H30"
+  },
+  {
+    "chunk_id": "NOTION-019-010",
+    "document_id": "NOTION-019",
+    "text": "2026-08-14(금) 2주차 시간표: 09:00~11:00 취업지원, 11:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I20:I30"
+  },
+  {
+    "chunk_id": "NOTION-019-011",
+    "document_id": "NOTION-019",
+    "text": "2026-08-17(월) 3주차 시간표: 09:00~18:00 광복절 대체공휴일",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E37:E47"
+  },
+  {
+    "chunk_id": "NOTION-019-012",
+    "document_id": "NOTION-019",
+    "text": "2026-08-18(화) 3주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F37:F47"
+  },
+  {
+    "chunk_id": "NOTION-019-013",
+    "document_id": "NOTION-019",
+    "text": "2026-08-19(수) 3주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G37:G47"
+  },
+  {
+    "chunk_id": "NOTION-019-014",
+    "document_id": "NOTION-019",
+    "text": "2026-08-20(목) 3주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H37:H47"
+  },
+  {
+    "chunk_id": "NOTION-019-015",
+    "document_id": "NOTION-019",
+    "text": "2026-08-21(금) 3주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I37:I47"
+  },
+  {
+    "chunk_id": "NOTION-019-016",
+    "document_id": "NOTION-019",
+    "text": "2026-08-24(월) 4주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E54:E64"
+  },
+  {
+    "chunk_id": "NOTION-019-017",
+    "document_id": "NOTION-019",
+    "text": "2026-08-25(화) 4주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F54:F64"
+  },
+  {
+    "chunk_id": "NOTION-019-018",
+    "document_id": "NOTION-019",
+    "text": "2026-08-26(수) 4주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G54:G64"
+  },
+  {
+    "chunk_id": "NOTION-019-019",
+    "document_id": "NOTION-019",
+    "text": "2026-08-27(목) 4주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H54:H64"
+  },
+  {
+    "chunk_id": "NOTION-019-020",
+    "document_id": "NOTION-019",
+    "text": "2026-08-28(금) 4주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I54:I64"
+  },
+  {
+    "chunk_id": "NOTION-019-021",
+    "document_id": "NOTION-019",
+    "text": "2026-08-31(월) 5주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E71:E81"
+  },
+  {
+    "chunk_id": "NOTION-019-022",
+    "document_id": "NOTION-019",
+    "text": "2026-09-01(화) 5주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F71:F81"
+  },
+  {
+    "chunk_id": "NOTION-019-023",
+    "document_id": "NOTION-019",
+    "text": "2026-09-02(수) 5주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어\n비고: 1 단위기간 종료(8/3 ~ 9/2) 단위기간 내 11일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G71:G86"
+  },
+  {
+    "chunk_id": "NOTION-019-024",
+    "document_id": "NOTION-019",
+    "text": "2026-09-03(목) 5주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H71:H81"
+  },
+  {
+    "chunk_id": "NOTION-019-025",
+    "document_id": "NOTION-019",
+    "text": "2026-09-04(금) 5주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I71:I81"
+  },
+  {
+    "chunk_id": "NOTION-019-026",
+    "document_id": "NOTION-019",
+    "text": "2026-09-07(월) 6주차 시간표: 09:00~13:00 AI Agent 풀스택 코어, 13:00~14:00 점심 시간, 14:00~18:00 AI Agent 풀스택 코어",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E88:E98"
+  },
+  {
+    "chunk_id": "NOTION-019-027",
+    "document_id": "NOTION-019",
+    "text": "2026-09-08(화) 6주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F88:F98"
+  },
+  {
+    "chunk_id": "NOTION-019-028",
+    "document_id": "NOTION-019",
+    "text": "2026-09-09(수) 6주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G88:G98"
+  },
+  {
+    "chunk_id": "NOTION-019-029",
+    "document_id": "NOTION-019",
+    "text": "2026-09-10(목) 6주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H88:H98"
+  },
+  {
+    "chunk_id": "NOTION-019-030",
+    "document_id": "NOTION-019",
+    "text": "2026-09-11(금) 6주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I88:I98"
+  },
+  {
+    "chunk_id": "NOTION-019-031",
+    "document_id": "NOTION-019",
+    "text": "2026-09-14(월) 7주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E105:E115"
+  },
+  {
+    "chunk_id": "NOTION-019-032",
+    "document_id": "NOTION-019",
+    "text": "2026-09-15(화) 7주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F105:F115"
+  },
+  {
+    "chunk_id": "NOTION-019-033",
+    "document_id": "NOTION-019",
+    "text": "2026-09-16(수) 7주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G105:G115"
+  },
+  {
+    "chunk_id": "NOTION-019-034",
+    "document_id": "NOTION-019",
+    "text": "2026-09-17(목) 7주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H105:H115"
+  },
+  {
+    "chunk_id": "NOTION-019-035",
+    "document_id": "NOTION-019",
+    "text": "2026-09-18(금) 7주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I105:I115"
+  },
+  {
+    "chunk_id": "NOTION-019-036",
+    "document_id": "NOTION-019",
+    "text": "2026-09-21(월) 8주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E122:E132"
+  },
+  {
+    "chunk_id": "NOTION-019-037",
+    "document_id": "NOTION-019",
+    "text": "2026-09-22(화) 8주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F122:F132"
+  },
+  {
+    "chunk_id": "NOTION-019-038",
+    "document_id": "NOTION-019",
+    "text": "2026-09-23(수) 8주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G122:G132"
+  },
+  {
+    "chunk_id": "NOTION-019-039",
+    "document_id": "NOTION-019",
+    "text": "2026-09-24(목) 8주차 시간표: 09:00~18:00 추석 연휴",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H122:H132"
+  },
+  {
+    "chunk_id": "NOTION-019-040",
+    "document_id": "NOTION-019",
+    "text": "2026-09-25(금) 8주차 시간표: 09:00~18:00 추석",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I122:I132"
+  },
+  {
+    "chunk_id": "NOTION-019-041",
+    "document_id": "NOTION-019",
+    "text": "2026-09-28(월) 9주차 시간표: 09:00~18:00 추석 연휴 대체공휴일",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E139:E149"
+  },
+  {
+    "chunk_id": "NOTION-019-042",
+    "document_id": "NOTION-019",
+    "text": "2026-09-29(화) 9주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F139:F149"
+  },
+  {
+    "chunk_id": "NOTION-019-043",
+    "document_id": "NOTION-019",
+    "text": "2026-09-30(수) 9주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G139:G149"
+  },
+  {
+    "chunk_id": "NOTION-019-044",
+    "document_id": "NOTION-019",
+    "text": "2026-10-01(목) 9주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H139:H149"
+  },
+  {
+    "chunk_id": "NOTION-019-045",
+    "document_id": "NOTION-019",
+    "text": "2026-10-02(금) 9주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현\n비고: 2 단위기간 종료(9/3 ~ 10/2) 단위기간 내 10일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I139:I154"
+  },
+  {
+    "chunk_id": "NOTION-019-046",
+    "document_id": "NOTION-019",
+    "text": "2026-10-05(월) 10주차 시간표: 09:00~18:00 개천절 대체공휴일",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E156:E166"
+  },
+  {
+    "chunk_id": "NOTION-019-047",
+    "document_id": "NOTION-019",
+    "text": "2026-10-06(화) 10주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F156:F166"
+  },
+  {
+    "chunk_id": "NOTION-019-048",
+    "document_id": "NOTION-019",
+    "text": "2026-10-07(수) 10주차 시간표: 09:00~13:00 프로젝트(1): AI 쇼핑몰 프론트엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(1): AI 쇼핑몰 프론트엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G156:G166"
+  },
+  {
+    "chunk_id": "NOTION-019-049",
+    "document_id": "NOTION-019",
+    "text": "2026-10-08(목) 10주차 시간표: 09:00~13:00 프로젝트(1): AI 쇼핑몰 프론트엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(1): AI 쇼핑몰 프론트엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H156:H166"
+  },
+  {
+    "chunk_id": "NOTION-019-050",
+    "document_id": "NOTION-019",
+    "text": "2026-10-09(금) 10주차 시간표: 09:00~18:00 한글날",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I156:I166"
+  },
+  {
+    "chunk_id": "NOTION-019-051",
+    "document_id": "NOTION-019",
+    "text": "2026-10-12(월) 11주차 시간표: 09:00~13:00 프로젝트(1): AI 쇼핑몰 프론트엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(1): AI 쇼핑몰 프론트엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E173:E183"
+  },
+  {
+    "chunk_id": "NOTION-019-052",
+    "document_id": "NOTION-019",
+    "text": "2026-10-13(화) 11주차 시간표: 09:00~13:00 프로젝트(1): AI 쇼핑몰 프론트엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(1): AI 쇼핑몰 프론트엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F173:F183"
+  },
+  {
+    "chunk_id": "NOTION-019-053",
+    "document_id": "NOTION-019",
+    "text": "2026-10-14(수) 11주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G173:G183"
+  },
+  {
+    "chunk_id": "NOTION-019-054",
+    "document_id": "NOTION-019",
+    "text": "2026-10-15(목) 11주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H173:H183"
+  },
+  {
+    "chunk_id": "NOTION-019-055",
+    "document_id": "NOTION-019",
+    "text": "2026-10-16(금) 11주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I173:I183"
+  },
+  {
+    "chunk_id": "NOTION-019-056",
+    "document_id": "NOTION-019",
+    "text": "2026-10-19(월) 12주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E190:E200"
+  },
+  {
+    "chunk_id": "NOTION-019-057",
+    "document_id": "NOTION-019",
+    "text": "2026-10-20(화) 12주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F190:F200"
+  },
+  {
+    "chunk_id": "NOTION-019-058",
+    "document_id": "NOTION-019",
+    "text": "2026-10-21(수) 12주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G190:G200"
+  },
+  {
+    "chunk_id": "NOTION-019-059",
+    "document_id": "NOTION-019",
+    "text": "2026-10-22(목) 12주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H190:H200"
+  },
+  {
+    "chunk_id": "NOTION-019-060",
+    "document_id": "NOTION-019",
+    "text": "2026-10-23(금) 12주차 시간표: 09:00~13:00 프로젝트(2): AI 쇼핑몰 백엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(2): AI 쇼핑몰 백엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I190:I200"
+  },
+  {
+    "chunk_id": "NOTION-019-061",
+    "document_id": "NOTION-019",
+    "text": "2026-10-26(월) 13주차 시간표: 09:00~13:00 프로젝트(2): AI 쇼핑몰 백엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(2): AI 쇼핑몰 백엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E207:E217"
+  },
+  {
+    "chunk_id": "NOTION-019-062",
+    "document_id": "NOTION-019",
+    "text": "2026-10-27(화) 13주차 시간표: 09:00~13:00 프로젝트(2): AI 쇼핑몰 백엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(2): AI 쇼핑몰 백엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F207:F217"
+  },
+  {
+    "chunk_id": "NOTION-019-063",
+    "document_id": "NOTION-019",
+    "text": "2026-10-28(수) 13주차 시간표: 09:00~13:00 프로젝트(2): AI 쇼핑몰 백엔드, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(2): AI 쇼핑몰 백엔드",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G207:G217"
+  },
+  {
+    "chunk_id": "NOTION-019-064",
+    "document_id": "NOTION-019",
+    "text": "2026-10-29(목) 13주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H207:H217"
+  },
+  {
+    "chunk_id": "NOTION-019-065",
+    "document_id": "NOTION-019",
+    "text": "2026-10-30(금) 13주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I207:I217"
+  },
+  {
+    "chunk_id": "NOTION-019-066",
+    "document_id": "NOTION-019",
+    "text": "2026-11-02(월) 14주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현\n비고: 3 단위기간 종료(10/3 ~ 11/2) 단위기간 내 10일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E224:E239"
+  },
+  {
+    "chunk_id": "NOTION-019-067",
+    "document_id": "NOTION-019",
+    "text": "2026-11-03(화) 14주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F224:F234"
+  },
+  {
+    "chunk_id": "NOTION-019-068",
+    "document_id": "NOTION-019",
+    "text": "2026-11-04(수) 14주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G224:G234"
+  },
+  {
+    "chunk_id": "NOTION-019-069",
+    "document_id": "NOTION-019",
+    "text": "2026-11-05(목) 14주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H224:H234"
+  },
+  {
+    "chunk_id": "NOTION-019-070",
+    "document_id": "NOTION-019",
+    "text": "2026-11-06(금) 14주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I224:I234"
+  },
+  {
+    "chunk_id": "NOTION-019-071",
+    "document_id": "NOTION-019",
+    "text": "2026-11-09(월) 15주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E241:E251"
+  },
+  {
+    "chunk_id": "NOTION-019-072",
+    "document_id": "NOTION-019",
+    "text": "2026-11-10(화) 15주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F241:F251"
+  },
+  {
+    "chunk_id": "NOTION-019-073",
+    "document_id": "NOTION-019",
+    "text": "2026-11-11(수) 15주차 시간표: 09:00~13:00 풀스택 AI 서비스 설계 및 구현, 13:00~14:00 점심 시간, 14:00~18:00 풀스택 AI 서비스 설계 및 구현",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G241:G251"
+  },
+  {
+    "chunk_id": "NOTION-019-074",
+    "document_id": "NOTION-019",
+    "text": "2026-11-12(목) 15주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H241:H251"
+  },
+  {
+    "chunk_id": "NOTION-019-075",
+    "document_id": "NOTION-019",
+    "text": "2026-11-13(금) 15주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I241:I251"
+  },
+  {
+    "chunk_id": "NOTION-019-076",
+    "document_id": "NOTION-019",
+    "text": "2026-11-16(월) 16주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E258:E268"
+  },
+  {
+    "chunk_id": "NOTION-019-077",
+    "document_id": "NOTION-019",
+    "text": "2026-11-17(화) 16주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F258:F268"
+  },
+  {
+    "chunk_id": "NOTION-019-078",
+    "document_id": "NOTION-019",
+    "text": "2026-11-18(수) 16주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G258:G268"
+  },
+  {
+    "chunk_id": "NOTION-019-079",
+    "document_id": "NOTION-019",
+    "text": "2026-11-19(목) 16주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H258:H268"
+  },
+  {
+    "chunk_id": "NOTION-019-080",
+    "document_id": "NOTION-019",
+    "text": "2026-11-20(금) 16주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I258:I268"
+  },
+  {
+    "chunk_id": "NOTION-019-081",
+    "document_id": "NOTION-019",
+    "text": "2026-11-23(월) 17주차 시간표: 09:00~13:00 프로젝트(3): RAG Agent 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(3): RAG Agent 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E275:E285"
+  },
+  {
+    "chunk_id": "NOTION-019-082",
+    "document_id": "NOTION-019",
+    "text": "2026-11-24(화) 17주차 시간표: 09:00~13:00 프로젝트(3): RAG Agent 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(3): RAG Agent 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F275:F285"
+  },
+  {
+    "chunk_id": "NOTION-019-083",
+    "document_id": "NOTION-019",
+    "text": "2026-11-25(수) 17주차 시간표: 09:00~13:00 프로젝트(3): RAG Agent 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(3): RAG Agent 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G275:G285"
+  },
+  {
+    "chunk_id": "NOTION-019-084",
+    "document_id": "NOTION-019",
+    "text": "2026-11-26(목) 17주차 시간표: 09:00~13:00 프로젝트(3): RAG Agent 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(3): RAG Agent 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H275:H285"
+  },
+  {
+    "chunk_id": "NOTION-019-085",
+    "document_id": "NOTION-019",
+    "text": "2026-11-27(금) 17주차 시간표: 09:00~13:00 프로젝트(3): RAG Agent 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(3): RAG Agent 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I275:I285"
+  },
+  {
+    "chunk_id": "NOTION-019-086",
+    "document_id": "NOTION-019",
+    "text": "2026-11-30(월) 18주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E292:E302"
+  },
+  {
+    "chunk_id": "NOTION-019-087",
+    "document_id": "NOTION-019",
+    "text": "2026-12-01(화) 18주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F292:F302"
+  },
+  {
+    "chunk_id": "NOTION-019-088",
+    "document_id": "NOTION-019",
+    "text": "2026-12-02(수) 18주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영\n비고: 4 단위기간 종료(11/3 ~ 12/2) 단위기간 내 11일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G292:G307"
+  },
+  {
+    "chunk_id": "NOTION-019-089",
+    "document_id": "NOTION-019",
+    "text": "2026-12-03(목) 18주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H292:H302"
+  },
+  {
+    "chunk_id": "NOTION-019-090",
+    "document_id": "NOTION-019",
+    "text": "2026-12-04(금) 18주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I292:I302"
+  },
+  {
+    "chunk_id": "NOTION-019-091",
+    "document_id": "NOTION-019",
+    "text": "2026-12-07(월) 19주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E309:E319"
+  },
+  {
+    "chunk_id": "NOTION-019-092",
+    "document_id": "NOTION-019",
+    "text": "2026-12-08(화) 19주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F309:F319"
+  },
+  {
+    "chunk_id": "NOTION-019-093",
+    "document_id": "NOTION-019",
+    "text": "2026-12-09(수) 19주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G309:G319"
+  },
+  {
+    "chunk_id": "NOTION-019-094",
+    "document_id": "NOTION-019",
+    "text": "2026-12-10(목) 19주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H309:H319"
+  },
+  {
+    "chunk_id": "NOTION-019-095",
+    "document_id": "NOTION-019",
+    "text": "2026-12-11(금) 19주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I309:I319"
+  },
+  {
+    "chunk_id": "NOTION-019-096",
+    "document_id": "NOTION-019",
+    "text": "2026-12-14(월) 20주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E326:E336"
+  },
+  {
+    "chunk_id": "NOTION-019-097",
+    "document_id": "NOTION-019",
+    "text": "2026-12-15(화) 20주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F326:F336"
+  },
+  {
+    "chunk_id": "NOTION-019-098",
+    "document_id": "NOTION-019",
+    "text": "2026-12-16(수) 20주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G326:G336"
+  },
+  {
+    "chunk_id": "NOTION-019-099",
+    "document_id": "NOTION-019",
+    "text": "2026-12-17(목) 20주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H326:H336"
+  },
+  {
+    "chunk_id": "NOTION-019-100",
+    "document_id": "NOTION-019",
+    "text": "2026-12-18(금) 20주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I326:I336"
+  },
+  {
+    "chunk_id": "NOTION-019-101",
+    "document_id": "NOTION-019",
+    "text": "2026-12-21(월) 21주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E343:E353"
+  },
+  {
+    "chunk_id": "NOTION-019-102",
+    "document_id": "NOTION-019",
+    "text": "2026-12-22(화) 21주차 시간표: 09:00~13:00 프로젝트(4): 오케스트레이션 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(4): 오케스트레이션 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F343:F353"
+  },
+  {
+    "chunk_id": "NOTION-019-103",
+    "document_id": "NOTION-019",
+    "text": "2026-12-23(수) 21주차 시간표: 09:00~13:00 프로젝트(4): 오케스트레이션 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(4): 오케스트레이션 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G343:G353"
+  },
+  {
+    "chunk_id": "NOTION-019-104",
+    "document_id": "NOTION-019",
+    "text": "2026-12-24(목) 21주차 시간표: 09:00~13:00 프로젝트(4): 오케스트레이션 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(4): 오케스트레이션 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H343:H353"
+  },
+  {
+    "chunk_id": "NOTION-019-105",
+    "document_id": "NOTION-019",
+    "text": "2026-12-25(금) 21주차 시간표: 09:00~18:00 성탄절",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I343:I353"
+  },
+  {
+    "chunk_id": "NOTION-019-106",
+    "document_id": "NOTION-019",
+    "text": "2026-12-28(월) 22주차 시간표: 09:00~13:00 프로젝트(4): 오케스트레이션 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(4): 오케스트레이션 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E360:E370"
+  },
+  {
+    "chunk_id": "NOTION-019-107",
+    "document_id": "NOTION-019",
+    "text": "2026-12-29(화) 22주차 시간표: 09:00~13:00 프로젝트(4): 오케스트레이션 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(4): 오케스트레이션 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F360:F370"
+  },
+  {
+    "chunk_id": "NOTION-019-108",
+    "document_id": "NOTION-019",
+    "text": "2026-12-30(수) 22주차 시간표: 09:00~13:00 프로젝트(4): 오케스트레이션 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(4): 오케스트레이션 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G360:G370"
+  },
+  {
+    "chunk_id": "NOTION-019-109",
+    "document_id": "NOTION-019",
+    "text": "2026-12-31(목) 22주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H360:H370"
+  },
+  {
+    "chunk_id": "NOTION-019-110",
+    "document_id": "NOTION-019",
+    "text": "2027-01-01(금) 22주차 시간표: 09:00~18:00 신정\n비고: 5 단위기간 종료(12/3 ~ 1/2) 단위기간 내 10일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I360:I375"
+  },
+  {
+    "chunk_id": "NOTION-019-111",
+    "document_id": "NOTION-019",
+    "text": "2027-01-04(월) 23주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E377:E387"
+  },
+  {
+    "chunk_id": "NOTION-019-112",
+    "document_id": "NOTION-019",
+    "text": "2027-01-05(화) 23주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F377:F387"
+  },
+  {
+    "chunk_id": "NOTION-019-113",
+    "document_id": "NOTION-019",
+    "text": "2027-01-06(수) 23주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G377:G387"
+  },
+  {
+    "chunk_id": "NOTION-019-114",
+    "document_id": "NOTION-019",
+    "text": "2027-01-07(목) 23주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H377:H387"
+  },
+  {
+    "chunk_id": "NOTION-019-115",
+    "document_id": "NOTION-019",
+    "text": "2027-01-08(금) 23주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I377:I387"
+  },
+  {
+    "chunk_id": "NOTION-019-116",
+    "document_id": "NOTION-019",
+    "text": "2027-01-11(월) 24주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E394:E404"
+  },
+  {
+    "chunk_id": "NOTION-019-117",
+    "document_id": "NOTION-019",
+    "text": "2027-01-12(화) 24주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 LLM 기반 AI 시스템 고도화 및 운영",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F394:F404"
+  },
+  {
+    "chunk_id": "NOTION-019-118",
+    "document_id": "NOTION-019",
+    "text": "2027-01-13(수) 24주차 시간표: 09:00~13:00 LLM 기반 AI 시스템 고도화 및 운영, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G394:G404"
+  },
+  {
+    "chunk_id": "NOTION-019-119",
+    "document_id": "NOTION-019",
+    "text": "2027-01-14(목) 24주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H394:H404"
+  },
+  {
+    "chunk_id": "NOTION-019-120",
+    "document_id": "NOTION-019",
+    "text": "2027-01-15(금) 24주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I394:I404"
+  },
+  {
+    "chunk_id": "NOTION-019-121",
+    "document_id": "NOTION-019",
+    "text": "2027-01-18(월) 25주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E411:E421"
+  },
+  {
+    "chunk_id": "NOTION-019-122",
+    "document_id": "NOTION-019",
+    "text": "2027-01-19(화) 25주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F411:F421"
+  },
+  {
+    "chunk_id": "NOTION-019-123",
+    "document_id": "NOTION-019",
+    "text": "2027-01-20(수) 25주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G411:G421"
+  },
+  {
+    "chunk_id": "NOTION-019-124",
+    "document_id": "NOTION-019",
+    "text": "2027-01-21(목) 25주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H411:H421"
+  },
+  {
+    "chunk_id": "NOTION-019-125",
+    "document_id": "NOTION-019",
+    "text": "2027-01-22(금) 25주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I411:I421"
+  },
+  {
+    "chunk_id": "NOTION-019-126",
+    "document_id": "NOTION-019",
+    "text": "2027-01-25(월) 26주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E428:E438"
+  },
+  {
+    "chunk_id": "NOTION-019-127",
+    "document_id": "NOTION-019",
+    "text": "2027-01-26(화) 26주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F428:F438"
+  },
+  {
+    "chunk_id": "NOTION-019-128",
+    "document_id": "NOTION-019",
+    "text": "2027-01-27(수) 26주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G428:G438"
+  },
+  {
+    "chunk_id": "NOTION-019-129",
+    "document_id": "NOTION-019",
+    "text": "2027-01-28(목) 26주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H428:H438"
+  },
+  {
+    "chunk_id": "NOTION-019-130",
+    "document_id": "NOTION-019",
+    "text": "2027-01-29(금) 26주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I428:I438"
+  },
+  {
+    "chunk_id": "NOTION-019-131",
+    "document_id": "NOTION-019",
+    "text": "2027-02-01(월) 27주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E445:E455"
+  },
+  {
+    "chunk_id": "NOTION-019-132",
+    "document_id": "NOTION-019",
+    "text": "2027-02-02(화) 27주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트\n비고: 6 단위기간 종료(1/3 ~ 2/2) 단위기간 내 11일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F445:F460"
+  },
+  {
+    "chunk_id": "NOTION-019-133",
+    "document_id": "NOTION-019",
+    "text": "2027-02-03(수) 27주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G445:G455"
+  },
+  {
+    "chunk_id": "NOTION-019-134",
+    "document_id": "NOTION-019",
+    "text": "2027-02-04(목) 27주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H445:H455"
+  },
+  {
+    "chunk_id": "NOTION-019-135",
+    "document_id": "NOTION-019",
+    "text": "2027-02-05(금) 27주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I445:I455"
+  },
+  {
+    "chunk_id": "NOTION-019-136",
+    "document_id": "NOTION-019",
+    "text": "2027-02-08(월) 28주차 시간표: 09:00~18:00 설날 연휴",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E462:E472"
+  },
+  {
+    "chunk_id": "NOTION-019-137",
+    "document_id": "NOTION-019",
+    "text": "2027-02-09(화) 28주차 시간표: 09:00~18:00 설날 대체공휴일",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F462:F472"
+  },
+  {
+    "chunk_id": "NOTION-019-138",
+    "document_id": "NOTION-019",
+    "text": "2027-02-10(수) 28주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G462:G472"
+  },
+  {
+    "chunk_id": "NOTION-019-139",
+    "document_id": "NOTION-019",
+    "text": "2027-02-11(목) 28주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H462:H472"
+  },
+  {
+    "chunk_id": "NOTION-019-140",
+    "document_id": "NOTION-019",
+    "text": "2027-02-12(금) 28주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I462:I472"
+  },
+  {
+    "chunk_id": "NOTION-019-141",
+    "document_id": "NOTION-019",
+    "text": "2027-02-15(월) 29주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E479:E489"
+  },
+  {
+    "chunk_id": "NOTION-019-142",
+    "document_id": "NOTION-019",
+    "text": "2027-02-16(화) 29주차 시간표: 09:00~13:00 프로젝트(5): AX 서비스 런칭 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 프로젝트(5): AX 서비스 런칭 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F479:F489"
+  },
+  {
+    "chunk_id": "NOTION-019-143",
+    "document_id": "NOTION-019",
+    "text": "2027-02-17(수) 29주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G479:G489"
+  },
+  {
+    "chunk_id": "NOTION-019-144",
+    "document_id": "NOTION-019",
+    "text": "2027-02-18(목) 29주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H479:H489"
+  },
+  {
+    "chunk_id": "NOTION-019-145",
+    "document_id": "NOTION-019",
+    "text": "2027-02-19(금) 29주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I479:I489"
+  },
+  {
+    "chunk_id": "NOTION-019-146",
+    "document_id": "NOTION-019",
+    "text": "2027-02-22(월) 30주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E496:E506"
+  },
+  {
+    "chunk_id": "NOTION-019-147",
+    "document_id": "NOTION-019",
+    "text": "2027-02-23(화) 30주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F496:F506"
+  },
+  {
+    "chunk_id": "NOTION-019-148",
+    "document_id": "NOTION-019",
+    "text": "2027-02-24(수) 30주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G496:G506"
+  },
+  {
+    "chunk_id": "NOTION-019-149",
+    "document_id": "NOTION-019",
+    "text": "2027-02-25(목) 30주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H496:H506"
+  },
+  {
+    "chunk_id": "NOTION-019-150",
+    "document_id": "NOTION-019",
+    "text": "2027-02-26(금) 30주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I496:I506"
+  },
+  {
+    "chunk_id": "NOTION-019-151",
+    "document_id": "NOTION-019",
+    "text": "2027-03-01(월) 31주차 시간표: 09:00~18:00 삼일절",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E513:E523"
+  },
+  {
+    "chunk_id": "NOTION-019-152",
+    "document_id": "NOTION-019",
+    "text": "2027-03-02(화) 31주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트\n비고: 7 단위기간 종료(2/3 ~ 3/2) 단위기간 내 9일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F513:F528"
+  },
+  {
+    "chunk_id": "NOTION-019-153",
+    "document_id": "NOTION-019",
+    "text": "2027-03-03(수) 31주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G513:G523"
+  },
+  {
+    "chunk_id": "NOTION-019-154",
+    "document_id": "NOTION-019",
+    "text": "2027-03-04(목) 31주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H513:H523"
+  },
+  {
+    "chunk_id": "NOTION-019-155",
+    "document_id": "NOTION-019",
+    "text": "2027-03-05(금) 31주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I513:I523"
+  },
+  {
+    "chunk_id": "NOTION-019-156",
+    "document_id": "NOTION-019",
+    "text": "2027-03-08(월) 32주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E530:E540"
+  },
+  {
+    "chunk_id": "NOTION-019-157",
+    "document_id": "NOTION-019",
+    "text": "2027-03-09(화) 32주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F530:F540"
+  },
+  {
+    "chunk_id": "NOTION-019-158",
+    "document_id": "NOTION-019",
+    "text": "2027-03-10(수) 32주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G530:G540"
+  },
+  {
+    "chunk_id": "NOTION-019-159",
+    "document_id": "NOTION-019",
+    "text": "2027-03-11(목) 32주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H530:H540"
+  },
+  {
+    "chunk_id": "NOTION-019-160",
+    "document_id": "NOTION-019",
+    "text": "2027-03-12(금) 32주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I530:I540"
+  },
+  {
+    "chunk_id": "NOTION-019-161",
+    "document_id": "NOTION-019",
+    "text": "2027-03-15(월) 33주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E547:E557"
+  },
+  {
+    "chunk_id": "NOTION-019-162",
+    "document_id": "NOTION-019",
+    "text": "2027-03-16(화) 33주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F547:F557"
+  },
+  {
+    "chunk_id": "NOTION-019-163",
+    "document_id": "NOTION-019",
+    "text": "2027-03-17(수) 33주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G547:G557"
+  },
+  {
+    "chunk_id": "NOTION-019-164",
+    "document_id": "NOTION-019",
+    "text": "2027-03-18(목) 33주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H547:H557"
+  },
+  {
+    "chunk_id": "NOTION-019-165",
+    "document_id": "NOTION-019",
+    "text": "2027-03-19(금) 33주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I547:I557"
+  },
+  {
+    "chunk_id": "NOTION-019-166",
+    "document_id": "NOTION-019",
+    "text": "2027-03-22(월) 34주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E564:E574"
+  },
+  {
+    "chunk_id": "NOTION-019-167",
+    "document_id": "NOTION-019",
+    "text": "2027-03-23(화) 34주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F564:F574"
+  },
+  {
+    "chunk_id": "NOTION-019-168",
+    "document_id": "NOTION-019",
+    "text": "2027-03-24(수) 34주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G564:G574"
+  },
+  {
+    "chunk_id": "NOTION-019-169",
+    "document_id": "NOTION-019",
+    "text": "2027-03-25(목) 34주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H564:H574"
+  },
+  {
+    "chunk_id": "NOTION-019-170",
+    "document_id": "NOTION-019",
+    "text": "2027-03-26(금) 34주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I564:I574"
+  },
+  {
+    "chunk_id": "NOTION-019-171",
+    "document_id": "NOTION-019",
+    "text": "2027-03-29(월) 35주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E581:E591"
+  },
+  {
+    "chunk_id": "NOTION-019-172",
+    "document_id": "NOTION-019",
+    "text": "2027-03-30(화) 35주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F581:F591"
+  },
+  {
+    "chunk_id": "NOTION-019-173",
+    "document_id": "NOTION-019",
+    "text": "2027-03-31(수) 35주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G581:G591"
+  },
+  {
+    "chunk_id": "NOTION-019-174",
+    "document_id": "NOTION-019",
+    "text": "2027-04-01(목) 35주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H581:H591"
+  },
+  {
+    "chunk_id": "NOTION-019-175",
+    "document_id": "NOTION-019",
+    "text": "2027-04-02(금) 35주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트\n비고: 8 단위기간 종료(3/3 ~ 4/2) 단위기간 내 12일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I581:I596"
+  },
+  {
+    "chunk_id": "NOTION-019-176",
+    "document_id": "NOTION-019",
+    "text": "2027-04-05(월) 36주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E598:E608"
+  },
+  {
+    "chunk_id": "NOTION-019-177",
+    "document_id": "NOTION-019",
+    "text": "2027-04-06(화) 36주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F598:F608"
+  },
+  {
+    "chunk_id": "NOTION-019-178",
+    "document_id": "NOTION-019",
+    "text": "2027-04-07(수) 36주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G598:G608"
+  },
+  {
+    "chunk_id": "NOTION-019-179",
+    "document_id": "NOTION-019",
+    "text": "2027-04-08(목) 36주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H598:H608"
+  },
+  {
+    "chunk_id": "NOTION-019-180",
+    "document_id": "NOTION-019",
+    "text": "2027-04-09(금) 36주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I598:I608"
+  },
+  {
+    "chunk_id": "NOTION-019-181",
+    "document_id": "NOTION-019",
+    "text": "2027-04-12(월) 37주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E615:E625"
+  },
+  {
+    "chunk_id": "NOTION-019-182",
+    "document_id": "NOTION-019",
+    "text": "2027-04-13(화) 37주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F615:F625"
+  },
+  {
+    "chunk_id": "NOTION-019-183",
+    "document_id": "NOTION-019",
+    "text": "2027-04-14(수) 37주차 시간표: 09:00~13:00 AI Kaggle 프로젝트, 13:00~14:00 점심 시간, 14:00~18:00 AI Kaggle 프로젝트",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G615:G625"
+  },
+  {
+    "chunk_id": "NOTION-019-184",
+    "document_id": "NOTION-019",
+    "text": "2027-04-15(목) 37주차 시간표: 09:00~13:00 기업초청발표회, 13:00~14:00 점심 시간, 14:00~16:00 기업초청발표회, 16:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H615:H625"
+  },
+  {
+    "chunk_id": "NOTION-019-185",
+    "document_id": "NOTION-019",
+    "text": "2027-04-16(금) 37주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I615:I625"
+  },
+  {
+    "chunk_id": "NOTION-019-186",
+    "document_id": "NOTION-019",
+    "text": "2027-04-19(월) 38주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E632:E642"
+  },
+  {
+    "chunk_id": "NOTION-019-187",
+    "document_id": "NOTION-019",
+    "text": "2027-04-20(화) 38주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F632:F642"
+  },
+  {
+    "chunk_id": "NOTION-019-188",
+    "document_id": "NOTION-019",
+    "text": "2027-04-21(수) 38주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G632:G642"
+  },
+  {
+    "chunk_id": "NOTION-019-189",
+    "document_id": "NOTION-019",
+    "text": "2027-04-22(목) 38주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H632:H642"
+  },
+  {
+    "chunk_id": "NOTION-019-190",
+    "document_id": "NOTION-019",
+    "text": "2027-04-23(금) 38주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I632:I642"
+  },
+  {
+    "chunk_id": "NOTION-019-191",
+    "document_id": "NOTION-019",
+    "text": "2027-04-26(월) 39주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E649:E659"
+  },
+  {
+    "chunk_id": "NOTION-019-192",
+    "document_id": "NOTION-019",
+    "text": "2027-04-27(화) 39주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F649:F659"
+  },
+  {
+    "chunk_id": "NOTION-019-193",
+    "document_id": "NOTION-019",
+    "text": "2027-04-28(수) 39주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G649:G659"
+  },
+  {
+    "chunk_id": "NOTION-019-194",
+    "document_id": "NOTION-019",
+    "text": "2027-04-29(목) 39주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H649:H659"
+  },
+  {
+    "chunk_id": "NOTION-019-195",
+    "document_id": "NOTION-019",
+    "text": "2027-04-30(금) 39주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원\n비고: 9 단위기간 종료(4/3 ~ 5/2) 단위기간 내 10일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I649:I664"
+  },
+  {
+    "chunk_id": "NOTION-019-196",
+    "document_id": "NOTION-019",
+    "text": "2027-05-03(월) 40주차 시간표: 09:00~18:00 노동절 대체휴무",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E666:E676"
+  },
+  {
+    "chunk_id": "NOTION-019-197",
+    "document_id": "NOTION-019",
+    "text": "2027-05-04(화) 40주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F666:F676"
+  },
+  {
+    "chunk_id": "NOTION-019-198",
+    "document_id": "NOTION-019",
+    "text": "2027-05-05(수) 40주차 시간표: 09:00~18:00 어린이날",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G666:G676"
+  },
+  {
+    "chunk_id": "NOTION-019-199",
+    "document_id": "NOTION-019",
+    "text": "2027-05-06(목) 40주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H666:H676"
+  },
+  {
+    "chunk_id": "NOTION-019-200",
+    "document_id": "NOTION-019",
+    "text": "2027-05-07(금) 40주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I666:I676"
+  },
+  {
+    "chunk_id": "NOTION-019-201",
+    "document_id": "NOTION-019",
+    "text": "2027-05-10(월) 41주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!E683:E693"
+  },
+  {
+    "chunk_id": "NOTION-019-202",
+    "document_id": "NOTION-019",
+    "text": "2027-05-11(화) 41주차 시간표: 09:00~13:00 취업지원, 13:00~14:00 점심 시간, 14:00~18:00 취업지원",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!F683:F693"
+  },
+  {
+    "chunk_id": "NOTION-019-203",
+    "document_id": "NOTION-019",
+    "text": "2027-05-12(수) 41주차 시간표: 09:00~11:00 취업지원, 11:00~18:00 수료식",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!G683:G693"
+  },
+  {
+    "chunk_id": "NOTION-019-204",
+    "document_id": "NOTION-019",
+    "text": "2027-05-13(목) 41주차 시간표: 09:00~18:00 부처님오신날",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!H683:H693"
+  },
+  {
+    "chunk_id": "NOTION-019-205",
+    "document_id": "NOTION-019",
+    "text": "2027-05-14(금) 41주차 시간표: 09:00~18:00 자체 휴무일\n비고: 10 단위기간 종료(5/3 ~ 5/14) 단위기간 내 3일 이상 결석 시 제적",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!I683:I698"
+  },
+  {
+    "chunk_id": "NOTION-019-206",
+    "document_id": "NOTION-019",
+    "text": "단위 기간 별 훈련일수에 따른 제적 기준\n1 단위기간: 2026-08-03 ~ 2026-09-02 (22일) : 11일 이상 결석 시 제적\n2 단위기간: 2026-09-03 ~ 2026-10-02 (19일) : 10일 이상 결석 시 제적\n3 단위기간: 2026-10-03 ~ 2026-11-02 (19일) : 10일 이상 결석 시 제적\n4 단위기간: 2026-11-03 ~ 2026-12-02 (22일) : 11일 이상 결석 시 제적\n5 단위기간: 2026-12-03 ~ 2027-01-02 (20일) : 10일 이상 결석 시 제적\n6 단위기간: 2027-01-03 ~ 2027-02-02 (22일) : 11일 이상 결석 시 제적\n7 단위기간: 2027-02-03 ~ 2027-03-02 (17일) : 9일 이상 결석 시 제적\n8 단위기간: 2027-03-03 ~ 2027-04-02 (23일) : 12일 이상 결석 시 제적\n9 단위기간: 2027-04-03 ~ 2027-05-02 (20일) : 10일 이상 결석 시 제적\n10 단위기간: 2027-05-03 ~ 2027-05-14 (6일) : 제적 적용 제외",
+    "source_path": "data/raw/notion/assets/KANT_AX_시간표.xlsx",
+    "source_location": "시트1!K4:L13"
+  }
+]
