@@ -19,6 +19,16 @@ def load(run_dir: Path, run_id: str) -> dict:
 def delta(b: str, i: str):
     return round(float(i) - float(b), 3) if b != "" and i != "" else ""
 
+def find_unscored(base: dict, imp: dict) -> list[str]:
+    """Answerable questions whose CP or CR is missing on either side."""
+    problems = []
+    for q in sorted(set(base) | set(imp)):
+        rows = [r for r in (base.get(q), imp.get(q)) if r is not None]
+        if any("no-evidence question" in r["note"] for r in rows):
+            continue
+        if len(rows) < 2 or any(r[m] == "" for r in rows for m in PASS_METRICS):
+            problems.append(q)
+    return problems
 
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -49,8 +59,14 @@ def main() -> None:
         deltas[m] = i - b
         print(f"{m:<18}{b:>10.3f}{i:>10.3f}{i - b:>+10.3f}  {len(pairs)}")
 
-    passed = all(deltas.get(m, 0) > 0 for m in PASS_METRICS)
-    print(f"regression_passed: {str(passed).lower()}  (rule: {' and '.join(PASS_METRICS)} must go up)")
+    unscored = find_unscored(base, imp)
+    if unscored:
+        verdict = "pending"
+        print(f"PENDING: CP/CR missing or failed on: {', '.join(unscored)}. "
+              "Re-score these questions, then compare again.")
+    else:
+        verdict = str(all(deltas.get(m, 0) > 0 for m in PASS_METRICS)).lower()
+    print(f"regression_passed: {verdict}  (rule: {' and '.join(PASS_METRICS)} must go up)")
     dropped = [m for m in METRICS if m not in PASS_METRICS and deltas.get(m, 0) < 0]
     if dropped:
         print(f"NOTE: went down: {', '.join(dropped)}")
