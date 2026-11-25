@@ -37,11 +37,11 @@ def diagnose(row: dict) -> list[tuple[str, str, str]]:
     # 답변 진단
     if f is not None and f < THRESHOLD:
         found.append(("GENERATION_FAILURE", "답변", "자료에 없는 내용을 만듦: '문맥만 사용' 규칙 강화"))
-    if ar is not None and ar < THRESHOLD:
-        found.append(("OFF_TOPIC", "답변", "질문과 다른 답: 프롬프트 점검"))
+    if ar is not None and ar < THRESHOLD:  # AR은 참고용: 담당자 목록에 올리지 않음
+        found.append(("AR_LOW", "", "참고용: AR 낮음. 답변을 직접 읽고 판단"))
 
-    if not found:
-        found.append(("PASS", "", "문제 없음"))
+    if not any(owner for _, owner, _ in found):
+        found.insert(0, ("PASS", "", "문제 없음"))
     return found
 
 
