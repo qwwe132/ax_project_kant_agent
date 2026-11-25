@@ -10,8 +10,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-017",
-        "chunk_id": null,
-        "source_location": "② 출결 관리 > 공가/휴가 신청"
+        "chunk_id": "NOTION-017-007",
+        "source_location": "② 출결 관리"
       }
     ]
   },
@@ -25,8 +25,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-017",
-        "chunk_id": null,
-        "source_location": "⑥ 도움/문의 > 실업급여·국취제 증빙 서류 안내"
+        "chunk_id": "NOTION-017-015",
+        "source_location": "⑥ 도움/문의"
       }
     ]
   },
@@ -41,8 +41,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-009",
-        "chunk_id": null,
-        "source_location": "하단 FAQ > 과제를 미완성 또는 진행하지 않았어요 / 과제가 아직 완료되지 않았어요"
+        "chunk_id": "NOTION-009-003",
+        "source_location": "Q. 과제가 아직 완료되지 않았어요. 어떡하죠?"
+      },
+      {
+        "document_id": "NOTION-009",
+        "chunk_id": "NOTION-009-002",
+        "source_location": "과제 제출 방법"
       }
     ]
   },
@@ -57,8 +62,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-008",
-        "chunk_id": null,
-        "source_location": "6절 ‘트랙별 커리큘럼 OT 시청하기’ > 권한 요청 방법"
+        "chunk_id": "NOTION-008-008",
+        "source_location": "6. 트랙별 커리큘럼 OT 시청하기"
       }
     ]
   },
@@ -73,8 +78,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-014",
-        "chunk_id": null,
-        "source_location": "전체 인정 사유 및 필요 증빙자료 표의 질병 항목 및 대표 사유 별 증빙 예시"
+        "chunk_id": "NOTION-014-004",
+        "source_location": "전체 인정 사유 및 필요 증빙자료"
+      },
+      {
+        "document_id": "NOTION-014",
+        "chunk_id": "NOTION-014-011",
+        "source_location": "본인 및 자녀의 질병/입원"
       }
     ]
   },
@@ -89,8 +99,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-019",
-        "chunk_id": null,
-        "source_location": "시트1 I275:I285 및 E292:E302"
+        "chunk_id": "NOTION-019-085",
+        "source_location": "시트1!I275:I285"
+      },
+      {
+        "document_id": "NOTION-019",
+        "chunk_id": "NOTION-019-086",
+        "source_location": "시트1!E292:E302"
       }
     ]
   },
@@ -105,8 +120,23 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-006",
-        "chunk_id": null,
-        "source_location": "3절 이렇게 활용해보세요 및 4절 AI 진단 퀴즈"
+        "chunk_id": "NOTION-006-003",
+        "source_location": "① 과제 / 프로젝트가 막막할 때"
+      },
+      {
+        "document_id": "NOTION-006",
+        "chunk_id": "NOTION-006-005",
+        "source_location": "③ 이해도 확인하고 싶을 때"
+      },
+      {
+        "document_id": "NOTION-006",
+        "chunk_id": "NOTION-006-006",
+        "source_location": "4. `AI 진단 퀴즈` 로 내 이해도를 검증해보세요"
+      },
+      {
+        "document_id": "NOTION-006",
+        "chunk_id": "NOTION-006-007",
+        "source_location": "추천 학습 흐름"
       }
     ]
   },
@@ -121,8 +151,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-009",
-        "chunk_id": null,
-        "source_location": "과제 제출 링크 및 과제 제출 방법 1단계"
+        "chunk_id": "NOTION-009-001",
+        "source_location": "과제 제출 링크"
+      },
+      {
+        "document_id": "NOTION-009",
+        "chunk_id": "NOTION-009-002",
+        "source_location": "과제 제출 방법"
       }
     ]
   },
@@ -136,8 +171,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-007",
-        "chunk_id": null,
-        "source_location": "5절 ‘QR 출석도 안 될 경우’"
+        "chunk_id": "NOTION-007-004",
+        "source_location": "5. QR 출석도 안 될 경우 🚨→ 셀카 (증빙 자료 확보)"
       }
     ]
   },
@@ -151,8 +186,23 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-014",
-        "chunk_id": null,
-        "source_location": "전체 인정 사유 및 필요 증빙자료 표의 질병 항목 및 공가 불인정 예시"
+        "chunk_id": "NOTION-014-004",
+        "source_location": "전체 인정 사유 및 필요 증빙자료"
+      },
+      {
+        "document_id": "NOTION-014",
+        "chunk_id": "NOTION-014-009",
+        "source_location": "전체 인정 사유 및 필요 증빙자료"
+      },
+      {
+        "document_id": "NOTION-014",
+        "chunk_id": "NOTION-014-011",
+        "source_location": "본인 및 자녀의 질병/입원"
+      },
+      {
+        "document_id": "NOTION-014",
+        "chunk_id": "NOTION-014-012",
+        "source_location": "본인 및 자녀의 질병/입원"
       }
     ]
   },
@@ -167,8 +217,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-017",
-        "chunk_id": null,
-        "source_location": "② 출결 관리 > 공가/휴가 신청의 주말·공휴일 예외"
+        "chunk_id": "NOTION-017-007",
+        "source_location": "② 출결 관리"
       }
     ]
   },
@@ -183,8 +233,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-015",
-        "chunk_id": null,
-        "source_location": "부정출결 해당 케이스 2번 및 적발 시 받는 불이익"
+        "chunk_id": "NOTION-015-003",
+        "source_location": "부정출결 해당 케이스"
+      },
+      {
+        "document_id": "NOTION-015",
+        "chunk_id": "NOTION-015-004",
+        "source_location": "부정출결 적발 시 받는 불이익"
       }
     ]
   },
@@ -199,8 +254,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-014",
-        "chunk_id": null,
-        "source_location": "전체 인정 사유 및 필요 증빙자료 표 > 결혼(본인, 자녀)"
+        "chunk_id": "NOTION-014-006",
+        "source_location": "전체 인정 사유 및 필요 증빙자료"
       }
     ]
   },
@@ -215,13 +270,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-013",
-        "chunk_id": null,
-        "source_location": "출결 규정 > 단순 실수나 입·퇴실 누락의 정정 불가"
+        "chunk_id": "NOTION-013-005",
+        "source_location": "본인인증과 출석체크"
       },
       {
         "document_id": "NOTION-014",
-        "chunk_id": null,
-        "source_location": "핵심 요약 > 퇴실 미체크 시 결석 처리"
+        "chunk_id": "NOTION-014-001",
+        "source_location": "✅ 핵심 요약"
       }
     ]
   },
@@ -236,8 +291,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-014",
-        "chunk_id": null,
-        "source_location": "핵심 요약 > 입실 시간 및 수강시간 기준"
+        "chunk_id": "NOTION-014-001",
+        "source_location": "✅ 핵심 요약"
       }
     ]
   },
@@ -251,8 +306,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-013",
-        "chunk_id": null,
-        "source_location": "훈련장려금 > 핵심 Point의 수령 조건"
+        "chunk_id": "NOTION-013-020",
+        "source_location": "훈련장려금"
       }
     ]
   },
@@ -267,8 +322,18 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-015",
-        "chunk_id": null,
-        "source_location": "부정출결이란? 및 부정출결 적발 시 받는 불이익"
+        "chunk_id": "NOTION-015-001",
+        "source_location": "부정출결이란?"
+      },
+      {
+        "document_id": "NOTION-015",
+        "chunk_id": "NOTION-015-004",
+        "source_location": "부정출결 적발 시 받는 불이익"
+      },
+      {
+        "document_id": "NOTION-015",
+        "chunk_id": "NOTION-015-005",
+        "source_location": "부정출결 적발 시 받는 불이익"
       }
     ]
   },

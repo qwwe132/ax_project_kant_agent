@@ -9,8 +9,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-017",
-        "chunk_id": null,
-        "source_location": "⑤ AI 튜터 > 진단 퀴즈"
+        "chunk_id": "NOTION-017-013",
+        "source_location": "진단 퀴즈"
       }
     ]
   },
@@ -25,8 +25,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-010",
-        "chunk_id": null,
-        "source_location": "3절 ‘포인트는 이렇게 쌓여요’ 표 및 중복 적립 안내"
+        "chunk_id": "NOTION-010-005",
+        "source_location": "⭐ 3. 포인트는 이렇게 쌓여요"
       }
     ]
   },
@@ -41,8 +41,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-010",
-        "chunk_id": null,
-        "source_location": "4절 ‘200P가 응모권 1장으로 바뀌어요’의 650P 예시"
+        "chunk_id": "NOTION-010-007",
+        "source_location": "🎟️ 4. 200P가 응모권 1장으로 바뀌어요"
       }
     ]
   },
@@ -57,8 +57,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-002",
-        "chunk_id": null,
-        "source_location": "생활 수칙 > 강의실 첫 번째 수칙"
+        "chunk_id": "NOTION-002-003",
+        "source_location": "🖥️ 강의실"
       }
     ]
   },
@@ -74,8 +74,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-005",
-        "chunk_id": null,
-        "source_location": "비밀번호 설정·변경 절차 1~5단계"
+        "chunk_id": "NOTION-005-001",
+        "source_location": "본문"
       }
     ]
   },
@@ -89,8 +89,13 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-018",
-        "chunk_id": null,
-        "source_location": "예약 방법 및 이용 수칙의 수강생 이용 층 안내"
+        "chunk_id": "NOTION-018-001",
+        "source_location": "본문"
+      },
+      {
+        "document_id": "NOTION-018",
+        "chunk_id": "NOTION-018-002",
+        "source_location": "본문"
       }
     ]
   },
@@ -104,8 +109,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-018",
-        "chunk_id": null,
-        "source_location": "예약 안내 > 하루 예약 횟수와 시간 제한"
+        "chunk_id": "NOTION-018-001",
+        "source_location": "본문"
       }
     ]
   },
@@ -120,8 +125,8 @@
     "allowed_evidence": [
       {
         "document_id": "NOTION-016",
-        "chunk_id": null,
-        "source_location": "‘수료하지 못하는 경우 자부담금은 어떻게 되나요?’"
+        "chunk_id": "NOTION-016-005",
+        "source_location": "💸 수료하지 못하는 경우 자부담금은 어떻게 되나요?"
       }
     ]
   },
