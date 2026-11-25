@@ -71,31 +71,53 @@ def show_bot(idx: int, msg: dict) -> None:
             show_citations(msg.get("citations", []))
 
 
-# API에 질문하고, 화면에 그릴 챗봇 메세지를 만든다.
-def ask_api(question: str) -> dict:
-    try:
-        res = requests.post(API_URL, json={"question": question}, timeout=60)
-        body = res.json()
-    except requests.RequestException:
-        body = {
-            "success": False,
-            "code": "CONNECTION_ERROR",
-            "message": "API 서버에 연결할 수 없습니다.",
-        }
-
-    if body.get("success"):
-        data = body["data"]
-        return {
-            "role": "assistant",
-            "kind": data["status"],
-            "content": data["answer"],
-            "citations": data["citations"],
-        }
+# 오류 말풍선용 챗봇 메시지를 만든다.
+def error_message(code: str, message: str) -> dict:
     return {
         "role": "assistant",
         "kind": "error",
-        "content": f"오류: {body.get('message')} ({body.get('code')})",
+        "content": f"오류: {message} ({code})",
         "citations": [],
+    }
+
+
+# API에 질문하고, 화면에 그릴 챗봇 메세지를 만든다.
+def ask_api(question: str) -> dict:
+    # 1) 서버에 연결
+    try:
+        res = requests.post(API_URL, json={"question": question}, timeout=60)
+    except requests.RequestException:
+        return error_message("CONNECTION_ERROR", "API 서버에 연결할 수 없습니다.")
+
+    # 2) 응답을 JSON으로 읽기 (HTML 같은 다른 응답이면 실패)
+    try:
+        body = res.json()
+    except ValueError:
+        return error_message("INVALID_RESPONSE", "API 응답 형식이 올바르지 않습니다.")
+
+    # 3) 응답이 객체(DICT)인지 확인 (null, 리스트 등 차단)
+    if not isinstance(body, dict):
+        return error_message("INVALID_RESPONSE", "API 응답 형식이 올바르지 않습니다.")
+
+    # 4) API가 보낸 실패 응답 (검증 실패, 서버 오류 등)
+    if not body.get("success"):
+        return error_message(body.get("code"), body.get("message"))
+
+    # 5) 성공 응답에 필요한 값이 다 있는지 확인
+    data = body.get("data")
+    if (
+        not isinstance(data, dict)
+        or data.get("status") not in ("ok", "no_evidence")
+        or not isinstance(data.get("answer"), str)
+        or not isinstance(data.get("citations"), list)
+    ):
+        return error_message("INVALID_RESPONSE", "API 응답 형식이 올바르지 않습니다.")
+
+    return {
+        "role": "assistant",
+        "kind": data["status"],
+        "content": data["answer"],
+        "citations": data["citations"],
     }
 
 
@@ -105,6 +127,7 @@ def show_message(idx: int, msg: dict) -> None:
         show_user(idx, msg)
     else:
         show_bot(idx, msg)
+
 
 # 메모리에 저장된 이전 대화 기록들을 화면에 모두 순서대로 그린다.
 for i, msg in enumerate(st.session_state["messages"]):
