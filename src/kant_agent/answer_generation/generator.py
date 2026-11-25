@@ -9,6 +9,11 @@ from kant_agent.answer_generation.schemas import CitedAnswerOutput
 
 load_dotenv()
 
+# 생성 모델과 프롬프트 버전 (평가 기록·보고서에 남긴다)
+# SYSTEM_PROMPT를 고치면 PROMPT_VERSION도 올린다. (v1 → v2)
+MODEL_NAME = "gpt-6-luna"
+PROMPT_VERSION = "v1"
+
 NO_EVIDENCE_MESSAGE = (
     "제공된 규정에서 관련 내용을 찾을 수 없습니다. 운영 담당자에게 확인해 주세요."
 )
@@ -48,7 +53,7 @@ def generate_answer(question: str, docs: list[Document]) -> CitedAnswerOutput:
         ]
     )
     model = init_chat_model(
-        model="gpt-6-luna",
+        model=MODEL_NAME,
         model_provider="openai",
         reasoning_effort="low",
     )
