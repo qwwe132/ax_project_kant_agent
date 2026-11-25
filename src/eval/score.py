@@ -33,6 +33,45 @@ def hit_at_5(item: dict, record: dict):
                 return 1
     return 0
 
+def evidence_match(ev: dict, c: dict) -> bool:
+    """True if a search result matches one allowed evidence."""
+    if ev.get("chunk_id") is not None:
+        return c["chunk_id"] == ev["chunk_id"]
+    return c["document_id"] == ev["document_id"] and c["source_location"] == ev["source_location"]
+
+
+def precision_recall_at_5(item: dict, record: dict):
+    """Precision@5 and Recall@5 for one question. None if no evidence is expected."""
+    allowed = item.get("allowed_evidence", [])
+    if not allowed:
+        return None
+    top5 = record["candidates"][:5]
+    relevant = sum(1 for c in top5 if any(evidence_match(ev, c) for ev in allowed))
+    found = sum(1 for ev in allowed if any(evidence_match(ev, c) for c in top5))
+    return relevant / 5, found / len(allowed)
+
+
+def write_metrics(path: Path, records: list[dict], items: dict) -> None:
+    """Save per-question metrics to a CSV. Rebuilt from the run record every time."""
+    fields = ["run_id", "question_id", "config", "type", "status",
+              "precision_at_5", "recall_at_5"]
+    with path.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for r in records:
+            item = items[r["question_id"]]
+            pr = precision_recall_at_5(item, r)
+            writer.writerow({
+                "run_id": r["run_id"],
+                "question_id": r["question_id"],
+                "config": r["config"],
+                "type": item.get("type", ""),
+                "status": r["status"],
+                "precision_at_5": "" if pr is None else round(pr[0], 3),
+                "recall_at_5": "" if pr is None else round(pr[1], 3),
+            })
+    print("saved metrics:", path)
+
 
 def build_rows(records: list[dict], items: dict) -> list[dict]:
     rows = []
@@ -88,7 +127,7 @@ def check_sheet(rows: list[dict]) -> list[str]:
             problems.append(f"{qid}: scored but scorer is empty")
     return problems
 
-def summarize(records: list[dict], rows: list[dict]) -> None:
+def summarize(records: list[dict], rows: list[dict], items: dict) -> None:
     answerable = [r for r in rows if r["hit_at_5"] != ""]
     no_evidence = [r for r in rows if r["hit_at_5"] == ""]
 
@@ -104,6 +143,13 @@ def summarize(records: list[dict], rows: list[dict]) -> None:
     if latencies:
         print(f"latency: mean {statistics.mean(latencies):.3f}s, median {statistics.median(latencies):.3f}s, n={len(latencies)}")
     print(f"errors: retrieve {retrieve_errors}, answer {answer_errors}")
+    
+    pr = [precision_recall_at_5(items[r["question_id"]], r) for r in records]
+    pr = [x for x in pr if x is not None]
+    if pr:
+        print("--- retrieval ---")
+        print(f"precision@5: mean {statistics.mean(p for p, _ in pr):.3f}, n={len(pr)}")
+        print(f"recall@5: mean {statistics.mean(r for _, r in pr):.3f}, n={len(pr)}")
 
     print("--- manual (from the scoring sheet) ---")
     for col, label, group in [
@@ -185,9 +231,10 @@ def main() -> None:
     else:
         print("using existing scoring sheet:", sheet_path)
 
+    write_metrics(run_dir / f"{args.run_id}_metrics.csv", records, items)
     sheet = read_sheet(sheet_path)
     check_ids(sheet, records)
-    summarize(records, merge_manual(auto_rows, sheet))
+    summarize(records, merge_manual(auto_rows, sheet), items)
 
 
 if __name__ == "__main__":
