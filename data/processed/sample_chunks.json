@@ -2,14 +2,14 @@
   {
     "chunk_id": "SAMPLE-001-001",
     "document_id": "SAMPLE-001",
-    "text": "평일 입실 마감은 09:10입니다. 09:10 이후 입실하면 지각으로 처리합니다.",
+    "text": "입실 기준\n평일 입실 마감은 09:10입니다. 09:10 이후 입실하면 지각으로 처리합니다.",
     "source_path": "data/sample/attendance.md",
     "source_location": "입실 기준"
   },
   {
     "chunk_id": "SAMPLE-002-001",
     "document_id": "SAMPLE-002",
-    "text": "본인의 질병으로 진료받아 공가를 신청할 때는 진료일과 질병코드가 적힌 진료확인서를 제출해야 합니다.",
+    "text": "질병 공가\n본인의 질병으로 진료받아 공가를 신청할 때는 진료일과 질병코드가 적힌 진료확인서를 제출해야 합니다.",
     "source_path": "data/sample/excused-absence.md",
     "source_location": "질병 공가"
   },
