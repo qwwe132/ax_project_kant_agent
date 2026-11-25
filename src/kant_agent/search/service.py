@@ -68,17 +68,33 @@ def load_collection_chunks(collection_name: str, engine: Engine) -> list[dict]:
     필드 누락 검사는 prepare_chunks()가 맡는다.
     색인 쪽 index()는 PGVector id에 해시를 쓰므로 chunk_id 순으로 정렬한다.
     """
+    from psycopg.errors import UndefinedTable
     from sqlalchemy import JSON, String, text
+    from sqlalchemy.exc import ProgrammingError
 
     query = text(_COLLECTION_CHUNKS_SQL).columns(
         id=String, document=String, cmetadata=JSON
     )
 
-    with engine.connect() as conn:
-        rows = conn.execute(query, {"collection_name": collection_name}).all()
+    try:
+        with engine.connect() as conn:
+            rows = conn.execute(query, {"collection_name": collection_name}).all()
+    except ProgrammingError as error:
+        # 색인을 한 번도 실행하지 않아 PGVector 테이블이 없는 경우.
+        # 검색 쪽에서 빈 테이블을 만들면 모든 질문이 "근거 없음"으로 조용히 끝나므로
+        # 테이블은 만들지 않고 실행 순서를 안내한다.
+        if isinstance(error.orig, UndefinedTable):
+            raise RuntimeError(
+                "색인 테이블이 없습니다. 먼저 색인을 실행하세요: "
+                "uv run python -m kant_agent.document_indexing.build_index"
+            ) from error
+        raise
 
     if not rows:
-        raise ValueError(f"컬렉션 '{collection_name}'이 없거나 비어 있습니다.")
+        raise ValueError(
+            f"컬렉션 '{collection_name}'이 없거나 비어 있습니다. "
+            "컬렉션 이름(SEARCH_COLLECTION)을 확인하거나 build_index를 실행하세요."
+        )
 
     chunk_list = []
 
