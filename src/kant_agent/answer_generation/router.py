@@ -7,7 +7,8 @@ from kant_agent.answer_generation.generator import answer_from_chunks
 from kant_agent.answer_generation.schemas import AskRequest
 from kant_agent.shared.core.schemas import APIResponse
 
-SAMPLE_CHUNKS_PATH = Path("data/fixtures/sample-chunks.json")
+ROOT = Path(__file__).resolve().parents[3]
+SAMPLE_CHUNKS_PATH = ROOT / "data" / "fixtures" / "sample-chunks.json"
 
 router = APIRouter(prefix="/v1/chatbot", tags=["KANT 규정 챗봇"])
 
