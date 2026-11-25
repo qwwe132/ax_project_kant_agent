@@ -110,14 +110,16 @@ def show_message(idx: int, msg: dict) -> None:
 for i, msg in enumerate(st.session_state["messages"]):
     show_message(i, msg)
 
-if prompt := st.chat_input(f"{BOT_NAME}에게 물어보세요."):
-    messages = st.session_state["messages"]
+if prompt := st.chat_input(f"{BOT_NAME}에게 물어보세요.", max_chars=500):
+    prompt = prompt.strip()
+    if prompt:
+        messages = st.session_state["messages"]
 
-    user_msg = {"role": "user", "content": prompt}
-    messages.append(user_msg)
-    show_message(len(messages) - 1, user_msg)
+        user_msg = {"role": "user", "content": prompt}
+        messages.append(user_msg)
+        show_message(len(messages) - 1, user_msg)
 
-    with st.spinner("답변을 준비하는 중..."):
-        bot_msg = ask_api(prompt)
-    messages.append(bot_msg)
-    show_message(len(messages) - 1, bot_msg)
+        with st.spinner("답변을 준비하는 중..."):
+            bot_msg = ask_api(prompt)
+        messages.append(bot_msg)
+        show_message(len(messages) - 1, bot_msg)
