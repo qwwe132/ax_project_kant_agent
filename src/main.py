@@ -1,16 +1,17 @@
-# This is a sample Python script.
+from fastapi import FastAPI
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from kant_agent.answer_generation.router import router as chatbot_router
+from kant_agent.shared.core.exception_handlers import (
+    register_exception_handlers,
+)
 
+app = FastAPI(
+    title="KANT AGENT API",
+    description="부트캠프 교육과정 규정 RAG 질의응답",
+    version="0.1.0",
+)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+register_exception_handlers(app)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# 라우터 등록
+app.include_router(chatbot_router)
