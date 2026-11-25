@@ -15,3 +15,4 @@ wheels/
 docs/project-brief.txt
 
 .env
+/docs/handoff.md

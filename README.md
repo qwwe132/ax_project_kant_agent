@@ -36,6 +36,16 @@
 2. 전처리 및 색인 재생성: <명령 작성>
 3. 인터페이스 실행: <명령 작성>
 4. 정상 답변·근거 없음 확인: <대표 질문과 예상 동작 작성>
-5. 평가 실행: <명령, 구성 및 결과 저장 위치 작성>
+5. 평가 실행: 프로젝트 환경에서 `uv run`으로 실행합니다. `python`으로 직접 실행하면 `kant_agent` 모듈을 찾지 못합니다. 루트 `.env`에 `OPENAI_API_KEY`가 필요합니다.
+   ```
+   uv run python src/eval/run_eval.py <run_id> <config> <eval_file> --kind <smoke|dev|final>
+   uv run python src/eval/score.py <run_id> <eval_file> --kind <smoke|dev|final>
+   ```
+   결과는 `results/<kind>/`에 `<run_id>.jsonl`(실행 원본)과 `<run_id>_scoring.csv`(수동 채점표)로 저장됩니다. 검색 연결 전에는 `--kind final`로 실행하지 않습니다.
 
 설계와 범위는 [문제 정의](docs/problem.md), 평가 파일 형식은 [평가셋 안내](eval/README.md), 결과 해석은 [비교 보고서](report.md)에 기록합니다.
+
+## 검색·재정렬 모듈
+
+`kant_agent.search`의 `search(question, mode)`로 A(Vector),
+B(BM25+Vector RRF), C(B+Cross-Encoder)를 선택합니다.

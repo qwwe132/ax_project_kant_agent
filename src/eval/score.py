@@ -170,6 +170,40 @@ def summarize(records: list[dict], rows: list[dict], items: dict) -> None:
     for p in check_sheet(rows):
         print("WARNING:", p)
 
+def check_ids(sheet: list[dict], records: list[dict]) -> None:
+    """Stop if the scoring sheet rows do not match the run record."""
+    sheet_ids = [r["question_id"] for r in sheet]
+    run_ids = [r["question_id"] for r in records]
+    problems = []
+    duplicated = sorted({q for q in sheet_ids if sheet_ids.count(q) > 1})
+    missing = [q for q in run_ids if q not in sheet_ids]
+    extra = [q for q in sheet_ids if q not in run_ids]
+    if duplicated:
+        problems.append(f"duplicated: {', '.join(duplicated)}")
+    if missing:
+        problems.append(f"missing: {', '.join(missing)}")
+    if extra:
+        problems.append(f"not in run: {', '.join(extra)}")
+    if problems:
+        raise SystemExit(
+            "Scoring sheet does not match the run record.\n"
+            + "\n".join(problems)
+            + "\nFix the sheet. Do not delete rows."
+        )
+
+
+#두 출처 합치기
+#자동칸은 원본 기록에서, 사람칸은 csv에서 가져옴
+def merge_manual(auto_rows: list[dict], sheet: list[dict]) -> list[dict]:
+    """Automatic columns from the run record, manual columns from the sheet."""
+    by_id = {r["question_id"]: r for r in sheet}
+    merged = []
+    for a in auto_rows:
+        row = {k: str(v) for k, v in a.items() if k not in MANUAL_COLUMNS}
+        row.update({c: by_id[a["question_id"]][c] for c in MANUAL_COLUMNS})
+        merged.append(row)
+    return merged
+
 
 def main() -> None:
     parser = argparse.ArgumentParser()
@@ -186,18 +220,21 @@ def main() -> None:
     if missing:
         raise SystemExit(f"Question IDs not in {args.eval_file}: {', '.join(missing)}\n"
                          "Check that the eval file matches this run.")
+    auto_rows = build_rows(records, items)
     sheet_path = run_dir / f"{args.run_id}_scoring.csv"
     if not sheet_path.exists():
         with sheet_path.open("w", encoding="utf-8-sig", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=FIELDS)
             writer.writeheader()
-            writer.writerows(build_rows(records, items))
+            writer.writerows(auto_rows)
         print("created scoring sheet:", sheet_path)
     else:
         print("using existing scoring sheet:", sheet_path)
 
     write_metrics(run_dir / f"{args.run_id}_metrics.csv", records, items)
-    summarize(records, read_sheet(sheet_path), items)
+    sheet = read_sheet(sheet_path)
+    check_ids(sheet, records)
+    summarize(records, merge_manual(auto_rows, sheet), items)
 
 
 if __name__ == "__main__":
