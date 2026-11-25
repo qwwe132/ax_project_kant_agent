@@ -40,7 +40,13 @@ _TOGGLE_HEADING = re.compile(
 
 # 표 전체(<table ...>...</table>)
 # 1번 그룹 = 여는 태그의 속성(header-row="true" 확인용), 2번 그룹 = 표 내용
-_TABLE = re.compile(r"<table([^>]*)>(.*?)</table>", re.DOTALL)
+# - (\s[^>]*|) : "table" 바로 뒤가 공백(속성 시작)이거나 아무것도 없을 때만
+#                매치한다. "<table-of-contents …/>" 같은 목차 태그를
+#                표로 잘못 잡지 않기 위해서다. (| 는 정규식 특강 6절)
+_TABLE = re.compile(r"<table(\s[^>]*|)>(.*?)</table>", re.DOTALL)
+
+# 머리글 행이 있는 표인지. 따옴표 종류("true", 'true')와 상관없이 잡는다.
+_HEADER_ROW_ATTR = re.compile(r"header-row=.true.")
 
 # 표 한 행(<tr>...</tr>)과 그 안의 칸
 # 칸은 일반 칸 <td>와 머리글 칸 <th>를 모두 잡는다. t[dh] = td 또는 th
@@ -135,15 +141,14 @@ def _table_repl(match: re.Match[str]) -> str:
 
     # header-row="true"가 없는 표는 첫 행이 머리글이라는 보장이 없어서
     # 칸 이름 없이 행만 한 줄씩 만든다. (아래 _table_row_repl과 같은 방식)
-    if 'header-row="true"' not in match.group(1):
+    if not _HEADER_ROW_ATTR.search(match.group(1)):
         return _TABLE_ROW.sub(_table_row_repl, match.group(2))
 
     rows = [_row_cells(row) for row in _TABLE_ROW.findall(match.group(2))]
     if not rows:
         return ""
     header = rows[0]
-    # 머리글 행도 한 줄로 남겨서 표가 어떤 칸으로 되어 있는지 보이게 한다.
-    lines = [" | ".join(header).rstrip(" |")]
+    lines = []
     for cells in rows[1:]:
         parts = []
         for col_index, value in enumerate(cells):
@@ -157,6 +162,10 @@ def _table_repl(match: re.Match[str]) -> str:
                 parts.append(value)
         if parts:
             lines.append(" | ".join(parts))
+    # 각 행에 칸 이름이 붙어 있으므로 머리글 행은 따로 남기지 않는다.
+    # 단, 데이터 행이 하나도 없는 표는 머리글이라도 남긴다.
+    if not lines:
+        lines = [" | ".join(header).rstrip(" |")]
     return "\n" + "\n".join(lines) + "\n"
 
 
