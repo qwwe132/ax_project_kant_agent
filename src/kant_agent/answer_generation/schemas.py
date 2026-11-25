@@ -7,10 +7,10 @@ class AskRequest(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
 
     question: str = Field(
-        default="몇 시부터 지각이야?",
         min_length=1,
         max_length=500,
         description="사용자 질문",
+        examples=["몇 시부터 지각이야?"],
     )
 
 
