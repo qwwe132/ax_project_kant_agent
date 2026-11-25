@@ -15,7 +15,6 @@ def retrieve(question: str) -> list[dict]:
     path = ROOT / "data" / "fixtures" / "sample-chunks.json"
     return json.loads(path.read_text(encoding="utf-8"))
 
-#TODO: 갈아끼기
 def answer(question: str, chunks: list[dict]) -> dict:
     """Answer step. Returns the answer text, citations, and a status."""
     return answer_from_chunks(question, chunks)
