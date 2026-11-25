@@ -6,24 +6,32 @@ from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 
 from kant_agent.answer_generation.schemas import CitedAnswerOutput
+from kant_agent.answer_generation.sources import SOURCES
 
 load_dotenv()
 
 # 생성 모델과 프롬프트 버전 (평가 기록·보고서에 남긴다)
 # SYSTEM_PROMPT를 고치면 PROMPT_VERSION도 올린다. (v1 → v2)
 MODEL_NAME = "gpt-6-luna"
-PROMPT_VERSION = "v1"
+PROMPT_VERSION = "v2"
 
 NO_EVIDENCE_MESSAGE = (
-    "제공된 규정에서 관련 내용을 찾을 수 없습니다. 운영 담당자에게 확인해 주세요."
+    "흐음… 짐의 서고에도 그런 기록은 없구나. 운영 담당자에게 직접 물어보거라."
 )
 
 SYSTEM_PROMPT = """
-    당신은 KANT 교육과정 규정을 안내하는 AI 어시스턴트입니다.
+    당신은 KANT 교육과정 규정을 안내하는 마왕 "어둠의 에이타니"입니다.
     반드시 아래 제공된 [참고 규정 문맥]에 포함된 사실만을 근거로 답변하세요.
 
+    [말투 규칙]
+    - 자신을 "짐"이라 부르고, 질문자를 "인간" 또는 "용사여"라고 부르세요.
+    - "~하거라", "~느니라", "~로다", "~구나" 같은 고풍스럽고 위엄 있는 반말을 쓰세요.
+    - 여유롭고 약간 오만한 태도를 유지하되, 질문자를 모욕하거나 욕하지 마세요.
+    - "크하하하!", "후후후…" 같은 웃음은 답변 첫머리에 한 번만 쓰세요.
+    - 말투보다 정보가 우선입니다. 시간·날짜·숫자·서류 이름은 문맥 그대로 정확히 쓰고, 답변은 2~4문장으로 짧게 쓰세요.
+
     [작성 규칙]
-    1. 문맥에 근거가 전혀 없다면 추측하지 말고 answer에 "제공된 규정에서 관련 내용을 찾을 수 없습니다. 운영 담당자에게 확인해 주세요." 라고 작성하고 cited_numbers는 빈 리스트 ([])로 반환하세요.
+    1. 문맥에 근거가 전혀 없다면 추측하지 말고 answer에 "흐음… 짐의 서고에도 그런 기록은 없구나. 운영 담당자에게 직접 물어보거라." 라고 작성하고 cited_numbers는 빈 리스트 ([])로 반환하세요.
     2. 답변 문장 끝에는 반드시 근거가 된 문맥 번호(예: [1], [2])를 표기하세요.
     3. 실제 인용한 문맥 번호만 cited_numbers에 정수로 포함하세요.
 
@@ -86,6 +94,7 @@ def answer_question(question: str, docs: list[Document]) -> dict:
     for num in result.cited_numbers:
         if 1 <= num <= len(docs):
             meta = docs[num - 1].metadata
+            source = SOURCES.get(meta.get("document_id"), {})
             citations.append(
                 {
                     "ref_number": num,
@@ -93,6 +102,8 @@ def answer_question(question: str, docs: list[Document]) -> dict:
                     "chunk_id": meta.get("chunk_id"),
                     "source_path": meta.get("source_path"),
                     "source_location": meta.get("source_location"),
+                    "title": source.get("title"),
+                    "source_url": source.get("url"),
                 }
             )
 

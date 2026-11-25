@@ -8,7 +8,10 @@ API_URL = "http://127.0.0.1:8000/v1/chatbot/ask"
 BOT_NAME = "어둠의 에이타니"
 BOT_AVATAR = Path(__file__).parent / "assets" / "bot.png"
 
-st.title("어둠의 에이타니 챗봇")
+# 제목 앞에 챗봇 프로필 이미지를 나란히 놓는다.
+with st.container(horizontal=True, vertical_alignment="center"):
+    st.image(BOT_AVATAR, width=64)
+    st.title("어둠의 에이타니 챗봇")
 
 # 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
 st.html(
@@ -43,22 +46,30 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
 
+# 마크다운에서 ~글자~ 가 취소선이 되지 않도록 ~ 를 글자 그대로 표시한다.
+# (예: 09:00~13:00, 13:00~14:00 이 취소선으로 깨지는 문제)
+def plain_tilde(text: str) -> str:
+    return text.replace("~", r"\~")
+
+
 # 답변 아래에 근거 목록을 표시한다.
 def show_citations(citations: list[dict]) -> None:
     if not citations:
         return
     with st.expander("참고 자료 보기"):
         for c in citations:
-            st.write(
-                f"[{c['ref_number']}] {c['document_id']} · "
-                f"{c['source_location']} ({c['source_path']})"
+            title = c.get("title") or c["document_id"]
+            url = c.get("source_url")
+            name = f"[{title}]({url})" if url else title
+            st.markdown(
+                f"[{c['ref_number']}] {name} · {c['source_location']}"
             )
 
 
 # 말풍선 이미지 - user
 def show_user(idx: int, msg: dict) -> None:
     with st.container(key=f"user-msg-{idx}"):
-        st.markdown(msg["content"], width="content")
+        st.markdown(plain_tilde(msg["content"]), width="content")
 
 
 # 말풍선 이미지 - chatbot
@@ -67,7 +78,7 @@ def show_bot(idx: int, msg: dict) -> None:
         st.caption(BOT_NAME)
         key = f"bot-msg-{msg['kind']}-{idx}"
         with st.container(key=key):
-            st.markdown(msg["content"], width="content")
+            st.markdown(plain_tilde(msg["content"]), width="content")
             show_citations(msg.get("citations", []))
 
 
