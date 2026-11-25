@@ -44,4 +44,3 @@
 
 `kant_agent.search`의 `search(question, mode)`로 A(Vector),
 B(BM25+Vector RRF), C(B+Cross-Encoder)를 선택합니다.
-설정·실행 명령·팀 연결 계약·검증 범위는 [검색 안내](docs/search.md)를 참고하세요.
