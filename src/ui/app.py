@@ -14,8 +14,7 @@ with st.container(horizontal=True, vertical_alignment="center"):
     st.title("어둠의 에이타니 챗봇")
 
 # 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
-st.html(
-    """
+st.html("""
     <style>
     div[class*="st-key-user-msg"] {
         background: #FEE500;
@@ -38,8 +37,7 @@ st.html(
     div[class*="st-key-bot-msg-no_evidence"] { background: #EEF4FF; }
     div[class*="st-key-bot-msg-error"] { background: #FDECEC; }
     </style>
-    """
-)
+    """)
 
 # 대화 기록을 저장할 메모리 공간(messages)이 없다면 새로 만든다.
 if "messages" not in st.session_state:
@@ -61,9 +59,7 @@ def show_citations(citations: list[dict]) -> None:
             title = c.get("title") or c["document_id"]
             url = c.get("source_url")
             name = f"[{title}]({url})" if url else title
-            st.markdown(
-                f"[{c['ref_number']}] {name} · {c['source_location']}"
-            )
+            st.markdown(f"[{c['ref_number']}] {name} · {c['source_location']}")
 
 
 # 말풍선 이미지 - user
@@ -118,7 +114,7 @@ def ask_api(question: str) -> dict:
     data = body.get("data")
     if (
         not isinstance(data, dict)
-        or data.get("status") not in ("ok", "no_evidence")
+        or data.get("status") not in ("ok", "no_evidence", "chat")
         or not isinstance(data.get("answer"), str)
         or not isinstance(data.get("citations"), list)
     ):
