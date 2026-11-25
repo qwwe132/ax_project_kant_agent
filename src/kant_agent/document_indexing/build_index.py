@@ -4,9 +4,11 @@
 실행 순서
 1) 문서 목록(data/sources.md)에서 색인할 파일과 문서 ID를 읽는다.
 2) 파일 형식(md, xlsx)에 맞는 로더로 청크를 만든다.
-3) 청크 전체를 data/processed/chunks.json에 저장한다.
+    문서 목록이나 청크가 비어 있으면 여기서 멈춘다. (기존 색인 보호)
+3) 같은 청크를 PGVector 컬렉션에 증분 적재한다. (교안 2장 7강)
+4) 적재가 성공한 뒤에 청크 전체를 data/processed/chunks.json에 저장한다.
     → 검색 담당의 setup_search(chunks_path, ...)가 이 파일을 읽는다.
-4) 같은 청크를 PGVector 컬렉션에 증분 적재한다. (교안 2장 7강)
+    (--chunks-only는 3을 건너뛰고 4만 한다.)
 
 사용법 (레포 루트에서)
     uv run python -m kant_agent.document_indexing.build_index
@@ -112,11 +114,23 @@ def load_chunks(file_path: str, document_id: str) -> list[dict]:
 
 def build_all_chunks(sources: dict[str, str]) -> list[dict]:
     """목록의 모든 원문을 청크로 만들고 빈 값·중복을 검사한다."""
+    # 적재는 cleanup="full"이라 "이번 실행에 없는 청크는 지운다".
+    # 문서 목록 표 형식이 바뀌어 목록이 비면, 빈 입력으로 적재해서
+    # 기존 컬렉션이 통째로 지워진다. 그래서 시작 전에 막는다.
+    if not sources:
+        raise ValueError(
+            "색인할 문서가 없습니다. 문서 목록 표 형식을 확인하세요."
+        )
+
     all_chunks = []
     seen_ids = set()
     for file_path, document_id in sources.items():
         chunks = load_chunks(file_path, document_id)
         logger.info("[build_index] %s -> 청크 %d개", file_path, len(chunks))
+        # 본문 없이 첨부 링크만 있는 문서는 청크가 0개일 수 있다.
+        # 이런 문서 하나 때문에 전체 색인을 멈추지는 않고 경고만 남긴다.
+        if not chunks:
+            logger.warning("[build_index] %s 에서 청크가 없습니다.", file_path)
         for chunk in chunks:
             # 검색 코드(prepare_chunks)와 같은 검사를 미리 해서
             # 검색 담당 쪽에서 오류가 나기 전에 여기서 잡는다.
@@ -127,6 +141,11 @@ def build_all_chunks(sources: dict[str, str]) -> list[dict]:
                 raise ValueError(f"chunk_id 중복: {chunk['chunk_id']}")
             seen_ids.add(chunk["chunk_id"])
             all_chunks.append(chunk)
+
+    # 문서는 있는데 청크가 하나도 안 나오면 로더·정제가 고장난 것이다.
+    # 이때도 빈 입력으로 적재되지 않도록 여기서 멈춘다.
+    if not all_chunks:
+        raise ValueError("만들어진 청크가 없습니다. 로더·정제를 확인하세요.")
     return all_chunks
 
 
@@ -237,7 +256,20 @@ def main() -> None:
         chunks_path = CHUNKS_PATH
         collection_name = COLLECTION_NAME
 
+    # 문서 목록이나 청크가 비어 있으면 여기서 오류가 나서
+    # 아래의 DB 적재와 JSON 저장이 실행되지 않는다.
     chunks = build_all_chunks(sources)
+
+    # DB 적재를 먼저 하고, 성공했을 때만 JSON을 바꾼다.
+    # DB 접속이나 임베딩 호출이 실패해도 JSON은 이전 상태로 남아서
+    # 검색 코드가 읽는 JSON과 DB의 청크가 어긋나지 않는다.
+    # (--chunks-only는 DB를 쓰지 않으므로 바로 JSON만 만든다.)
+    if not args.chunks_only:
+        result = index_chunks(chunks, collection_name)
+        logger.info(
+            "[build_index] %s 적재 결과: %s", collection_name, result
+        )
+
     save_chunks(chunks, chunks_path)
     logger.info(
         "[build_index] 문서 %d개, 청크 %d개 -> %s",
@@ -245,12 +277,6 @@ def main() -> None:
         len(chunks),
         chunks_path.as_posix(),
     )
-
-    if args.chunks_only:
-        return
-
-    result = index_chunks(chunks, collection_name)
-    logger.info("[build_index] %s 적재 결과: %s", collection_name, result)
 
 
 if __name__ == "__main__":
