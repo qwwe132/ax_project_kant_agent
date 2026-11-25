@@ -46,6 +46,11 @@ SOURCES_PATH = Path("data/sources.md")
 CHUNKS_PATH = Path("data/processed/chunks.json")
 COLLECTION_NAME = "kant_docs"
 
+# 색인하지 않는 문서. 본문 없이 첨부 링크만 있어 청크가 나오지 않는다.
+# 여기에 없는 문서가 청크 0개를 내면 오류로 멈춘다(아래 build_all_chunks).
+# - NOTION-011 학습 로드맵: 본문이 HTML 첨부 링크 한 줄뿐
+EXCLUDED_DOCUMENT_IDS = {"NOTION-011"}
+
 # 팀 공용 샘플 색인 설정 (README "팀 공용 샘플 데이터")
 SAMPLE_DIR = Path("data/sample")
 SAMPLE_CHUNKS_PATH = Path("data/processed/sample_chunks.json")
@@ -77,6 +82,14 @@ def read_source_list(sources_path: Path) -> dict[str, str]:
     text = sources_path.read_text(encoding="utf-8")
     sources = {}
     for match in _SOURCE_ROW.finditer(text):
+        # 색인 제외 문서는 목록에 넣지 않는다. 무엇을 뺐는지는 로그로 남긴다.
+        if match.group(1) in EXCLUDED_DOCUMENT_IDS:
+            logger.info(
+                "[build_index] 색인 제외: %s (%s)",
+                match.group(1),
+                match.group(2),
+            )
+            continue
         sources[match.group(2)] = match.group(1)
     return sources
 
@@ -127,10 +140,15 @@ def build_all_chunks(sources: dict[str, str]) -> list[dict]:
     for file_path, document_id in sources.items():
         chunks = load_chunks(file_path, document_id)
         logger.info("[build_index] %s -> 청크 %d개", file_path, len(chunks))
-        # 본문 없이 첨부 링크만 있는 문서는 청크가 0개일 수 있다.
-        # 이런 문서 하나 때문에 전체 색인을 멈추지는 않고 경고만 남긴다.
+        # 색인 대상 문서가 청크 0개를 내면 로더·정제 문제로 본다.
+        # 그대로 적재하면 cleanup="full"이 그 문서의 기존 청크를 지우므로
+        # 문서 하나만 비어도 적재·저장 전에 멈춘다.
+        # (0개가 정상인 문서는 EXCLUDED_DOCUMENT_IDS에 넣어 제외한다.)
         if not chunks:
-            logger.warning("[build_index] %s 에서 청크가 없습니다.", file_path)
+            raise ValueError(
+                f"청크가 없습니다: {file_path} ({document_id}). "
+                "로더·정제를 확인하거나 색인 제외 목록에 넣으세요."
+            )
         for chunk in chunks:
             # 검색 코드(prepare_chunks)와 같은 검사를 미리 해서
             # 검색 담당 쪽에서 오류가 나기 전에 여기서 잡는다.
