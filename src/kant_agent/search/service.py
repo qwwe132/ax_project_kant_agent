@@ -203,7 +203,12 @@ def vector_search(question, k):
         chunk_id = doc.metadata["chunk_id"]
 
         if chunk_id not in chunk_map or doc.page_content != chunk_map[chunk_id]["text"]:
-            raise ValueError("벡터 색인과 BM25 청크가 다릅니다. setup_search를 다시 실행하세요.")
+            # BM25 청크는 setup_search() 시점에 고정되지만 벡터 검색은 DB 최신 상태를 읽는다.
+            # 서버를 켠 채 재색인하면 여기서 어긋나므로 API를 재시작해야 한다.
+            raise ValueError(
+                "벡터 색인과 BM25 청크가 다릅니다. 재색인 후에는 API를 재시작하세요"
+                "(API 중지 → build_index → API 재시작)."
+            )
 
         if chunk_id in seen:
             continue

@@ -14,6 +14,8 @@ from kant_agent.shared.core.exception_handlers import (
 async def lifespan(app: FastAPI):
     # 검색기(BM25·벡터 연결·재정렬 모델)는 서버 시작 시 1회만 준비한다.
     # 재정렬 모델 로드 때문에 시작에 수십 초가 걸리지만, 첫 질문은 빨라진다.
+    # BM25 청크는 여기서 고정되므로 재색인할 때는
+    # API 중지 → build_index 실행 → API 재시작 순서를 지킨다.
     search_service.setup_search(
         os.getenv("SEARCH_COLLECTION", search_service.COLLECTION_NAME),
         os.getenv("SEARCH_INDEX_VERSION", "local"),
