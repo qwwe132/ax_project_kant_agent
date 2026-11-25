@@ -54,6 +54,7 @@ def run(run_id: str, config: str, eval_file: str, kind: str) -> Path:
                         "source_location": c["source_location"],
                         "score": c.get("score"),
                         "pre_rerank_rank": c.get("pre_rerank_rank"),
+                        "text": c.get("text"),
                     }
                     for rank, c in enumerate(chunks, start=1)
                 ]
