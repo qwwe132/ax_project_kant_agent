@@ -11,6 +11,7 @@ from langchain_community.retrievers import BM25Retriever
 
 if TYPE_CHECKING:
     from langchain_postgres import PGVector
+    from sqlalchemy.engine import Engine
 
 # 기본값 설정
 TOP_K = 5
@@ -31,6 +32,57 @@ index_version = ""
 
 def load_chunks(path):
     return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+
+
+# PGVector 기본 스키마에서 컬렉션 이름으로 청크를 읽는다.
+# 컬렉션 이름으로 JOIN 필터링해야 다른 컬렉션(다른 색인 버전) 청크가 섞이지 않는다.
+_COLLECTION_CHUNKS_SQL = """
+SELECT e.id, e.document, e.cmetadata
+FROM langchain_pg_embedding AS e
+JOIN langchain_pg_collection AS c ON e.collection_id = c.uuid
+WHERE c.name = :collection_name
+ORDER BY e.id
+"""
+
+
+def get_database_url() -> str:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+    connection = os.getenv("DATABASE_URL")
+
+    if not connection:
+        raise ValueError(".env에 DATABASE_URL을 설정하세요.")
+
+    return connection
+
+
+def load_collection_chunks(collection_name: str, engine: Engine) -> list[dict]:
+    """PGVector 컬렉션에 적재된 청크를 prepare_chunks() 입력 형식으로 읽는다.
+
+    본문은 document 컬럼, 나머지 필드는 cmetadata(JSONB)에서 가져온다.
+    필드 누락 검사는 prepare_chunks()가 맡는다.
+    """
+    from sqlalchemy import JSON, String, text
+
+    query = text(_COLLECTION_CHUNKS_SQL).columns(
+        id=String, document=String, cmetadata=JSON
+    )
+
+    with engine.connect() as conn:
+        rows = conn.execute(query, {"collection_name": collection_name}).all()
+
+    if not rows:
+        raise ValueError(f"컬렉션 '{collection_name}'이 없거나 비어 있습니다.")
+
+    chunk_list = []
+
+    for row in rows:
+        chunk = dict(row.cmetadata or {})
+        chunk["text"] = row.document
+        chunk_list.append(chunk)
+
+    return chunk_list
 
 
 def split_words(text):
@@ -67,29 +119,46 @@ def prepare_chunks(chunk_list):
         bm25 = BM25Retriever.from_documents(documents, preprocess_func=split_words)
 
 
-def setup_search(chunks_path, collection_name, version):
+def setup_search(
+    collection_name: str,
+    version: str,
+    chunks_path: str | Path | None = None,
+    load_reranker: bool = True,
+) -> None:
+    """검색기를 초기화한다. 앱 시작 시 1회 호출한다.
+
+    기본은 DB의 같은 컬렉션에서 청크를 읽어 BM25를 만든다.
+    chunks_path를 주면 JSON 파일을 대신 쓴다(샘플·테스트용).
+    load_reranker가 True면 재정렬 모델도 여기서 로드한다.
+    첫 C 모드 검색이 모델 로드 시간만큼 느려지고 latency_sec에
+    그 시간이 섞이는 것을 막기 위해서다. A·B 모드만 쓸 때는 False로 둔다.
+    """
     global vectorstore, reranker, index_version
-    from dotenv import load_dotenv
     from langchain_openai import OpenAIEmbeddings
     from langchain_postgres import PGVector
+    from sqlalchemy import create_engine
 
-    load_dotenv()
-    connection = os.getenv("DATABASE_URL")
+    engine = create_engine(get_database_url())
 
-    if not connection:
-        raise ValueError(".env에 DATABASE_URL을 설정하세요.")
+    if chunks_path is None:
+        chunk_list = load_collection_chunks(collection_name, engine)
+    else:
+        chunk_list = load_chunks(chunks_path)
 
-    prepare_chunks(load_chunks(chunks_path))
+    prepare_chunks(chunk_list)
     embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
     vectorstore = PGVector(
         embeddings=embeddings,
-        connection=connection,
+        connection=engine,
         collection_name=collection_name,
         use_jsonb=True,
         create_extension=False,
     )
     index_version = version
     reranker = None
+
+    if load_reranker:
+        get_reranker()
 
 
 def vector_search(question, k):
@@ -104,7 +173,7 @@ def vector_search(question, k):
         chunk_id = doc.metadata["chunk_id"]
 
         if chunk_id not in chunk_map or doc.page_content != chunk_map[chunk_id]["text"]:
-            raise ValueError("벡터 색인과 청크 JSON이 다릅니다.")
+            raise ValueError("벡터 색인과 BM25 청크가 다릅니다. setup_search를 다시 실행하세요.")
 
         if chunk_id in seen:
             continue
@@ -168,23 +237,27 @@ def hybrid_search(vector_results, keyword_results):
     return results
 
 
-def rerank_search(question, candidates):
+def get_reranker():
     global reranker
-
-    if not candidates:
-        return []
 
     if reranker is None:
         from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 
         reranker = HuggingFaceCrossEncoder(model_name=RERANKER_MODEL)
 
+    return reranker
+
+
+def rerank_search(question, candidates):
+    if not candidates:
+        return []
+
     pairs = []
 
     for row in candidates:
         pairs.append((question, row["text"]))
 
-    scores = list(reranker.score(pairs))
+    scores = list(get_reranker().score(pairs))
 
     if len(scores) != len(candidates):
         raise ValueError("재정렬 점수 개수가 후보 개수와 다릅니다.")
