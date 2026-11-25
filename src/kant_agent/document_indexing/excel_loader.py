@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+from openpyxl import load_workbook
 
 from kant_agent.shared.core.logger import get_logger
 
@@ -162,21 +163,29 @@ def _day_text(
     # 시간 칸 9줄만 잘라낸다. (Pandas 특강 3.1 iloc 슬라이싱)
     slot_rows = df.iloc[first_slot:first_slot + _SLOT_COUNT]
 
-    # 병합 셀은 첫 칸에만 값이 있고 나머지는 비어 있다(NaN).
-    # 예) 공휴일은 09:00 칸에만 "추석"이 있다.
-    # ffill()로 빈칸을 바로 위 값으로 채운다. (Pandas 특강 3.3.4)
-    subjects = slot_rows[col].ffill()
+    # 병합 셀은 _fill_merged_cells()에서 이미 채워 두었다.
+    # 여기서 남은 빈칸(NaN)은 원문에 정말 일정이 없는 칸이라 건너뛴다.
+    # 예) 2027-05-12 수료식은 11:00~13:00만 적혀 있고 오후는 빈칸이다.
+    subjects = slot_rows[col]
 
     # 같은 교과가 이어지는 시간은 하나로 합친다.
     # 예) 09:00~10:00 입학식, 10:00~11:00 입학식 -> 09:00~11:00 입학식
     # segments에는 [시작 시각, 끝 시각, 교과명]을 담는다.
     segments = []
     for slot_index in range(_SLOT_COUNT):
+        if pd.isna(subjects.iloc[slot_index]):
+            continue
         subject = _clean_text(subjects.iloc[slot_index])
         # 시작·종료 시각은 B열·D열에 time으로 들어 있다. 09:00:00 → "09:00"
         start = slot_rows.iat[slot_index, _TIME_START_COL].strftime("%H:%M")
         end = slot_rows.iat[slot_index, _TIME_END_COL].strftime("%H:%M")
-        if segments and segments[-1][2] == subject:
+        # 교과가 같고, 앞 구간이 끝난 시각에 바로 이어질 때만 합친다.
+        # 중간에 빈칸이 있으면 시간이 끊기므로 새 구간으로 둔다.
+        if (
+            segments
+            and segments[-1][2] == subject
+            and segments[-1][1] == start
+        ):
             # 바로 앞 구간과 교과가 같으면 끝 시각만 늘린다.
             segments[-1][1] = end
         else:
@@ -245,6 +254,39 @@ def _dismissal_text(df: pd.DataFrame) -> tuple[str, int, int] | None:
     return "\n".join(lines), first_row, last_row
 
 
+def _fill_merged_cells(
+    df: pd.DataFrame, file_path: Path, sheet_name: str
+) -> None:
+    """엑셀에서 실제로 병합된 범위만 첫 칸의 값으로 채운다.
+
+    pandas는 병합 정보를 읽지 못해서, 병합 셀은 첫 칸에만 값이 있고
+    나머지는 빈칸(NaN)으로 들어온다. 그렇다고 빈칸을 모두 위 값으로
+    채우면(ffill) 원래 비어 있던 칸까지 채워져 원문에 없는 일정이
+    생긴다. 그래서 openpyxl로 병합 범위 목록을 읽어 그 안만 채운다.
+    """
+    # merged_cells.ranges: "E515:E523" 같은 병합 범위 목록
+    sheet = load_workbook(file_path)[sheet_name]
+    for merged in sheet.merged_cells.ranges:
+        # openpyxl 행·열 번호는 1부터, pandas는 0부터라서 1을 뺀다.
+        first_row = merged.min_row - 1
+        first_col = merged.min_col - 1
+        # 교과명이 들어가는 요일 열(E~I)의 병합만 채운다.
+        # B열 "시작시간"처럼 머리글 칸의 병합까지 채우면
+        # 주차 블록의 날짜 줄을 찾는 기준이 흐트러진다.
+        if not _FIRST_DAY_COL <= first_col <= _LAST_DAY_COL:
+            continue
+        if first_row >= len(df):
+            continue
+        value = df.iat[first_row, first_col]
+        for row_index in range(first_row, merged.max_row):
+            for col_index in range(first_col, merged.max_col):
+                if row_index >= len(df) or col_index >= len(df.columns):
+                    continue
+                # 이미 값이 있는 칸(날짜 등)은 덮어쓰지 않고 빈칸만 채운다.
+                if pd.isna(df.iat[row_index, col_index]):
+                    df.iat[row_index, col_index] = value
+
+
 def _load_weekly_timetable(
     file_path: Path, document_id: str, sheet_name: str
 ) -> list[dict]:
@@ -253,6 +295,8 @@ def _load_weekly_timetable(
     # 같은 모양의 주차 블록이 아래로 반복되는 구조라서다.
     # 그래서 열 이름 대신 숫자(0, 1, 2 ...)로 칸을 가리킨다.
     df = pd.read_excel(file_path, sheet_name=sheet_name, header=None)
+    # 병합으로 생긴 빈칸만 채운다. 원래 비어 있던 칸은 그대로 둔다.
+    _fill_merged_cells(df, file_path, sheet_name)
     source_path = file_path.as_posix()
 
     chunks = []
