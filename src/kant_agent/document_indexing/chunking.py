@@ -101,17 +101,10 @@ def build_chunks(
     chunk_size: int = DEFAULT_CHUNK_SIZE,
     chunk_overlap: int = DEFAULT_CHUNK_OVERLAP,
 ) -> list[dict]:
-    """Document를 섹션별로 나눈 뒤 길면 한 번 더 잘라 청크 목록을 만든다."""
-    # 교안 2장 2강의 재귀적 분할기.
-    # 문단(\n\n) → 줄(\n) → 공백 순으로 나눌 곳을 찾아
-    # chunk_size를 넘지 않게 자르므로 문장이 중간에 덜 끊긴다.
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,  # 청크 하나의 최대 글자 수
-        chunk_overlap=chunk_overlap,  # 앞뒤 청크가 겹치는 글자 수
-        length_function=len,  # 토큰이 아닌 글자 수로 길이를 잰다.
-        is_separator_regex=False,
-    )
+    """Document를 섹션별로 나눈 뒤 길면 한 번 더 잘라 청크 목록을 만든다.
 
+    각 청크 본문 맨 앞에는 섹션 제목을 한 줄로 붙인다.
+    """
     document_id = document.metadata["document_id"]
     chunks = []
     # 섹션을 먼저 나누는 이유: 크기만으로 자르면 "09:10 이후 지각"처럼
@@ -119,9 +112,32 @@ def build_chunks(
     for section_title, section_text in _split_sections(
         document.page_content
     ):
-        # 섹션이 chunk_size보다 짧으면 조각 1개, 길면 여러 개가 나온다.
+        # 제목을 본문 앞에 붙일 자리(제목 + 줄바꿈 1글자)만큼
+        # 자를 크기를 줄여서, 붙인 뒤에도 chunk_size를 넘지 않게 한다.
+        # 제목이 너무 길어도 본문 자리는 chunk_size의 절반은 남긴다.
+        title_length = len(section_title) + 1 if section_title else 0
+        piece_size = max(chunk_size - title_length, chunk_size // 2)
+
+        # 교안 2장 2강의 재귀적 분할기.
+        # 문단(\n\n) → 줄(\n) → 공백 순으로 나눌 곳을 찾아
+        # piece_size를 넘지 않게 자르므로 문장이 중간에 덜 끊긴다.
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=piece_size,  # 조각 하나의 최대 글자 수
+            chunk_overlap=chunk_overlap,  # 앞뒤 조각이 겹치는 글자 수
+            length_function=len,  # 토큰이 아닌 글자 수로 길이를 잰다.
+            is_separator_regex=False,
+        )
+
+        # 섹션이 짧으면 조각 1개, 길면 여러 개가 나온다.
         # 같은 섹션에서 나온 조각은 source_location이 모두 같다.
         for piece in text_splitter.split_text(section_text):
+            # 섹션 제목을 본문 맨 앞에도 붙인다.
+            # 제목은 _split_sections()에서 경계로만 쓰여 본문에서 빠지는데,
+            # 벡터 임베딩·BM25는 본문(text)만 보므로 제목 속 검색 단서
+            # (예: "Q. 과제가 아직 완료되지 않았어요")가 사라지기 때문이다.
+            # 긴 섹션이 여러 조각으로 나뉘어도 조각마다 붙여 맥락을 남긴다.
+            if section_title:
+                piece = section_title + "\n" + piece
             chunks.append(
                 {
                     # 순번 기반 ID라 같은 원문·설정이면 다시 만들어도 같다.
