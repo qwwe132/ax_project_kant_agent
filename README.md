@@ -33,17 +33,7 @@
 ## 재현 순서
 
 1. [문서 목록](data/sources.md)을 보고 입력 원문을 준비합니다. <재수집 방법 작성>
-2. 전처리 및 색인 재생성
-   - PGVector 실행(교안 RAG 2장 5강 이미지, 수업 실습용 컨테이너와 구분한 프로젝트 전용):
-     `docker run -d --name kant-agent-pgvector -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres -v kant_agent_pgdata:/var/lib/postgresql/data -p 5432:5432 pgvector/pgvector:pg17`
-     - 수업용 컨테이너와 포트(5432)가 같아서 동시에 켜지 않습니다. 이후에는 `docker start kant-agent-pgvector`로 실행합니다.
-   - `.env`에 `OPENAI_API_KEY`, `DATABASE_URL` 설정([`.env.example`](.env.example) 참고)
-   - 색인 생성: `uv run python -m kant_agent.document_indexing.build_index`
-     - 원문 → `data/processed/chunks.json` → PGVector 컬렉션 `kant_docs` 증분 적재(임베딩 `text-embedding-3-small`)
-     - 다시 실행하면 바뀌지 않은 청크는 건너뜁니다(`num_skipped`).
-     - `--chunks-only`: DB 없이 `chunks.json`만 생성
-     - `--sample`: `data/sample/` → `data/processed/sample_chunks.json`, 컬렉션 `kant_docs_sample`
-   - 검색 연결: `setup_search("data/processed/chunks.json", "kant_docs", "v1")`
+2. 전처리 및 색인 재생성: <명령 작성>
 3. 인터페이스 실행: <명령 작성>
 4. 정상 답변·근거 없음 확인: <대표 질문과 예상 동작 작성>
 5. 평가 실행: <명령, 구성 및 결과 저장 위치 작성>
