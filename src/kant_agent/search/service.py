@@ -22,6 +22,10 @@ VECTOR_WEIGHT = 0.5
 EMBEDDING_MODEL = "text-embedding-3-small"
 RERANKER_MODEL = "Dongjin-kr/ko-reranker"
 
+# 색인 담당(document_indexing/build_index.py)이 적재하는 컬렉션 이름
+COLLECTION_NAME = "kant_docs"
+SAMPLE_COLLECTION_NAME = "kant_docs_sample"
+
 chunks = []
 chunk_map = {}
 bm25: BM25Retriever | None = None
@@ -41,7 +45,6 @@ SELECT e.id, e.document, e.cmetadata
 FROM langchain_pg_embedding AS e
 JOIN langchain_pg_collection AS c ON e.collection_id = c.uuid
 WHERE c.name = :collection_name
-ORDER BY e.id
 """
 
 
@@ -62,6 +65,7 @@ def load_collection_chunks(collection_name: str, engine: Engine) -> list[dict]:
 
     본문은 document 컬럼, 나머지 필드는 cmetadata(JSONB)에서 가져온다.
     필드 누락 검사는 prepare_chunks()가 맡는다.
+    색인 쪽 index()는 PGVector id에 해시를 쓰므로 chunk_id 순으로 정렬한다.
     """
     from sqlalchemy import JSON, String, text
 
@@ -82,11 +86,37 @@ def load_collection_chunks(collection_name: str, engine: Engine) -> list[dict]:
         chunk["text"] = row.document
         chunk_list.append(chunk)
 
+    chunk_list.sort(key=lambda chunk: str(chunk.get("chunk_id", "")))
     return chunk_list
 
 
-def split_words(text):
-    return text.split()
+# BM25에 남길 형태소 품사. 조사(J*)·어미(E*)·문장부호(S*)는 버린다.
+# 공백 분리만 하면 "지각이야?"와 "지각"이 다른 단어가 되어 키워드 검색이 실패한다.
+# W_*는 09:10, 2026-12-01 같은 시간·날짜·URL을 한 토큰으로 유지한다.
+_KEEP_TAG_PREFIXES = ("NN", "NR", "NP", "VV", "VA", "XR", "SL", "SH", "SN", "W_")
+_kiwi = None
+
+
+def _get_kiwi():
+    global _kiwi
+
+    if _kiwi is None:
+        from kiwipiepy import Kiwi
+
+        _kiwi = Kiwi()
+
+    return _kiwi
+
+
+def split_words(text: str) -> list[str]:
+    """BM25용 토큰 목록. 한국어 형태소 분석 후 내용어만 남긴다."""
+    words = []
+
+    for token in _get_kiwi().tokenize(text):
+        if token.tag.startswith(_KEEP_TAG_PREFIXES):
+            words.append(token.form.lower())
+
+    return words
 
 
 def prepare_chunks(chunk_list):
