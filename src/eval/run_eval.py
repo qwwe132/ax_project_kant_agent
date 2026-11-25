@@ -10,14 +10,32 @@ ROOT = Path(__file__).resolve().parents[2]
 SEARCH_CONFIGS = ("A", "B", "C")
 
 
-def retrieve(question: str, config: str) -> list[dict]:
-    """Search step. Returns chunks, best first.
+def summarize_trace(trace: dict) -> dict:
+    """Keep each search stage's candidates (id, rank, score). No text."""
+    def pick(rows, rank_key, score_key):
+        return [
+            {"chunk_id": r["chunk_id"], "document_id": r["document_id"],
+             "rank": r.get(rank_key), "score": r.get(score_key)}
+            for r in rows
+        ]
+    return {
+        "vector": pick(trace["vector_candidates"], "vector_rank", "vector_distance"),
+        "bm25": pick(trace["bm25_candidates"], "bm25_rank", "bm25_score"),
+        "pre_rerank": pick(trace["pre_rerank"], "pre_rerank_rank", "rrf_score"),
+        "post_rerank": pick(trace["post_rerank"], "rank", "rerank_score"),
+        "search_latency_sec": round(trace["latency_sec"], 3),
+    }
+
+
+def retrieve(question: str, config: str):
+    """Search step. Returns (chunks best first, search trace or None).
     A/B/C use the real search. "stub" returns the 3 sample chunks."""
     #raise RuntimeError("test") #오류테스트용
     if config in SEARCH_CONFIGS:
-        return search_service.search(question, mode=config)
+        trace = search_service.search_with_trace(question, mode=config)
+        return trace["results"], summarize_trace(trace)
     path = ROOT / "data" / "fixtures" / "sample-chunks.json"
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8")), None
 
 
 def answer(question: str, chunks: list[dict]) -> dict:
@@ -64,6 +82,7 @@ def run(run_id: str, config: str, eval_file: str, kind: str,
                 "question_id": item.get("id", f"UNKNOWN-{index}"),
                 "config": config,
                 "search_settings": settings,
+                "search_trace" : None,
                 "candidates": [],
                 "answer": "",
                 "citations": [],
@@ -72,7 +91,7 @@ def run(run_id: str, config: str, eval_file: str, kind: str,
 
             start = time.perf_counter()
             try:
-                chunks = retrieve(item["question"], config)
+                chunks, record["search_trace"] = retrieve(item["question"], config)
                 record["candidates"] = [
                     {
                         "rank": rank,
