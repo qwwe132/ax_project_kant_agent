@@ -74,6 +74,16 @@ _HTML_TAG = re.compile(r"</?[A-Za-z][A-Za-z0-9-]*[^<>\n]*>")
 # "\<카페>" 같은 꺾쇠 표기도 "<카페>"로 되돌리려고 "<"를 포함한다.
 _MARKDOWN_ESCAPE = re.compile(r"\\([\\`*_{}\[\]()#+\-.!~|<>])")
 
+# 줄 맨 앞에서 시작하는 짧은 굵은 글씨 한 줄 = 소제목
+# 예) <b>훈련장려금</b>, <b>Pull Request (PR)</b>
+# - ^<b>        : 들여쓰기 없이 줄 맨 앞에서 시작 (콜아웃 안 "🚨 참고사항"
+#                 처럼 들여쓴 강조 문구는 제외)
+# - ([^<\n]{1,30}) : 30자 이하 글자만. 긴 강조 문장은 제목이 아니다.
+_BOLD_HEADING = re.compile(r"^<b>([^<\n]{1,30})</b>[ \t]*$", re.MULTILINE)
+
+# 구분선만 있는 줄. 예) "---"
+_HORIZONTAL_RULE = re.compile(r"^-{3,}[ \t]*$", re.MULTILINE)
+
 # 세 줄 이상 연속된 줄바꿈(빈 줄 두 개 이상)
 _EXTRA_BLANK_LINES = re.compile(r"\n{3,}")
 
@@ -129,6 +139,10 @@ def clean_notion_markdown(text: str) -> str:
     text = _TOGGLE_HEADING.sub(_heading_repl, text)
     # 2) 표 한 행 → "칸1 | 칸2 | 칸3" 한 줄
     text = _TABLE_ROW.sub(_table_row_repl, text)
+    # 2-1) 줄 맨 앞의 짧은 굵은 글씨 → "### 소제목"
+    text = _BOLD_HEADING.sub(r"\n### \1\n", text)
+    # 2-2) 구분선(---)은 검색에 의미가 없어 지운다.
+    text = _HORIZONTAL_RULE.sub("", text)
     # 3) 남은 <br /> → 실제 줄바꿈
     text = _LINE_BREAK.sub("\n", text)
     # 4) 이미지·첨부 파일 링크 줄은 검색에 도움이 안 되어 지운다.

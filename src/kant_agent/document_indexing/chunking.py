@@ -20,6 +20,9 @@ _HEADER_KEYS = {
     "문서 ID": "document_id",
     "자료 구분": "data_type",
     "수집일": "collected_at",
+    "분류": "category",
+    "Notion 원문": "source_url",
+    "Notion 최종 수정 시각": "updated_at",
 }
 
 
