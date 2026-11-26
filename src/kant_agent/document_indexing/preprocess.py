@@ -24,9 +24,7 @@ import re
 #     다음 제목 태그를 넘어가 그 제목까지 먹지 않게 막는다.
 # - </h\1>  : 1번 그룹과 같은 숫자의 닫는 태그(</h3>)를 찾는다.
 # - DOTALL  : 제목이 여러 줄에 걸쳐 있어서 .이 줄바꿈도 포함하게 한다.
-_HEADING_TAG = re.compile(
-    r"<h([23])[^>]*>\s*(((?!</?h[23]).)*?)\s*</h\1>", re.DOTALL
-)
+_HEADING_TAG = re.compile(r"<h([23])[^>]*>\s*(((?!</?h[23]).)*?)\s*</h\1>", re.DOTALL)
 
 # 접었다 펼 수 있는 "토글 제목" 블록
 # 예) <toggle heading="h2">
@@ -34,9 +32,7 @@ _HEADING_TAG = re.compile(
 # 여는 태그 다음 줄(2번 그룹)을 제목으로 본다.
 # - [^>]*   : heading 앞뒤에 color="..." 같은 다른 속성이 있어도 넘어간다.
 # - .h([23]). : 따옴표 자리에 . 을 써서 "h2" 와 'h2' 를 모두 잡는다.
-_TOGGLE_HEADING = re.compile(
-    r"<toggle[^>]*heading=.h([23]).[^>]*>\s*\n\s*([^\n]+)"
-)
+_TOGGLE_HEADING = re.compile(r"<toggle[^>]*heading=.h([23]).[^>]*>\s*\n\s*([^\n]+)")
 
 # 표 전체(<table ...>...</table>)
 # 1번 그룹 = 여는 태그의 속성(header-row="true" 확인용), 2번 그룹 = 표 내용
@@ -65,9 +61,7 @@ _LINE_BREAK = re.compile(r"<br\s*/?>")
 #             본문 속 일반 웹 링크는 남긴다.
 # MULTILINE을 켜야 ^(줄 시작)과 $(줄 끝)가 문서 전체가 아니라
 # 각 줄마다 적용된다. (정규식 특강 4절)
-_ATTACHMENT_LINE = re.compile(
-    r"^\s*!?\[[^\]]*\]\(\./assets/[^)]*\)\s*$", re.MULTILINE
-)
+_ATTACHMENT_LINE = re.compile(r"^\s*!?\[[^\]]*\]\(\./assets/[^)]*\)\s*$", re.MULTILINE)
 
 # 남은 HTML 태그. <b>, </span>, <callout icon="💡"> 등
 # 진짜 태그만 지우도록 조건을 좁힌다.

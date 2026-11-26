@@ -16,7 +16,7 @@ load_dotenv()
 # 하나라도 고치면 PROMPT_VERSION을 올린다.
 MODEL_NAME = "gpt-6-luna"
 PROMPT_VERSION = "v3"
-MAX_TOKENS = 1000   # 출력 한도 (추론 토큰 포함, 실측 최대 약 370)
+MAX_TOKENS = 1000  # 출력 한도 (추론 토큰 포함, 실측 최대 약 370)
 
 NO_EVIDENCE_MESSAGE = (
     "흐음… 짐의 서고에도 그런 기록은 없구나. 운영 담당자에게 직접 물어보거라."

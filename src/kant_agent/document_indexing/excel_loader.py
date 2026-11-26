@@ -98,9 +98,7 @@ def _make_chunk(
     }
 
 
-def _load_table(
-    file_path: Path, document_id: str, sheet_name: str
-) -> list[dict]:
+def _load_table(file_path: Path, document_id: str, sheet_name: str) -> list[dict]:
     """머리글이 있는 일반 표를 한 행씩 청크로 만든다."""
     # 첫 행을 머리글(열 이름)로 읽는다. 예) 날짜, 시간, 일정, 자료 구분
     # 그러면 df["일정"]처럼 열 이름으로 값을 꺼낼 수 있다.
@@ -161,7 +159,7 @@ def _day_text(
     # 날짜 줄 아래는 "교과명" 줄이고, 그 아래부터 시간 칸이 시작된다.
     first_slot = header_row + 2
     # 시간 칸 9줄만 잘라낸다. (Pandas 특강 3.1 iloc 슬라이싱)
-    slot_rows = df.iloc[first_slot:first_slot + _SLOT_COUNT]
+    slot_rows = df.iloc[first_slot : first_slot + _SLOT_COUNT]
 
     # 병합 셀은 _fill_merged_cells()에서 이미 채워 두었다.
     # 여기서 남은 빈칸(NaN)은 원문에 정말 일정이 없는 칸이라 건너뛴다.
@@ -181,11 +179,7 @@ def _day_text(
         end = slot_rows.iat[slot_index, _TIME_END_COL].strftime("%H:%M")
         # 교과가 같고, 앞 구간이 끝난 시각에 바로 이어질 때만 합친다.
         # 중간에 빈칸이 있으면 시간이 끊기므로 새 구간으로 둔다.
-        if (
-            segments
-            and segments[-1][2] == subject
-            and segments[-1][1] == start
-        ):
+        if segments and segments[-1][2] == subject and segments[-1][1] == start:
             # 바로 앞 구간과 교과가 같으면 끝 시각만 늘린다.
             segments[-1][1] = end
         else:
@@ -254,9 +248,7 @@ def _dismissal_text(df: pd.DataFrame) -> tuple[str, int, int] | None:
     return "\n".join(lines), first_row, last_row
 
 
-def _fill_merged_cells(
-    df: pd.DataFrame, file_path: Path, sheet_name: str
-) -> None:
+def _fill_merged_cells(df: pd.DataFrame, file_path: Path, sheet_name: str) -> None:
     """엑셀에서 실제로 병합된 범위만 첫 칸의 값으로 채운다.
 
     pandas는 병합 정보를 읽지 못해서, 병합 셀은 첫 칸에만 값이 있고

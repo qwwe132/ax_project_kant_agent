@@ -89,11 +89,7 @@ def _split_sections(text: str) -> list[tuple[str, str]]:
     sections.append((section_title, "\n".join(section_lines)))
 
     # 메타데이터 줄만 있던 머리말처럼 내용이 빈 구간은 버린다.
-    return [
-        (title, content.strip())
-        for title, content in sections
-        if content.strip()
-    ]
+    return [(title, content.strip()) for title, content in sections if content.strip()]
 
 
 def build_chunks(
@@ -109,9 +105,7 @@ def build_chunks(
     chunks = []
     # 섹션을 먼저 나누는 이유: 크기만으로 자르면 "09:10 이후 지각"처럼
     # 규정과 조건이 다른 청크로 갈라져 원문 위치를 찾기 어려워진다.
-    for section_title, section_text in _split_sections(
-        document.page_content
-    ):
+    for section_title, section_text in _split_sections(document.page_content):
         # 제목을 본문 앞에 붙일 자리(제목 + 줄바꿈 1글자)만큼
         # 자를 크기를 줄여서, 붙인 뒤에도 chunk_size를 넘지 않게 한다.
         # 제목이 너무 길어도 본문 자리는 chunk_size의 절반은 남긴다.

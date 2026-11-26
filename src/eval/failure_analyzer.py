@@ -6,7 +6,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 THRESHOLD = 0.7  # 팀 합의 임계치. scoring_criteria.md와 같은 값으로 유지
 METRICS = ["context_precision", "context_recall", "faithfulness", "answer_relevancy"]
-FIELDS = ["run_id", "question_id", "status"] + METRICS + ["diagnosis", "owner", "advice"]
+FIELDS = (
+    ["run_id", "question_id", "status"] + METRICS + ["diagnosis", "owner", "advice"]
+)
 
 
 def to_float(value: str):
@@ -23,20 +25,42 @@ def diagnose(row: dict) -> list[tuple[str, str, str]]:
     if "error:" in row["note"]:
         found.append(("JUDGE_ERROR", "평가", "Ragas 채점 실패: note 확인 후 다시 채점"))
     if "no-evidence question" in row["note"]:
-        found.append(("NOT_SCORED", "평가", "근거 없는 문항: 정보 부족 안내를 직접 확인"))
+        found.append(
+            ("NOT_SCORED", "평가", "근거 없는 문항: 정보 부족 안내를 직접 확인")
+        )
         return found
 
     # 검색 진단
     if cr is not None and cr < THRESHOLD:
-        found.append(("RETRIEVAL_FAILURE", "검색", "필요한 자료를 못 찾음: 하이브리드·BM25·청킹 점검"))
+        found.append(
+            (
+                "RETRIEVAL_FAILURE",
+                "검색",
+                "필요한 자료를 못 찾음: 하이브리드·BM25·청킹 점검",
+            )
+        )
     elif cp is not None and cp < THRESHOLD:
-        found.append(("RANKING_ISSUE", "검색", "자료는 찾았지만 순위가 낮음: 리랭크·후보 수 점검"))
+        found.append(
+            (
+                "RANKING_ISSUE",
+                "검색",
+                "자료는 찾았지만 순위가 낮음: 리랭크·후보 수 점검",
+            )
+        )
     elif cr is not None and row["status"] == "no_evidence":
-        found.append(("MISSED_ANSWER", "답변", "근거를 찾았는데 모른다고 답함: 답변 조건 점검"))
+        found.append(
+            ("MISSED_ANSWER", "답변", "근거를 찾았는데 모른다고 답함: 답변 조건 점검")
+        )
 
     # 답변 진단
     if f is not None and f < THRESHOLD:
-        found.append(("GENERATION_FAILURE", "답변", "자료에 없는 내용을 만듦: '문맥만 사용' 규칙 강화"))
+        found.append(
+            (
+                "GENERATION_FAILURE",
+                "답변",
+                "자료에 없는 내용을 만듦: '문맥만 사용' 규칙 강화",
+            )
+        )
     if ar is not None and ar < THRESHOLD:  # AR은 참고용: 담당자 목록에 올리지 않음
         found.append(("AR_LOW", "", "참고용: AR 낮음. 답변을 직접 읽고 판단"))
 
