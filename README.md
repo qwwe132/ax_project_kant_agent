@@ -38,10 +38,18 @@
 4. 정상 답변·근거 없음 확인: <대표 질문과 예상 동작 작성>
 5. 평가 실행: 프로젝트 환경에서 `uv run`으로 실행합니다. `python`으로 직접 실행하면 `kant_agent` 모듈을 찾지 못합니다. 루트 `.env`에 `OPENAI_API_KEY`가 필요합니다.
    ```
-   uv run python src/eval/run_eval.py <run_id> <config> <eval_file> --kind <smoke|dev|final>
-   uv run python src/eval/score.py <run_id> <eval_file> --kind <smoke|dev|final>
+   uv run python src/eval/run_eval.py <run_id> <stub|A|B|C> <eval_file> --kind <smoke|dev|final> --index-version <v1>
+   uv run python src/eval/ragas_eval.py <run_id> <eval_file> --kind <kind>
+   uv run python src/eval/failure_analyzer.py <run_id> --kind <kind>
+   uv run python src/eval/compare.py <baseline_run_id> <improved_run_id> --kind <kind>
+   uv run python src/eval/score.py <run_id> <eval_file> --kind <kind>
    ```
-   결과는 `results/<kind>/`에 `<run_id>.jsonl`(실행 원본)과 `<run_id>_scoring.csv`(수동 채점표)로 저장됩니다. 검색 연결 전에는 `--kind final`로 실행하지 않습니다.
+   결과는 `results/<kind>/`에 저장됩니다. `<run_id>.jsonl`(실행 원본), `_ragas.csv`(Ragas 4지표), `_diagnosis.csv`(실패 진단), `compare_*.csv`(회귀 비교), `_scoring.csv`(수동 채점표). 같은 run_id는 덮어쓰지 않으니 새로 실행할 때는 새 run_id를 씁니다.
+
+   캐시 실험만 `--cache`를 붙입니다. A/B/C 비교와 최종 평가에서는 붙이지 않습니다. 문서를 다시 색인하면 `--index-version`을 올려야 이전 캐시를 쓰지 않습니다. 캐시 파일 `.cache/`는 커밋하지 않습니다.
+   ```
+   uv run python src/eval/run_eval.py cache-1-miss C eval/cache.json --kind dev --index-version v1 --cache
+   ```
 
 설계와 범위는 [문제 정의](docs/problem.md), 평가 파일 형식은 [평가셋 안내](eval/README.md), 결과 해석은 [비교 보고서](report.md)에 기록합니다.
 
