@@ -4,6 +4,14 @@ import json
 import statistics
 from pathlib import Path
 
+from testset import (
+    evidence_recall,
+    is_evidence,
+    is_no_evidence,
+    load_testset,
+    question_type,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 
 SCORE_COLUMNS = ["answer_correct", "evidence_fit", "no_evidence_ok"]
@@ -26,42 +34,19 @@ def load_jsonl(path: Path) -> list[dict]:
 
 
 def hit_at_5(item: dict, record: dict):
-    """1 if any allowed evidence is in the top 5 candidates, 0 if not, "" if no evidence is expected."""
-    allowed = item.get("allowed_evidence", [])
-    if not allowed:
+    """1 if any evidence is in the top 5 candidates, 0 if not, "" if no evidence is expected."""
+    if is_no_evidence(item):
         return ""
-    for ev in allowed:
-        for c in record["candidates"][:5]:
-            if ev.get("chunk_id") is not None:
-                if c["chunk_id"] == ev["chunk_id"]:
-                    return 1
-            elif (
-                c["document_id"] == ev["document_id"]
-                and c["source_location"] == ev["source_location"]
-            ):
-                return 1
-    return 0
-
-
-def evidence_match(ev: dict, c: dict) -> bool:
-    """True if a search result matches one allowed evidence."""
-    if ev.get("chunk_id") is not None:
-        return c["chunk_id"] == ev["chunk_id"]
-    return (
-        c["document_id"] == ev["document_id"]
-        and c["source_location"] == ev["source_location"]
-    )
+    return int(any(is_evidence(item, c) for c in record["candidates"][:5]))
 
 
 def precision_recall_at_5(item: dict, record: dict):
     """Precision@5 and Recall@5 for one question. None if no evidence is expected."""
-    allowed = item.get("allowed_evidence", [])
-    if not allowed:
+    if is_no_evidence(item):
         return None
     top5 = record["candidates"][:5]
-    relevant = sum(1 for c in top5 if any(evidence_match(ev, c) for ev in allowed))
-    found = sum(1 for ev in allowed if any(evidence_match(ev, c) for c in top5))
-    return relevant / 5, found / len(allowed)
+    relevant = sum(1 for c in top5 if is_evidence(item, c))
+    return relevant / 5, evidence_recall(item, top5)
 
 
 def write_metrics(path: Path, records: list[dict], items: dict) -> None:
@@ -86,7 +71,7 @@ def write_metrics(path: Path, records: list[dict], items: dict) -> None:
                     "run_id": r["run_id"],
                     "question_id": r["question_id"],
                     "config": r["config"],
-                    "type": item.get("type", ""),
+                    "type": question_type(item),
                     "status": r["status"],
                     "precision_at_5": "" if pr is None else round(pr[0], 3),
                     "recall_at_5": "" if pr is None else round(pr[1], 3),
@@ -104,7 +89,7 @@ def build_rows(records: list[dict], items: dict) -> list[dict]:
             "run_id": r["run_id"],
             "question_id": r["question_id"],
             "config": r["config"],
-            "type": item.get("type", ""),
+            "type": question_type(item),
             "status": r["status"],
             "call_ok": int(call_ok),
             "latency_sec": r["latency_sec"],
@@ -252,10 +237,7 @@ def main() -> None:
 
     run_dir = ROOT / "results" / args.kind
     records = load_jsonl(run_dir / f"{args.run_id}.jsonl")
-    items = {
-        i["id"]: i
-        for i in json.loads((ROOT / args.eval_file).read_text(encoding="utf-8"))
-    }
+    items = load_testset(ROOT / args.eval_file)
 
     missing = [r["question_id"] for r in records if r["question_id"] not in items]
     if missing:

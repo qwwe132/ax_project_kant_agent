@@ -19,6 +19,8 @@ from ragas.metrics.collections import (
     Faithfulness,
 )
 
+from testset import is_no_evidence, load_testset, reference_answer
+
 ROOT = Path(__file__).resolve().parents[2]
 EMBEDDING_MODEL = "text-embedding-3-small"  # Answer Relevancy가 문장끼리 비교할떄 쓰는 모델. 검색과 같은 모델
 FIELDS = [
@@ -78,12 +80,12 @@ async def score_records(
         }
         item = items[r["question_id"]]
         question = item["question"]
-        reference = " ".join(item["expected_answer"])
+        reference = reference_answer(item)
         contexts = [c["text"] for c in r["candidates"] if c.get("text")]
         notes = []
 
         # 검색 지표: 답이 있는 문항이면 답변 결과와 상관없이 채점
-        if not item.get("allowed_evidence"):
+        if is_no_evidence(item):
             notes.append("context: no-evidence question")
         elif not contexts:
             row["context_precision"] = 0
@@ -148,10 +150,7 @@ def main() -> None:
     load_dotenv()
     run_dir = ROOT / "results" / args.kind
     records = load_jsonl(run_dir / f"{args.run_id}.jsonl")
-    items = {
-        i["id"]: i
-        for i in json.loads((ROOT / args.eval_file).read_text(encoding="utf-8"))
-    }
+    items = load_testset(ROOT / args.eval_file)
 
     out_path = run_dir / f"{args.run_id}_ragas.csv"
     if out_path.exists():
