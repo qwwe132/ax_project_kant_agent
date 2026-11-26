@@ -1,12 +1,12 @@
 from pathlib import Path
 
-import requests
+import httpx
 import streamlit as st
 
 API_URL = "http://127.0.0.1:8000/v1/chatbot/ask"
 
 BOT_NAME = "어둠의 에이타니"
-BOT_AVATAR = Path(__file__).parent / "assets" / "bot.png"
+BOT_AVATAR = Path(__file__).parent / "assets" / "bot.gif"
 
 # 제목 앞에 챗봇 프로필 이미지를 나란히 놓는다.
 with st.container(horizontal=True, vertical_alignment="center"):
@@ -92,8 +92,9 @@ def error_message(code: str, message: str) -> dict:
 def ask_api(question: str) -> dict:
     # 1) 서버에 연결
     try:
-        res = requests.post(API_URL, json={"question": question}, timeout=60)
-    except requests.RequestException:
+        with httpx.Client(timeout=60) as client:
+            res = client.post(API_URL, json={"question": question})
+    except httpx.RequestError:
         return error_message("CONNECTION_ERROR", "API 서버에 연결할 수 없습니다.")
 
     # 2) 응답을 JSON으로 읽기 (HTML 같은 다른 응답이면 실패)

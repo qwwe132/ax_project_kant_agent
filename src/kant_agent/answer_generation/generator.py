@@ -12,9 +12,11 @@ from kant_agent.answer_generation.sources import SOURCES
 load_dotenv()
 
 # 생성 모델과 프롬프트 버전 (평가 기록·보고서에 남긴다)
-# SYSTEM_PROMPT를 고치면 PROMPT_VERSION도 올린다. (v1 → v2)
+# SYSTEM_PROMPT, INTENT_PROMPT, CHAT_PROMPT, TONE_RULES 중
+# 하나라도 고치면 PROMPT_VERSION을 올린다.
 MODEL_NAME = "gpt-6-luna"
 PROMPT_VERSION = "v3"
+MAX_TOKENS = 1000   # 출력 한도 (추론 토큰 포함, 실측 최대 약 370)
 
 NO_EVIDENCE_MESSAGE = (
     "흐음… 짐의 서고에도 그런 기록은 없구나. 운영 담당자에게 직접 물어보거라."
@@ -41,7 +43,7 @@ SYSTEM_PROMPT = (
     - 말투보다 정보가 우선입니다. 시간·날짜·숫자·서류 이름은 문맥 그대로 정확히 쓰고, 답변은 2~4문장으로 짧게 쓰세요.
 
     [작성 규칙]
-    1. 문맥에 근거가 전혀 없다면 추측하지 말고 answer에 "흐음… 짐의 서고에도 그런 기록은 없구나. 운영 담당자에게 직접 물어보거라." 라고 작성하고 cited_numbers는 빈 리스트 ([])로 반환하세요.
+    1. 문맥에 근거가 전혀 없다면 추측하지 말고 answer에 "{no_evidence}" 라고 작성하고 cited_numbers는 빈 리스트 ([])로 반환하세요.
     2. 답변 문장 끝에는 반드시 근거가 된 문맥 번호(예: [1], [2])를 표기하세요.
     3. 실제 인용한 문맥 번호만 cited_numbers에 정수로 포함하세요.
 
@@ -104,6 +106,7 @@ def generate_answer(question: str, docs: list[Document]) -> CitedAnswerOutput:
         model=MODEL_NAME,
         model_provider="openai",
         reasoning_effort="low",
+        max_tokens=MAX_TOKENS,
     )
     structured_llm = model.with_structured_output(CitedAnswerOutput)
     chain = prompt | structured_llm
@@ -112,6 +115,7 @@ def generate_answer(question: str, docs: list[Document]) -> CitedAnswerOutput:
         {
             "context": _format_numbered_context(docs),
             "question": question,
+            "no_evidence": NO_EVIDENCE_MESSAGE,
         }
     )
 
@@ -158,6 +162,7 @@ def answer_question(question: str, docs: list[Document]) -> dict:
         "question": question,
         "status": status,
         "answer": answer,
+        "raw_answer": result.answer,
         "citations": citations,
         "retrieved_count": len(docs),
     }
@@ -175,7 +180,10 @@ def classify_intent(question: str) -> str:
         [("system", INTENT_PROMPT), ("human", "{question}")]
     )
     model = init_chat_model(
-        model=MODEL_NAME, model_provider="openai", reasoning_effort="low"
+        model=MODEL_NAME,
+        model_provider="openai",
+        reasoning_effort="low",
+        max_tokens=MAX_TOKENS,
     )
     chain = prompt | model | StrOutputParser()
     intent = chain.invoke({"question": question}).strip()
@@ -189,7 +197,10 @@ def answer_chat(question: str) -> dict:
         [("system", CHAT_PROMPT), ("human", "{question}")]
     )
     model = init_chat_model(
-        model=MODEL_NAME, model_provider="openai", reasoning_effort="low"
+        model=MODEL_NAME,
+        model_provider="openai",
+        reasoning_effort="low",
+        max_tokens=MAX_TOKENS,
     )
     chain = prompt | model | StrOutputParser()
     return {
