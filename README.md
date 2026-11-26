@@ -8,7 +8,7 @@
 - 의존성 설치 명령: `uv sync --locked`
 - 환경변수: [`.env.example`](.env.example) 참고
 - 임베딩·생성·재정렬 모델 및 버전:
-  - 생성: `gpt-6-luna` (`reasoning_effort="low"`, 출력 한도 `MAX_TOKENS=1000`), 프롬프트 `v3` — 값은 [`generator.py`](src/kant_agent/answer_generation/generator.py)의 `MODEL_NAME`, `PROMPT_VERSION`, `MAX_TOKENS`
+  - 생성: `gpt-6-luna` (`reasoning_effort="low"`, 출력 한도 `MAX_TOKENS=1000`), 프롬프트 `v4` — 값은 [`generator.py`](src/kant_agent/answer_generation/generator.py)의 `MODEL_NAME`, `PROMPT_VERSION`, `MAX_TOKENS`
   - 임베딩: <작성>
   - 재정렬: <작성>
 
