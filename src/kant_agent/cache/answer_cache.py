@@ -1,8 +1,9 @@
-"""Answer cache: keep the full search + answer result in a JSON file.
+"""Answer cache: keep the full search + answer result.
 
 The key mixes the question with everything that changes the answer
-(search config, index version, answer model, prompt version).
-If any of them changes, the key changes, so an old answer is never reused.
+(search config, collection, index version, search settings, answer model,
+prompt version). If any of them changes, the key changes, so an old answer
+is never reused. path=None keeps entries in memory only.
 """
 import hashlib
 import json
@@ -20,17 +21,22 @@ def normalize(question: str) -> str:
     return text.rstrip("?.!？。 ").strip()
 
 
-def make_key(question: str, config: str, index_version: str,
-             model: str, prompt_version: str) -> str:
-    """Locker number: same inputs always give the same key."""
-    parts = [normalize(question), config, index_version, model, prompt_version]
-    return hashlib.sha256("|".join(parts).encode("utf-8")).hexdigest()
+def make_key(question: str, config: str, settings: dict) -> str:
+    """Locker number: same inputs always give the same key.
 
+    settings holds everything that can change the answer:
+    {"search": collection, index version, search parameters, models,
+     "answer": answer model, prompt version}.
+    """
+    payload = json.dumps([normalize(question), config, settings],
+                         ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 class AnswerCache:
-    def __init__(self, path: Path = CACHE_PATH):
+    def __init__(self, path: Path | None = CACHE_PATH):
+        """path=None keeps entries in memory only (cleared on restart)."""
         self.path = path
-        if path.exists():
+        if path is not None and path.exists():
             self.entries = json.loads(path.read_text(encoding="utf-8"))
         else:
             self.entries = {}
@@ -49,6 +55,8 @@ class AnswerCache:
             "info": info,
             "value": value,
         }
+        if self.path is None:
+            return
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(
             json.dumps(self.entries, ensure_ascii=False, indent=2), encoding="utf-8")

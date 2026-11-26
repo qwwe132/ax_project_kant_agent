@@ -99,8 +99,8 @@ def run(run_id: str, config: str, eval_file: str, kind: str,
             start = time.perf_counter()
             key, saved = None, None
             if cache is not None:
-                key = make_key(item["question"], config, str(index_version),
-                               answer_settings["model"], answer_settings["prompt_version"])
+                key = make_key(item["question"], config,
+                               {"search": settings, "answer": answer_settings})
                 saved = cache.get(key)
                 record["cache"] = "hit" if saved else "miss"
 
@@ -134,7 +134,7 @@ def run(run_id: str, config: str, eval_file: str, kind: str,
                 if cache is not None:
                     cache.put(key, {k: record[k] for k in CACHED_FIELDS},
                               {"question": item["question"], "config": config,
-                               "index_version": index_version, **answer_settings})
+                               "search": settings, "answer": answer_settings})
 
             record["latency_sec"] = round(time.perf_counter() - start, 3)
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
