@@ -7,6 +7,8 @@ import csv
 import json
 from pathlib import Path
 
+from testset import load_testset, question_type, reference_answer
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -21,7 +23,7 @@ def main() -> None:
     a = p.parse_args()
 
     run_dir = ROOT / "results" / a.kind
-    items = {i["id"]: i for i in json.loads((ROOT / a.testset).read_text(encoding="utf-8"))}
+    items = load_testset(ROOT / a.testset)
     recs = {}
     for line in (run_dir / f"{a.run_id}.jsonl").read_text(encoding="utf-8").splitlines():
         if line.strip():
@@ -38,12 +40,12 @@ def main() -> None:
         qid = row["question_id"]
         it, rec = items[qid], recs[qid]
         print("=" * 70)
-        print(f"{qid} [{it['type']}] status={rec['status']}  "
+        print(f"{qid} [{question_type(it)}] status={rec['status']}  "
               f"CP={row['context_precision']} CR={row['context_recall']} "
               f"F={row['faithfulness'] or '-'} AR={row['answer_relevancy'] or '-'}")
         print("Q:", it["question"])
-        print("정답:", it["expected_answer"])
-        print("허용 근거:", it["allowed_evidence"])
+        print("정답:", reference_answer(it))
+        print("근거 원문:", it.get("context") or it.get("allowed_evidence"))
         print("답변:", rec["answer"])
         print("인용:", rec["citations"])
         print("-- 검색 상위 5 --")

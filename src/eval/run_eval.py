@@ -5,6 +5,7 @@ import time
 from pathlib import Path
 
 from langchain_core.callbacks import get_usage_metadata_callback
+from testset import load_testset
 
 from kant_agent.answer_generation import generator
 from kant_agent.answer_generation.generator import answer_from_chunks
@@ -115,7 +116,7 @@ def run(
     index_version: str,
     use_cache: bool = False,
 ) -> Path:
-    questions = json.loads((ROOT / eval_file).read_text(encoding="utf-8"))
+    questions = load_testset(ROOT / eval_file)
 
     out_dir = ROOT / "results" / kind
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -136,10 +137,10 @@ def run(
     records = []  # NEW: for the summary at the end
 
     with out_path.open("x", encoding="utf-8") as f:
-        for index, item in enumerate(questions, start=1):
+        for question_id, item in questions.items():
             record = {
                 "run_id": run_id,
-                "question_id": item.get("id", f"UNKNOWN-{index}"),
+                "question_id": question_id,
                 "config": config,
                 "search_settings": settings,
                 "answer_settings": answer_settings,
