@@ -235,31 +235,32 @@ KANT AGENT가 교육기관의 공식 문서에서
 
 ---
 
-## 8. 기술 스택 (초안)
+## 8. 기술 스택
 
 | 구분 | 기술 |
 |---|---|
-| Frontend | Next.js, TypeScript |
+| Frontend | Streamlit, httpx |
 | Backend | FastAPI, Python |
 | Database | PostgreSQL |
 | Vector DB | pgvector |
-| Embedding | 선정 예정 |
-| LLM | 선정 예정 |
-| 검색 방식 | Vector, BM25 + Vector, Hybrid + re-ranking |
+| Embedding | OpenAI `text-embedding-3-small` |
+| LLM | OpenAI `gpt-6-luna` (`reasoning_effort="low"`, `max_tokens` 1000), LangChain |
+| Re-ranking | `Dongjin-kr/ko-reranker` (Cross-Encoder) |
+| 검색 방식 | Vector, BM25 + Vector, Hybrid + re-ranking (최종 선택: Hybrid + re-ranking) |
 | 평가 | Hit@5, 정답 충족, 근거 적합, 정보 부족 안내, 성공률·지연·오류 |
 
 ---
 
 ## 9. 1일차 작업 목록
 
-- [ ] 문제 정의 작성
-- [ ] 목표 사용자 정의
-- [ ] 구현 범위 및 제외 범위 확정
-- [ ] 성공 기준 설정
-- [ ] 공식 문서 수집 및 목록화
-- [ ] 평가 질문 30개 초안 작성
-- [ ] 질문별 기대 답변 작성 및 허용 근거 원문 위치 확인
-- [ ] Dev/Test 평가셋 분리
+- [x] 문제 정의 작성
+- [x] 목표 사용자 정의
+- [x] 구현 범위 및 제외 범위 확정
+- [x] 성공 기준 설정
+- [x] 공식 문서 수집 및 목록화
+- [x] 평가 질문 30개 초안 작성
+- [x] 질문별 기대 답변 작성 및 허용 근거 원문 위치 확인
+- [x] Dev/Test 평가셋 분리
 
 ---
 

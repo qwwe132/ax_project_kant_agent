@@ -9,8 +9,8 @@
 - 환경변수: [`.env.example`](.env.example) 참고
 - 임베딩·생성·재정렬 모델 및 버전:
   - 생성: `gpt-6-luna` (`reasoning_effort="low"`, 출력 한도 `MAX_TOKENS=1000`), 프롬프트 `v4` — 값은 [`generator.py`](src/kant_agent/answer_generation/generator.py)의 `MODEL_NAME`, `PROMPT_VERSION`, `MAX_TOKENS`
-  - 임베딩: <작성>
-  - 재정렬: <작성>
+  - 임베딩: `text-embedding-3-small` (OpenAI), 컬렉션 `kant_docs`, 색인 `v1` — 값은 [`build_index.py`](src/kant_agent/document_indexing/build_index.py)와 [`service.py`](src/kant_agent/search/service.py)의 `EMBEDDING_MODEL`
+  - 재정렬: `Dongjin-kr/ko-reranker` (Cross-Encoder, 구성 C), 후보 `CANDIDATE_K=20`개 중 상위 `TOP_K=5`개 출력 — 값은 [`service.py`](src/kant_agent/search/service.py)의 `RERANKER_MODEL`, `CANDIDATE_K`, `TOP_K`
 
 ## 팀 공용 샘플 데이터
 
@@ -35,7 +35,11 @@
 
 ## 재현 순서
 
-1. [문서 목록](data/sources.md)을 보고 입력 원문을 준비합니다. <재수집 방법 작성>
+1. [문서 목록](data/sources.md)을 보고 입력 원문을 준비합니다. 2026-11-23에 수집한 원문 사본이 `data/raw/notion/`에 들어 있으므로 그대로 재현할 때는 이 단계를 건너뜁니다. 원문이 바뀌어 다시 받을 때는 아래 순서를 따릅니다.
+   - Notion 문서(NOTION-001~018): 문서 목록의 출처 링크를 열어 Markdown으로 저장하고, 원문 위치 열의 파일(예: `data/raw/notion/attendance-fraud.md`)에 덮어씁니다. 첨부 이미지·파일은 `data/raw/notion/assets/`에 둡니다.
+   - 파일 맨 위 머리말(`- 문서 ID: NOTION-015`, `- Notion 원문`, `- 수집일`, `- Notion 최종 수정 시각`)은 유지하고 수집일과 수정 시각만 고칩니다. 색인은 이 문서 ID가 문서 목록과 다르면 멈춥니다.
+   - 시간표(NOTION-019): 구글 시트를 xlsx로 내려받아 `data/raw/notion/assets/KANT_AX_시간표.xlsx`에 덮어씁니다.
+   - 문서 목록의 `버전 또는 수집일` 열을 고치고, 2번으로 색인을 다시 만든 뒤 평가·캐시의 `--index-version`을 올립니다.
 2. 전처리 및 색인 재생성: 루트 `.env`에 [`.env.example`](.env.example)의 `OPENAI_API_KEY`, `DATABASE_URL`을 채운 뒤 레포 루트에서 실행합니다.
    ```
    uv run python -m kant_agent.document_indexing.build_index
@@ -53,7 +57,7 @@
    | --- | --- |
    | 몇 시부터 지각이야? | 흰 말풍선, "09:10 이후 입실하면 지각" + `[1]`, "참고 자료 보기"에 `[KANT] 출석 및 공가 신청 가이드` Notion 링크 |
    | 11월 27일 시간표 알려줘 | 흰 말풍선, `09:00~13:00·14:00~18:00` 일정 + `KANT AX 시간표` 링크 |
-   | 회사 주차 요금은 얼마야? | 파란 말풍선, 근거 없음 안내("짐의 서고에도 그런 기록은 없구나…"), 참고 자료 없음 |
+   | 회사 주차 요금은 얼마야? | 파란 말풍선, 근거 없음 안내("흐음… 본좌의 서고에는 그런 기록이 없구나. 운영 담당자에게 직접 물어보거라."), 참고 자료 없음 |
    | 안녕 | 흰 말풍선, 짧은 인사(일반 대화), 참고 자료 없음 |
    | (API 서버를 끈 상태에서) 아무 질문 | 빨간 말풍선 `CONNECTION_ERROR` |
 
