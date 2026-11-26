@@ -1,0 +1,11 @@
+﻿run_id,question_id,config,type,status,call_ok,latency_sec,hit_at_5,answer_correct,evidence_fit,no_evidence_ok,note,scorer,reviewer
+dev-C-02,DEV-001,C,직접 검색,ok,1,7.816,1,,,,,,
+dev-C-02,DEV-002,C,직접 검색,ok,1,7.203,1,,,,,,
+dev-C-02,DEV-003,C,직접 검색,ok,1,7.923,1,,,,,,
+dev-C-02,DEV-004,C,직접 검색,ok,1,6.147,1,,,,,,
+dev-C-02,DEV-005,C,직접 검색,ok,1,7.866,1,,,,,,
+dev-C-02,DEV-006,C,직접 검색,ok,1,8.193,1,,,,,,
+dev-C-02,DEV-007,C,직접 검색,ok,1,6.965,1,,,,,,
+dev-C-02,DEV-008,C,직접 검색,ok,1,7.674,1,,,,,,
+dev-C-02,DEV-009,C,근거 없음,no_evidence,1,6.862,,,,,,,
+dev-C-02,DEV-010,C,근거 없음,ok,1,7.784,,,,,,,

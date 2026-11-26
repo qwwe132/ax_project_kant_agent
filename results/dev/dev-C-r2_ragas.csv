@@ -1,0 +1,11 @@
+﻿run_id,question_id,status,context_precision,context_recall,faithfulness,answer_relevancy,judge_model,embedding_model,ragas_version,note
+dev-C-r2,DEV-001,ok,1.0,1.0,0.667,0.831,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-002,ok,1.0,1.0,1.0,0.781,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-003,ok,0.833,1.0,1.0,0.652,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-004,ok,1.0,1.0,1.0,0.611,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-005,ok,1.0,1.0,1.0,0.77,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-006,ok,1.0,1.0,0.667,0.53,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-007,ok,1.0,1.0,1.0,0.818,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-008,ok,1.0,1.0,1.0,0.516,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-r2,DEV-009,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
+dev-C-r2,DEV-010,ok,,,0.5,0.405,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question

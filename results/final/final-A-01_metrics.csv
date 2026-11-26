@@ -1,0 +1,21 @@
+﻿run_id,question_id,config,type,status,precision_at_5,recall_at_5
+final-A-01,TEST-001,A,직접 검색,no_evidence,0.0,0.0
+final-A-01,TEST-002,A,직접 검색,no_evidence,0.0,0.0
+final-A-01,TEST-003,A,직접 검색,ok,0.4,1.0
+final-A-01,TEST-004,A,직접 검색,ok,0.2,1.0
+final-A-01,TEST-005,A,직접 검색,ok,0.2,0.5
+final-A-01,TEST-006,A,직접 검색,ok,0.2,0.5
+final-A-01,TEST-007,A,직접 검색,ok,0.4,0.5
+final-A-01,TEST-008,A,직접 검색,ok,0.4,1.0
+final-A-01,TEST-009,A,직접 검색,ok,0.2,1.0
+final-A-01,TEST-010,A,직접 검색,ok,0.0,0.0
+final-A-01,TEST-011,A,유사 조건 구분,ok,0.0,0.0
+final-A-01,TEST-012,A,유사 조건 구분,ok,0.0,0.0
+final-A-01,TEST-013,A,유사 조건 구분,ok,0.2,1.0
+final-A-01,TEST-014,A,유사 조건 구분,ok,0.2,0.5
+final-A-01,TEST-015,A,유사 조건 구분,ok,0.2,1.0
+final-A-01,TEST-016,A,유사 조건 구분,ok,0.2,1.0
+final-A-01,TEST-017,A,유사 조건 구분,no_evidence,0.0,0.0
+final-A-01,TEST-018,A,근거 없음,ok,,
+final-A-01,TEST-019,A,근거 없음,no_evidence,,
+final-A-01,TEST-020,A,근거 없음,no_evidence,,
