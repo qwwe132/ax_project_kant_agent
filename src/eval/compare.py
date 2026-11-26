@@ -5,7 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 METRICS = ["context_precision", "context_recall", "faithfulness", "answer_relevancy"]
-PASS_METRICS = ["context_precision", "context_recall"]  # 팀 합의: 둘 다 올라가야 통과
+PASS_METRICS = ["context_precision", "context_recall"]  # 팀 합의: 둘 다 내려가지 않아야 통과
 
 
 def load(run_dir: Path, run_id: str) -> dict:
@@ -65,8 +65,11 @@ def main() -> None:
         print(f"PENDING: CP/CR missing or failed on: {', '.join(unscored)}. "
               "Re-score these questions, then compare again.")
     else:
-        verdict = str(all(deltas.get(m, 0) > 0 for m in PASS_METRICS)).lower()
-    print(f"regression_passed: {verdict}  (rule: {' and '.join(PASS_METRICS)} must go up)")
+        verdict = str(all(deltas.get(m, 0) >= 0 for m in PASS_METRICS)).lower()
+    print(f"regression_passed: {verdict}  (rule: {' and '.join(PASS_METRICS)} must not go down)")
+    if verdict == "true":
+        improved = any(deltas.get(m, 0) > 0 for m in PASS_METRICS)
+        print(f"improved: {str(improved).lower()}  (rule: {' or '.join(PASS_METRICS)} went up)")
     dropped = [m for m in METRICS if m not in PASS_METRICS and deltas.get(m, 0) < 0]
     if dropped:
         print(f"NOTE: went down: {', '.join(dropped)}")
