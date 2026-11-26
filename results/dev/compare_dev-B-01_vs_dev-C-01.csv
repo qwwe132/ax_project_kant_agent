@@ -1,0 +1,11 @@
+﻿question_id,context_precision_baseline,context_precision_improved,context_precision_delta,context_recall_baseline,context_recall_improved,context_recall_delta,faithfulness_baseline,faithfulness_improved,faithfulness_delta,answer_relevancy_baseline,answer_relevancy_improved,answer_relevancy_delta
+DEV-001,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.531,0.775,0.244
+DEV-002,0.5,1.0,0.5,1.0,1.0,0.0,1.0,1.0,0.0,0.851,0.833,-0.018
+DEV-003,0.833,0.833,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.659,0.625,-0.034
+DEV-004,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.67,0.67,0.0
+DEV-005,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.783,0.891,0.108
+DEV-006,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.686,0.691,0.005
+DEV-007,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.569,0.823,0.254
+DEV-008,1.0,1.0,0.0,1.0,1.0,0.0,0.667,1.0,0.333,0.457,0.539,0.082
+DEV-009,,,,,,,,1.0,,,0.0,
+DEV-010,,,,,,,0.5,0.6,0.1,0.597,0.0,-0.597

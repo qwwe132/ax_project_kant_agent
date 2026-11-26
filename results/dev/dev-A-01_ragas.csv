@@ -1,0 +1,11 @@
+﻿run_id,question_id,status,context_precision,context_recall,faithfulness,answer_relevancy,judge_model,embedding_model,ragas_version,note
+dev-A-01,DEV-001,ok,0.333,1.0,1.0,0.768,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-002,ok,1.0,1.0,0.667,0.759,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-003,ok,0.583,1.0,1.0,0.5,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-004,ok,1.0,1.0,1.0,0.67,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-005,ok,1.0,1.0,0.875,0.891,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-006,ok,1.0,1.0,0.667,0.556,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-007,ok,1.0,1.0,1.0,0.807,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-008,ok,1.0,1.0,0.667,0.459,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-A-01,DEV-009,ok,,,1.0,0.0,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question
+dev-A-01,DEV-010,ok,,,0.75,0.614,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question
