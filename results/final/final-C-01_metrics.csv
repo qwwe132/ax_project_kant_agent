@@ -1,0 +1,21 @@
+﻿run_id,question_id,config,type,status,precision_at_5,recall_at_5
+final-C-01,TEST-001,C,단순 사실 확인,ok,0.2,1.0
+final-C-01,TEST-002,C,단순 사실 확인,ok,0.2,1.0
+final-C-01,TEST-003,C,단순 사실 확인,ok,0.4,0.998
+final-C-01,TEST-004,C,단순 사실 확인,ok,0.2,1.0
+final-C-01,TEST-005,C,단순 사실 확인,ok,0.4,0.999
+final-C-01,TEST-006,C,단순 사실 확인,ok,0.2,0.502
+final-C-01,TEST-007,C,단순 사실 확인,ok,0.4,0.391
+final-C-01,TEST-008,C,단순 사실 확인,ok,0.4,0.998
+final-C-01,TEST-009,C,단순 사실 확인,ok,0.2,1.0
+final-C-01,TEST-010,C,단순 사실 확인,ok,0.4,0.564
+final-C-01,TEST-011,C,복합 추론 질문,ok,0.0,0.0
+final-C-01,TEST-012,C,복합 추론 질문,ok,0.0,0.0
+final-C-01,TEST-013,C,복합 추론 질문,ok,0.2,1.0
+final-C-01,TEST-014,C,복합 추론 질문,ok,0.2,0.395
+final-C-01,TEST-015,C,복합 추론 질문,ok,0.2,1.0
+final-C-01,TEST-016,C,복합 추론 질문,ok,0.2,1.0
+final-C-01,TEST-017,C,복합 추론 질문,ok,0.4,0.242
+final-C-01,TEST-018,C,문서 외 함정 질문,ok,,
+final-C-01,TEST-019,C,문서 외 함정 질문,no_evidence,,
+final-C-01,TEST-020,C,문서 외 함정 질문,no_evidence,,

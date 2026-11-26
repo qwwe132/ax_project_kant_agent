@@ -1,0 +1,21 @@
+﻿run_id,question_id,status,context_precision,context_recall,faithfulness,answer_relevancy,judge_model,embedding_model,ragas_version,note
+final-B-01,TEST-001,ok,0.333,1.0,1.0,0.71,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-002,ok,0.5,0.0,0.333,0.643,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-003,ok,0.833,1.0,1.0,0.416,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-004,ok,1.0,1.0,1.0,0.601,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-005,ok,0.7,1.0,1.0,0.677,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-006,ok,0.0,0.0,0.6,0.665,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-007,ok,0.804,0.0,0.875,0.479,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-008,ok,0.5,1.0,0.875,0.504,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-009,ok,0.806,1.0,0.8,0.519,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-010,no_evidence,0.0,1.0,,,gpt-6-luna,text-embedding-3-small,0.4.4,"answer: skipped, status is no_evidence"
+final-B-01,TEST-011,ok,0.2,0.333,0.667,0.529,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-012,ok,1.0,0.0,1.0,0.0,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-013,ok,0.583,1.0,0.8,0.839,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-014,ok,1.0,0.5,0.5,0.619,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-015,ok,0.5,1.0,1.0,0.604,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-016,ok,0.806,1.0,0.333,0.787,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-017,ok,0.0,0.0,1.0,0.0,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-018,ok,,,0.667,0.706,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question
+final-B-01,TEST-019,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
+final-B-01,TEST-020,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
