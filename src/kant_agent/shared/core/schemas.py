@@ -28,9 +28,7 @@ class APIResponse(BaseModel, Generic[T]):
         message: str = "요청이 성공적으로 처리되었습니다.",
         code: str = "OK",
     ) -> "APIResponse[T]":
-        return cls(
-            success=True, code=code, message=message, errors=None, data=data
-        )
+        return cls(success=True, code=code, message=message, errors=None, data=data)
 
     @classmethod
     def fail(
@@ -39,6 +37,4 @@ class APIResponse(BaseModel, Generic[T]):
         code: str = "BAD_REQUEST",
         errors: dict[str, list[str]] | list[str] | Any | None = None,
     ) -> "APIResponse[None]":
-        return cls(
-            success=False, code=code, message=message, errors=errors, data=None
-        )
+        return cls(success=False, code=code, message=message, errors=errors, data=None)

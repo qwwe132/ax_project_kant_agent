@@ -9,8 +9,14 @@ ROOT = Path(__file__).resolve().parents[2]
 SCORE_COLUMNS = ["answer_correct", "evidence_fit", "no_evidence_ok"]
 MANUAL_COLUMNS = SCORE_COLUMNS + ["note", "scorer", "reviewer"]
 FIELDS = [
-    "run_id", "question_id", "config", "type", "status",
-    "call_ok", "latency_sec", "hit_at_5",
+    "run_id",
+    "question_id",
+    "config",
+    "type",
+    "status",
+    "call_ok",
+    "latency_sec",
+    "hit_at_5",
 ] + MANUAL_COLUMNS
 
 
@@ -29,15 +35,22 @@ def hit_at_5(item: dict, record: dict):
             if ev.get("chunk_id") is not None:
                 if c["chunk_id"] == ev["chunk_id"]:
                     return 1
-            elif c["document_id"] == ev["document_id"] and c["source_location"] == ev["source_location"]:
+            elif (
+                c["document_id"] == ev["document_id"]
+                and c["source_location"] == ev["source_location"]
+            ):
                 return 1
     return 0
+
 
 def evidence_match(ev: dict, c: dict) -> bool:
     """True if a search result matches one allowed evidence."""
     if ev.get("chunk_id") is not None:
         return c["chunk_id"] == ev["chunk_id"]
-    return c["document_id"] == ev["document_id"] and c["source_location"] == ev["source_location"]
+    return (
+        c["document_id"] == ev["document_id"]
+        and c["source_location"] == ev["source_location"]
+    )
 
 
 def precision_recall_at_5(item: dict, record: dict):
@@ -53,23 +66,32 @@ def precision_recall_at_5(item: dict, record: dict):
 
 def write_metrics(path: Path, records: list[dict], items: dict) -> None:
     """Save per-question metrics to a CSV. Rebuilt from the run record every time."""
-    fields = ["run_id", "question_id", "config", "type", "status",
-              "precision_at_5", "recall_at_5"]
+    fields = [
+        "run_id",
+        "question_id",
+        "config",
+        "type",
+        "status",
+        "precision_at_5",
+        "recall_at_5",
+    ]
     with path.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
         for r in records:
             item = items[r["question_id"]]
             pr = precision_recall_at_5(item, r)
-            writer.writerow({
-                "run_id": r["run_id"],
-                "question_id": r["question_id"],
-                "config": r["config"],
-                "type": item.get("type", ""),
-                "status": r["status"],
-                "precision_at_5": "" if pr is None else round(pr[0], 3),
-                "recall_at_5": "" if pr is None else round(pr[1], 3),
-            })
+            writer.writerow(
+                {
+                    "run_id": r["run_id"],
+                    "question_id": r["question_id"],
+                    "config": r["config"],
+                    "type": item.get("type", ""),
+                    "status": r["status"],
+                    "precision_at_5": "" if pr is None else round(pr[0], 3),
+                    "recall_at_5": "" if pr is None else round(pr[1], 3),
+                }
+            )
     print("saved metrics:", path)
 
 
@@ -112,6 +134,7 @@ def total_of(column: str, group: list[dict]):
     score = sum(int(r[column]) for r in filled if r["call_ok"] == "1")
     return score, len(filled), len(group)
 
+
 def check_sheet(rows: list[dict]) -> list[str]:
     problems = []
     for r in rows:
@@ -119,13 +142,22 @@ def check_sheet(rows: list[dict]) -> list[str]:
         for col in SCORE_COLUMNS:
             if r[col] not in ("", "0", "1"):
                 problems.append(f"{qid}: {col} must be 0 or 1 (got {r[col]!r})")
-        wrong = ["no_evidence_ok"] if r["hit_at_5"] != "" else ["answer_correct", "evidence_fit"]
+        wrong = (
+            ["no_evidence_ok"]
+            if r["hit_at_5"] != ""
+            else ["answer_correct", "evidence_fit"]
+        )
         for col in wrong:
             if r[col] != "":
                 problems.append(f"{qid}: {col} should be empty for this question type")
-        if r["call_ok"] == "1" and any(r[c] != "" for c in SCORE_COLUMNS) and r["scorer"] == "":
+        if (
+            r["call_ok"] == "1"
+            and any(r[c] != "" for c in SCORE_COLUMNS)
+            and r["scorer"] == ""
+        ):
             problems.append(f"{qid}: scored but scorer is empty")
     return problems
+
 
 def summarize(records: list[dict], rows: list[dict], items: dict) -> None:
     answerable = [r for r in rows if r["hit_at_5"] != ""]
@@ -141,9 +173,11 @@ def summarize(records: list[dict], rows: list[dict], items: dict) -> None:
     print(f"Hit@5: {hits}/{len(answerable)}")
     print(f"call success: {len(ok)}/{len(rows)}")
     if latencies:
-        print(f"latency: mean {statistics.mean(latencies):.3f}s, median {statistics.median(latencies):.3f}s, n={len(latencies)}")
+        print(
+            f"latency: mean {statistics.mean(latencies):.3f}s, median {statistics.median(latencies):.3f}s, n={len(latencies)}"
+        )
     print(f"errors: retrieve {retrieve_errors}, answer {answer_errors}")
-    
+
     pr = [precision_recall_at_5(items[r["question_id"]], r) for r in records]
     pr = [x for x in pr if x is not None]
     if pr:
@@ -163,12 +197,16 @@ def summarize(records: list[dict], rows: list[dict], items: dict) -> None:
     reviewed = sum(1 for r in rows if r["reviewer"] != "")
     print(f"cross-reviewed rows: {reviewed}/{len(rows)}")
 
-    wrong = [r["question_id"] for r in rows
-             if r["call_ok"] == "0" and any(r[c] == "1" for c in SCORE_COLUMNS)]
+    wrong = [
+        r["question_id"]
+        for r in rows
+        if r["call_ok"] == "0" and any(r[c] == "1" for c in SCORE_COLUMNS)
+    ]
     if wrong:
         print(f"WARNING: call errors marked as 1 (counted as 0): {', '.join(wrong)}")
     for p in check_sheet(rows):
         print("WARNING:", p)
+
 
 def check_ids(sheet: list[dict], records: list[dict]) -> None:
     """Stop if the scoring sheet rows do not match the run record."""
@@ -192,8 +230,8 @@ def check_ids(sheet: list[dict], records: list[dict]) -> None:
         )
 
 
-#두 출처 합치기
-#자동칸은 원본 기록에서, 사람칸은 csv에서 가져옴
+# 두 출처 합치기
+# 자동칸은 원본 기록에서, 사람칸은 csv에서 가져옴
 def merge_manual(auto_rows: list[dict], sheet: list[dict]) -> list[dict]:
     """Automatic columns from the run record, manual columns from the sheet."""
     by_id = {r["question_id"]: r for r in sheet}
@@ -214,12 +252,17 @@ def main() -> None:
 
     run_dir = ROOT / "results" / args.kind
     records = load_jsonl(run_dir / f"{args.run_id}.jsonl")
-    items = {i["id"]: i for i in json.loads((ROOT / args.eval_file).read_text(encoding="utf-8"))}
+    items = {
+        i["id"]: i
+        for i in json.loads((ROOT / args.eval_file).read_text(encoding="utf-8"))
+    }
 
     missing = [r["question_id"] for r in records if r["question_id"] not in items]
     if missing:
-        raise SystemExit(f"Question IDs not in {args.eval_file}: {', '.join(missing)}\n"
-                         "Check that the eval file matches this run.")
+        raise SystemExit(
+            f"Question IDs not in {args.eval_file}: {', '.join(missing)}\n"
+            "Check that the eval file matches this run."
+        )
     auto_rows = build_rows(records, items)
     sheet_path = run_dir / f"{args.run_id}_scoring.csv"
     if not sheet_path.exists():

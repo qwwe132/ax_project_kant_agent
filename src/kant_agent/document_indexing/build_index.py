@@ -72,9 +72,7 @@ REQUIRED_FIELDS = [
 # - ^\| (\S+) \|  : 줄 맨 앞 첫 칸의 문서 ID (1번 그룹)
 # - `([^`]+\.(md|xlsx))` : 백틱 안의 .md·.xlsx 경로 (2번 그룹)
 # MULTILINE을 켜야 ^가 줄마다 적용된다. (정규식 특강 4절)
-_SOURCE_ROW = re.compile(
-    r"^\| (\S+) \|.*`([^`]+\.(md|xlsx))`", re.MULTILINE
-)
+_SOURCE_ROW = re.compile(r"^\| (\S+) \|.*`([^`]+\.(md|xlsx))`", re.MULTILINE)
 
 
 def read_source_list(sources_path: Path) -> dict[str, str]:
@@ -131,9 +129,7 @@ def build_all_chunks(sources: dict[str, str]) -> list[dict]:
     # 문서 목록 표 형식이 바뀌어 목록이 비면, 빈 입력으로 적재해서
     # 기존 컬렉션이 통째로 지워진다. 그래서 시작 전에 막는다.
     if not sources:
-        raise ValueError(
-            "색인할 문서가 없습니다. 문서 목록 표 형식을 확인하세요."
-        )
+        raise ValueError("색인할 문서가 없습니다. 문서 목록 표 형식을 확인하세요.")
 
     all_chunks = []
     seen_ids = set()
@@ -218,8 +214,7 @@ def index_chunks(chunks: list[dict], collection_name: str) -> dict:
     # 검색 코드가 page_content와 chunks.json의 text가 같은지,
     # 메타데이터 chunk_id로 청크를 찾기 때문에 그대로 넣어야 한다.
     documents = [
-        Document(page_content=chunk["text"], metadata=chunk)
-        for chunk in chunks
+        Document(page_content=chunk["text"], metadata=chunk) for chunk in chunks
     ]
 
     # 내용이 같은 청크는 장부와 비교해 건너뛰고(skip),
@@ -284,9 +279,7 @@ def main() -> None:
     # (--chunks-only는 DB를 쓰지 않으므로 바로 JSON만 만든다.)
     if not args.chunks_only:
         result = index_chunks(chunks, collection_name)
-        logger.info(
-            "[build_index] %s 적재 결과: %s", collection_name, result
-        )
+        logger.info("[build_index] %s 적재 결과: %s", collection_name, result)
 
     save_chunks(chunks, chunks_path)
     logger.info(

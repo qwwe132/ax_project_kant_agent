@@ -5,6 +5,7 @@ The key mixes the question with everything that changes the answer
 prompt version). If any of them changes, the key changes, so an old answer
 is never reused. path=None keeps entries in memory only.
 """
+
 import hashlib
 import json
 import re
@@ -28,9 +29,11 @@ def make_key(question: str, config: str, settings: dict) -> str:
     {"search": collection, index version, search parameters, models,
      "answer": answer model, prompt version}.
     """
-    payload = json.dumps([normalize(question), config, settings],
-                         ensure_ascii=False, sort_keys=True)
+    payload = json.dumps(
+        [normalize(question), config, settings], ensure_ascii=False, sort_keys=True
+    )
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
 
 class AnswerCache:
     def __init__(self, path: Path | None = CACHE_PATH):
@@ -59,4 +62,5 @@ class AnswerCache:
             return
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(
-            json.dumps(self.entries, ensure_ascii=False, indent=2), encoding="utf-8")
+            json.dumps(self.entries, ensure_ascii=False, indent=2), encoding="utf-8"
+        )

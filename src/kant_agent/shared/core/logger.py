@@ -9,8 +9,7 @@ log_mode = os.getenv("LOGGING_MODE", "info").lower()
 log_level = logging.DEBUG if log_mode == "debug" else logging.INFO
 
 LOG_FORMAT = (
-    "%(asctime)s [%(levelname)s] %(name)s "
-    "(%(filename)s:%(lineno)d) - %(message)s"
+    "%(asctime)s [%(levelname)s] %(name)s " "(%(filename)s:%(lineno)d) - %(message)s"
 )
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
