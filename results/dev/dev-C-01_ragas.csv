@@ -1,11 +1,11 @@
 ﻿run_id,question_id,status,context_precision,context_recall,faithfulness,answer_relevancy,judge_model,embedding_model,ragas_version,note
-dev-C-01,DEV-001,ok,1.0,1.0,1.0,0.773,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-002,ok,1.0,1.0,1.0,0.753,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-003,ok,0.833,1.0,1.0,0.656,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-001,ok,1.0,1.0,1.0,0.775,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-002,ok,1.0,1.0,1.0,0.833,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-003,ok,0.833,1.0,1.0,0.625,gpt-6-luna,text-embedding-3-small,0.4.4,
 dev-C-01,DEV-004,ok,1.0,1.0,1.0,0.67,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-005,ok,1.0,1.0,1.0,0.728,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-006,ok,1.0,1.0,0.5,0.521,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-007,ok,1.0,1.0,1.0,0.635,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-008,ok,1.0,1.0,1.0,0.471,gpt-6-luna,text-embedding-3-small,0.4.4,
-dev-C-01,DEV-009,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
-dev-C-01,DEV-010,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
+dev-C-01,DEV-005,ok,1.0,1.0,1.0,0.891,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-006,ok,1.0,1.0,1.0,0.691,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-007,ok,1.0,1.0,1.0,0.823,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-008,ok,1.0,1.0,1.0,0.539,gpt-6-luna,text-embedding-3-small,0.4.4,
+dev-C-01,DEV-009,ok,,,1.0,0.0,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question
+dev-C-01,DEV-010,ok,,,0.6,0.0,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question

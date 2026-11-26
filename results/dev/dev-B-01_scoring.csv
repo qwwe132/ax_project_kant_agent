@@ -1,0 +1,11 @@
+﻿run_id,question_id,config,type,status,call_ok,latency_sec,hit_at_5,answer_correct,evidence_fit,no_evidence_ok,note,scorer,reviewer
+dev-B-01,DEV-001,B,단순 사실 확인,ok,1,2.817,1,,,,,,
+dev-B-01,DEV-002,B,단순 사실 확인,ok,1,1.576,1,,,,,,
+dev-B-01,DEV-003,B,단순 사실 확인,ok,1,1.983,1,,,,,,
+dev-B-01,DEV-004,B,단순 사실 확인,ok,1,1.966,1,,,,,,
+dev-B-01,DEV-005,B,단순 사실 확인,ok,1,2.26,1,,,,,,
+dev-B-01,DEV-006,B,단순 사실 확인,ok,1,1.809,1,,,,,,
+dev-B-01,DEV-007,B,단순 사실 확인,ok,1,1.742,1,,,,,,
+dev-B-01,DEV-008,B,단순 사실 확인,ok,1,2.059,1,,,,,,
+dev-B-01,DEV-009,B,문서 외 함정 질문,no_evidence,1,2.41,,,,,,,
+dev-B-01,DEV-010,B,문서 외 함정 질문,ok,1,1.632,,,,,,,

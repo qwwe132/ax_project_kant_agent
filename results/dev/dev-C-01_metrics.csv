@@ -1,0 +1,11 @@
+﻿run_id,question_id,config,type,status,precision_at_5,recall_at_5
+dev-C-01,DEV-001,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-002,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-003,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-004,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-005,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-006,C,단순 사실 확인,ok,0.4,0.999
+dev-C-01,DEV-007,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-008,C,단순 사실 확인,ok,0.2,1.0
+dev-C-01,DEV-009,C,문서 외 함정 질문,ok,,
+dev-C-01,DEV-010,C,문서 외 함정 질문,ok,,
