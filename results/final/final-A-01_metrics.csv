@@ -1,0 +1,21 @@
+﻿run_id,question_id,config,type,status,precision_at_5,recall_at_5
+final-A-01,TEST-001,A,단순 사실 확인,no_evidence,0.0,0.0
+final-A-01,TEST-002,A,단순 사실 확인,no_evidence,0.0,0.0
+final-A-01,TEST-003,A,단순 사실 확인,ok,0.4,0.998
+final-A-01,TEST-004,A,단순 사실 확인,ok,0.2,1.0
+final-A-01,TEST-005,A,단순 사실 확인,ok,0.2,0.517
+final-A-01,TEST-006,A,단순 사실 확인,ok,0.2,0.502
+final-A-01,TEST-007,A,단순 사실 확인,ok,0.4,0.391
+final-A-01,TEST-008,A,단순 사실 확인,ok,0.4,0.998
+final-A-01,TEST-009,A,단순 사실 확인,ok,0.2,1.0
+final-A-01,TEST-010,A,단순 사실 확인,ok,0.0,0.0
+final-A-01,TEST-011,A,복합 추론 질문,ok,0.0,0.0
+final-A-01,TEST-012,A,복합 추론 질문,no_evidence,0.0,0.0
+final-A-01,TEST-013,A,복합 추론 질문,ok,0.2,1.0
+final-A-01,TEST-014,A,복합 추론 질문,ok,0.2,0.395
+final-A-01,TEST-015,A,복합 추론 질문,ok,0.2,1.0
+final-A-01,TEST-016,A,복합 추론 질문,ok,0.2,1.0
+final-A-01,TEST-017,A,복합 추론 질문,no_evidence,0.0,0.0
+final-A-01,TEST-018,A,문서 외 함정 질문,ok,,
+final-A-01,TEST-019,A,문서 외 함정 질문,no_evidence,,
+final-A-01,TEST-020,A,문서 외 함정 질문,no_evidence,,
