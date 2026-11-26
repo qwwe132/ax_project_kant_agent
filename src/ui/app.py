@@ -172,6 +172,7 @@ if prompt := st.chat_input(f"{BOT_NAME}에게 물어보세요.", max_chars=500):
         user_msg = {"role": "user", "content": prompt}
         messages.append(user_msg)
         show_message(len(messages) - 1, user_msg)
+        scroll_to_bottom()
 
         with st.spinner("답변을 준비하는 중..."):
             bot_msg = ask_api(prompt)

@@ -7,7 +7,10 @@
 - Python 버전: [`.python-version`](.python-version)
 - 의존성 설치 명령: `uv sync --locked`
 - 환경변수: [`.env.example`](.env.example) 참고
-- 임베딩·생성·재정렬 모델 및 버전: <작성>
+- 임베딩·생성·재정렬 모델 및 버전:
+  - 생성: `gpt-6-luna` (`reasoning_effort="low"`, 출력 한도 `MAX_TOKENS=1000`), 프롬프트 `v3` — 값은 [`generator.py`](src/kant_agent/answer_generation/generator.py)의 `MODEL_NAME`, `PROMPT_VERSION`, `MAX_TOKENS`
+  - 임베딩: <작성>
+  - 재정렬: <작성>
 
 ## 팀 공용 샘플 데이터
 
@@ -38,8 +41,23 @@
    uv run python -m kant_agent.document_indexing.build_index
    ```
    정상이면 마지막 로그에 `문서 18개, 청크 394개 -> data/processed/chunks.json`이 나옵니다. NOTION-011은 본문이 첨부 링크뿐이라 색인에서 제외됩니다([문서 목록](data/sources.md) 참고). DB 적재 없이 청크 파일만 다시 만들려면 `--chunks-only`를 붙입니다.
-3. 인터페이스 실행: <명령 작성>
-4. 정상 답변·근거 없음 확인: <대표 질문과 예상 동작 작성>
+3. 인터페이스 실행: 2번의 색인과 `.env`(`OPENAI_API_KEY`, `DATABASE_URL`)가 준비된 상태에서 터미널 두 개를 엽니다.
+   ```
+   uv run uvicorn main:app --app-dir src --port 8000
+   uv run streamlit run src/ui/app.py
+   ```
+   API는 시작할 때 재정렬 모델을 불러오느라 수십 초가 걸립니다. `Application startup complete` 로그가 나온 뒤 브라우저에서 `http://localhost:8501`을 엽니다. 화면은 `http://127.0.0.1:8000`의 API를 호출하므로 API 포트는 8000으로 둡니다.
+4. 정상 답변·근거 없음 확인: 화면에서 아래 질문을 입력합니다.
+
+   | 질문 | 예상 동작 |
+   | --- | --- |
+   | 몇 시부터 지각이야? | 흰 말풍선, "09:10 이후 입실하면 지각" + `[1]`, "참고 자료 보기"에 `[KANT] 출석 및 공가 신청 가이드` Notion 링크 |
+   | 11월 27일 시간표 알려줘 | 흰 말풍선, `09:00~13:00·14:00~18:00` 일정 + `KANT AX 시간표` 링크 |
+   | 회사 주차 요금은 얼마야? | 파란 말풍선, 근거 없음 안내("짐의 서고에도 그런 기록은 없구나…"), 참고 자료 없음 |
+   | 안녕 | 흰 말풍선, 짧은 인사(일반 대화), 참고 자료 없음 |
+   | (API 서버를 끈 상태에서) 아무 질문 | 빨간 말풍선 `CONNECTION_ERROR` |
+
+   답변 문장은 매번 조금씩 다를 수 있습니다. 시간, 상태, 근거 문서가 위와 같으면 정상입니다.
 5. 평가 실행: 프로젝트 환경에서 `uv run`으로 실행합니다. `python`으로 직접 실행하면 `kant_agent` 모듈을 찾지 못합니다. 루트 `.env`에 `OPENAI_API_KEY`가 필요합니다.
    ```
    uv run python src/eval/run_eval.py <run_id> <stub|A|B|C> <eval_file> --kind <smoke|dev|final> --index-version <v1>
