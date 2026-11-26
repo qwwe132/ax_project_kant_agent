@@ -1,0 +1,21 @@
+﻿run_id,question_id,status,context_precision,context_recall,faithfulness,answer_relevancy,judge_model,embedding_model,ragas_version,note
+final-B-01,TEST-001,ok,0.333,1.0,1.0,0.663,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-002,ok,0.5,1.0,0.667,0.78,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-003,ok,0.833,1.0,1.0,0.479,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-004,ok,1.0,1.0,0.75,0.567,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-005,ok,0.7,1.0,0.75,0.625,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-006,ok,0.0,0.0,1.0,0.776,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-007,ok,0.756,0.5,0.857,0.563,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-008,ok,0.917,1.0,1.0,0.603,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-009,ok,0.75,1.0,1.0,0.553,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-010,ok,1.0,1.0,0.667,0.0,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-011,ok,0.0,0.333,1.0,0.672,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-012,ok,0.0,0.0,0.833,0.575,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-013,no_evidence,0.583,1.0,,,gpt-6-luna,text-embedding-3-small,0.4.4,"answer: skipped, status is no_evidence"
+final-B-01,TEST-014,ok,1.0,0.5,0.6,0.616,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-015,ok,0.583,1.0,1.0,0.583,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-016,ok,0.806,1.0,1.0,0.731,gpt-6-luna,text-embedding-3-small,0.4.4,
+final-B-01,TEST-017,no_evidence,0.0,0.0,,,gpt-6-luna,text-embedding-3-small,0.4.4,"answer: skipped, status is no_evidence"
+final-B-01,TEST-018,ok,,,0.667,0.307,gpt-6-luna,text-embedding-3-small,0.4.4,context: no-evidence question
+final-B-01,TEST-019,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
+final-B-01,TEST-020,no_evidence,,,,,gpt-6-luna,text-embedding-3-small,0.4.4,"context: no-evidence question; answer: skipped, status is no_evidence"
