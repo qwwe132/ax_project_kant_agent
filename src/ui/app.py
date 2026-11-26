@@ -11,7 +11,7 @@ BOT_AVATAR = Path(__file__).parent / "assets" / "bot.gif"
 # 제목 앞에 챗봇 프로필 이미지를 나란히 놓는다.
 with st.container(horizontal=True, vertical_alignment="center"):
     st.image(BOT_AVATAR, width=64)
-    st.title("어둠의 에이타니 챗봇")
+    st.title("어둠의 에이타니 챗봇", anchor=False)
 
 # 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
 st.html("""
@@ -36,6 +36,14 @@ st.html("""
     }
     div[class*="st-key-bot-msg-no_evidence"] { background: #EEF4FF; }
     div[class*="st-key-bot-msg-error"] { background: #FDECEC; }
+    div[class*="st-key-bot-msg"] [data-testid="stExpander"] summary,
+    div[class*="st-key-bot-msg"] [data-testid="stExpander"] summary:hover {
+        background: #F3F4F6;
+        color: #191919;
+    }
+    div[class*="st-key-bot-msg"] [data-testid="stExpander"] summary * {
+        color: #191919;
+    }
     </style>
     """)
 
@@ -137,6 +145,21 @@ def show_message(idx: int, msg: dict) -> None:
         show_bot(idx, msg)
 
 
+# 답변이 오면 페이지를 맨 아래(최신 답변)로 내린다. (교안에 없음: Streamlit의 HTML·JS 기능)
+def scroll_to_bottom() -> None:
+    st.html(
+        """
+        <script>
+        setTimeout(() => {
+            const page = document.querySelector('[data-testid="stAppScrollToBottomContainer"]');
+            if (page) page.scrollTo({top: page.scrollHeight, behavior: "smooth"});
+        }, 100);
+        </script>
+        """,
+        unsafe_allow_javascript=True,
+    )
+
+
 # 메모리에 저장된 이전 대화 기록들을 화면에 모두 순서대로 그린다.
 for i, msg in enumerate(st.session_state["messages"]):
     show_message(i, msg)
@@ -149,8 +172,10 @@ if prompt := st.chat_input(f"{BOT_NAME}에게 물어보세요.", max_chars=500):
         user_msg = {"role": "user", "content": prompt}
         messages.append(user_msg)
         show_message(len(messages) - 1, user_msg)
+        scroll_to_bottom()
 
         with st.spinner("답변을 준비하는 중..."):
             bot_msg = ask_api(prompt)
         messages.append(bot_msg)
         show_message(len(messages) - 1, bot_msg)
+        scroll_to_bottom()
