@@ -5,7 +5,7 @@
 ## 실행 환경
 
 - Python 버전: [`.python-version`](.python-version)
-- 의존성 설치 명령: <작성>
+- 의존성 설치 명령: `uv sync --locked`
 - 환경변수: [`.env.example`](.env.example) 참고
 - 임베딩·생성·재정렬 모델 및 버전: <작성>
 
@@ -33,7 +33,11 @@
 ## 재현 순서
 
 1. [문서 목록](data/sources.md)을 보고 입력 원문을 준비합니다. <재수집 방법 작성>
-2. 전처리 및 색인 재생성: <명령 작성>
+2. 전처리 및 색인 재생성: 루트 `.env`에 [`.env.example`](.env.example)의 `OPENAI_API_KEY`, `DATABASE_URL`을 채운 뒤 레포 루트에서 실행합니다.
+   ```
+   uv run python -m kant_agent.document_indexing.build_index
+   ```
+   정상이면 마지막 로그에 `문서 18개, 청크 394개 -> data/processed/chunks.json`이 나옵니다. NOTION-011은 본문이 첨부 링크뿐이라 색인에서 제외됩니다([문서 목록](data/sources.md) 참고). DB 적재 없이 청크 파일만 다시 만들려면 `--chunks-only`를 붙입니다.
 3. 인터페이스 실행: <명령 작성>
 4. 정상 답변·근거 없음 확인: <대표 질문과 예상 동작 작성>
 5. 평가 실행: 프로젝트 환경에서 `uv run`으로 실행합니다. `python`으로 직접 실행하면 `kant_agent` 모듈을 찾지 못합니다. 루트 `.env`에 `OPENAI_API_KEY`가 필요합니다.
