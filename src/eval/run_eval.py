@@ -1,7 +1,10 @@
 import argparse
 import json
+import statistics
 import time
 from pathlib import Path
+
+from langchain_core.callbacks import get_usage_metadata_callback
 
 from kant_agent.answer_generation import generator
 from kant_agent.answer_generation.generator import answer_from_chunks
@@ -10,7 +13,7 @@ from kant_agent.search import service as search_service
 
 ROOT = Path(__file__).resolve().parents[2]
 SEARCH_CONFIGS = ("A", "B", "C")
-CACHED_FIELDS = ("candidates", "answer", "citations", "status")  # 캐시에 넣는 항목
+CACHED_FIELDS = ("candidates", "answer", "raw_answer", "citations", "status")  # 캐시에 넣는 항목
 
 
 def summarize_trace(trace: dict) -> dict:
@@ -71,6 +74,37 @@ def prepare_search(config: str, collection: str, index_version: str):
         "reranker_model": search_service.RERANKER_MODEL if config == "C" else None,
     }
 
+def count_tokens(usage: dict) -> dict:
+    """Add up tokens from every model call in one question."""
+    total = {"input_tokens": 0, "output_tokens": 0, "reasoning_tokens": 0, "total_tokens": 0}
+    for u in usage.values():  # one entry per model name
+        total["input_tokens"] += u.get("input_tokens", 0)
+        total["output_tokens"] += u.get("output_tokens", 0)
+        total["reasoning_tokens"] += (u.get("output_token_details") or {}).get("reasoning", 0)
+        total["total_tokens"] += u.get("total_tokens", 0)
+    return total
+
+
+def print_summary(records: list[dict]) -> None:
+    """Totals for the whole run: status counts, tokens, and time."""
+    n = len(records)
+    statuses = sorted({r["status"] for r in records})
+    counts = ", ".join(f"{s} {sum(r['status'] == s for r in records)}" for s in statuses)
+    tokens = {k: sum(r["usage"][k] for r in records)
+              for k in ("input_tokens", "output_tokens", "reasoning_tokens", "total_tokens")}
+    latency = [r["latency_sec"] for r in records]
+
+    print("--- summary ---")
+    print(f"questions: {n} ({counts})")
+    print(f"tokens: total {tokens['total_tokens']:,} / per question {tokens['total_tokens'] / n:,.0f} "
+          f"(input {tokens['input_tokens']:,}, output {tokens['output_tokens']:,}, "
+          f"reasoning {tokens['reasoning_tokens']:,})")
+    print(f"latency: mean {statistics.mean(latency):.2f}s, median {statistics.median(latency):.2f}s")
+    for step in ("search_sec", "answer_sec"):
+        values = [r["timing"][step] for r in records if r["timing"][step] is not None]
+        if values:
+            print(f"  {step}: mean {statistics.mean(values):.2f}s, "
+                  f"median {statistics.median(values):.2f}s (n={len(values)})")
 
 def run(
     run_id: str,
@@ -96,8 +130,10 @@ def run(
     answer_settings = {
         "model": generator.MODEL_NAME,
         "prompt_version": generator.PROMPT_VERSION,
+        "max_tokens": generator.MAX_TOKENS,  # NEW
     }
     cache = AnswerCache() if use_cache else None
+    records = []  # NEW: for the summary at the end
 
     with out_path.open("x", encoding="utf-8") as f:
         for index, item in enumerate(questions, start=1):
@@ -111,8 +147,11 @@ def run(
                 "search_trace": None,
                 "candidates": [],
                 "answer": "",
+                "raw_answer": None,  # NEW
                 "citations": [],
                 "status": "error",
+                "usage": count_tokens({}),  # NEW: all 0 until the model is called
+                "timing": {"search_sec": None, "answer_sec": None},  # NEW
             }
 
             start = time.perf_counter()
@@ -130,7 +169,9 @@ def run(
                 record.update(saved)
             else:
                 try:
+                    step = time.perf_counter()  # NEW
                     chunks, record["search_trace"] = retrieve(item["question"], config)
+                    record["timing"]["search_sec"] = round(time.perf_counter() - step, 3)  # NEW
                     record["candidates"] = [
                         {
                             "rank": rank,
@@ -147,8 +188,13 @@ def run(
                     record["retrieve_error"] = repr(e)
                 else:
                     try:
-                        result = answer(item["question"], chunks)
+                        step = time.perf_counter()  # NEW
+                        with get_usage_metadata_callback() as cb:  # NEW: count tokens
+                            result = answer(item["question"], chunks)
+                        record["timing"]["answer_sec"] = round(time.perf_counter() - step, 3)  # NEW
+                        record["usage"] = count_tokens(cb.usage_metadata)  # NEW
                         record["answer"] = result["answer"]
+                        record["raw_answer"] = result.get("raw_answer")  # NEW
                         record["citations"] = result["citations"]
                         record["status"] = result["status"]
                     except Exception as e:
@@ -167,14 +213,16 @@ def run(
 
             record["latency_sec"] = round(time.perf_counter() - start, 3)
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
+            records.append(record)  # NEW
             cache_note = f" cache={record['cache']}" if record["cache"] else ""
             print(
-                f"{record['question_id']}: {record['status']} ({record['latency_sec']}s){cache_note}"
+                f"{record['question_id']}: {record['status']} ({record['latency_sec']}s, "
+                f"{record['usage']['total_tokens']} tok){cache_note}"
             )
 
+    print_summary(records)  # NEW
     print("saved:", out_path)
     return out_path
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
