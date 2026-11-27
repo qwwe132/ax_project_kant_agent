@@ -89,19 +89,34 @@ def tani_html(tilt: str = "") -> str:
     """
 
 
-def scene_html() -> str:
-    lamps_html, lamps_css = _lamps()
-    dust_html, dust_css = _dust()
-    tani_box = _box(*TANI)
+def effects_html() -> str:
+    """보라 안개, 램프 불빛, 빛가루. 다크타니·의자보다 위에 겹치도록 tani_html() 뒤에 그린다.
+
+    (의자 그림이 안개를 가리면 의자 상자 테두리가 일자 선으로 보인다)
+    """
+    lamps_html, _ = _lamps()
+    dust_html, _ = _dust()
     return f"""
     <div class="scene" aria-hidden="true">
-      <div class="scene-art scene-bg">
+      <div class="scene-art">
         <div class="mist mist-1"></div>
         <div class="mist mist-2"></div>
         <div class="mist mist-3"></div>
         {lamps_html}
         {dust_html}
       </div>
+    </div>
+    """
+
+
+def scene_html() -> str:
+    """배경 그림과 모든 효과의 CSS. 순서: scene_html → tani_html → effects_html."""
+    _, lamps_css = _lamps()
+    _, dust_css = _dust()
+    tani_box = _box(*TANI)
+    return f"""
+    <div class="scene" aria-hidden="true">
+      <div class="scene-art scene-bg"></div>
     </div>
     <style>
     .stApp {{ background: transparent; }}
