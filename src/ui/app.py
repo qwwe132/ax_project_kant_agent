@@ -3,6 +3,8 @@ from pathlib import Path
 import httpx
 import streamlit as st
 
+from scene import scene_html, tani_html
+
 API_URL = "http://127.0.0.1:8000/v1/chatbot/ask"
 
 BOT_NAME = "어둠의 마왕 다크타니"
@@ -10,13 +12,29 @@ BOT_AVATAR = Path(__file__).parent / "assets" / "bot.gif"
 
 st.set_page_config(page_title=BOT_NAME, layout="wide")
 
-# 배경 그림과 오른쪽 대화 창, 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
+# 대화 기록을 저장할 메모리 공간(messages)이 없다면 새로 만든다.
+if "messages" not in st.session_state:
+    st.session_state["messages"] = []
+
+
+# 마지막 답변이 근거 없음이면 다크타니가 고개를 갸우뚱한다.
+# 답변마다 tilt-a, tilt-b를 번갈아 줘야 연속으로 근거 없음이 와도 다시 움직인다.
+def tani_tilt(messages: list[dict]) -> str:
+    if messages and messages[-1].get("kind") == "no_evidence":
+        return "tilt-a" if len(messages) // 2 % 2 else "tilt-b"
+    return ""
+
+
+# 움직이는 배경 (램프 불빛, 빛가루, 보라 안개) - scene.py
+st.html(scene_html())
+# 다크타니는 따로 그린다. 답변이 오면 이 자리만 다시 그린다.
+tani_slot = st.empty()
+tani_slot.html(tani_html(tani_tilt(st.session_state["messages"])))
+
+# 오른쪽 대화 창과 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
 # (교안에 없음: Streamlit 정적 파일 서빙과 CSS. 색은 src/ui/library/index.html 기준)
 st.html("""
     <style>
-    .stApp {
-        background: url("app/static/archive.webp") center / cover no-repeat fixed;
-    }
     [data-testid="stHeader"] { background: transparent; }
 
     .st-key-chat-panel {
@@ -63,10 +81,6 @@ st.html("""
     }
     </style>
     """)
-
-# 대화 기록을 저장할 메모리 공간(messages)이 없다면 새로 만든다.
-if "messages" not in st.session_state:
-    st.session_state["messages"] = []
 
 
 # 마크다운에서 ~글자~ 가 취소선이 되지 않도록 ~ 를 글자 그대로 표시한다.
@@ -192,3 +206,5 @@ if prompt and prompt.strip():
             bot_msg = ask_api(prompt)
         messages.append(bot_msg)
         show_message(len(messages) - 1, bot_msg)
+
+    tani_slot.html(tani_html(tani_tilt(messages)))
