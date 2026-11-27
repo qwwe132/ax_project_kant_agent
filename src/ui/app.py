@@ -3,7 +3,7 @@ from pathlib import Path
 import httpx
 import streamlit as st
 
-from scene import scene_html, tani_html
+from scene import effects_html, scene_html, tani_html
 
 API_URL = "http://127.0.0.1:8000/v1/chatbot/ask"
 
@@ -25,11 +25,13 @@ def tani_tilt(messages: list[dict]) -> str:
     return ""
 
 
-# 움직이는 배경 (램프 불빛, 빛가루, 보라 안개) - scene.py
+# 움직이는 배경 - scene.py (배경 → 다크타니·의자 → 안개·불빛·빛가루 순서로 겹친다)
 st.html(scene_html())
 # 다크타니는 따로 그린다. 답변이 오면 이 자리만 다시 그린다.
 tani_slot = st.empty()
 tani_slot.html(tani_html(tani_tilt(st.session_state["messages"])))
+# 안개·램프 불빛·빛가루는 다크타니와 의자 위에 겹친다.
+st.html(effects_html())
 
 # 오른쪽 대화 창과 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
 # (교안에 없음: Streamlit 정적 파일 서빙과 CSS. 색은 src/ui/library/index.html 기준)
