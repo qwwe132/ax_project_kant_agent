@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2b1729">
+<title>어둠의 에이타니 · KANT 서고</title>
+<style>
+*{box-sizing:border-box}html{color-scheme:dark}body{margin:0;color:#fff4ff;background:#21121d;font:1rem/1.55 "Malgun Gothic",system-ui,sans-serif}
+main{height:100vh;height:100dvh;position:relative;overflow:hidden;isolation:isolate}
+.scene{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.chat{position:absolute;right:4.7%;top:13.5%;width:50%;height:62%;display:flex;flex-direction:column;overflow:hidden;border:1px solid #dba7d19c;border-radius:clamp(20px,2.2vw,38px);background:linear-gradient(125deg,#55354cbd,#362030d9 65%,#55334ac9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 5px #f7bcf02b,0 16px 52px #130a1455}
+header{display:flex;align-items:center;gap:.8rem;padding:clamp(11px,2vh,22px) 4.5%;border-bottom:1px solid #dbbdd33f}header img{width:clamp(44px,4.4vw,76px);height:auto}h1{font-size:clamp(1.2rem,1.95vw,2.1rem);margin:0;letter-spacing:-.035em}
+#log{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#98778f transparent;padding:clamp(12px,2.5vh,28px) 4.7%;display:flex;flex-direction:column;gap:clamp(12px,2vh,24px)}
+.row{display:flex;align-items:flex-start;gap:clamp(8px,1vw,18px);flex:none}.row img{width:clamp(32px,3.9vw,66px);height:auto}.user{justify-content:flex-end}
+.bubble{max-width:90%;min-width:0;background:#643768c9;border:1px solid #ad77b795;border-radius:20px 20px 20px 5px;padding:.58em .95em;font-size:clamp(1rem,1.52vw,1.56rem);overflow-wrap:anywhere}.user .bubble{color:#291637;background:#e0b8f7;border-color:#edceff;border-radius:20px 20px 5px 20px}.answer{margin:0;white-space:pre-wrap}
+details{font-size:.85em;color:#e6c8ed;margin-top:.35em}summary{cursor:pointer;width:fit-content}summary:hover,a:hover{color:white}.source{font-size:.95em;margin:.5em 0 0;color:#f4e1f6}.source a{color:inherit;text-underline-offset:3px}.excerpt{display:block;white-space:pre-line;margin-top:.18em}
+footer{padding:clamp(10px,1.8vh,20px) 4.5%;border-top:1px solid #dbbdd339}
+form{display:flex;align-items:flex-end;gap:7px;padding:6px 7px 6px 15px;border:1px solid #d4aac9a8;border-radius:22px;background:#29172e69}textarea{background:transparent;color:white;border:0;resize:none;min-width:0;flex:1;font:inherit;font-size:clamp(1rem,1.24vw,1.3rem);line-height:1.45;padding:7px 0;max-height:5.5em}textarea::placeholder{color:#d7bdd7}
+button{cursor:pointer;font:inherit}.send{display:grid;place-items:center;width:42px;height:42px;flex:none;border:1px solid #d59cf9;border-radius:50%;background:#a34fe2;color:white}.send:disabled{cursor:default;opacity:.7}.send svg{width:22px;height:22px}.retry{display:block;margin-top:6px;border:0;background:transparent;color:#efccff;text-decoration:underline;padding:2px 0}
+:focus-visible{outline:2px solid #ffd094;outline-offset:2px}textarea:focus-visible{outline:0}form:focus-within{border-color:#f0ccff;box-shadow:0 0 0 1px #deb7ef}
+@media(min-aspect-ratio:2/1){.chat{top:7%;height:85%}}
+@media(max-width:800px),(max-aspect-ratio:1/1){.chat{top:auto;bottom:max(8px,env(safe-area-inset-bottom));right:2.5%;width:95%;height:65%}.scene{height:47%;width:100%}header{padding:8px 4%}header img{width:40px}.bubble{max-width:91%}footer{padding:9px 4%}}
+@media(max-height:480px) and (min-aspect-ratio:1/1){.chat{height:94%;top:3%}header,footer{padding-block:5px}}
+header picture,.row picture{display:block;flex:none}
+picture img{display:block;object-fit:contain}
+@media(prefers-reduced-motion:no-preference){picture img{object-view-box:inset(20% 21% 18% 21%)}}
+</style>
+</head>
+<body><main>
+<svg class="scene" aria-hidden="true" viewBox="0 0 836 470.5" preserveAspectRatio="xMidYMid slice">
+<image href="archive.webp" width="836" height="470.5"/>
+
+</svg>
+<section class="chat" aria-label="KANT 서고 대화"><header><picture id="avatar"><source media="(prefers-reduced-motion: reduce)" srcset="darktani.png"><img src="darktani.gif" alt=""></picture><h1>어둠의 에이타니</h1></header>
+<div id="log" role="log" aria-label="대화 기록" aria-live="polite" aria-relevant="additions text"></div>
+<footer><form><textarea rows="1" maxlength="500" aria-label="KANT 프로그램에 관한 질문" placeholder="질문을 입력하세요"></textarea><button class="send" type="submit" aria-label="전송" title="전송" disabled><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m3 10 18-7-6 18-3.6-7.9L3 10Z M11.4 13.1 21 3"/></svg></button></form></footer></section></main>
+<script>
+'use strict';
+const log=document.querySelector('#log'), input=document.querySelector('textarea'), sendButton=document.querySelector('.send');
+const form=document.querySelector('form'), scene=document.querySelector('.scene');
+const small=matchMedia('(max-width:800px),(max-aspect-ratio:1/1)');
+function frame(){scene.setAttribute('viewBox',small.matches?'45 145 365 220':'0 0 836 470.5')}
+small.addEventListener('change',frame);frame();
+const live=location.protocol!=='file:' && /^\/library(?:\/|$)/.test(location.pathname);
+const attendance={title:'KANT 출석 및 공가 신청 가이드',source_url:'https://app.notion.com/p/4216d0d25caa804c9992d2b43ac83e2a',ref_number:1,source_location:'핵심 요약 · 출석 가능 시간'};
+const records=[
+ {match:/퇴실|조퇴/,answer:'퇴실은 17:50부터 23:59까지다. 17:50 전에 나가면 조퇴로 기록된다, 인간.',cite:{...attendance,excerpt:'퇴실: 17:50~23:59. 17:50 이전 퇴실 시 조퇴.'}},
+ {match:/지각|입실|늦/,answer:'09:10 이후 입실은 지각이다, 인간.',cite:{...attendance,excerpt:'09:10 이후 입실 시, 지각.'}},
+ {match:/공가/,answer:'공적인 사유로 결석할 땐 증빙자료를 제출하거라. 공가로 인정되면 그날 전체가 출석이다.',cite:{...attendance,source_location:'공가 신청',excerpt:'올바른 증빙자료를 제출하면 해당 일 전체가 출석으로 인정됩니다.'}},
+ {match:/QR|큐알|기기등록/i,answer:'고용24 직업훈련 출결관리 앱에 로그인하고, 마이페이지에서 네 출결 기기를 등록하거라.',cite:{title:'QR 출석 안내문',source_url:'https://app.notion.com/p/4216d0d25caa809095e0e20e9d01d131',ref_number:1,source_location:'개강 전 준비',excerpt:'마이페이지 → 나의 출결 기기관리에서 스마트폰 등록.'}}
+];
+let pending=false;
+function sync(){sendButton.disabled=pending||!input.value.trim();input.style.height='auto';input.style.height=input.scrollHeight+'px'}
+for(const e of ['input','focus','blur']) input.addEventListener(e,sync);
+function row(text,user=false){
+ const outer=document.createElement('div');outer.className=user?'row user':'row';
+ if(!user){const icon=document.querySelector('#avatar').cloneNode(true);icon.removeAttribute('id');outer.append(icon)}
+ const bubble=document.createElement('div');bubble.className='bubble';
+ const answer=document.createElement('p');answer.className='answer';answer.textContent=text;bubble.append(answer);outer.append(bubble);log.append(outer);return bubble;
+}
+function sources(bubble,citations){
+ if(!citations.length)return;
+ const drawer=document.createElement('details'),summary=document.createElement('summary');
+ summary.textContent='참고 자료 보기';drawer.append(summary);
+ for(const c of citations){
+  const block=document.createElement('p');block.className='source';
+  const label='['+(c.ref_number||1)+'] '+(c.title||c.document_id||'참고 자료');
+  if(/^https?:\/\//i.test(c.source_url||'')){const a=document.createElement('a');a.href=c.source_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label;block.append(a)}else block.append(label);
+  for(const value of [c.source_location,c.excerpt])if(value){const line=document.createElement('span');line.className='excerpt';line.textContent=value;block.append(line)}
+  drawer.append(block);
+ }
+ bubble.append(drawer);
+}
+function offline(text){
+ const item=records.find(record=>record.match.test(text));
+ return item?{answer:item.answer,citations:[item.cite]}:{answer:'이 오프라인 서고에는 입실·퇴실, 공가, QR 출석 기록이 있다. 그중 무엇이 궁금하냐, 인간?',citations:[]};
+}
+async function retrieve(text){
+ if(!live)return offline(text);
+ const res=await fetch('/v1/chatbot/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:text}),signal:AbortSignal.timeout(120000)});
+ if(!res.ok)throw new Error('request failed');
+ const {data}=await res.json();
+ if(typeof data?.answer!=='string'||!Array.isArray(data.citations))throw new Error('invalid answer');
+ return data;
+}
+async function respond(text,bubble){
+ pending=true;sync();bubble.replaceChildren();const answer=document.createElement('p');answer.className='answer';answer.textContent='기록을 살피는 중…';bubble.append(answer);log.scrollTop=log.scrollHeight;
+ try{const data=await retrieve(text);const follow=log.scrollHeight-log.scrollTop-log.clientHeight<36;answer.textContent=data.answer;sources(bubble,data.citations);if(follow)log.scrollTop=log.scrollHeight}
+ catch{answer.textContent='서고에 연결할 수 없다. 잠시 후 다시 시도하거라.';const retry=document.createElement('button');retry.className='retry';retry.textContent='다시 시도';retry.onclick=()=>{if(!pending)respond(text,bubble)};bubble.append(retry)}
+ finally{pending=false;sync()}
+}
+form.addEventListener('submit',e=>{e.preventDefault();const text=input.value.trim();if(!text||pending)return;row(text,true);input.value='';respond(text,row(''))});
+input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing&&e.keyCode!==229){e.preventDefault();form.requestSubmit()}});
+if(live)row('서고에 온 것을 환영한다, 인간. KANT 과정에 대해 무엇이 궁금하냐?');
+else{row('몇 시부터 지각이야?',true);sources(row(records[1].answer),[records[1].cite])}
+sync();
+</script></body></html>

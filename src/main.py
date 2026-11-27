@@ -1,8 +1,10 @@
 import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from kant_agent.answer_generation.router import router as chatbot_router
 from kant_agent.search import service as search_service
@@ -51,3 +53,8 @@ register_exception_handlers(app)
 
 # 라우터 등록
 app.include_router(chatbot_router)
+app.mount(
+    "/library",
+    StaticFiles(directory=Path(__file__).parent / "ui" / "library", html=True),
+    name="library",
+)
