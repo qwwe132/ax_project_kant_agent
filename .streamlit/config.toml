@@ -1,0 +1,6 @@
+[server]
+# src/ui/static/ 의 배경 그림을 app/static/... 주소로 내보낸다.
+enableStaticServing = true
+
+[theme]
+base = "dark"

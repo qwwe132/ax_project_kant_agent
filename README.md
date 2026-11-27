@@ -8,7 +8,7 @@
 - 의존성 설치 명령: `uv sync --locked`
 - 환경변수: [`.env.example`](.env.example) 참고
 - 임베딩·생성·재정렬 모델 및 버전:
-  - 생성: `gpt-6-luna` (`reasoning_effort="low"`, 출력 한도 `MAX_TOKENS=1000`), 프롬프트 `v4` — 값은 [`generator.py`](src/kant_agent/answer_generation/generator.py)의 `MODEL_NAME`, `PROMPT_VERSION`, `MAX_TOKENS`
+  - 생성: `gpt-6-luna` (`reasoning_effort="low"`, 출력 한도 `MAX_TOKENS=1000`), 프롬프트 `v5`(최종 평가는 `v4`, v5는 챗봇 이름만 "어둠의 마왕 다크타니"로 변경) — 값은 [`generator.py`](src/kant_agent/answer_generation/generator.py)의 `MODEL_NAME`, `PROMPT_VERSION`, `MAX_TOKENS`
   - 임베딩: `text-embedding-3-small` (OpenAI), 컬렉션 `kant_docs`, 색인 `v1` — 값은 [`build_index.py`](src/kant_agent/document_indexing/build_index.py)와 [`service.py`](src/kant_agent/search/service.py)의 `EMBEDDING_MODEL`
   - 재정렬: `Dongjin-kr/ko-reranker` (Cross-Encoder, 구성 C), 후보 `CANDIDATE_K=20`개 중 상위 `TOP_K=5`개 출력 — 값은 [`service.py`](src/kant_agent/search/service.py)의 `RERANKER_MODEL`, `CANDIDATE_K`, `TOP_K`
 
@@ -50,16 +50,16 @@
    uv run uvicorn main:app --app-dir src --port 8000
    uv run streamlit run src/ui/app.py
    ```
-   API는 시작할 때 재정렬 모델을 불러오느라 수십 초가 걸립니다. `Application startup complete` 로그가 나온 뒤 브라우저에서 `http://localhost:8501`을 엽니다. 화면은 `http://127.0.0.1:8000`의 API를 호출하므로 API 포트는 8000으로 둡니다.
+   API는 시작할 때 재정렬 모델을 불러오느라 수십 초가 걸립니다. `Application startup complete` 로그가 나온 뒤 브라우저에서 `http://localhost:8501`을 엽니다. 화면은 `http://127.0.0.1:8000`의 API를 호출하므로 API 포트는 8000으로 둡니다. 배경 그림은 레포 루트의 `.streamlit/config.toml`(정적 파일 서빙)을 읽어야 나오므로 반드시 레포 루트에서 실행하고, 설정을 바꾼 뒤에는 Streamlit을 다시 시작합니다.
 4. 정상 답변·근거 없음 확인: 화면에서 아래 질문을 입력합니다.
 
    | 질문 | 예상 동작 |
    | --- | --- |
-   | 몇 시부터 지각이야? | 흰 말풍선, "09:10 이후 입실하면 지각" + `[1]`, "참고 자료 보기"에 `[KANT] 출석 및 공가 신청 가이드` Notion 링크 |
-   | 11월 27일 시간표 알려줘 | 흰 말풍선, `09:00~13:00·14:00~18:00` 일정 + `KANT AX 시간표` 링크 |
-   | 회사 주차 요금은 얼마야? | 파란 말풍선, 근거 없음 안내("흐음… 본좌의 서고에는 그런 기록이 없구나. 운영 담당자에게 직접 물어보거라."), 참고 자료 없음 |
-   | 안녕 | 흰 말풍선, 짧은 인사(일반 대화), 참고 자료 없음 |
-   | (API 서버를 끈 상태에서) 아무 질문 | 빨간 말풍선 `CONNECTION_ERROR` |
+   | 몇 시부터 지각이야? | 보라 말풍선, "09:10 이후 입실하면 지각" + `[1]`, "참고 자료 보기"에 `[KANT] 출석 및 공가 신청 가이드` Notion 링크 |
+   | 11월 27일 시간표 알려줘 | 보라 말풍선, `09:00~13:00·14:00~18:00` 일정 + `KANT AX 시간표` 링크 |
+   | 회사 주차 요금은 얼마야? | 남색 말풍선, 근거 없음 안내("흐음… 본좌의 서고에는 그런 기록이 없구나. 운영 담당자에게 직접 물어보거라."), 참고 자료 없음 |
+   | 안녕 | 보라 말풍선, 짧은 인사(일반 대화), 참고 자료 없음 |
+   | (API 서버를 끈 상태에서) 아무 질문 | 붉은 말풍선 `CONNECTION_ERROR` |
 
    답변 문장은 매번 조금씩 다를 수 있습니다. 시간, 상태, 근거 문서가 위와 같으면 정상입니다.
 5. 평가 실행: 프로젝트 환경에서 `uv run`으로 실행합니다. `python`으로 직접 실행하면 `kant_agent` 모듈을 찾지 못합니다. 루트 `.env`에 `OPENAI_API_KEY`가 필요합니다.

@@ -5,44 +5,61 @@ import streamlit as st
 
 API_URL = "http://127.0.0.1:8000/v1/chatbot/ask"
 
-BOT_NAME = "어둠의 에이타니"
+BOT_NAME = "어둠의 마왕 다크타니"
 BOT_AVATAR = Path(__file__).parent / "assets" / "bot.gif"
 
-# 제목 앞에 챗봇 프로필 이미지를 나란히 놓는다.
-with st.container(horizontal=True, vertical_alignment="center"):
-    st.image(BOT_AVATAR, width=64)
-    st.title("어둠의 에이타니 챗봇", anchor=False)
+st.set_page_config(page_title=BOT_NAME, layout="wide")
 
-# 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
+# 배경 그림과 오른쪽 대화 창, 말풍선 모양 (key= 로 만든 st-key-... 클래스만 꾸민다)
+# (교안에 없음: Streamlit 정적 파일 서빙과 CSS. 색은 src/ui/library/index.html 기준)
 st.html("""
     <style>
+    .stApp {
+        background: url("app/static/archive.webp") center / cover no-repeat fixed;
+    }
+    [data-testid="stHeader"] { background: transparent; }
+
+    .st-key-chat-panel {
+        width: 50% !important;
+        margin-left: auto;
+        margin-top: 3vh;
+        padding: 16px 24px;
+        border: 1px solid #dba7d19c;
+        border-radius: 32px;
+        background: linear-gradient(125deg, #55354cbd, #362030d9 65%, #55334ac9);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 16px 52px #130a1455;
+    }
+
     div[class*="st-key-user-msg"] {
-        background: #FEE500;
-        color: #191919;
-        border-radius: 16px;
+        background: #e0b8f7;
+        color: #291637;
+        border-radius: 20px 20px 5px 20px;
         padding: 8px 14px;
-        max-width: 70%;
+        max-width: 75%;
         width: fit-content !important;
         margin-left: auto;
     }
     div[class*="st-key-bot-msg"] {
-        background: #FFFFFF;
-        color: #191919;
-        border: 1px solid #E5E7EB;
-        border-radius: 16px;
+        background: #643768c9;
+        color: #fff4ff;
+        border: 1px solid #ad77b795;
+        border-radius: 20px 20px 20px 5px;
         padding: 8px 14px;
-        max-width: 80%;
+        max-width: 90%;
         width: fit-content !important;
     }
-    div[class*="st-key-bot-msg-no_evidence"] { background: #EEF4FF; }
-    div[class*="st-key-bot-msg-error"] { background: #FDECEC; }
+    div[class*="st-key-bot-msg-no_evidence"] { background: #3f3a6bc9; }
+    div[class*="st-key-bot-msg-error"] { background: #6b2f3fc9; }
     div[class*="st-key-bot-msg"] [data-testid="stExpander"] summary,
-    div[class*="st-key-bot-msg"] [data-testid="stExpander"] summary:hover {
-        background: #F3F4F6;
-        color: #191919;
-    }
     div[class*="st-key-bot-msg"] [data-testid="stExpander"] summary * {
-        color: #191919;
+        background: transparent;
+        color: #e6c8ed;
+    }
+
+    @media (max-width: 800px) {
+        .st-key-chat-panel { width: 100% !important; padding: 12px 14px; }
+        .st-key-chat-panel h1 { font-size: 1.6rem; }
     }
     </style>
     """)
@@ -79,7 +96,6 @@ def show_user(idx: int, msg: dict) -> None:
 # 말풍선 이미지 - chatbot
 def show_bot(idx: int, msg: dict) -> None:
     with st.chat_message("assistant", avatar=BOT_AVATAR):
-        st.caption(BOT_NAME)
         key = f"bot-msg-{msg['kind']}-{idx}"
         with st.container(key=key):
             st.markdown(plain_tilde(msg["content"]), width="content")
@@ -145,37 +161,34 @@ def show_message(idx: int, msg: dict) -> None:
         show_bot(idx, msg)
 
 
-# 답변이 오면 페이지를 맨 아래(최신 답변)로 내린다. (교안에 없음: Streamlit의 HTML·JS 기능)
-def scroll_to_bottom() -> None:
-    st.html(
-        """
-        <script>
-        setTimeout(() => {
-            const page = document.querySelector('[data-testid="stAppScrollToBottomContainer"]');
-            if (page) page.scrollTo({top: page.scrollHeight, behavior: "smooth"});
-        }, 100);
-        </script>
-        """,
-        unsafe_allow_javascript=True,
-    )
+# 오른쪽 대화 창: 제목 + 대화 기록(스크롤) + 입력창
+with st.container(key="chat-panel"):
+    with st.container(horizontal=True, vertical_alignment="center", wrap=False):
+        st.image(BOT_AVATAR, width=64)
+        st.title(BOT_NAME, anchor=False)
 
+    # 높이를 고정하면 내용이 넘칠 때 이 안에서만 스크롤된다.
+    # autoscroll=True: 새 메시지가 오면 자동으로 맨 아래로 내린다.
+    log = st.container(height=500, border=False, autoscroll=True, key="chat-log")
 
-# 메모리에 저장된 이전 대화 기록들을 화면에 모두 순서대로 그린다.
-for i, msg in enumerate(st.session_state["messages"]):
-    show_message(i, msg)
+    # 컨테이너 안에 넣으면 입력창이 화면 맨 아래가 아니라 창 안에 붙는다.
+    prompt = st.chat_input("질문을 입력하세요", max_chars=500)
 
-if prompt := st.chat_input(f"{BOT_NAME}에게 물어보세요.", max_chars=500):
+# 메모리에 저장된 이전 대화 기록들을 대화 창 안에 순서대로 그린다.
+with log:
+    for i, msg in enumerate(st.session_state["messages"]):
+        show_message(i, msg)
+
+if prompt and prompt.strip():
     prompt = prompt.strip()
-    if prompt:
-        messages = st.session_state["messages"]
+    messages = st.session_state["messages"]
 
+    with log:
         user_msg = {"role": "user", "content": prompt}
         messages.append(user_msg)
         show_message(len(messages) - 1, user_msg)
-        scroll_to_bottom()
 
-        with st.spinner("답변을 준비하는 중..."):
+        with st.spinner("기록을 살피는 중..."):
             bot_msg = ask_api(prompt)
         messages.append(bot_msg)
         show_message(len(messages) - 1, bot_msg)
-        scroll_to_bottom()

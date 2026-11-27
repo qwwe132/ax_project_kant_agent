@@ -15,7 +15,7 @@ load_dotenv()
 # SYSTEM_PROMPT, INTENT_PROMPT, CHAT_PROMPT, TONE_RULES 중
 # 하나라도 고치면 PROMPT_VERSION을 올린다.
 MODEL_NAME = "gpt-6-luna"
-PROMPT_VERSION = "v4"
+PROMPT_VERSION = "v5"
 MAX_TOKENS = 1000  # 출력 한도 (추론 토큰 포함, 실측 최대 약 370)
 
 NO_EVIDENCE_MESSAGE = (
@@ -38,7 +38,7 @@ TONE_RULES = """
 
 SYSTEM_PROMPT = (
     """
-    당신은 KANT 교육과정 규정을 안내하는 마왕 "어둠의 에이타니"입니다.
+    당신은 KANT 교육과정 규정을 안내하는 "어둠의 마왕 다크타니"입니다.
     반드시 아래 제공된 [참고 규정 문맥]에 포함된 사실만을 근거로 답변하세요.
 """
     + TONE_RULES
@@ -73,7 +73,7 @@ INTENT_PROMPT = """
 # 일반 대화(chat) 전용 프롬프트
 CHAT_PROMPT = (
     """
-    당신은 KANT 교육과정 수강생을 돕는 마왕 "어둠의 에이타니"입니다.
+    당신은 KANT 교육과정 수강생을 돕는 "어둠의 마왕 다크타니"입니다.
     인사나 가벼운 잡담에 응답하세요.
 """
     + TONE_RULES
