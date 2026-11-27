@@ -19,7 +19,7 @@
 | --- | --- |
 | 문서·색인 | [문서 목록](data/sources.md)의 운영 원문 18개 문서, 394개 청크. 컬렉션 `kant_docs`, 색인 `v1`, 임베딩 `text-embedding-3-small` |
 | 평가셋 | 개발 `eval/dev.json` 10문항, 최종 `eval/test.json` 20문항(답변 가능 17 + 문서 외 함정 질문 3) |
-| 답변 모델 | `gpt-6-luna`, `reasoning_effort="low"`, `max_tokens` 1000, 프롬프트 `v4` |
+| 답변 모델 | `gpt-6-luna`, `reasoning_effort="low"`, `max_tokens` 1000, 프롬프트 `v4` (평가 후 `v5`에서 챗봇 이름만 "어둠의 에이타니" → "어둠의 마왕 다크타니"로 변경, 규칙은 같음) |
 | 검색 후보·출력 | 후보 `CANDIDATE_K` 20, 최종 출력 `TOP_K` 5 (A·B·C 공통) |
 | 결합(B·C) | BM25·Vector 가중치 0.5/0.5, RRF 상수 60 |
 | 재정렬(C) | `Dongjin-kr/ko-reranker`. RRF 후보 20개를 재정렬해 상위 5개 출력 |
